@@ -101,8 +101,8 @@
   {
     "id": "q10",
     "type": "true-false",
-    "prompt": "True or False: \"I have to finish my homework before club practice\" means the homework should be completed first.",
-    "answer": "true",
-    "explanation": "\"Before club practice\" shows that finishing the homework happens earlier than club practice."
+    "prompt": "True or false: \"May I borrow your notes?\" is a polite classroom request.",
+    "answer": true,
+    "explanation": "'May I ...?' is a polite way to ask permission in a classroom. Asking to borrow notes is a natural school-life situation."
   }
 ]

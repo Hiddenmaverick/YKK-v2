@@ -98,8 +98,8 @@
   {
     "id": "q10",
     "type": "true-false",
-    "prompt": "True or False: \"Get off the bus\" means to board the bus.",
-    "answer": false,
-    "explanation": "\"Get off\" means to leave a bus, train, or plane. \"Get on\" means to board it."
+    "prompt": "True or false: \"Excuse me, where is the nearest station?\" is a natural way to ask for directions.",
+    "answer": true,
+    "explanation": "'Excuse me' makes the question polite, and 'Where is the nearest station?' clearly asks for a location."
   }
 ]
