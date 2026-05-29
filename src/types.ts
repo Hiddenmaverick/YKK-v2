@@ -5,6 +5,16 @@ export interface Lesson {
   questionFile: string;
 }
 
+export interface LessonProgress {
+  lastScore: number;
+  lastTotal: number;
+  lastPercentage: number;
+  bestScore: number;
+  bestPercentage: number;
+  completedCount: number;
+  lastCompletedAt: string;
+}
+
 export interface MultipleChoiceQuestion {
   id: string;
   type: 'multiple-choice';
