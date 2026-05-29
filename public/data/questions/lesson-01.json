@@ -7,7 +7,11 @@
       "I'm doing well, thank you.",
       "It is next to the library.",
       "At seven o'clock yesterday.",
-      "Yes, I have two pens."
+      "Yes, I have two pens.",
+      "I am doing well, thank you.",
+      "It is under the desk.",
+      "I went there last Sunday.",
+      "Yes, it is my umbrella."
     ],
     "answer": "I'm doing well, thank you.",
     "explanation": "This is a common greeting. A short, polite answer about your condition is natural. Teachers can also introduce 'I'm OK' or 'I'm a little tired' as useful alternatives."
@@ -30,7 +34,11 @@
       "I have a part-time job on weekends.",
       "I have part-time job in weekends.",
       "I am have a part-time job on weekends.",
-      "I do a part-time job at weekend every."
+      "I do a part-time job at weekend every.",
+      "I have a part-time job during weekends.",
+      "I have a part-time job by weekends.",
+      "I am part-time job have weekends.",
+      "Weekend job I have part-time."
     ],
     "answer": "I have a part-time job on weekends.",
     "explanation": "Use 'have a part-time job' and 'on weekends' for a regular weekend activity. This example is useful for everyday conversation practice without asking students for personal details."
@@ -73,10 +81,17 @@
       "Could you speak a little more slowly, please?",
       "Speak slowly now.",
       "Why you speak slowly?",
-      "You are slowly speak, please."
+      "You are slowly speak, please.",
+      "Could you please speak a little more slowly?",
+      "Speak slow little now please.",
+      "Why slowly you speak little?",
+      "You must speak slowly for me."
     ],
-    "answer": "Could you speak a little more slowly, please?",
-    "explanation": "'Could you ... please?' is a polite pattern for requests. 'A little more slowly' is useful when students need extra time to understand spoken English."
+    "answer": [
+      "Could you speak a little more slowly, please?",
+      "Could you please speak a little more slowly?"
+    ],
+    "explanation": "'Could you ... please?' and 'Could you please ...?' are polite request patterns. Both correct choices ask someone to speak more slowly in a respectful way."
   },
   {
     "id": "q8",

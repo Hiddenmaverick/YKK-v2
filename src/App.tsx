@@ -4,15 +4,36 @@ import type { AnswerReview, Lesson, Question } from './types';
 const normalizeAnswer = (value: string | boolean) =>
   String(value).trim().toLowerCase().replace(/\s+/g, ' ');
 
-const shuffleQuestions = (questions: Question[]) =>
-  [...questions]
-    .map((question) => ({ question, sort: Math.random() }))
+const shuffleArray = <T,>(items: T[]) =>
+  [...items]
+    .map((item) => ({ item, sort: Math.random() }))
     .sort((a, b) => a.sort - b.sort)
-    .map(({ question }) => question);
+    .map(({ item }) => item);
+
+const getStringAnswers = (answer: string | string[]) => (Array.isArray(answer) ? answer : [answer]);
+
+const prepareQuestionForQuiz = (question: Question): Question => {
+  if (question.type !== 'multiple-choice') {
+    return question;
+  }
+
+  const acceptedAnswers = getStringAnswers(question.answer);
+  const acceptedAnswerKeys = new Set(acceptedAnswers.map(normalizeAnswer));
+  const chosenCorrectAnswer = shuffleArray(acceptedAnswers)[0];
+  const incorrectChoices = question.choices.filter((choice) => !acceptedAnswerKeys.has(normalizeAnswer(choice)));
+
+  return {
+    ...question,
+    choices: shuffleArray([chosenCorrectAnswer, ...shuffleArray(incorrectChoices).slice(0, 3)]),
+  };
+};
+
+const prepareQuestionsForQuiz = (questions: Question[]) =>
+  shuffleArray(questions).map(prepareQuestionForQuiz);
 
 const getAcceptedAnswers = (question: Question): Array<string | boolean> => {
-  if (question.type === 'fill-in-the-blank') {
-    return Array.isArray(question.answer) ? question.answer : [question.answer];
+  if (question.type === 'fill-in-the-blank' || question.type === 'multiple-choice') {
+    return getStringAnswers(question.answer);
   }
 
   return [question.answer];
@@ -99,7 +120,7 @@ function App() {
       }
 
       const questionData = (await response.json()) as Question[];
-      setQuestions(shuffleQuestions(questionData));
+      setQuestions(prepareQuestionsForQuiz(questionData));
     } catch (loadError) {
       setError(loadError instanceof Error ? loadError.message : 'Could not load questions.');
     } finally {

@@ -8,6 +8,17 @@ const csvPath = path.join(projectRoot, 'teacher-content', 'questions.csv');
 const lessonsPath = path.join(projectRoot, 'public', 'data', 'lessons.json');
 const questionsDir = path.join(projectRoot, 'public', 'data', 'questions');
 
+const optionColumns = [
+  'option_a',
+  'option_b',
+  'option_c',
+  'option_d',
+  'option_e',
+  'option_f',
+  'option_g',
+  'option_h',
+];
+
 const expectedColumns = [
   'lesson_id',
   'lesson_title',
@@ -15,10 +26,7 @@ const expectedColumns = [
   'question_id',
   'question_type',
   'prompt',
-  'option_a',
-  'option_b',
-  'option_c',
-  'option_d',
+  ...optionColumns,
   'answer',
   'accepted_answers',
   'explanation',
@@ -129,11 +137,20 @@ function normalizeRow(header, csvRow) {
   const row = Object.fromEntries(header.map((column, index) => [column, values[index] ?? '']));
   for (const field of requiredFields) {
     if (!row[field]) {
-      fail(csvRow.line, `missing required field "${field}".`);
+      const friendlyNames = {
+        prompt: 'missing prompt',
+        answer: 'missing answer',
+        explanation: 'missing explanation',
+      };
+      fail(csvRow.line, friendlyNames[field] ?? `missing required field "${field}".`);
     }
   }
 
   return row;
+}
+
+function getOptionValues(row) {
+  return optionColumns.map((field) => row[field]).filter((choice) => choice !== '');
 }
 
 function addAcceptedAnswer(answers, seenAnswers, value) {
@@ -160,16 +177,29 @@ function toQuestion(row, rowNumber) {
   }
 
   if (type === 'multiple-choice') {
-    const choices = ['option_a', 'option_b', 'option_c', 'option_d']
-      .map((field) => row[field])
-      .filter((choice) => choice !== '');
-
-    if (choices.length < 2) {
-      fail(rowNumber, 'multiple-choice questions need at least two non-empty choices in option_a through option_d.');
+    const choices = getOptionValues(row);
+    const answers = [];
+    const seenAnswers = new Set();
+    addAcceptedAnswer(answers, seenAnswers, row.answer);
+    for (const acceptedAnswer of row.accepted_answers.split(';')) {
+      addAcceptedAnswer(answers, seenAnswers, acceptedAnswer);
     }
 
-    if (!choices.includes(row.answer)) {
-      fail(rowNumber, `multiple-choice answer "${row.answer}" must exactly match one of the choices.`);
+    if (choices.length < 4) {
+      fail(rowNumber, 'fewer than 4 total options for multiple-choice. Add at least 4 non-empty choices in option_a through option_h.');
+    }
+
+    const choiceSet = new Set(choices);
+    for (const answer of answers) {
+      if (!choiceSet.has(answer)) {
+        fail(rowNumber, `correct answer not found in options: "${answer}" must appear in option_a through option_h.`);
+      }
+    }
+
+    const answerSet = new Set(answers);
+    const incorrectChoices = choices.filter((choice) => !answerSet.has(choice));
+    if (incorrectChoices.length < 3) {
+      fail(rowNumber, 'fewer than 3 incorrect distractors for multiple-choice. Add more incorrect choices in option_a through option_h.');
     }
 
     return {
@@ -177,15 +207,15 @@ function toQuestion(row, rowNumber) {
       type,
       prompt: row.prompt,
       choices,
-      answer: row.answer,
+      answer: answers.length === 1 ? answers[0] : answers,
       explanation: row.explanation,
     };
   }
 
   if (type === 'true-false') {
-    const filledOptions = ['option_a', 'option_b', 'option_c', 'option_d'].filter((field) => row[field] !== '');
+    const filledOptions = optionColumns.filter((field) => row[field] !== '');
     if (filledOptions.length > 0) {
-      fail(rowNumber, 'true-false questions must leave option_a through option_d blank.');
+      fail(rowNumber, 'true-false questions must leave option_a through option_h blank.');
     }
 
     if (row.accepted_answers !== '') {

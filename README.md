@@ -61,37 +61,36 @@ npm run build
 | `question_id` | A unique question ID inside that lesson, such as `q1`, `q2`, or `q10`. |
 | `question_type` | Use exactly `multiple-choice`, `fill-in-the-blank`, or `true-false`. |
 | `prompt` | The question or instruction students will see. |
-| `option_a` | First choice for a multiple-choice question. Leave blank for fill-in-the-blank and true-false questions. |
-| `option_b` | Second choice for a multiple-choice question. Leave blank for fill-in-the-blank and true-false questions. |
-| `option_c` | Optional third choice for a multiple-choice question. Leave blank if not needed, including for fill-in-the-blank and true-false questions. |
-| `option_d` | Optional fourth choice for a multiple-choice question. Leave blank if not needed, including for fill-in-the-blank and true-false questions. |
-| `answer` | For multiple choice, this must exactly match one of the option cells. For fill-in-the-blank, this is the required accepted answer. For true-false, use `true` or `false`. |
-| `accepted_answers` | For fill-in-the-blank only, add extra accepted answers separated by semicolons, such as `eat; have`. Leave blank for multiple-choice and true-false questions. |
+| `option_a` through `option_h` | Up to eight source choices for a multiple-choice question. Existing files that only use `option_a` through `option_d` still work, and blank option columns are ignored. Leave all option columns blank for fill-in-the-blank and true-false questions. |
+| `answer` | For multiple choice, this is the main correct answer and must exactly match one option cell. For fill-in-the-blank, this is the required accepted answer. For true-false, use `true` or `false`. |
+| `accepted_answers` | Add extra accepted answers separated by semicolons, such as `eat; have`. For multiple-choice questions, each extra correct answer must also appear somewhere in `option_a` through `option_h`. Leave blank for true-false questions. |
 | `explanation` | A clear teacher-friendly explanation shown after the student answers. Every question needs an explanation. |
 
 ### Multiple-choice example
 
-| lesson_id | lesson_title | lesson_description | question_id | question_type | prompt | option_a | option_b | option_c | option_d | answer | accepted_answers | explanation |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| `lesson-04` | `Lesson 4: Food and Shopping English` | `Practice useful English for ordering food and shopping.` | `q1` | `multiple-choice` | `Choose the most polite sentence.` | `Could I have a sandwich, please?` | `Give sandwich now.` | `I sandwich yesterday.` | `Sandwich is station.` | `Could I have a sandwich, please?` |  | `"Could I have ... please?" is a polite way to order food or ask for something.` |
+The CSV can store a larger teacher-controlled option bank than students see. For each multiple-choice question, `option_a` through `option_h` may contain up to eight possible choices. When a quiz starts, the student sees only four choices: exactly one randomly selected correct answer and three randomly selected incorrect choices, shuffled into a random order. The correct answer is always included in the displayed four choices.
 
-Multiple-choice questions need at least two non-empty option cells. Empty option cells are ignored. The `answer` cell must match one option exactly.
+Multiple-choice questions must have at least four total non-empty options and at least three incorrect distractors. Empty option columns are ignored. The `answer` cell is the main correct answer. Use `accepted_answers` for additional correct multiple-choice answers separated by semicolons; every correct answer from both `answer` and `accepted_answers` must appear somewhere in `option_a` through `option_h`.
+
+| lesson_id | lesson_title | lesson_description | question_id | question_type | prompt | option_a | option_b | option_c | option_d | option_e | option_f | option_g | option_h | answer | accepted_answers | explanation |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| `lesson-04` | `Lesson 4: Food and Shopping English` | `Practice useful English for ordering food and shopping.` | `q1` | `multiple-choice` | `Choose a polite sentence.` | `Could I have a sandwich, please?` | `Give sandwich now.` | `I sandwich yesterday.` | `Sandwich is station.` | `May I have a sandwich, please?` | `You sandwich give me.` | `The sandwich is a train.` | `Where sandwich homework?` | `Could I have a sandwich, please?` | `May I have a sandwich, please?` | `"Could I have ... please?" and "May I have ... please?" are polite ways to order food or ask for something.` |
 
 ### Fill-in-the-blank example with multiple accepted answers
 
-| lesson_id | lesson_title | lesson_description | question_id | question_type | prompt | option_a | option_b | option_c | option_d | answer | accepted_answers | explanation |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| `lesson-04` | `Lesson 4: Food and Shopping English` | `Practice useful English for ordering food and shopping.` | `q2` | `fill-in-the-blank` | `Fill in the blank: I usually _____ lunch at school.` |  |  |  |  | `eat` | `have` | `Both "eat lunch" and "have lunch" are natural English expressions.` |
+| lesson_id | lesson_title | lesson_description | question_id | question_type | prompt | option_a | option_b | option_c | option_d | option_e | option_f | option_g | option_h | answer | accepted_answers | explanation |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| `lesson-04` | `Lesson 4: Food and Shopping English` | `Practice useful English for ordering food and shopping.` | `q2` | `fill-in-the-blank` | `Fill in the blank: I usually _____ lunch at school.` |  |  |  |  |  |  |  |  | `eat` | `have` | `Both "eat lunch" and "have lunch" are natural English expressions.` |
 
-For fill-in-the-blank questions, `option_a` through `option_d` are ignored. Put the main answer in `answer`; put extra accepted answers in `accepted_answers` separated by semicolons. Duplicate accepted answers are ignored when JSON is generated.
+For fill-in-the-blank questions, `option_a` through `option_h` are ignored. Put the main answer in `answer`; put extra accepted answers in `accepted_answers` separated by semicolons. Duplicate accepted answers are ignored when JSON is generated.
 
 ### True-false example
 
-True-false questions use two buttons, **True** and **False**, and show feedback as soon as a student chooses one. In the CSV, use `true-false` as the `question_type`, leave `option_a` through `option_d` blank, put `true` or `false` in `answer`, and leave `accepted_answers` blank. The generated JSON stores the answer as a boolean.
+True-false questions use two buttons, **True** and **False**, and show feedback as soon as a student chooses one. In the CSV, use `true-false` as the `question_type`, leave `option_a` through `option_h` blank, put `true` or `false` in `answer`, and leave `accepted_answers` blank. The generated JSON stores the answer as a boolean.
 
-| lesson_id | lesson_title | lesson_description | question_id | question_type | prompt | option_a | option_b | option_c | option_d | answer | accepted_answers | explanation |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| `lesson-04` | `Lesson 4: Food and Shopping English` | `Practice useful English for ordering food and shopping.` | `q3` | `true-false` | `True or false: "Could I have a sandwich, please?" is a polite request.` |  |  |  |  | `true` |  | `"Could I have ... please?" is a polite way to order food or ask for something.` |
+| lesson_id | lesson_title | lesson_description | question_id | question_type | prompt | option_a | option_b | option_c | option_d | option_e | option_f | option_g | option_h | answer | accepted_answers | explanation |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| `lesson-04` | `Lesson 4: Food and Shopping English` | `Practice useful English for ordering food and shopping.` | `q3` | `true-false` | `True or false: "Could I have a sandwich, please?" is a polite request.` |  |  |  |  |  |  |  |  | `true` |  | `"Could I have ... please?" is a polite way to order food or ask for something.` |
 
 
 ## GitHub Pages
@@ -139,8 +138,8 @@ A generated multiple-choice question has these fields:
 - `id`: the question ID from the CSV, such as `q1`
 - `type`: `multiple-choice`
 - `prompt`: the question or instruction shown to students
-- `choices`: an array of answer choices from non-empty option columns
-- `answer`: the correct answer; it exactly matches one of the choices
+- `choices`: an array of all non-empty source choices from `option_a` through `option_h`; the app randomly displays only four choices when a quiz starts
+- `answer`: the correct answer as a string, or an array when `accepted_answers` adds multiple correct answers; every correct answer exactly matches one of the choices
 - `explanation`: a clear explanation that a teacher can use for review
 
 Example generated JSON:
@@ -154,9 +153,16 @@ Example generated JSON:
     "Could I have a glass of water, please?",
     "Give me water now.",
     "I water want please glass.",
-    "Water is yesterday."
+    "Water is yesterday.",
+    "May I have a glass of water, please?",
+    "Water glass now give.",
+    "Yesterday is water please.",
+    "My glass goes to school."
   ],
-  "answer": "Could I have a glass of water, please?",
+  "answer": [
+    "Could I have a glass of water, please?",
+    "May I have a glass of water, please?"
+  ],
   "explanation": "'Could I have ... please?' is a polite pattern for ordering or asking for something."
 }
 ```
