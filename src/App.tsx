@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from 'react';
-import type { AnswerReview, Lesson, LessonProgress, Question } from './types';
+import type { AnswerReview, AttemptMode, Lesson, LessonProgress, Question } from './types';
 
 const normalizeAnswer = (value: string | boolean) =>
   String(value).trim().toLowerCase().replace(/\s+/g, ' ');
@@ -28,8 +28,23 @@ const prepareQuestionForQuiz = (question: Question): Question => {
   };
 };
 
-const prepareQuestionsForQuiz = (questions: Question[]) =>
-  shuffleArray(questions).map(prepareQuestionForQuiz);
+const ATTEMPT_MODES = {
+  practice: {
+    label: 'Practice Mode',
+    limit: 10,
+    description: '10 random questions. Feedback after each answer.',
+  },
+  quiz: {
+    label: 'Quiz Mode',
+    limit: 25,
+    description: '25 random questions. Feedback at the end.',
+  },
+} as const;
+
+const prepareQuestionsForAttempt = (questions: Question[], limit: number) =>
+  shuffleArray(questions).slice(0, limit).map(prepareQuestionForQuiz);
+
+const getModeLabel = (mode: AttemptMode) => ATTEMPT_MODES[mode].label;
 
 const getAcceptedAnswers = (question: Question): Array<string | boolean> => {
   if (question.type === 'fill-in-the-blank' || question.type === 'multiple-choice') {
@@ -182,15 +197,23 @@ const createLessonProgress = (
   score: number,
   total: number,
   percentage: number,
-): LessonProgress => ({
-  lastScore: score,
-  lastTotal: total,
-  lastPercentage: percentage,
-  bestScore: Math.max(previousProgress?.bestScore ?? 0, score),
-  bestPercentage: Math.max(previousProgress?.bestPercentage ?? 0, percentage),
-  completedCount: (previousProgress?.completedCount ?? 0) + 1,
-  lastCompletedAt: new Date().toISOString(),
-});
+  mode: AttemptMode,
+): LessonProgress => {
+  const previousBestPercentage = previousProgress?.bestPercentage ?? 0;
+  const isNewBest = !previousProgress || percentage >= previousBestPercentage;
+
+  return {
+    lastScore: score,
+    lastTotal: total,
+    lastPercentage: percentage,
+    bestScore: isNewBest ? score : previousProgress.bestScore,
+    bestTotal: isNewBest ? total : previousProgress.bestTotal ?? previousProgress.lastTotal,
+    bestPercentage: Math.max(previousBestPercentage, percentage),
+    completedCount: (previousProgress?.completedCount ?? 0) + 1,
+    lastCompletedAt: new Date().toISOString(),
+    lastMode: mode,
+  };
+};
 
 const formatShortDateTime = (dateTime: string) => {
   const date = new Date(dateTime);
@@ -254,6 +277,7 @@ function App() {
   const [lessons, setLessons] = useState<Lesson[]>([]);
   const [selectedLesson, setSelectedLesson] = useState<Lesson | null>(null);
   const [questions, setQuestions] = useState<Question[]>([]);
+  const [selectedMode, setSelectedMode] = useState<AttemptMode | null>(null);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [selectedChoice, setSelectedChoice] = useState('');
   const [blankAnswer, setBlankAnswer] = useState('');
@@ -331,6 +355,7 @@ function App() {
   const chooseLesson = (lesson: Lesson) => {
     setSelectedLesson(lesson);
     setQuestions([]);
+    setSelectedMode(null);
     setReviews([]);
     setShowResults(false);
     setProgressSaved(false);
@@ -340,13 +365,14 @@ function App() {
     setError('');
   };
 
-  const startQuiz = async () => {
+  const startAttempt = async (mode: AttemptMode) => {
     if (!selectedLesson) {
       return;
     }
 
     setIsLoading(true);
     setError('');
+    setSelectedMode(mode);
     setReviews([]);
     setShowResults(false);
     setProgressSaved(false);
@@ -364,7 +390,7 @@ function App() {
       }
 
       const questionData = (await response.json()) as Question[];
-      setQuestions(prepareQuestionsForQuiz(questionData));
+      setQuestions(prepareQuestionsForAttempt(questionData, ATTEMPT_MODES[mode].limit));
     } catch (loadError) {
       setError(loadError instanceof Error ? loadError.message : 'Could not load questions.');
     } finally {
@@ -372,8 +398,37 @@ function App() {
     }
   };
 
+  const finishAttempt = (completedReviews: AnswerReview[]) => {
+    const completedScore = completedReviews.filter((review) => review.isCorrect).length;
+    const completedPercentage = questions.length > 0 ? Math.round((completedScore / questions.length) * 100) : 0;
+
+    if (selectedLesson && selectedMode) {
+      setCurrentResultProgress(
+        createLessonProgress(
+          lessonProgress[selectedLesson.id],
+          completedScore,
+          questions.length,
+          completedPercentage,
+          selectedMode,
+        ),
+      );
+    }
+
+    setShowResults(true);
+  };
+
+  const goToNextQuestion = (completedReviews = reviews) => {
+    if (currentQuestionIndex < questions.length - 1) {
+      setCurrentQuestionIndex((index) => index + 1);
+      resetAnswerState();
+      return;
+    }
+
+    finishAttempt(completedReviews);
+  };
+
   const checkAnswer = (answerOverride?: string) => {
-    if (!currentQuestion || feedback) {
+    if (!currentQuestion || (selectedMode === 'practice' && feedback)) {
       return;
     }
 
@@ -392,42 +447,36 @@ function App() {
 
     const acceptedAnswers = getAcceptedAnswers(currentQuestion).map(normalizeAnswer);
     const isCorrect = acceptedAnswers.includes(normalizeAnswer(studentAnswer));
-
-    setError('');
-    setFeedback(isCorrect ? 'correct' : 'incorrect');
-    setReviews((previousReviews) => [
-      ...previousReviews,
+    const nextReviews = [
+      ...reviews,
       {
         question: currentQuestion,
         studentAnswer,
         isCorrect,
       },
-    ]);
-  };
+    ];
 
-  const goToNextQuestion = () => {
-    if (currentQuestionIndex < questions.length - 1) {
-      setCurrentQuestionIndex((index) => index + 1);
-      resetAnswerState();
+    setError('');
+    setReviews(nextReviews);
+
+    if (selectedMode === 'quiz') {
+      goToNextQuestion(nextReviews);
       return;
     }
 
-    if (selectedLesson) {
-      setCurrentResultProgress(
-        createLessonProgress(lessonProgress[selectedLesson.id], score, questions.length, percentage),
-      );
-    }
-
-    setShowResults(true);
+    setFeedback(isCorrect ? 'correct' : 'incorrect');
   };
 
   const retryLesson = () => {
-    startQuiz();
+    if (selectedMode) {
+      startAttempt(selectedMode);
+    }
   };
 
   const chooseAnotherLesson = () => {
     setSelectedLesson(null);
     setQuestions([]);
+    setSelectedMode(null);
     setReviews([]);
     setShowResults(false);
     setProgressSaved(false);
@@ -457,11 +506,11 @@ function App() {
   const googleFormUrl = selectedLesson && currentResultProgress
     ? buildGoogleFormUrl({
         nickname: trimmedNickname,
-        lesson: selectedLesson.title,
+        lesson: selectedMode ? `${selectedLesson.title} (${getModeLabel(selectedMode)})` : selectedLesson.title,
         score: `${score} / ${questions.length}`,
         percentage: `${percentage}%`,
         completedCount: String(currentResultProgress.completedCount),
-        bestScore: `${currentResultProgress.bestScore} / ${currentResultProgress.lastTotal}`,
+        bestScore: `${currentResultProgress.bestScore} / ${currentResultProgress.bestTotal ?? currentResultProgress.lastTotal}`,
         dateTime: formatShortDateTime(currentResultProgress.lastCompletedAt),
       })
     : '';
@@ -526,7 +575,7 @@ function App() {
                   {progress && (
                     <div className="lesson-progress">
                       <p>Last score: {progress.lastScore} / {progress.lastTotal}</p>
-                      <p>Best score: {progress.bestScore} / {progress.lastTotal}</p>
+                      <p>Best score: {progress.bestScore} / {progress.bestTotal ?? progress.lastTotal}</p>
                       <p>Completed: {progress.completedCount} times</p>
                     </div>
                   )}
@@ -545,14 +594,24 @@ function App() {
             <div className="saved-progress-summary">
               <p><strong>Last score:</strong> {lessonProgress[selectedLesson.id].lastScore} / {lessonProgress[selectedLesson.id].lastTotal}</p>
               <p><strong>Last percentage:</strong> {lessonProgress[selectedLesson.id].lastPercentage}%</p>
-              <p><strong>Best score:</strong> {lessonProgress[selectedLesson.id].bestScore} / {lessonProgress[selectedLesson.id].lastTotal}</p>
+              <p><strong>Best score:</strong> {lessonProgress[selectedLesson.id].bestScore} / {lessonProgress[selectedLesson.id].bestTotal ?? lessonProgress[selectedLesson.id].lastTotal}</p>
               <p><strong>Best percentage:</strong> {lessonProgress[selectedLesson.id].bestPercentage}%</p>
               <p><strong>Completed:</strong> {lessonProgress[selectedLesson.id].completedCount} times</p>
+              {lessonProgress[selectedLesson.id].lastMode && (
+                <p><strong>Last mode:</strong> {getModeLabel(lessonProgress[selectedLesson.id].lastMode)}</p>
+              )}
               <p><strong>Last completed:</strong> {formatShortDateTime(lessonProgress[selectedLesson.id].lastCompletedAt)}</p>
             </div>
           )}
           <div className="button-row">
-            <button className="primary-button" onClick={startQuiz}>Start quiz</button>
+            <button className="mode-button" onClick={() => startAttempt('practice')} type="button">
+              <span>{ATTEMPT_MODES.practice.label}</span>
+              <small>{ATTEMPT_MODES.practice.description}</small>
+            </button>
+            <button className="mode-button" onClick={() => startAttempt('quiz')} type="button">
+              <span>{ATTEMPT_MODES.quiz.label}</span>
+              <small>{ATTEMPT_MODES.quiz.description}</small>
+            </button>
             <button className="secondary-button" onClick={chooseAnotherLesson}>Choose another lesson</button>
           </div>
         </section>
@@ -561,7 +620,7 @@ function App() {
       {!isLoading && selectedLesson && currentQuestion && !quizComplete && (
         <section className="card quiz-card">
           <p className="progress-text">
-            Question {currentQuestionIndex + 1} of {questions.length}
+            {selectedMode ? `${getModeLabel(selectedMode)} · ` : ''}Question {currentQuestionIndex + 1} of {questions.length}
           </p>
           <h2>{currentQuestion.prompt}</h2>
 
@@ -571,7 +630,7 @@ function App() {
                 <label className="choice-option" key={choice}>
                   <input
                     checked={selectedChoice === choice}
-                    disabled={feedback !== null}
+                    disabled={selectedMode === 'practice' && feedback !== null}
                     name="answer"
                     onChange={() => setSelectedChoice(choice)}
                     type="radio"
@@ -587,7 +646,7 @@ function App() {
             <label className="blank-label">
               Your answer
               <input
-                disabled={feedback !== null}
+                disabled={selectedMode === 'practice' && feedback !== null}
                 onChange={(event) => setBlankAnswer(event.target.value)}
                 placeholder="Type your answer"
                 type="text"
@@ -600,14 +659,14 @@ function App() {
             <div className="button-row" role="group" aria-label="True or false answer choices">
               <button
                 className="secondary-button"
-                disabled={feedback !== null}
+                disabled={selectedMode === 'practice' && feedback !== null}
                 onClick={() => checkAnswer('True')}
               >
                 True
               </button>
               <button
                 className="secondary-button"
-                disabled={feedback !== null}
+                disabled={selectedMode === 'practice' && feedback !== null}
                 onClick={() => checkAnswer('False')}
               >
                 False
@@ -616,8 +675,12 @@ function App() {
           )}
 
           {!feedback && currentQuestion.type !== 'true-false' ? (
-            <button className="primary-button" onClick={() => checkAnswer()}>Check answer</button>
-          ) : feedback ? (
+            <button className="primary-button" onClick={() => checkAnswer()}>
+              {selectedMode === 'quiz'
+                ? currentQuestionIndex < questions.length - 1 ? 'Next question' : 'Show results'
+                : 'Check answer'}
+            </button>
+          ) : feedback && selectedMode === 'practice' ? (
             <div className={`feedback ${feedback}`}>
               <strong>{feedback === 'correct' ? 'Correct!' : 'Incorrect'}</strong>
               <p>{currentQuestion.explanation}</p>
@@ -635,6 +698,7 @@ function App() {
         <section className="card results-card">
           <h2>Final results</h2>
           <div className="results-summary">
+            {selectedMode && <p><strong>Mode:</strong> {getModeLabel(selectedMode)}</p>}
             <p className="score-text">Score: {score} / {questions.length}</p>
             <p><strong>Percentage:</strong> {percentage}%</p>
             <p><strong>Correct:</strong> {score}</p>
