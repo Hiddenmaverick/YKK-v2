@@ -62,6 +62,18 @@ const getReviewAnswer = (question: Question) =>
 
 const NICKNAME_STORAGE_KEY = 'ykk-practice-nickname';
 const PROGRESS_STORAGE_KEY = 'ykk-practice-progress';
+const GOOGLE_FORM_BASE_URL =
+  'https://docs.google.com/forms/d/e/1FAIpQLScxaQqfSfsYaUIFzwUGW2G2TqCpccChC66LHq5gBI1HsQpm6A/viewform?usp=pp_url';
+const GOOGLE_FORM_FIELDS = {
+  nickname: 'entry.517867730',
+  lesson: 'entry.1904990527',
+  score: 'entry.168681509',
+  percentage: 'entry.1935507190',
+  completedCount: 'entry.222664735',
+  bestScore: 'entry.1096279580',
+  dateTime: 'entry.1471656644',
+  comment: 'entry.198954009',
+} as const;
 
 type LessonProgressMap = Record<string, LessonProgress>;
 
@@ -165,6 +177,21 @@ const readProgress = (): LessonProgressMap => {
 const saveProgress = (progress: LessonProgressMap) =>
   writeStorageValue(PROGRESS_STORAGE_KEY, JSON.stringify(progress));
 
+const createLessonProgress = (
+  previousProgress: LessonProgress | undefined,
+  score: number,
+  total: number,
+  percentage: number,
+): LessonProgress => ({
+  lastScore: score,
+  lastTotal: total,
+  lastPercentage: percentage,
+  bestScore: Math.max(previousProgress?.bestScore ?? 0, score),
+  bestPercentage: Math.max(previousProgress?.bestPercentage ?? 0, percentage),
+  completedCount: (previousProgress?.completedCount ?? 0) + 1,
+  lastCompletedAt: new Date().toISOString(),
+});
+
 const formatShortDateTime = (dateTime: string) => {
   const date = new Date(dateTime);
 
@@ -176,6 +203,29 @@ const formatShortDateTime = (dateTime: string) => {
     dateStyle: 'medium',
     timeStyle: 'short',
   }).format(date);
+};
+
+const buildGoogleFormUrl = (fields: {
+  nickname: string;
+  lesson: string;
+  score: string;
+  percentage: string;
+  completedCount: string;
+  bestScore: string;
+  dateTime: string;
+}) => {
+  const formUrl = new URL(GOOGLE_FORM_BASE_URL);
+
+  formUrl.searchParams.set(GOOGLE_FORM_FIELDS.nickname, fields.nickname);
+  formUrl.searchParams.set(GOOGLE_FORM_FIELDS.lesson, fields.lesson);
+  formUrl.searchParams.set(GOOGLE_FORM_FIELDS.score, fields.score);
+  formUrl.searchParams.set(GOOGLE_FORM_FIELDS.percentage, fields.percentage);
+  formUrl.searchParams.set(GOOGLE_FORM_FIELDS.completedCount, fields.completedCount);
+  formUrl.searchParams.set(GOOGLE_FORM_FIELDS.bestScore, fields.bestScore);
+  formUrl.searchParams.set(GOOGLE_FORM_FIELDS.dateTime, fields.dateTime);
+  formUrl.searchParams.set(GOOGLE_FORM_FIELDS.comment, '');
+
+  return formUrl.toString();
 };
 
 const getResultMessage = (percentage: number, nickname: string) => {
@@ -215,6 +265,7 @@ function App() {
   const [nickname, setNickname] = useState(() => readStorageValue(NICKNAME_STORAGE_KEY) ?? '');
   const [lessonProgress, setLessonProgress] = useState<LessonProgressMap>(() => readProgress());
   const [progressSaved, setProgressSaved] = useState(false);
+  const [currentResultProgress, setCurrentResultProgress] = useState<LessonProgress | null>(null);
 
   useEffect(() => {
     const trimmedNickname = nickname.trim();
@@ -256,30 +307,20 @@ function App() {
   const quizComplete = questions.length > 0 && showResults;
 
   useEffect(() => {
-    if (!quizComplete || !selectedLesson || progressSaved) {
+    if (!quizComplete || !selectedLesson || !currentResultProgress || progressSaved) {
       return;
     }
 
-    const previousProgress = lessonProgress[selectedLesson.id];
-    const nextProgress: LessonProgress = {
-      lastScore: score,
-      lastTotal: questions.length,
-      lastPercentage: percentage,
-      bestScore: Math.max(previousProgress?.bestScore ?? 0, score),
-      bestPercentage: Math.max(previousProgress?.bestPercentage ?? 0, percentage),
-      completedCount: (previousProgress?.completedCount ?? 0) + 1,
-      lastCompletedAt: new Date().toISOString(),
-    };
     const nextProgressMap = {
       ...lessonProgress,
-      [selectedLesson.id]: nextProgress,
+      [selectedLesson.id]: currentResultProgress,
     };
 
     if (saveProgress(nextProgressMap)) {
       setLessonProgress(nextProgressMap);
       setProgressSaved(true);
     }
-  }, [lessonProgress, percentage, progressSaved, questions.length, quizComplete, score, selectedLesson]);
+  }, [currentResultProgress, lessonProgress, progressSaved, quizComplete, selectedLesson]);
 
   const resetAnswerState = () => {
     setSelectedChoice('');
@@ -293,6 +334,7 @@ function App() {
     setReviews([]);
     setShowResults(false);
     setProgressSaved(false);
+    setCurrentResultProgress(null);
     setCurrentQuestionIndex(0);
     resetAnswerState();
     setError('');
@@ -308,6 +350,7 @@ function App() {
     setReviews([]);
     setShowResults(false);
     setProgressSaved(false);
+    setCurrentResultProgress(null);
     setCurrentQuestionIndex(0);
     resetAnswerState();
 
@@ -369,6 +412,12 @@ function App() {
       return;
     }
 
+    if (selectedLesson) {
+      setCurrentResultProgress(
+        createLessonProgress(lessonProgress[selectedLesson.id], score, questions.length, percentage),
+      );
+    }
+
     setShowResults(true);
   };
 
@@ -382,6 +431,7 @@ function App() {
     setReviews([]);
     setShowResults(false);
     setProgressSaved(false);
+    setCurrentResultProgress(null);
     setCurrentQuestionIndex(0);
     resetAnswerState();
     setError('');
@@ -404,6 +454,25 @@ function App() {
 
   const hasSavedProgress = Object.keys(lessonProgress).length > 0;
   const trimmedNickname = nickname.trim();
+  const googleFormUrl = selectedLesson && currentResultProgress
+    ? buildGoogleFormUrl({
+        nickname: trimmedNickname,
+        lesson: selectedLesson.title,
+        score: `${score} / ${questions.length}`,
+        percentage: `${percentage}%`,
+        completedCount: String(currentResultProgress.completedCount),
+        bestScore: `${currentResultProgress.bestScore} / ${currentResultProgress.lastTotal}`,
+        dateTime: formatShortDateTime(currentResultProgress.lastCompletedAt),
+      })
+    : '';
+
+  const openGoogleForm = () => {
+    if (!googleFormUrl) {
+      return;
+    }
+
+    window.open(googleFormUrl, '_blank', 'noopener,noreferrer');
+  };
 
   return (
     <main className="app-shell">
@@ -576,6 +645,16 @@ function App() {
                 ? 'Progress saved locally on this device.'
                 : 'Progress will be saved locally on this device when storage is available.'}
             </p>
+          </div>
+
+          <div className="result-submit-panel">
+            <p className="form-privacy-note">
+              This opens a Google Form. Check the information before submitting. Do not enter your real full
+              name or student number.
+            </p>
+            <button className="primary-button" onClick={openGoogleForm} type="button">
+              Submit result to teacher
+            </button>
           </div>
 
           <h3>Questions to Review</h3>
