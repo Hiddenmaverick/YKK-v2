@@ -3,7 +3,12 @@
     "id": "q1",
     "type": "multiple-choice",
     "prompt": "Choose the best response: May I borrow your notes after class?",
-    "choices": ["Sure, but please return them tomorrow.", "I usually eat lunch at noon.", "It is next to the station.", "No, I am from Osaka."],
+    "choices": [
+      "Sure, but please return them tomorrow.",
+      "I usually eat lunch at noon.",
+      "It is next to the station.",
+      "No, I am from Osaka."
+    ],
     "answer": "Sure, but please return them tomorrow.",
     "explanation": "The question asks for permission to borrow something. A natural response gives permission and explains when the notes should be returned."
   },
@@ -11,14 +16,22 @@
     "id": "q2",
     "type": "fill-in-the-blank",
     "prompt": "Fill in the blank: I have to _____ my homework before club practice.",
-    "answer": ["finish", "do"],
+    "answer": [
+      "finish",
+      "do"
+    ],
     "explanation": "Both 'finish my homework' and 'do my homework' are common school expressions. 'Finish' emphasizes completing the work."
   },
   {
     "id": "q3",
     "type": "multiple-choice",
     "prompt": "Choose the sentence that correctly asks about a test schedule.",
-    "choices": ["When is the English test?", "Where English test is?", "What is English test do?", "When the English test?"],
+    "choices": [
+      "When is the English test?",
+      "Where English test is?",
+      "What is English test do?",
+      "When the English test?"
+    ],
     "answer": "When is the English test?",
     "explanation": "Use 'When is ...?' to ask about the time or date of an event. This pattern can be reused for meetings, club activities, and deadlines."
   },
@@ -33,7 +46,12 @@
     "id": "q5",
     "type": "multiple-choice",
     "prompt": "What does 'assignment' mean in a school context?",
-    "choices": ["宿題や課題", "放課後の部活動", "通学路", "昼休み"],
+    "choices": [
+      "宿題や課題",
+      "放課後の部活動",
+      "通学路",
+      "昼休み"
+    ],
     "answer": "宿題や課題",
     "explanation": "In school English, an 'assignment' is work a teacher asks students to complete, such as homework, a worksheet, or a short project."
   },
@@ -41,14 +59,22 @@
     "id": "q6",
     "type": "fill-in-the-blank",
     "prompt": "Fill in the blank: Could you _____ that again, please?",
-    "answer": ["say", "repeat"],
+    "answer": [
+      "say",
+      "repeat"
+    ],
     "explanation": "Use 'Could you say that again?' or 'Could you repeat that?' when you did not hear or understand something. Both are polite classroom English."
   },
   {
     "id": "q7",
     "type": "multiple-choice",
     "prompt": "Choose the best sentence for explaining why you were late to class.",
-    "choices": ["I'm sorry I'm late. My train was delayed.", "I'm sorry I'm late. I will eat dinner.", "I'm sorry I'm late. The library is quiet.", "I'm sorry I'm late. This pencil is mine."],
+    "choices": [
+      "I'm sorry I'm late. My train was delayed.",
+      "I'm sorry I'm late. I will eat dinner.",
+      "I'm sorry I'm late. The library is quiet.",
+      "I'm sorry I'm late. This pencil is mine."
+    ],
     "answer": "I'm sorry I'm late. My train was delayed.",
     "explanation": "This sentence gives a polite apology and a clear reason. It is useful in Japan because train delays are a common, realistic situation."
   },
@@ -63,7 +89,12 @@
     "id": "q9",
     "type": "multiple-choice",
     "prompt": "Choose the best question to ask a teacher for help.",
-    "choices": ["Could you explain this problem, please?", "You explain this problem now.", "Why you problem explain?", "This problem teacher help."],
+    "choices": [
+      "Could you explain this problem, please?",
+      "You explain this problem now.",
+      "Why you problem explain?",
+      "This problem teacher help."
+    ],
     "answer": "Could you explain this problem, please?",
     "explanation": "'Could you ... please?' is a polite way to ask a teacher or classmate for help. The verb 'explain' is followed by the thing you want to understand."
   },
