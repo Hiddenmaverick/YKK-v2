@@ -10,7 +10,7 @@ export interface MultipleChoiceQuestion {
   type: 'multiple-choice';
   prompt: string;
   choices: string[];
-  answer: string;
+  answer: string | string[];
   explanation: string;
 }
 

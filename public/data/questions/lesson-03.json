@@ -7,7 +7,11 @@
       "Excuse me, where is the nearest station?",
       "Excuse me, what time do you eat breakfast?",
       "Excuse me, do you have math homework?",
-      "Excuse me, is this your notebook?"
+      "Excuse me, is this your notebook?",
+      "Excuse me, how can I get to the nearest station?",
+      "Excuse me, is your homework finished?",
+      "Excuse me, what club are you in?",
+      "Excuse me, where is my math class?"
     ],
     "answer": "Excuse me, where is the nearest station?",
     "explanation": "Use 'Where is ...?' to ask for the location of a place. 'Excuse me' makes the question polite when speaking to someone you do not know."
@@ -30,7 +34,11 @@
       "片道切符",
       "往復切符",
       "指定席",
-      "改札口"
+      "改札口",
+      "片道乗車券",
+      "時刻表",
+      "旅行かばん",
+      "観光案内所"
     ],
     "answer": "片道切符",
     "explanation": "A 'one-way ticket' is a ticket for travel in one direction only. A 'round-trip ticket' is 往復切符."
@@ -70,7 +78,11 @@
       "Could you take a picture of us, please?",
       "Take picture us now.",
       "You must take my photo.",
-      "Where is my photo yesterday?"
+      "Where is my photo yesterday?",
+      "Would you take a picture of us, please?",
+      "Picture take could us yesterday?",
+      "You take us picture must.",
+      "Where does my camera eat?"
     ],
     "answer": "Could you take a picture of us, please?",
     "explanation": "'Could you ... please?' is a polite request, and 'take a picture of us' is the natural phrase when asking someone to use your camera or phone."
