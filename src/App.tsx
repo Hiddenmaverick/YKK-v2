@@ -39,10 +39,42 @@ const getAcceptedAnswers = (question: Question): Array<string | boolean> => {
   return [question.answer];
 };
 
+const formatAnswer = (answer: string | boolean) => {
+  if (typeof answer === 'boolean') {
+    return answer ? 'True' : 'False';
+  }
+
+  if (normalizeAnswer(answer) === 'true') {
+    return 'True';
+  }
+
+  if (normalizeAnswer(answer) === 'false') {
+    return 'False';
+  }
+
+  return answer;
+};
+
 const getReviewAnswer = (question: Question) =>
   getAcceptedAnswers(question)
-    .map((answer) => String(answer))
+    .map(formatAnswer)
     .join(' / ');
+
+const getResultMessage = (percentage: number) => {
+  if (percentage >= 90) {
+    return 'Excellent work.';
+  }
+
+  if (percentage >= 70) {
+    return 'Good job. Review the missed questions.';
+  }
+
+  if (percentage >= 50) {
+    return 'Keep practicing. Focus on the review below.';
+  }
+
+  return 'Try again after reviewing the explanations.';
+};
 
 function App() {
   const [lessons, setLessons] = useState<Lesson[]>([]);
@@ -80,6 +112,9 @@ function App() {
 
   const currentQuestion = questions[currentQuestionIndex];
   const score = useMemo(() => reviews.filter((review) => review.isCorrect).length, [reviews]);
+  const incorrectCount = reviews.length - score;
+  const percentage = questions.length > 0 ? Math.round((score / questions.length) * 100) : 0;
+  const missedReviews = useMemo(() => reviews.filter((review) => !review.isCorrect), [reviews]);
   const quizComplete = questions.length > 0 && showResults;
 
   const resetAnswerState = () => {
@@ -296,21 +331,30 @@ function App() {
 
       {!isLoading && quizComplete && (
         <section className="card results-card">
-          <h2>Final score</h2>
-          <p className="score-text">
-            {score} / {questions.length}
-          </p>
-          <h3>Review</h3>
-          <ol className="review-list">
-            {reviews.map((review) => (
-              <li key={review.question.id} className={review.isCorrect ? 'review-correct' : 'review-incorrect'}>
-                <p><strong>{review.question.prompt}</strong></p>
-                <p>Your answer: {review.studentAnswer}</p>
-                <p>Accepted answer: {getReviewAnswer(review.question)}</p>
-                <p>{review.question.explanation}</p>
-              </li>
-            ))}
-          </ol>
+          <h2>Final results</h2>
+          <div className="results-summary">
+            <p className="score-text">Score: {score} / {questions.length}</p>
+            <p><strong>Percentage:</strong> {percentage}%</p>
+            <p><strong>Correct:</strong> {score}</p>
+            <p><strong>Incorrect:</strong> {incorrectCount}</p>
+            <p className="result-message">{getResultMessage(percentage)}</p>
+          </div>
+
+          <h3>Questions to Review</h3>
+          {missedReviews.length === 0 ? (
+            <p className="message success-message">No missed questions. Great work.</p>
+          ) : (
+            <ol className="review-list">
+              {missedReviews.map((review) => (
+                <li key={review.question.id} className="review-incorrect">
+                  <p><strong>{review.question.prompt}</strong></p>
+                  <p><strong>Your answer:</strong> {formatAnswer(review.studentAnswer)}</p>
+                  <p><strong>Correct answer:</strong> {getReviewAnswer(review.question)}</p>
+                  <p><strong>Explanation:</strong> {review.question.explanation}</p>
+                </li>
+              ))}
+            </ol>
+          )}
           <div className="button-row">
             <button className="primary-button" onClick={retryLesson}>Retry</button>
             <button className="secondary-button" onClick={chooseAnotherLesson}>Choose another lesson</button>

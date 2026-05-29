@@ -99,6 +99,12 @@ h2 {
   color: #991b1b;
 }
 
+.success-message {
+  background: #ecfdf5;
+  border-color: #16a34a;
+  color: #166534;
+}
+
 .lesson-grid {
   display: grid;
   gap: 16px;
@@ -223,11 +229,33 @@ h2 {
   border: 2px solid #f97316;
 }
 
+.results-summary {
+  background: #f8fafc;
+  border: 2px solid #dbeafe;
+  border-radius: 18px;
+  margin-bottom: 24px;
+  padding: 18px;
+}
+
+.results-summary p {
+  margin-bottom: 8px;
+}
+
+.results-summary p:last-child {
+  margin-bottom: 0;
+}
+
 .score-text {
   color: #2563eb;
-  font-size: 3rem;
+  font-size: clamp(2rem, 7vw, 3rem);
   font-weight: 900;
-  margin-bottom: 24px;
+  margin-bottom: 12px;
+}
+
+.result-message {
+  color: #1e3a8a;
+  font-size: 1.15rem;
+  font-weight: 800;
 }
 
 .review-list {
