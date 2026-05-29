@@ -2,39 +2,76 @@
   {
     "id": "q1",
     "type": "multiple-choice",
-    "prompt": "Choose the best response: How are you today?",
-    "choices": ["I'm fine, thank you.", "It is a pen.", "At seven o'clock.", "Yes, I did."],
-    "answer": "I'm fine, thank you.",
-    "explanation": "When someone asks how you are, a natural answer is 'I'm fine, thank you.'"
+    "prompt": "Choose the best response: How are you doing today?",
+    "choices": ["I'm doing well, thank you.", "It is next to the library.", "At seven o'clock yesterday.", "Yes, I have two pens."],
+    "answer": "I'm doing well, thank you.",
+    "explanation": "This is a common greeting. A short, polite answer about your condition is natural. Teachers can also introduce 'I'm OK' or 'I'm a little tired' as useful alternatives."
   },
   {
     "id": "q2",
     "type": "fill-in-the-blank",
-    "prompt": "Fill in the blank: I _____ soccer after school.",
-    "answer": ["play", "practice"],
-    "explanation": "Both 'play soccer' and 'practice soccer' can be correct in this sentence."
+    "prompt": "Fill in the blank: I usually _____ the bus to school.",
+    "answer": ["take", "catch"],
+    "explanation": "'Take the bus' is the most common phrase. 'Catch the bus' is also natural when the meaning is getting on a bus at the right time."
   },
   {
     "id": "q3",
     "type": "multiple-choice",
-    "prompt": "Choose the correct sentence.",
-    "choices": ["She likes music.", "She like music.", "She liking music.", "She to like music."],
-    "answer": "She likes music.",
-    "explanation": "Use 'likes' with he, she, or it in the simple present tense."
+    "prompt": "Choose the sentence that is most natural.",
+    "choices": ["I have a part-time job on weekends.", "I have part-time job in weekends.", "I am have a part-time job on weekends.", "I do a part-time job at weekend every."],
+    "answer": "I have a part-time job on weekends.",
+    "explanation": "Use 'have a part-time job' and 'on weekends' for a regular weekend activity. This example is useful for everyday conversation practice without asking students for personal details."
   },
   {
     "id": "q4",
     "type": "fill-in-the-blank",
-    "prompt": "Fill in the blank: We went to Kyoto _____ train.",
-    "answer": "by",
-    "explanation": "Use 'by' before a form of transportation, such as 'by train' or 'by bus.'"
+    "prompt": "Fill in the blank: Could you _____ me your eraser for a moment?",
+    "answer": ["lend", "pass"],
+    "explanation": "'Lend me your eraser' means let me use it for a short time. 'Pass me your eraser' is also natural if the eraser is nearby."
   },
   {
     "id": "q5",
     "type": "multiple-choice",
-    "prompt": "What does 'library' mean?",
-    "choices": ["図書館", "体育館", "職員室", "駅"],
-    "answer": "図書館",
-    "explanation": "'Library' means 図書館 in Japanese."
+    "prompt": "Choose the best response: Thank you for your help.",
+    "choices": ["You're welcome.", "I'm sixteen years old.", "It takes ten minutes.", "No, I didn't go there."],
+    "answer": "You're welcome.",
+    "explanation": "'You're welcome' is a polite response to 'Thank you.' Teachers can also point out natural alternatives such as 'No problem' for casual situations."
+  },
+  {
+    "id": "q6",
+    "type": "fill-in-the-blank",
+    "prompt": "Fill in the blank: I am looking _____ my phone. Have you seen it?",
+    "answer": "for",
+    "explanation": "The phrase 'look for' means to try to find something. This is different from 'look at,' which means to direct your eyes toward something."
+  },
+  {
+    "id": "q7",
+    "type": "multiple-choice",
+    "prompt": "Choose the polite way to make a request.",
+    "choices": ["Could you speak a little more slowly, please?", "Speak slowly now.", "Why you speak slowly?", "You are slowly speak, please."],
+    "answer": "Could you speak a little more slowly, please?",
+    "explanation": "'Could you ... please?' is a polite pattern for requests. 'A little more slowly' is useful when students need extra time to understand spoken English."
+  },
+  {
+    "id": "q8",
+    "type": "fill-in-the-blank",
+    "prompt": "Fill in the blank: I was absent _____ school yesterday because I had a fever.",
+    "answer": "from",
+    "explanation": "Use 'absent from school' to explain that someone did not attend school. The reason in this sentence is general and does not require personal information."
+  },
+  {
+    "id": "q9",
+    "type": "multiple-choice",
+    "prompt": "Choose the best sentence for giving an opinion.",
+    "choices": ["I think this idea is useful.", "I am think this idea useful.", "This idea think useful me.", "I thinking useful this idea."],
+    "answer": "I think this idea is useful.",
+    "explanation": "Use 'I think ...' followed by a complete sentence. This pattern helps students express opinions in pair work and short presentations."
+  },
+  {
+    "id": "q10",
+    "type": "fill-in-the-blank",
+    "prompt": "Fill in the blank: Let's meet _____ front of the station at five.",
+    "answer": "in",
+    "explanation": "The phrase is 'in front of.' It is useful for arranging a meeting place in everyday conversation."
   }
 ]
