@@ -151,8 +151,8 @@ function addAcceptedAnswer(answers, seenAnswers, value) {
 
 function toQuestion(row, rowNumber) {
   const type = row.question_type;
-  if (type !== 'multiple-choice' && type !== 'fill-in-the-blank') {
-    fail(rowNumber, `invalid question_type "${type}". Use either "multiple-choice" or "fill-in-the-blank".`);
+  if (type !== 'multiple-choice' && type !== 'fill-in-the-blank' && type !== 'true-false') {
+    fail(rowNumber, `invalid question_type "${type}". Use "multiple-choice", "fill-in-the-blank", or "true-false".`);
   }
 
   if (!row.explanation) {
@@ -178,6 +178,30 @@ function toQuestion(row, rowNumber) {
       prompt: row.prompt,
       choices,
       answer: row.answer,
+      explanation: row.explanation,
+    };
+  }
+
+  if (type === 'true-false') {
+    const filledOptions = ['option_a', 'option_b', 'option_c', 'option_d'].filter((field) => row[field] !== '');
+    if (filledOptions.length > 0) {
+      fail(rowNumber, 'true-false questions must leave option_a through option_d blank.');
+    }
+
+    if (row.accepted_answers !== '') {
+      fail(rowNumber, 'true-false questions must leave accepted_answers blank.');
+    }
+
+    const normalizedAnswer = row.answer.toLocaleLowerCase();
+    if (normalizedAnswer !== 'true' && normalizedAnswer !== 'false') {
+      fail(rowNumber, 'true-false answer must be either "true" or "false".');
+    }
+
+    return {
+      id: row.question_id,
+      type,
+      prompt: row.prompt,
+      answer: normalizedAnswer === 'true',
       explanation: row.explanation,
     };
   }
