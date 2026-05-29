@@ -1,0 +1,40 @@
+[
+  {
+    "id": "q1",
+    "type": "multiple-choice",
+    "prompt": "Choose the best response: How are you today?",
+    "choices": ["I'm fine, thank you.", "It is a pen.", "At seven o'clock.", "Yes, I did."],
+    "answer": "I'm fine, thank you.",
+    "explanation": "When someone asks how you are, a natural answer is 'I'm fine, thank you.'"
+  },
+  {
+    "id": "q2",
+    "type": "fill-in-the-blank",
+    "prompt": "Fill in the blank: I _____ soccer after school.",
+    "answer": ["play", "practice"],
+    "explanation": "Both 'play soccer' and 'practice soccer' can be correct in this sentence."
+  },
+  {
+    "id": "q3",
+    "type": "multiple-choice",
+    "prompt": "Choose the correct sentence.",
+    "choices": ["She likes music.", "She like music.", "She liking music.", "She to like music."],
+    "answer": "She likes music.",
+    "explanation": "Use 'likes' with he, she, or it in the simple present tense."
+  },
+  {
+    "id": "q4",
+    "type": "fill-in-the-blank",
+    "prompt": "Fill in the blank: We went to Kyoto _____ train.",
+    "answer": "by",
+    "explanation": "Use 'by' before a form of transportation, such as 'by train' or 'by bus.'"
+  },
+  {
+    "id": "q5",
+    "type": "multiple-choice",
+    "prompt": "What does 'library' mean?",
+    "choices": ["図書館", "体育館", "職員室", "駅"],
+    "answer": "図書館",
+    "explanation": "'Library' means 図書館 in Japanese."
+  }
+]
