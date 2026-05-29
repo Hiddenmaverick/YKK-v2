@@ -1,0 +1,70 @@
+[
+  {
+    "id": "q1",
+    "type": "multiple-choice",
+    "prompt": "Choose the best response: May I borrow your notebook after class?",
+    "choices": ["Sure, but please return it tomorrow.", "I usually eat lunch at noon.", "It is next to the station.", "No, I am from Osaka."],
+    "answer": "Sure, but please return it tomorrow.",
+    "explanation": "The question asks for permission to borrow something, so a natural response is to say yes and explain when to return it."
+  },
+  {
+    "id": "q2",
+    "type": "fill-in-the-blank",
+    "prompt": "Fill in the blank: I have to _____ my homework before club practice.",
+    "answer": ["finish", "do"],
+    "explanation": "Both 'finish my homework' and 'do my homework' are common expressions for completing schoolwork."
+  },
+  {
+    "id": "q3",
+    "type": "multiple-choice",
+    "prompt": "Choose the sentence that correctly asks about a test schedule.",
+    "choices": ["When is the English test?", "Where English test is?", "What is English test do?", "When the English test?"],
+    "answer": "When is the English test?",
+    "explanation": "Use 'When is ...?' to ask about the time or date of an event."
+  },
+  {
+    "id": "q4",
+    "type": "fill-in-the-blank",
+    "prompt": "Fill in the blank: Our school festival is _____ Saturday.",
+    "answer": "on",
+    "explanation": "Use 'on' with days of the week, such as 'on Monday' or 'on Saturday.'"
+  },
+  {
+    "id": "q5",
+    "type": "multiple-choice",
+    "prompt": "What does 'assignment' mean in a school context?",
+    "choices": ["宿題や課題", "放課後の部活動", "通学路", "昼休み"],
+    "answer": "宿題や課題",
+    "explanation": "In school English, an 'assignment' is work a teacher asks students to complete, such as homework or a project."
+  },
+  {
+    "id": "q6",
+    "type": "fill-in-the-blank",
+    "prompt": "Fill in the blank: Could you _____ that again, please?",
+    "answer": ["say", "repeat"],
+    "explanation": "Use 'Could you say that again?' or 'Could you repeat that?' when you did not hear or understand something."
+  },
+  {
+    "id": "q7",
+    "type": "multiple-choice",
+    "prompt": "Choose the best sentence for explaining why you were late to class.",
+    "choices": ["I'm sorry I'm late. My train was delayed.", "I'm sorry I'm late. I will eat dinner.", "I'm sorry I'm late. The library is quiet.", "I'm sorry I'm late. This pencil is mine."],
+    "answer": "I'm sorry I'm late. My train was delayed.",
+    "explanation": "This sentence gives a polite apology and a clear reason for being late."
+  },
+  {
+    "id": "q8",
+    "type": "fill-in-the-blank",
+    "prompt": "Fill in the blank: We are preparing _____ the speech contest.",
+    "answer": "for",
+    "explanation": "The phrase is 'prepare for' an event, test, contest, or activity."
+  },
+  {
+    "id": "q9",
+    "type": "multiple-choice",
+    "prompt": "Choose the best question to ask a teacher for help.",
+    "choices": ["Could you explain this problem, please?", "You explain this problem now.", "Why you problem explain?", "This problem teacher help."],
+    "answer": "Could you explain this problem, please?",
+    "explanation": "'Could you ... please?' is a polite way to ask a teacher or classmate for help."
+  }
+]
