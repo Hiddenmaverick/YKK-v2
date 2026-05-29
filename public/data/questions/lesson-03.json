@@ -97,9 +97,9 @@
   },
   {
     "id": "q10",
-    "type": "fill-in-the-blank",
-    "prompt": "Fill in the blank: Could you show me this place _____ the map?",
-    "answer": "on",
-    "explanation": "Use 'on the map' when pointing to or finding a location using a map. This is helpful when asking for directions in a new place."
+    "type": "true-false",
+    "prompt": "True or False: \"Get off the bus\" means to board the bus.",
+    "answer": false,
+    "explanation": "\"Get off\" means to leave a bus, train, or plane. \"Get on\" means to board it."
   }
 ]

@@ -100,9 +100,9 @@
   },
   {
     "id": "q10",
-    "type": "fill-in-the-blank",
-    "prompt": "Fill in the blank: Let's meet _____ front of the station at five.",
-    "answer": "in",
-    "explanation": "The phrase is 'in front of.' It is useful for arranging a meeting place in everyday conversation."
+    "type": "true-false",
+    "prompt": "True or False: \"Could you speak a little more slowly, please?\" is a polite request.",
+    "answer": true,
+    "explanation": "This sentence uses \"Could you ... please?\", which is a polite way to ask someone to do something."
   }
 ]
