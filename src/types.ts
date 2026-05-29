@@ -22,7 +22,15 @@ export interface FillBlankQuestion {
   explanation: string;
 }
 
-export type Question = MultipleChoiceQuestion | FillBlankQuestion;
+export interface TrueFalseQuestion {
+  id: string;
+  type: 'true-false';
+  prompt: string;
+  answer: boolean | 'true' | 'false';
+  explanation: string;
+}
+
+export type Question = MultipleChoiceQuestion | FillBlankQuestion | TrueFalseQuestion;
 
 export interface AnswerReview {
   question: Question;

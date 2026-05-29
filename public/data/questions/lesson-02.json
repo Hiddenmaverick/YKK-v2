@@ -100,9 +100,9 @@
   },
   {
     "id": "q10",
-    "type": "fill-in-the-blank",
-    "prompt": "Fill in the blank: Please hand _____ your worksheet before you leave the classroom.",
-    "answer": "in",
-    "explanation": "The phrasal verb 'hand in' means to submit homework, a worksheet, or an assignment to a teacher."
+    "type": "true-false",
+    "prompt": "True or False: \"I have to finish my homework before club practice\" means the homework should be completed first.",
+    "answer": "true",
+    "explanation": "\"Before club practice\" shows that finishing the homework happens earlier than club practice."
   }
 ]

@@ -1,7 +1,8 @@
 import { useEffect, useMemo, useState } from 'react';
 import type { AnswerReview, Lesson, Question } from './types';
 
-const normalizeAnswer = (value: string) => value.trim().toLowerCase().replace(/\s+/g, ' ');
+const normalizeAnswer = (value: string | boolean) =>
+  String(value).trim().toLowerCase().replace(/\s+/g, ' ');
 
 const shuffleQuestions = (questions: Question[]) =>
   [...questions]
@@ -9,12 +10,18 @@ const shuffleQuestions = (questions: Question[]) =>
     .sort((a, b) => a.sort - b.sort)
     .map(({ question }) => question);
 
-const getAcceptedAnswers = (question: Question) =>
-  question.type === 'fill-in-the-blank'
-    ? Array.isArray(question.answer)
-      ? question.answer
-      : [question.answer]
-    : [question.answer];
+const getAcceptedAnswers = (question: Question): Array<string | boolean> => {
+  if (question.type === 'fill-in-the-blank') {
+    return Array.isArray(question.answer) ? question.answer : [question.answer];
+  }
+
+  return [question.answer];
+};
+
+const getReviewAnswer = (question: Question) =>
+  getAcceptedAnswers(question)
+    .map((answer) => String(answer))
+    .join(' / ');
 
 function App() {
   const [lessons, setLessons] = useState<Lesson[]>([]);
@@ -100,17 +107,22 @@ function App() {
     }
   };
 
-  const checkAnswer = () => {
+  const checkAnswer = (answerOverride?: string) => {
     if (!currentQuestion || feedback) {
       return;
     }
 
     const studentAnswer =
-      currentQuestion.type === 'multiple-choice' ? selectedChoice : blankAnswer.trim();
+      answerOverride ??
+      (currentQuestion.type === 'multiple-choice' ? selectedChoice : blankAnswer.trim());
 
     if (!studentAnswer) {
       setError('Please enter or choose an answer.');
       return;
+    }
+
+    if (currentQuestion.type === 'true-false') {
+      setSelectedChoice(studentAnswer);
     }
 
     const acceptedAnswers = getAcceptedAnswers(currentQuestion).map(normalizeAnswer);
@@ -195,7 +207,7 @@ function App() {
           </p>
           <h2>{currentQuestion.prompt}</h2>
 
-          {currentQuestion.type === 'multiple-choice' ? (
+          {currentQuestion.type === 'multiple-choice' && (
             <div className="choice-list">
               {currentQuestion.choices.map((choice) => (
                 <label className="choice-option" key={choice}>
@@ -211,7 +223,9 @@ function App() {
                 </label>
               ))}
             </div>
-          ) : (
+          )}
+
+          {currentQuestion.type === 'fill-in-the-blank' && (
             <label className="blank-label">
               Your answer
               <input
@@ -224,9 +238,28 @@ function App() {
             </label>
           )}
 
-          {!feedback ? (
-            <button className="primary-button" onClick={checkAnswer}>Check answer</button>
-          ) : (
+          {currentQuestion.type === 'true-false' && (
+            <div className="button-row" role="group" aria-label="True or false answer choices">
+              <button
+                className="secondary-button"
+                disabled={feedback !== null}
+                onClick={() => checkAnswer('True')}
+              >
+                True
+              </button>
+              <button
+                className="secondary-button"
+                disabled={feedback !== null}
+                onClick={() => checkAnswer('False')}
+              >
+                False
+              </button>
+            </div>
+          )}
+
+          {!feedback && currentQuestion.type !== 'true-false' ? (
+            <button className="primary-button" onClick={() => checkAnswer()}>Check answer</button>
+          ) : feedback ? (
             <div className={`feedback ${feedback}`}>
               <strong>{feedback === 'correct' ? 'Correct!' : 'Incorrect'}</strong>
               <p>{currentQuestion.explanation}</p>
@@ -236,7 +269,7 @@ function App() {
                 <button className="primary-button" onClick={goToNextQuestion}>Show results</button>
               )}
             </div>
-          )}
+          ) : null}
         </section>
       )}
 
@@ -252,7 +285,7 @@ function App() {
               <li key={review.question.id} className={review.isCorrect ? 'review-correct' : 'review-incorrect'}>
                 <p><strong>{review.question.prompt}</strong></p>
                 <p>Your answer: {review.studentAnswer}</p>
-                <p>Accepted answer: {getAcceptedAnswers(review.question).join(' / ')}</p>
+                <p>Accepted answer: {getReviewAnswer(review.question)}</p>
                 <p>{review.question.explanation}</p>
               </li>
             ))}

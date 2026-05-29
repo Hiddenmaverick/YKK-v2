@@ -59,13 +59,13 @@ npm run build
 | `lesson_title` | The lesson title shown on the lesson card. Use the same title on every row with the same `lesson_id`. |
 | `lesson_description` | A short lesson summary shown on the lesson card. Use the same description on every row with the same `lesson_id`. |
 | `question_id` | A unique question ID inside that lesson, such as `q1`, `q2`, or `q10`. |
-| `question_type` | Use exactly `multiple-choice` or `fill-in-the-blank`. |
+| `question_type` | Use exactly `multiple-choice` or `fill-in-the-blank`. The app also supports `true-false` in question JSON, but the CSV generator has not been changed for that workflow yet. |
 | `prompt` | The question or instruction students will see. |
 | `option_a` | First choice for a multiple-choice question. Leave blank for fill-in-the-blank questions. |
 | `option_b` | Second choice for a multiple-choice question. Leave blank for fill-in-the-blank questions. |
 | `option_c` | Optional third choice for a multiple-choice question. Leave blank if not needed. |
 | `option_d` | Optional fourth choice for a multiple-choice question. Leave blank if not needed. |
-| `answer` | For multiple choice, this must exactly match one of the option cells. For fill-in-the-blank, this is the required accepted answer. |
+| `answer` | For multiple choice, this must exactly match one of the option cells. For fill-in-the-blank, this is the required accepted answer. In true-false JSON, use `true`, `false`, `"true"`, or `"false"`. |
 | `accepted_answers` | For fill-in-the-blank only, add extra accepted answers separated by semicolons, such as `eat; have`. Leave blank for multiple-choice questions. |
 | `explanation` | A clear teacher-friendly explanation shown after the student answers. Every question needs an explanation. |
 
@@ -84,6 +84,24 @@ Multiple-choice questions need at least two non-empty option cells. Empty option
 | `lesson-04` | `Lesson 4: Food and Shopping English` | `Practice useful English for ordering food and shopping.` | `q2` | `fill-in-the-blank` | `Fill in the blank: I usually _____ lunch at school.` |  |  |  |  | `eat` | `have` | `Both "eat lunch" and "have lunch" are natural English expressions.` |
 
 For fill-in-the-blank questions, `option_a` through `option_d` are ignored. Put the main answer in `answer`; put extra accepted answers in `accepted_answers` separated by semicolons. Duplicate accepted answers are ignored when JSON is generated.
+
+### True-false JSON question format
+
+True-false questions use two buttons, **True** and **False**, and show feedback as soon as a student chooses one. This question type is supported by the app's JSON question format. The CSV generation workflow has not been changed yet, so do not expect `npm run generate-content` to create true-false questions from the teacher CSV until that workflow is updated.
+
+Example true-false JSON question:
+
+```json
+{
+  "id": "q10",
+  "type": "true-false",
+  "prompt": "True or False: 'Could you help me, please?' is a polite request.",
+  "answer": true,
+  "explanation": "The phrase 'Could you ... please?' is a polite way to ask for help."
+}
+```
+
+The `answer` value may be the boolean `true` or `false`, or the strings `"true"` or `"false"`.
 
 
 ## GitHub Pages
@@ -122,7 +140,7 @@ Generated lesson fields:
 
 ### Question files: `public/data/questions/[lesson_id].json`
 
-Each generated question file contains a JSON array of question objects. Keep the English natural, simple, and appropriate for Japanese high school students when editing the CSV source file.
+Each question file contains a JSON array of question objects. Keep the English natural, simple, and appropriate for Japanese high school students. Most files are generated from the CSV source file, but the app can also read the true-false JSON format described below.
 
 ### Multiple-choice question format
 
@@ -189,12 +207,35 @@ Example with multiple accepted answers:
 
 Fill-in-the-blank checking ignores capitalization and extra spaces.
 
+### True-false question format
+
+A true-false question has these fields:
+
+- `id`: the question ID, such as `q10`
+- `type`: `true-false`
+- `prompt`: a true-or-false statement shown to students
+- `answer`: the correct answer as `true`, `false`, `"true"`, or `"false"`
+- `explanation`: a clear explanation that a teacher can use for review
+
+Example true-false JSON:
+
+```json
+{
+  "id": "q10",
+  "type": "true-false",
+  "prompt": "True or False: 'Get off the bus' means to leave the bus.",
+  "answer": true,
+  "explanation": "'Get off' means to leave a bus, train, or plane. 'Get on' means to board it."
+}
+```
+
+True-false questions are included in randomized quiz order, instant feedback, scoring, explanations, and final review.
+
 ### Check generated content before publishing
 
-Regenerate and build the site before opening a pull request:
+Validate JSON files and build the site before opening a pull request. If you are only using the CSV-supported question types, regenerate first with `npm run generate-content`. For true-false JSON changes, do not run the CSV generator until that workflow is updated, because it only supports the older CSV question types.
 
 ```bash
-npm run generate-content
 npm run build
 ```
 
