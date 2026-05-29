@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from 'react';
-import type { AnswerReview, Lesson, Question } from './types';
+import type { AnswerReview, Lesson, LessonProgress, Question } from './types';
 
 const normalizeAnswer = (value: string | boolean) =>
   String(value).trim().toLowerCase().replace(/\s+/g, ' ');
@@ -60,20 +60,144 @@ const getReviewAnswer = (question: Question) =>
     .map(formatAnswer)
     .join(' / ');
 
-const getResultMessage = (percentage: number) => {
+const NICKNAME_STORAGE_KEY = 'ykk-practice-nickname';
+const PROGRESS_STORAGE_KEY = 'ykk-practice-progress';
+
+type LessonProgressMap = Record<string, LessonProgress>;
+
+const isStorageAvailable = () => {
+  if (typeof window === 'undefined') {
+    return false;
+  }
+
+  try {
+    const testKey = 'ykk-practice-storage-test';
+    window.localStorage.setItem(testKey, testKey);
+    window.localStorage.removeItem(testKey);
+    return true;
+  } catch {
+    return false;
+  }
+};
+
+const readStorageValue = (key: string) => {
+  if (!isStorageAvailable()) {
+    return null;
+  }
+
+  try {
+    return window.localStorage.getItem(key);
+  } catch {
+    return null;
+  }
+};
+
+const writeStorageValue = (key: string, value: string) => {
+  if (!isStorageAvailable()) {
+    return false;
+  }
+
+  try {
+    window.localStorage.setItem(key, value);
+    return true;
+  } catch {
+    return false;
+  }
+};
+
+const removeStorageValue = (key: string) => {
+  if (!isStorageAvailable()) {
+    return false;
+  }
+
+  try {
+    window.localStorage.removeItem(key);
+    return true;
+  } catch {
+    return false;
+  }
+};
+
+const isLessonProgress = (value: unknown): value is LessonProgress => {
+  if (!value || typeof value !== 'object') {
+    return false;
+  }
+
+  const progress = value as Record<string, unknown>;
+
+  return (
+    typeof progress.lastScore === 'number' &&
+    typeof progress.lastTotal === 'number' &&
+    typeof progress.lastPercentage === 'number' &&
+    typeof progress.bestScore === 'number' &&
+    typeof progress.bestPercentage === 'number' &&
+    typeof progress.completedCount === 'number' &&
+    typeof progress.lastCompletedAt === 'string'
+  );
+};
+
+const readProgress = (): LessonProgressMap => {
+  const storedProgress = readStorageValue(PROGRESS_STORAGE_KEY);
+
+  if (!storedProgress) {
+    return {};
+  }
+
+  try {
+    const parsedProgress: unknown = JSON.parse(storedProgress);
+
+    if (!parsedProgress || typeof parsedProgress !== 'object' || Array.isArray(parsedProgress)) {
+      return {};
+    }
+
+    return Object.entries(parsedProgress).reduce<LessonProgressMap>((validProgress, [lessonId, progress]) => {
+      if (isLessonProgress(progress)) {
+        validProgress[lessonId] = progress;
+      }
+
+      return validProgress;
+    }, {});
+  } catch {
+    return {};
+  }
+};
+
+const saveProgress = (progress: LessonProgressMap) =>
+  writeStorageValue(PROGRESS_STORAGE_KEY, JSON.stringify(progress));
+
+const formatShortDateTime = (dateTime: string) => {
+  const date = new Date(dateTime);
+
+  if (Number.isNaN(date.getTime())) {
+    return dateTime;
+  }
+
+  return new Intl.DateTimeFormat(undefined, {
+    dateStyle: 'medium',
+    timeStyle: 'short',
+  }).format(date);
+};
+
+const getResultMessage = (percentage: number, nickname: string) => {
   if (percentage >= 90) {
-    return 'Excellent work.';
+    return nickname ? `Excellent work, ${nickname}.` : 'Excellent work.';
   }
 
   if (percentage >= 70) {
-    return 'Good job. Review the missed questions.';
+    return nickname
+      ? `Good job, ${nickname}. Review the missed questions below.`
+      : 'Good job. Review the missed questions below.';
   }
 
   if (percentage >= 50) {
-    return 'Keep practicing. Focus on the review below.';
+    return nickname
+      ? `Keep practicing, ${nickname}. Focus on the review below.`
+      : 'Keep practicing. Focus on the review below.';
   }
 
-  return 'Try again after reviewing the explanations.';
+  return nickname
+    ? `Try again, ${nickname}, after reviewing the explanations.`
+    : 'Try again after reviewing the explanations.';
 };
 
 function App() {
@@ -88,6 +212,20 @@ function App() {
   const [isLoading, setIsLoading] = useState(true);
   const [showResults, setShowResults] = useState(false);
   const [error, setError] = useState('');
+  const [nickname, setNickname] = useState(() => readStorageValue(NICKNAME_STORAGE_KEY) ?? '');
+  const [lessonProgress, setLessonProgress] = useState<LessonProgressMap>(() => readProgress());
+  const [progressSaved, setProgressSaved] = useState(false);
+
+  useEffect(() => {
+    const trimmedNickname = nickname.trim();
+
+    if (trimmedNickname) {
+      writeStorageValue(NICKNAME_STORAGE_KEY, trimmedNickname);
+      return;
+    }
+
+    removeStorageValue(NICKNAME_STORAGE_KEY);
+  }, [nickname]);
 
   useEffect(() => {
     const loadLessons = async () => {
@@ -117,6 +255,32 @@ function App() {
   const missedReviews = useMemo(() => reviews.filter((review) => !review.isCorrect), [reviews]);
   const quizComplete = questions.length > 0 && showResults;
 
+  useEffect(() => {
+    if (!quizComplete || !selectedLesson || progressSaved) {
+      return;
+    }
+
+    const previousProgress = lessonProgress[selectedLesson.id];
+    const nextProgress: LessonProgress = {
+      lastScore: score,
+      lastTotal: questions.length,
+      lastPercentage: percentage,
+      bestScore: Math.max(previousProgress?.bestScore ?? 0, score),
+      bestPercentage: Math.max(previousProgress?.bestPercentage ?? 0, percentage),
+      completedCount: (previousProgress?.completedCount ?? 0) + 1,
+      lastCompletedAt: new Date().toISOString(),
+    };
+    const nextProgressMap = {
+      ...lessonProgress,
+      [selectedLesson.id]: nextProgress,
+    };
+
+    if (saveProgress(nextProgressMap)) {
+      setLessonProgress(nextProgressMap);
+      setProgressSaved(true);
+    }
+  }, [lessonProgress, percentage, progressSaved, questions.length, quizComplete, score, selectedLesson]);
+
   const resetAnswerState = () => {
     setSelectedChoice('');
     setBlankAnswer('');
@@ -128,6 +292,7 @@ function App() {
     setQuestions([]);
     setReviews([]);
     setShowResults(false);
+    setProgressSaved(false);
     setCurrentQuestionIndex(0);
     resetAnswerState();
     setError('');
@@ -142,6 +307,7 @@ function App() {
     setError('');
     setReviews([]);
     setShowResults(false);
+    setProgressSaved(false);
     setCurrentQuestionIndex(0);
     resetAnswerState();
 
@@ -215,17 +381,56 @@ function App() {
     setQuestions([]);
     setReviews([]);
     setShowResults(false);
+    setProgressSaved(false);
     setCurrentQuestionIndex(0);
     resetAnswerState();
     setError('');
   };
+
+  const clearNickname = () => {
+    setNickname('');
+    removeStorageValue(NICKNAME_STORAGE_KEY);
+  };
+
+  const clearProgress = () => {
+    if (!window.confirm('Clear saved quiz progress on this device?')) {
+      return;
+    }
+
+    removeStorageValue(PROGRESS_STORAGE_KEY);
+    setLessonProgress({});
+    setProgressSaved(false);
+  };
+
+  const hasSavedProgress = Object.keys(lessonProgress).length > 0;
+  const trimmedNickname = nickname.trim();
 
   return (
     <main className="app-shell">
       <section className="hero-card">
         <p className="eyebrow">Version 1</p>
         <h1>English Practice</h1>
-        <p className="privacy-note">No login. No personal information.</p>
+        <div className="nickname-panel">
+          <label className="nickname-label">
+            Optional nickname
+            <input
+              aria-describedby="privacy-helper"
+              maxLength={24}
+              onChange={(event) => setNickname(event.target.value)}
+              placeholder="Example: Ren"
+              type="text"
+              value={nickname}
+            />
+          </label>
+          {trimmedNickname && (
+            <button className="text-button" onClick={clearNickname} type="button">
+              Clear saved nickname
+            </button>
+          )}
+        </div>
+        <p className="privacy-note" id="privacy-helper">
+          Progress is saved only on this device. Do not use your real full name or student number.
+        </p>
       </section>
 
       {error && <p className="message error-message">{error}</p>}
@@ -233,14 +438,32 @@ function App() {
 
       {!isLoading && !selectedLesson && (
         <section className="card">
-          <h2>Choose a lesson</h2>
-          <div className="lesson-grid">
-            {lessons.map((lesson) => (
-              <button className="lesson-card" key={lesson.id} onClick={() => chooseLesson(lesson)}>
-                <span>{lesson.title}</span>
-                <small>{lesson.description}</small>
+          <div className="section-heading-row">
+            <h2>Choose a lesson</h2>
+            {hasSavedProgress && (
+              <button className="text-button" onClick={clearProgress} type="button">
+                Clear saved progress
               </button>
-            ))}
+            )}
+          </div>
+          <div className="lesson-grid">
+            {lessons.map((lesson) => {
+              const progress = lessonProgress[lesson.id];
+
+              return (
+                <button className="lesson-card" key={lesson.id} onClick={() => chooseLesson(lesson)}>
+                  <span>{lesson.title}</span>
+                  <small>{lesson.description}</small>
+                  {progress && (
+                    <div className="lesson-progress">
+                      <p>Last score: {progress.lastScore} / {progress.lastTotal}</p>
+                      <p>Best score: {progress.bestScore} / {progress.lastTotal}</p>
+                      <p>Completed: {progress.completedCount} times</p>
+                    </div>
+                  )}
+                </button>
+              );
+            })}
           </div>
         </section>
       )}
@@ -249,6 +472,16 @@ function App() {
         <section className="card lesson-start">
           <h2>{selectedLesson.title}</h2>
           <p>{selectedLesson.description}</p>
+          {lessonProgress[selectedLesson.id] && (
+            <div className="saved-progress-summary">
+              <p><strong>Last score:</strong> {lessonProgress[selectedLesson.id].lastScore} / {lessonProgress[selectedLesson.id].lastTotal}</p>
+              <p><strong>Last percentage:</strong> {lessonProgress[selectedLesson.id].lastPercentage}%</p>
+              <p><strong>Best score:</strong> {lessonProgress[selectedLesson.id].bestScore} / {lessonProgress[selectedLesson.id].lastTotal}</p>
+              <p><strong>Best percentage:</strong> {lessonProgress[selectedLesson.id].bestPercentage}%</p>
+              <p><strong>Completed:</strong> {lessonProgress[selectedLesson.id].completedCount} times</p>
+              <p><strong>Last completed:</strong> {formatShortDateTime(lessonProgress[selectedLesson.id].lastCompletedAt)}</p>
+            </div>
+          )}
           <div className="button-row">
             <button className="primary-button" onClick={startQuiz}>Start quiz</button>
             <button className="secondary-button" onClick={chooseAnotherLesson}>Choose another lesson</button>
@@ -337,7 +570,12 @@ function App() {
             <p><strong>Percentage:</strong> {percentage}%</p>
             <p><strong>Correct:</strong> {score}</p>
             <p><strong>Incorrect:</strong> {incorrectCount}</p>
-            <p className="result-message">{getResultMessage(percentage)}</p>
+            <p className="result-message">{getResultMessage(percentage, trimmedNickname)}</p>
+            <p className="local-save-message">
+              {progressSaved
+                ? 'Progress saved locally on this device.'
+                : 'Progress will be saved locally on this device when storage is available.'}
+            </p>
           </div>
 
           <h3>Questions to Review</h3>

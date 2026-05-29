@@ -297,3 +297,90 @@ h2 {
     width: 100%;
   }
 }
+
+.nickname-panel {
+  align-items: end;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  margin: 0 auto 14px;
+  max-width: 560px;
+}
+
+.nickname-label {
+  color: #1e3a8a;
+  display: grid;
+  flex: 1 1 260px;
+  font-weight: 800;
+  gap: 8px;
+  text-align: left;
+}
+
+.nickname-label input {
+  border: 2px solid #bfdbfe;
+  border-radius: 999px;
+  padding: 12px 18px;
+  width: 100%;
+}
+
+.text-button {
+  background: transparent;
+  border: 0;
+  color: #1d4ed8;
+  font-weight: 800;
+  padding: 10px 0;
+  text-decoration: underline;
+}
+
+.text-button:hover,
+.text-button:focus-visible {
+  color: #1e3a8a;
+}
+
+.section-heading-row {
+  align-items: start;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: space-between;
+  margin-bottom: 18px;
+}
+
+.section-heading-row h2 {
+  margin-bottom: 0;
+}
+
+.lesson-progress,
+.saved-progress-summary {
+  background: #eff6ff;
+  border-radius: 14px;
+  color: #1e3a8a;
+  margin-top: 16px;
+  padding: 12px;
+}
+
+.lesson-progress p,
+.saved-progress-summary p {
+  margin-bottom: 4px;
+}
+
+.lesson-progress p:last-child,
+.saved-progress-summary p:last-child {
+  margin-bottom: 0;
+}
+
+.local-save-message {
+  color: #166534;
+  font-weight: 800;
+}
+
+@media (max-width: 640px) {
+  .nickname-panel {
+    align-items: stretch;
+  }
+
+  .text-button {
+    width: 100%;
+  }
+}
