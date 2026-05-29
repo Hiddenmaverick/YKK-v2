@@ -44,7 +44,11 @@ const ATTEMPT_MODES = {
 const prepareQuestionsForAttempt = (questions: Question[], limit: number) =>
   shuffleArray(questions).slice(0, limit).map(prepareQuestionForQuiz);
 
+const isAttemptMode = (value: unknown): value is AttemptMode => value === 'practice' || value === 'quiz';
+
 const getModeLabel = (mode: AttemptMode) => ATTEMPT_MODES[mode].label;
+
+const getOptionalModeLabel = (mode: unknown) => (isAttemptMode(mode) ? getModeLabel(mode) : '');
 
 const getAcceptedAnswers = (question: Question): Array<string | boolean> => {
   if (question.type === 'fill-in-the-blank' || question.type === 'multiple-choice') {
@@ -159,7 +163,8 @@ const isLessonProgress = (value: unknown): value is LessonProgress => {
     typeof progress.bestScore === 'number' &&
     typeof progress.bestPercentage === 'number' &&
     typeof progress.completedCount === 'number' &&
-    typeof progress.lastCompletedAt === 'string'
+    typeof progress.lastCompletedAt === 'string' &&
+    (progress.lastMode === undefined || isAttemptMode(progress.lastMode))
   );
 };
 
@@ -598,7 +603,7 @@ function App() {
               <p><strong>Best percentage:</strong> {lessonProgress[selectedLesson.id].bestPercentage}%</p>
               <p><strong>Completed:</strong> {lessonProgress[selectedLesson.id].completedCount} times</p>
               {lessonProgress[selectedLesson.id].lastMode && (
-                <p><strong>Last mode:</strong> {getModeLabel(lessonProgress[selectedLesson.id].lastMode)}</p>
+                <p><strong>Last mode:</strong> {getOptionalModeLabel(lessonProgress[selectedLesson.id].lastMode)}</p>
               )}
               <p><strong>Last completed:</strong> {formatShortDateTime(lessonProgress[selectedLesson.id].lastCompletedAt)}</p>
             </div>
@@ -685,9 +690,9 @@ function App() {
               <strong>{feedback === 'correct' ? 'Correct!' : 'Incorrect'}</strong>
               <p>{currentQuestion.explanation}</p>
               {currentQuestionIndex < questions.length - 1 ? (
-                <button className="primary-button" onClick={goToNextQuestion}>Next question</button>
+                <button className="primary-button" onClick={() => goToNextQuestion()}>Next question</button>
               ) : (
-                <button className="primary-button" onClick={goToNextQuestion}>Show results</button>
+                <button className="primary-button" onClick={() => goToNextQuestion()}>Show results</button>
               )}
             </div>
           ) : null}
