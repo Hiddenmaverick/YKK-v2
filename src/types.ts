@@ -5,14 +5,18 @@ export interface Lesson {
   questionFile: string;
 }
 
+export type AttemptMode = 'practice' | 'quiz';
+
 export interface LessonProgress {
   lastScore: number;
   lastTotal: number;
   lastPercentage: number;
   bestScore: number;
+  bestTotal?: number;
   bestPercentage: number;
   completedCount: number;
   lastCompletedAt: string;
+  lastMode?: AttemptMode;
 }
 
 export interface MultipleChoiceQuestion {
