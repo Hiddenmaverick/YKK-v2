@@ -25,5 +25,41 @@
     "categoryId": "communication",
     "categoryTitle": "コミュニケーション英語 / Communication English",
     "categoryDescription": "Practice Communication English lessons and units."
+  },
+  {
+    "id": "logic-expression-lesson-01",
+    "title": "Lesson 1: Giving Opinions",
+    "description": "Practice giving clear opinions with polite and useful expressions.",
+    "questionFile": "logic-expression-lesson-01.json",
+    "categoryId": "logic-expression",
+    "categoryTitle": "論理・表現 / Logic and Expression",
+    "categoryDescription": "Practice Logic and Expression lessons and units."
+  },
+  {
+    "id": "logic-expression-lesson-02",
+    "title": "Lesson 2: Explaining Reasons",
+    "description": "Practice giving reasons and examples to support opinions.",
+    "questionFile": "logic-expression-lesson-02.json",
+    "categoryId": "logic-expression",
+    "categoryTitle": "論理・表現 / Logic and Expression",
+    "categoryDescription": "Practice Logic and Expression lessons and units."
+  },
+  {
+    "id": "vocabulary-unit-01",
+    "title": "Unit 1: Classroom Words",
+    "description": "Practice useful vocabulary for classroom objects, actions, and places.",
+    "questionFile": "vocabulary-unit-01.json",
+    "categoryId": "vocabulary",
+    "categoryTitle": "語彙 / Vocabulary",
+    "categoryDescription": "Practice Vocabulary lessons and units."
+  },
+  {
+    "id": "vocabulary-unit-02",
+    "title": "Unit 2: Travel Words",
+    "description": "Practice useful vocabulary for transportation, places, and travel situations.",
+    "questionFile": "vocabulary-unit-02.json",
+    "categoryId": "vocabulary",
+    "categoryTitle": "語彙 / Vocabulary",
+    "categoryDescription": "Practice Vocabulary lessons and units."
   }
 ]

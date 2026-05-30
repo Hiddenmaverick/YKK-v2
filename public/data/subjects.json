@@ -12,13 +12,19 @@
   {
     "id": "logic-expression",
     "title": "論理・表現 / Logic and Expression",
-    "description": "Logic and Expression lessons are coming soon.",
-    "lessonIds": []
+    "description": "Practice Logic and Expression lessons and units.",
+    "lessonIds": [
+      "logic-expression-lesson-01",
+      "logic-expression-lesson-02"
+    ]
   },
   {
     "id": "vocabulary",
     "title": "語彙 / Vocabulary",
-    "description": "Vocabulary lessons are coming soon.",
-    "lessonIds": []
+    "description": "Practice Vocabulary lessons and units.",
+    "lessonIds": [
+      "vocabulary-unit-01",
+      "vocabulary-unit-02"
+    ]
   }
 ]

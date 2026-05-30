@@ -1,0 +1,60 @@
+[
+  {
+    "id": "q1",
+    "type": "multiple-choice",
+    "prompt": "What does \"passport\" mean in Japanese?",
+    "choices": [
+      "パスポート",
+      "駅",
+      "地図",
+      "切符",
+      "荷物",
+      "空港",
+      "座席",
+      "お土産"
+    ],
+    "answer": "パスポート",
+    "explanation": "A passport is an official document used when traveling to another country."
+  },
+  {
+    "id": "q2",
+    "type": "fill-in-the-blank",
+    "prompt": "Fill in the blank: We need to buy a train _____ before we get on the train.",
+    "answer": "ticket",
+    "explanation": "A ticket shows that you have paid to ride a train, bus, or other transportation."
+  },
+  {
+    "id": "q3",
+    "type": "true-false",
+    "prompt": "True or false: \"Luggage\" means bags or suitcases that people take when they travel.",
+    "answer": true,
+    "explanation": "Luggage is the general word for travel bags and suitcases."
+  },
+  {
+    "id": "q4",
+    "type": "multiple-choice",
+    "prompt": "Choose the word that means 「到着する」.",
+    "choices": [
+      "arrive",
+      "depart",
+      "forget",
+      "borrow",
+      "practice",
+      "erase",
+      "invite",
+      "explain"
+    ],
+    "answer": "arrive",
+    "explanation": "'Arrive' means to reach a place. 'Depart' means to leave a place."
+  },
+  {
+    "id": "q5",
+    "type": "fill-in-the-blank",
+    "prompt": "Fill in the blank: The plane will _____ from Gate 12 at 9:30.",
+    "answer": [
+      "depart",
+      "leave"
+    ],
+    "explanation": "'Depart' and 'leave' both mean to go away from a place. They are common words in travel information."
+  }
+]

@@ -1,0 +1,60 @@
+[
+  {
+    "id": "q1",
+    "type": "multiple-choice",
+    "prompt": "Choose the best connector for giving a reason: I like reading books _____ they help me learn new ideas.",
+    "choices": [
+      "because",
+      "but",
+      "or",
+      "so",
+      "although",
+      "before",
+      "while",
+      "then"
+    ],
+    "answer": "because",
+    "explanation": "'Because' introduces a reason. The second part explains why the speaker likes reading books."
+  },
+  {
+    "id": "q2",
+    "type": "fill-in-the-blank",
+    "prompt": "Fill in the blank: I was absent _____ I had a fever.",
+    "answer": [
+      "because",
+      "since"
+    ],
+    "explanation": "'Because' and 'since' can introduce a reason. Both fit this simple explanation."
+  },
+  {
+    "id": "q3",
+    "type": "true-false",
+    "prompt": "True or false: A good reason should connect clearly to the opinion it supports.",
+    "answer": true,
+    "explanation": "A reason is stronger when it clearly explains why the opinion makes sense."
+  },
+  {
+    "id": "q4",
+    "type": "multiple-choice",
+    "prompt": "Choose the sentence that gives both an opinion and a reason.",
+    "choices": [
+      "I think breakfast is important because it gives us energy.",
+      "Breakfast is at seven.",
+      "Because energy important breakfast.",
+      "I went to school after breakfast.",
+      "Breakfast and lunch are meals.",
+      "I think because.",
+      "Energy gives important I think.",
+      "Breakfast is a word."
+    ],
+    "answer": "I think breakfast is important because it gives us energy.",
+    "explanation": "This sentence states an opinion, 'breakfast is important,' and supports it with the reason 'because it gives us energy.'"
+  },
+  {
+    "id": "q5",
+    "type": "fill-in-the-blank",
+    "prompt": "Fill in the blank: For this _____, we should start the project early.",
+    "answer": "reason",
+    "explanation": "'For this reason' connects the previous idea to a conclusion or suggestion."
+  }
+]
