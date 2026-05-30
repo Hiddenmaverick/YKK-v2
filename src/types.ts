@@ -1,8 +1,18 @@
+export interface Subject {
+  id: string;
+  title: string;
+  description: string;
+  lessonIds: string[];
+}
+
 export interface Lesson {
   id: string;
   title: string;
   description: string;
   questionFile: string;
+  categoryId: string;
+  categoryTitle: string;
+  categoryDescription: string;
 }
 
 export type AttemptMode = 'practice' | 'quiz';

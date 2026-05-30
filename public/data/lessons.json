@@ -3,18 +3,27 @@
     "id": "lesson-01",
     "title": "Lesson 1: Everyday English",
     "description": "Practice common classroom and daily-life English sentences.",
-    "questionFile": "lesson-01.json"
+    "questionFile": "lesson-01.json",
+    "categoryId": "communication",
+    "categoryTitle": "コミュニケーション英語 / Communication English",
+    "categoryDescription": "Practice Communication English lessons and units."
   },
   {
     "id": "lesson-02",
     "title": "Lesson 2: School Life English",
     "description": "Practice useful English for classes, clubs, homework, and school events.",
-    "questionFile": "lesson-02.json"
+    "questionFile": "lesson-02.json",
+    "categoryId": "communication",
+    "categoryTitle": "コミュニケーション英語 / Communication English",
+    "categoryDescription": "Practice Communication English lessons and units."
   },
   {
     "id": "lesson-03",
     "title": "Lesson 3: Travel and Directions English",
     "description": "Practice practical English for trips, stations, directions, and asking for help.",
-    "questionFile": "lesson-03.json"
+    "questionFile": "lesson-03.json",
+    "categoryId": "communication",
+    "categoryTitle": "コミュニケーション英語 / Communication English",
+    "categoryDescription": "Practice Communication English lessons and units."
   }
 ]
