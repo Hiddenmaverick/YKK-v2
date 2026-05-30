@@ -43,6 +43,8 @@ const requiredFields = [
   'explanation',
 ];
 
+const validQuestionTypes = ['multiple-choice', 'fill-in-the-blank', 'true-false'];
+
 function parseCsv(text) {
   const rows = [];
   let row = [];
@@ -124,25 +126,20 @@ function isBlankRow(values) {
   return values.every((value) => value.trim() === '');
 }
 
-function fail(rowNumber, message) {
-  throw new Error(`Row ${rowNumber}: ${message}`);
+function addError(errors, rowNumber, message) {
+  errors.push(`Row ${rowNumber}: ${message}`);
 }
 
-function normalizeRow(header, csvRow) {
+function normalizeRow(header, csvRow, errors) {
   const values = csvRow.values.map((value) => value.trim());
   if (values.length > header.length) {
-    fail(csvRow.line, `found ${values.length} cells, but the header has ${header.length}. Check for an extra comma or missing quotes around text that contains commas.`);
+    addError(errors, csvRow.line, `found ${values.length} cells, but the header has ${header.length}. Check for an extra comma or add quotes around text that contains commas.`);
   }
 
   const row = Object.fromEntries(header.map((column, index) => [column, values[index] ?? '']));
   for (const field of requiredFields) {
     if (!row[field]) {
-      const friendlyNames = {
-        prompt: 'missing prompt',
-        answer: 'missing answer',
-        explanation: 'missing explanation',
-      };
-      fail(csvRow.line, friendlyNames[field] ?? `missing required field "${field}".`);
+      addError(errors, csvRow.line, `missing required field "${field}". Add a value in the ${field} column.`);
     }
   }
 
@@ -151,6 +148,14 @@ function normalizeRow(header, csvRow) {
 
 function getOptionValues(row) {
   return optionColumns.map((field) => row[field]).filter((choice) => choice !== '');
+}
+
+function getFilledOptionColumns(row) {
+  return optionColumns.filter((field) => row[field] !== '');
+}
+
+function formatList(values) {
+  return values.map((value) => `"${value}"`).join(', ');
 }
 
 function addAcceptedAnswer(answers, seenAnswers, value) {
@@ -166,40 +171,76 @@ function addAcceptedAnswer(answers, seenAnswers, value) {
   }
 }
 
-function toQuestion(row, rowNumber) {
-  const type = row.question_type;
-  if (type !== 'multiple-choice' && type !== 'fill-in-the-blank' && type !== 'true-false') {
-    fail(rowNumber, `invalid question_type "${type}". Use "multiple-choice", "fill-in-the-blank", or "true-false".`);
+function getAcceptedAnswers(row) {
+  const answers = [];
+  const seenAnswers = new Set();
+  addAcceptedAnswer(answers, seenAnswers, row.answer);
+  for (const acceptedAnswer of row.accepted_answers.split(';')) {
+    addAcceptedAnswer(answers, seenAnswers, acceptedAnswer);
+  }
+  return answers;
+}
+
+function findDuplicateValues(values) {
+  const firstValueByKey = new Map();
+  const duplicateValues = [];
+  const duplicateKeys = new Set();
+
+  for (const value of values) {
+    const key = value.toLocaleLowerCase();
+    if (firstValueByKey.has(key)) {
+      if (!duplicateKeys.has(key)) {
+        duplicateValues.push(firstValueByKey.get(key));
+        duplicateKeys.add(key);
+      }
+      duplicateValues.push(value);
+    } else {
+      firstValueByKey.set(key, value);
+    }
   }
 
-  if (!row.explanation) {
-    fail(rowNumber, 'question has no explanation. Add a teacher-friendly explanation.');
+  return duplicateValues;
+}
+
+function validateAnswerOptions({ answers, choices, errors, rowNumber }) {
+  const choiceSet = new Set(choices);
+  for (const answer of answers) {
+    if (!choiceSet.has(answer)) {
+      addError(errors, rowNumber, `multiple-choice answer "${answer}" must exactly match one of option_a through option_h. Available options are: ${formatList(choices)}.`);
+    }
+  }
+}
+
+function toQuestion(row, rowNumber, errors) {
+  const type = row.question_type;
+  if (!validQuestionTypes.includes(type)) {
+    if (type) {
+      addError(errors, rowNumber, `invalid question_type "${type}". Use one of: ${validQuestionTypes.join(', ')}.`);
+    }
+    return null;
   }
 
   if (type === 'multiple-choice') {
     const choices = getOptionValues(row);
-    const answers = [];
-    const seenAnswers = new Set();
-    addAcceptedAnswer(answers, seenAnswers, row.answer);
-    for (const acceptedAnswer of row.accepted_answers.split(';')) {
-      addAcceptedAnswer(answers, seenAnswers, acceptedAnswer);
-    }
+    const duplicateOptions = findDuplicateValues(choices);
+    const answers = getAcceptedAnswers(row);
 
     if (choices.length < 4) {
-      fail(rowNumber, 'fewer than 4 total options for multiple-choice. Add at least 4 non-empty choices in option_a through option_h.');
+      addError(errors, rowNumber, 'multiple-choice questions need at least 4 non-empty options in option_a through option_h. Add more options or change the question_type.');
     }
 
-    const choiceSet = new Set(choices);
-    for (const answer of answers) {
-      if (!choiceSet.has(answer)) {
-        fail(rowNumber, `correct answer not found in options: "${answer}" must appear in option_a through option_h.`);
-      }
+    if (duplicateOptions.length > 0) {
+      addError(errors, rowNumber, `multiple-choice options must not be duplicates. Remove or rewrite these duplicate options: ${formatList(duplicateOptions)}.`);
+    }
+
+    if (row.answer) {
+      validateAnswerOptions({ answers, choices, errors, rowNumber });
     }
 
     const answerSet = new Set(answers);
     const incorrectChoices = choices.filter((choice) => !answerSet.has(choice));
     if (incorrectChoices.length < 3) {
-      fail(rowNumber, 'fewer than 3 incorrect distractors for multiple-choice. Add more incorrect choices in option_a through option_h.');
+      addError(errors, rowNumber, 'multiple-choice questions need at least 3 incorrect options. Add more distractors in option_a through option_h, or remove extra correct answers from accepted_answers.');
     }
 
     return {
@@ -213,18 +254,18 @@ function toQuestion(row, rowNumber) {
   }
 
   if (type === 'true-false') {
-    const filledOptions = optionColumns.filter((field) => row[field] !== '');
+    const filledOptions = getFilledOptionColumns(row);
     if (filledOptions.length > 0) {
-      fail(rowNumber, 'true-false questions must leave option_a through option_h blank.');
+      addError(errors, rowNumber, `true-false questions must leave option_a through option_h blank. Clear these columns: ${filledOptions.join(', ')}.`);
     }
 
     if (row.accepted_answers !== '') {
-      fail(rowNumber, 'true-false questions must leave accepted_answers blank.');
+      addError(errors, rowNumber, 'true-false questions must leave accepted_answers blank. Put only true or false in the answer column.');
     }
 
     const normalizedAnswer = row.answer.toLocaleLowerCase();
-    if (normalizedAnswer !== 'true' && normalizedAnswer !== 'false') {
-      fail(rowNumber, 'true-false answer must be either "true" or "false".');
+    if (row.answer && normalizedAnswer !== 'true' && normalizedAnswer !== 'false') {
+      addError(errors, rowNumber, 'true-false answer must be either "true" or "false". Capitalization does not matter.');
     }
 
     return {
@@ -236,11 +277,9 @@ function toQuestion(row, rowNumber) {
     };
   }
 
-  const answers = [];
-  const seenAnswers = new Set();
-  addAcceptedAnswer(answers, seenAnswers, row.answer);
-  for (const acceptedAnswer of row.accepted_answers.split(';')) {
-    addAcceptedAnswer(answers, seenAnswers, acceptedAnswer);
+  const answers = getAcceptedAnswers(row);
+  if (row.answer && answers.length === 0) {
+    addError(errors, rowNumber, 'fill-in-the-blank needs at least one accepted answer after trimming spaces. Add the correct answer in the answer column.');
   }
 
   return {
@@ -275,6 +314,22 @@ function validateHeader(header) {
   return trimmedHeader;
 }
 
+function printValidationErrors(errors) {
+  console.error(`Found ${errors.length} CSV validation ${errors.length === 1 ? 'error' : 'errors'}:`);
+  for (const error of errors) {
+    console.error(`- ${error}`);
+  }
+  console.error(`Fix ${errors.length === 1 ? 'it' : 'them'} and run npm run generate-content again.`);
+}
+
+function printSuccessSummary(lessons) {
+  const questionCount = lessons.reduce((count, lesson) => count + lesson.questions.length, 0);
+  console.log(`Generated ${lessons.length} ${lessons.length === 1 ? 'lesson' : 'lessons'} and ${questionCount} ${questionCount === 1 ? 'question' : 'questions'}.`);
+  for (const lesson of lessons) {
+    console.log(`${lesson.id}: ${lesson.questions.length} ${lesson.questions.length === 1 ? 'question' : 'questions'}`);
+  }
+}
+
 async function main() {
   const csvText = await readFile(csvPath, 'utf8');
   const rows = parseCsv(csvText).filter((row) => !isBlankRow(row.values));
@@ -284,42 +339,58 @@ async function main() {
   }
 
   const header = validateHeader(rows[0].values);
+  const errors = [];
   const lessons = [];
   const lessonsById = new Map();
   const questionIdsByLesson = new Map();
 
   for (const csvRow of rows.slice(1)) {
-    const row = normalizeRow(header, csvRow);
+    const row = normalizeRow(header, csvRow, errors);
     const lessonId = row.lesson_id;
 
-    if (!lessonsById.has(lessonId)) {
-      const lesson = {
-        id: lessonId,
-        title: row.lesson_title,
-        description: row.lesson_description,
-        questionFile: `${lessonId}.json`,
-        questions: [],
-      };
-      lessonsById.set(lessonId, lesson);
-      lessons.push(lesson);
-      questionIdsByLesson.set(lessonId, new Set());
-    } else {
-      const lesson = lessonsById.get(lessonId);
-      if (lesson.title !== row.lesson_title) {
-        fail(csvRow.line, `lesson_title for "${lessonId}" does not match earlier rows. Use the same title every time this lesson_id appears.`);
+    if (lessonId) {
+      if (!lessonsById.has(lessonId)) {
+        const lesson = {
+          id: lessonId,
+          title: row.lesson_title,
+          description: row.lesson_description,
+          questionFile: `${lessonId}.json`,
+          questions: [],
+          firstRow: csvRow.line,
+        };
+        lessonsById.set(lessonId, lesson);
+        lessons.push(lesson);
+        questionIdsByLesson.set(lessonId, new Map());
+      } else {
+        const lesson = lessonsById.get(lessonId);
+        if (row.lesson_title && lesson.title !== row.lesson_title) {
+          addError(errors, csvRow.line, `lesson_title for lesson_id "${lessonId}" does not match row ${lesson.firstRow}. Use exactly "${lesson.title}" or update all rows for this lesson.`);
+        }
+        if (row.lesson_description && lesson.description !== row.lesson_description) {
+          addError(errors, csvRow.line, `lesson_description for lesson_id "${lessonId}" does not match row ${lesson.firstRow}. Use exactly "${lesson.description}" or update all rows for this lesson.`);
+        }
       }
-      if (lesson.description !== row.lesson_description) {
-        fail(csvRow.line, `lesson_description for "${lessonId}" does not match earlier rows. Use the same description every time this lesson_id appears.`);
+
+      if (row.question_id) {
+        const questionIds = questionIdsByLesson.get(lessonId);
+        if (questionIds.has(row.question_id)) {
+          addError(errors, csvRow.line, `duplicate question_id "${row.question_id}" in lesson "${lessonId}". It was first used on row ${questionIds.get(row.question_id)}; choose a unique question_id for this row.`);
+        } else {
+          questionIds.set(row.question_id, csvRow.line);
+        }
       }
     }
 
-    const questionIds = questionIdsByLesson.get(lessonId);
-    if (questionIds.has(row.question_id)) {
-      fail(csvRow.line, `duplicate question_id "${row.question_id}" in lesson "${lessonId}".`);
+    const question = toQuestion(row, csvRow.line, errors);
+    if (question && lessonId && lessonsById.has(lessonId)) {
+      lessonsById.get(lessonId).questions.push(question);
     }
-    questionIds.add(row.question_id);
+  }
 
-    lessonsById.get(lessonId).questions.push(toQuestion(row, csvRow.line));
+  if (errors.length > 0) {
+    printValidationErrors(errors);
+    process.exitCode = 1;
+    return;
   }
 
   if (lessons.length === 0) {
@@ -350,10 +421,7 @@ async function main() {
     await writeFile(outputPath, `${JSON.stringify(lesson.questions, null, 2)}\n`);
   }
 
-  console.log(`Generated ${lessonsPath}`);
-  for (const lesson of lessons) {
-    console.log(`Generated ${path.join(questionsDir, lesson.questionFile)} (${lesson.questions.length} questions)`);
-  }
+  printSuccessSummary(lessons);
 }
 
 main().catch((error) => {
