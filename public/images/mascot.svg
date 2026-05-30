@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 320" role="img" aria-labelledby="title desc">
+  <title id="title">Yuukoukan mascot</title>
+  <desc id="desc">A friendly white school mascot with green hair, red cheeks, and a green school emblem.</desc>
+  <rect width="320" height="320" fill="#ffffff"/>
+  <g stroke="#17324a" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M96 184 42 252l82-27Z" fill="#ef4444" stroke-width="4"/>
+    <path d="M102 178 56 247l80-29Z" fill="#f97316" stroke-width="3"/>
+    <path d="M110 174 72 236l72-24Z" fill="#facc15" stroke-width="3"/>
+    <path d="M89 98 30 60l34 74Z" fill="#f8fafc" stroke-width="4"/>
+    <path d="M231 98 290 60l-34 74Z" fill="#f8fafc" stroke-width="4"/>
+    <path d="M75 94 45 72l18 42Z" fill="#a7f3d0" stroke-width="2"/>
+    <path d="M245 94 275 72l-18 42Z" fill="#a7f3d0" stroke-width="2"/>
+    <path d="M250 102 276 46" fill="none" stroke-width="4"/>
+    <path d="M268 38h44v50h-44z" fill="#22c55e" stroke-width="3"/>
+    <text x="280" y="70" font-family="serif" font-size="24" font-weight="700" fill="#17324a" stroke="none">高</text>
+    <path d="M74 149c-32 24-29 70 18 80" fill="#f8fafc" stroke-width="4"/>
+    <path d="M246 149c32 24 29 70-18 80" fill="#f8fafc" stroke-width="4"/>
+    <path d="M75 130c0-43 38-78 85-78s85 35 85 78v116c0 28-23 50-50 50h-70c-28 0-50-22-50-50z" fill="#f8fafc" stroke-width="4"/>
+    <path d="M160 230v66" fill="none" stroke="#94a3b8" stroke-width="3"/>
+    <path d="M142 26 160 0l18 34Z" fill="#fde68a" stroke-width="3"/>
+    <path d="M150 14c8 2 14 5 20 10" fill="none" stroke="#f59e0b" stroke-width="3"/>
+    <path d="M109 68 124 18l18 60Z" fill="#22c55e" stroke="#166534" stroke-width="3"/>
+    <path d="M132 64 162 8l16 70Z" fill="#38e55f" stroke="#166534" stroke-width="3"/>
+    <path d="M165 64 202 20l-4 70Z" fill="#22c55e" stroke="#166534" stroke-width="3"/>
+    <ellipse cx="160" cy="70" rx="58" ry="46" fill="#38e55f" stroke="#166534" stroke-width="3"/>
+    <path d="M96 93 70 48l62 35Z" fill="#22c55e" stroke="#166534" stroke-width="3"/>
+    <path d="M204 82 246 48l-23 58Z" fill="#22c55e" stroke="#166534" stroke-width="3"/>
+    <ellipse cx="122" cy="126" rx="20" ry="22" fill="#22c55e" stroke-width="3"/>
+    <ellipse cx="198" cy="126" rx="20" ry="22" fill="#22c55e" stroke-width="3"/>
+    <circle cx="122" cy="127" r="7" fill="#111827" stroke="none"/>
+    <circle cx="198" cy="127" r="7" fill="#111827" stroke="none"/>
+    <circle cx="125" cy="122" r="3" fill="#fff" stroke="none"/>
+    <circle cx="201" cy="122" r="3" fill="#fff" stroke="none"/>
+    <circle cx="91" cy="163" r="19" fill="#fb7185" stroke="#dc2626" stroke-width="3"/>
+    <circle cx="229" cy="163" r="19" fill="#fb7185" stroke="#dc2626" stroke-width="3"/>
+    <rect x="110" y="137" width="100" height="48" rx="24" fill="#f8d8b4" stroke-width="3"/>
+    <path d="M132 158c8 10 20 10 28 0M160 158c8 10 20 10 28 0" fill="none" stroke-width="3"/>
+    <circle cx="160" cy="226" r="56" fill="#22c55e" stroke="#166534" stroke-width="4"/>
+    <path d="M160 184v84M118 226h84M130 196l60 60M190 196l-60 60" fill="none" stroke="#166534" stroke-width="3" opacity=".8"/>
+    <text x="136" y="242" font-family="serif" font-size="45" font-weight="800" fill="#17324a" stroke="none">猶</text>
+  </g>
+</svg>

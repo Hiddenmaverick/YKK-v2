@@ -531,8 +531,21 @@ function App() {
   return (
     <main className="app-shell">
       <section className="hero-card">
-        <p className="eyebrow">Version 1</p>
-        <h1>English Practice</h1>
+        <div className="hero-content">
+          <div className="hero-copy">
+            <div className="school-identity" aria-label="Yuukoukan High School identity">
+              <p className="school-name">長崎県立 猶興館高等学校</p>
+              <p className="school-meta">YUUKOUKAN HIGH SCHOOL · EST. 1880</p>
+            </div>
+            <p className="eyebrow">Version 1</p>
+            <h1>English Practice</h1>
+          </div>
+          <img
+            alt="Yuukoukan mascot"
+            className="mascot-image"
+            src={`${import.meta.env.BASE_URL}images/mascot.svg`}
+          />
+        </div>
         <div className="nickname-panel">
           <label className="nickname-label">
             Optional nickname

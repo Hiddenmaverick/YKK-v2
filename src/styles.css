@@ -1,6 +1,6 @@
 :root {
-  color: #1f2937;
-  background: #eef4ff;
+  color: #172033;
+  background: #071426;
   font-family:
     Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   font-synthesis: none;
@@ -16,6 +16,17 @@ body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
+  background:
+    radial-gradient(circle at 15% 0%, rgba(34, 197, 94, 0.16), transparent 28rem),
+    linear-gradient(135deg, #071426 0%, #0c1c33 48%, #08111f 100%);
+}
+
+body::before {
+  background: linear-gradient(90deg, #19b86a, #a7f3d0, #19b86a);
+  content: "";
+  display: block;
+  height: 6px;
+  width: 100%;
 }
 
 button,
@@ -35,29 +46,97 @@ input:disabled {
 
 .app-shell {
   margin: 0 auto;
-  max-width: 960px;
-  padding: 24px;
+  max-width: 1040px;
+  padding: 28px 24px 40px;
 }
 
 .hero-card,
 .card {
-  background: #ffffff;
-  border: 1px solid #dbeafe;
-  border-radius: 24px;
-  box-shadow: 0 20px 45px rgba(37, 99, 235, 0.1);
-  padding: 28px;
+  border-radius: 28px;
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.28);
 }
 
 .hero-card {
+  background:
+    linear-gradient(145deg, rgba(31, 64, 105, 0.98), rgba(16, 42, 75, 0.98)),
+    #1f4069;
+  border: 1px solid rgba(167, 243, 208, 0.22);
+  color: #f8fafc;
   margin-bottom: 24px;
-  text-align: center;
+  overflow: hidden;
+  padding: 32px;
+  position: relative;
+}
+
+.hero-card::after {
+  background: #22c55e;
+  border-radius: 999px;
+  bottom: 0;
+  content: "";
+  height: 7px;
+  left: 32px;
+  position: absolute;
+  right: 32px;
+}
+
+.hero-content {
+  align-items: center;
+  display: grid;
+  gap: 24px;
+  grid-template-columns: minmax(0, 1fr) auto;
+  margin-bottom: 24px;
+}
+
+.hero-copy {
+  min-width: 0;
+}
+
+.school-identity {
+  border-left: 5px solid #22c55e;
+  margin-bottom: 18px;
+  padding-left: 16px;
+  text-align: left;
+}
+
+.school-name {
+  color: #f8fafc;
+  font-size: clamp(1.1rem, 3.6vw, 1.7rem);
+  font-weight: 900;
+  letter-spacing: 0.03em;
+  margin-bottom: 3px;
+}
+
+.school-meta {
+  color: #a7f3d0;
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  margin-bottom: 0;
+}
+
+.mascot-image {
+  background: #ffffff;
+  border: 4px solid rgba(167, 243, 208, 0.95);
+  border-radius: 28px;
+  box-shadow: 0 16px 30px rgba(3, 7, 18, 0.25);
+  display: block;
+  height: clamp(112px, 17vw, 158px);
+  object-fit: contain;
+  padding: 8px;
+  width: clamp(112px, 17vw, 158px);
+}
+
+.card {
+  background: #f5f0e6;
+  border: 1px solid #e0d7c8;
+  padding: 28px;
 }
 
 .eyebrow {
-  color: #2563eb;
-  font-size: 0.85rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
+  color: #a7f3d0;
+  font-size: 0.82rem;
+  font-weight: 900;
+  letter-spacing: 0.16em;
   margin: 0 0 8px;
   text-transform: uppercase;
 }
@@ -70,80 +149,116 @@ p {
 }
 
 h1 {
-  font-size: clamp(2.25rem, 8vw, 4.25rem);
-  line-height: 1;
-  margin-bottom: 16px;
-}
-
-h2 {
-  font-size: clamp(1.5rem, 4vw, 2.25rem);
-}
-
-.privacy-note {
-  color: #475569;
-  font-size: 1.15rem;
+  color: #ffffff;
+  font-size: clamp(2.35rem, 7vw, 4.6rem);
+  letter-spacing: -0.05em;
+  line-height: 0.95;
   margin-bottom: 0;
 }
 
+h2 {
+  color: #12305a;
+  font-size: clamp(1.5rem, 4vw, 2.25rem);
+  letter-spacing: -0.025em;
+}
+
+h3 {
+  color: #12305a;
+}
+
+.privacy-note {
+  background: rgba(7, 20, 38, 0.42);
+  border: 1px solid rgba(167, 243, 208, 0.22);
+  border-radius: 16px;
+  color: #dbeafe;
+  font-size: 1.05rem;
+  margin-bottom: 0;
+  padding: 13px 16px;
+}
+
 .message {
-  background: #eff6ff;
-  border-left: 6px solid #2563eb;
-  border-radius: 14px;
+  background: #dbeafe;
+  border-left: 6px solid #22c55e;
+  border-radius: 16px;
+  color: #12305a;
   margin: 0 0 20px;
   padding: 16px;
 }
 
 .error-message {
   background: #fef2f2;
-  border-color: #dc2626;
+  border-color: #ef4444;
   color: #991b1b;
 }
 
 .success-message {
   background: #ecfdf5;
   border-color: #16a34a;
-  color: #166534;
+  color: #14532d;
 }
 
 .lesson-grid {
   display: grid;
-  gap: 16px;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 18px;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
 }
 
 .lesson-card {
-  background: #f8fafc;
-  border: 2px solid #bfdbfe;
-  border-radius: 18px;
-  color: #1e3a8a;
-  min-height: 150px;
+  background:
+    linear-gradient(#fffdf8, #f8f1e6) padding-box,
+    linear-gradient(135deg, #d8cbb8, #22c55e) border-box;
+  border: 2px solid transparent;
+  border-radius: 22px;
+  color: #12305a;
+  min-height: 172px;
   padding: 22px;
   text-align: left;
-  transition: border-color 0.15s ease, transform 0.15s ease;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease, transform 0.15s ease;
 }
 
 .lesson-card:hover,
 .lesson-card:focus-visible {
-  border-color: #2563eb;
-  transform: translateY(-2px);
+  box-shadow: 0 16px 32px rgba(15, 23, 42, 0.16);
+  transform: translateY(-3px);
 }
 
 .lesson-card span {
-  display: block;
+  align-items: center;
+  display: flex;
   font-size: 1.35rem;
-  font-weight: 800;
+  font-weight: 900;
+  gap: 10px;
   margin-bottom: 10px;
+}
+
+.lesson-card span::before {
+  background: #22c55e;
+  border-radius: 999px;
+  content: "";
+  flex: 0 0 12px;
+  height: 12px;
+  width: 12px;
 }
 
 .lesson-card small {
   color: #475569;
+  display: block;
   font-size: 1rem;
 }
 
 .lesson-start p,
 .progress-text {
   color: #475569;
-  font-size: 1.1rem;
+  font-size: 1.08rem;
+}
+
+.progress-text {
+  background: #dff6e8;
+  border-radius: 999px;
+  color: #14532d;
+  display: inline-block;
+  font-weight: 800;
+  padding: 8px 14px;
 }
 
 .button-row {
@@ -153,24 +268,24 @@ h2 {
   margin-top: 24px;
 }
 
-
 .mode-button {
-  background: #f8fafc;
-  border: 2px solid #bfdbfe;
-  border-radius: 18px;
-  color: #1e3a8a;
+  background: #fffdf8;
+  border: 2px solid #d6c9b6;
+  border-radius: 20px;
+  color: #12305a;
   display: grid;
   flex: 1 1 220px;
   gap: 8px;
-  min-height: 96px;
+  min-height: 104px;
   padding: 18px 22px;
   text-align: left;
-  transition: border-color 0.15s ease, transform 0.15s ease;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease, transform 0.15s ease;
 }
 
 .mode-button:hover,
 .mode-button:focus-visible {
-  border-color: #2563eb;
+  border-color: #22c55e;
+  box-shadow: 0 14px 28px rgba(15, 23, 42, 0.13);
   transform: translateY(-2px);
 }
 
@@ -188,24 +303,32 @@ h2 {
 .secondary-button {
   border: 0;
   border-radius: 999px;
-  font-weight: 800;
+  font-weight: 900;
   min-height: 52px;
   padding: 14px 24px;
+  transition: background 0.15s ease, box-shadow 0.15s ease, transform 0.15s ease;
 }
 
 .primary-button {
-  background: #2563eb;
+  background: #16a34a;
+  box-shadow: 0 10px 22px rgba(22, 163, 74, 0.25);
   color: #ffffff;
 }
 
 .primary-button:hover,
 .primary-button:focus-visible {
-  background: #1d4ed8;
+  background: #15803d;
+  transform: translateY(-1px);
 }
 
 .secondary-button {
-  background: #dbeafe;
-  color: #1e3a8a;
+  background: #17324a;
+  color: #f8fafc;
+}
+
+.secondary-button:hover,
+.secondary-button:focus-visible {
+  background: #214563;
 }
 
 .choice-list {
@@ -216,28 +339,49 @@ h2 {
 
 .choice-option {
   align-items: center;
-  background: #f8fafc;
-  border: 2px solid #e2e8f0;
-  border-radius: 16px;
+  background: #fffdf8;
+  border: 2px solid #d8cbb8;
+  border-radius: 18px;
+  color: #172033;
   display: flex;
   gap: 12px;
   padding: 16px;
 }
 
+.choice-option:has(input:checked) {
+  background: #ecfdf5;
+  border-color: #22c55e;
+}
+
 .choice-option input {
+  accent-color: #16a34a;
   height: 22px;
   width: 22px;
 }
 
 .blank-label {
+  color: #12305a;
   display: grid;
-  font-weight: 800;
+  font-weight: 900;
   gap: 8px;
   margin: 22px 0;
 }
 
+.blank-label input,
+.nickname-label input {
+  background: #ffffff;
+  border: 2px solid #b8c8da;
+  color: #172033;
+  outline: none;
+}
+
+.blank-label input:focus,
+.nickname-label input:focus {
+  border-color: #22c55e;
+  box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.18);
+}
+
 .blank-label input {
-  border: 2px solid #bfdbfe;
   border-radius: 16px;
   font-size: 1.1rem;
   padding: 16px;
@@ -251,21 +395,23 @@ h2 {
 }
 
 .feedback.correct {
-  background: #ecfdf5;
+  background: #dcfce7;
   border: 2px solid #16a34a;
+  color: #14532d;
 }
 
 .feedback.incorrect {
   background: #fff7ed;
   border: 2px solid #f97316;
+  color: #7c2d12;
 }
 
 .results-summary {
-  background: #f8fafc;
-  border: 2px solid #dbeafe;
-  border-radius: 18px;
+  background: #fffdf8;
+  border: 2px solid #d8cbb8;
+  border-radius: 20px;
   margin-bottom: 24px;
-  padding: 18px;
+  padding: 20px;
 }
 
 .results-summary p {
@@ -277,16 +423,17 @@ h2 {
 }
 
 .score-text {
-  color: #2563eb;
+  color: #16a34a;
   font-size: clamp(2rem, 7vw, 3rem);
-  font-weight: 900;
+  font-weight: 950;
+  letter-spacing: -0.04em;
   margin-bottom: 12px;
 }
 
 .result-message {
-  color: #1e3a8a;
+  color: #12305a;
   font-size: 1.15rem;
-  font-weight: 800;
+  font-weight: 900;
 }
 
 .review-list {
@@ -305,29 +452,12 @@ h2 {
 }
 
 .review-correct {
-  background: #ecfdf5;
+  background: #dcfce7;
 }
 
 .review-incorrect {
   background: #fff7ed;
-}
-
-@media (max-width: 640px) {
-  .app-shell {
-    padding: 14px;
-  }
-
-  .hero-card,
-  .card {
-    border-radius: 18px;
-    padding: 20px;
-  }
-
-  .primary-button,
-  .secondary-button,
-  .mode-button {
-    width: 100%;
-  }
+  border-left: 6px solid #f97316;
 }
 
 .nickname-panel {
@@ -337,20 +467,19 @@ h2 {
   gap: 12px;
   justify-content: center;
   margin: 0 auto 14px;
-  max-width: 560px;
+  max-width: 620px;
 }
 
 .nickname-label {
-  color: #1e3a8a;
+  color: #f8fafc;
   display: grid;
   flex: 1 1 260px;
-  font-weight: 800;
+  font-weight: 900;
   gap: 8px;
   text-align: left;
 }
 
 .nickname-label input {
-  border: 2px solid #bfdbfe;
   border-radius: 999px;
   padding: 12px 18px;
   width: 100%;
@@ -359,24 +488,36 @@ h2 {
 .text-button {
   background: transparent;
   border: 0;
-  color: #1d4ed8;
-  font-weight: 800;
+  color: #a7f3d0;
+  font-weight: 900;
   padding: 10px 0;
   text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.card .text-button {
+  color: #166534;
 }
 
 .text-button:hover,
 .text-button:focus-visible {
-  color: #1e3a8a;
+  color: #ffffff;
+}
+
+.card .text-button:hover,
+.card .text-button:focus-visible {
+  color: #12305a;
 }
 
 .section-heading-row {
   align-items: start;
+  border-bottom: 3px solid #22c55e;
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
   justify-content: space-between;
-  margin-bottom: 18px;
+  margin-bottom: 20px;
+  padding-bottom: 14px;
 }
 
 .section-heading-row h2 {
@@ -385,9 +526,10 @@ h2 {
 
 .lesson-progress,
 .saved-progress-summary {
-  background: #eff6ff;
-  border-radius: 14px;
-  color: #1e3a8a;
+  background: #e7f7ec;
+  border: 1px solid #bbf7d0;
+  border-radius: 16px;
+  color: #12305a;
   margin-top: 16px;
   padding: 12px;
 }
@@ -404,29 +546,63 @@ h2 {
 
 .local-save-message {
   color: #166534;
-  font-weight: 800;
-}
-
-@media (max-width: 640px) {
-  .nickname-panel {
-    align-items: stretch;
-  }
-
-  .text-button {
-    width: 100%;
-  }
+  font-weight: 900;
 }
 
 .result-submit-panel {
-  background: #f0fdf4;
-  border: 2px solid #bbf7d0;
-  border-radius: 18px;
+  background: #e7f7ec;
+  border: 2px solid #86efac;
+  border-radius: 20px;
   margin-bottom: 24px;
   padding: 18px;
 }
 
 .form-privacy-note {
-  color: #166534;
-  font-weight: 700;
+  color: #14532d;
+  font-weight: 800;
   margin-bottom: 14px;
+}
+
+@media (max-width: 720px) {
+  .app-shell {
+    padding: 16px 14px 28px;
+  }
+
+  .hero-card,
+  .card {
+    border-radius: 20px;
+    padding: 20px;
+  }
+
+  .hero-card::after {
+    left: 20px;
+    right: 20px;
+  }
+
+  .hero-content {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .school-identity {
+    display: inline-block;
+    max-width: 100%;
+  }
+
+  .mascot-image {
+    height: 118px;
+    justify-self: center;
+    width: 118px;
+  }
+
+  .nickname-panel {
+    align-items: stretch;
+  }
+
+  .primary-button,
+  .secondary-button,
+  .mode-button,
+  .text-button {
+    width: 100%;
+  }
 }
