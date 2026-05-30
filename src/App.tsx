@@ -529,7 +529,16 @@ function App() {
   };
 
   return (
-    <main className="app-shell">
+    <>
+      <div className="yuukoukan-rain" aria-hidden="true">
+        <span>猶興館</span>
+        <span>猶興館</span>
+        <span>猶興館</span>
+        <span>猶興館</span>
+        <span>猶興館</span>
+        <span>猶興館</span>
+      </div>
+      <main className="app-shell">
       <section className="hero-card">
         <div className="hero-content">
           <div className="hero-copy">
@@ -760,7 +769,8 @@ function App() {
           </div>
         </section>
       )}
-    </main>
+      </main>
+    </>
   );
 }
 
