@@ -152,6 +152,11 @@ input:disabled {
   position: relative;
 }
 
+.compact-hero {
+  margin-bottom: 16px;
+  padding-bottom: 26px;
+}
+
 .hero-card::after {
   background: #22c55e;
   border-radius: 999px;
@@ -169,6 +174,10 @@ input:disabled {
   gap: 24px;
   grid-template-columns: minmax(0, 1fr) auto;
   margin-bottom: 24px;
+}
+
+.compact-hero .hero-content {
+  margin-bottom: 0;
 }
 
 .hero-copy {
@@ -631,6 +640,11 @@ h3 {
   max-width: 620px;
 }
 
+.nickname-panel-saved {
+  align-items: center;
+  max-width: 720px;
+}
+
 .nickname-label {
   color: #f8fafc;
   display: grid;
@@ -646,6 +660,29 @@ h3 {
   width: 100%;
 }
 
+.nickname-saved-display,
+.nickname-compact {
+  align-items: center;
+  background: rgba(167, 243, 208, 0.12);
+  border: 1px solid rgba(167, 243, 208, 0.26);
+  border-radius: 999px;
+  color: #dffcf0;
+  display: inline-flex;
+  flex-wrap: wrap;
+  font-weight: 800;
+  gap: 10px;
+}
+
+.nickname-saved-display {
+  padding: 8px 14px;
+}
+
+.nickname-compact {
+  font-size: 0.92rem;
+  margin: 14px 0 0;
+  padding: 6px 12px;
+}
+
 .text-button {
   background: transparent;
   border: 0;
@@ -654,6 +691,11 @@ h3 {
   padding: 10px 0;
   text-decoration: underline;
   text-underline-offset: 3px;
+}
+
+.subtle-text-button {
+  font-size: 0.9rem;
+  opacity: 0.78;
 }
 
 .card .text-button {
@@ -793,6 +835,17 @@ h3 {
 
   .nickname-panel {
     align-items: stretch;
+  }
+
+  .compact-hero {
+    margin-bottom: 12px;
+    padding-bottom: 20px;
+  }
+
+  .nickname-saved-display,
+  .nickname-compact {
+    justify-content: center;
+    width: 100%;
   }
 
   .primary-button,
