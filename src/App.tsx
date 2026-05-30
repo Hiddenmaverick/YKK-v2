@@ -303,6 +303,7 @@ function App() {
   const [showResults, setShowResults] = useState(false);
   const [error, setError] = useState('');
   const [nickname, setNickname] = useState(() => readStorageValue(NICKNAME_STORAGE_KEY) ?? '');
+  const [isEditingNickname, setIsEditingNickname] = useState(() => !readStorageValue(NICKNAME_STORAGE_KEY)?.trim());
   const [lessonProgress, setLessonProgress] = useState<LessonProgressMap>(() => readProgress());
   const [progressSaved, setProgressSaved] = useState(false);
   const [currentResultProgress, setCurrentResultProgress] = useState<LessonProgress | null>(null);
@@ -388,6 +389,10 @@ function App() {
   const chooseSubject = (subject: Subject) => {
     if (subject.lessonIds.length === 0) {
       return;
+    }
+
+    if (nickname.trim()) {
+      setIsEditingNickname(false);
     }
 
     setSelectedSubject(subject);
@@ -553,6 +558,7 @@ function App() {
 
   const clearNickname = () => {
     setNickname('');
+    setIsEditingNickname(true);
     removeStorageValue(NICKNAME_STORAGE_KEY);
   };
 
@@ -568,6 +574,8 @@ function App() {
 
   const hasSavedProgress = Object.keys(lessonProgress).length > 0;
   const trimmedNickname = nickname.trim();
+  const isHomeScreen = !selectedSubject;
+  const showFullNicknameInput = isHomeScreen && (!trimmedNickname || isEditingNickname);
   const googleFormUrl = selectedLesson && currentResultProgress
     ? buildGoogleFormUrl({
         nickname: trimmedNickname,
@@ -601,7 +609,7 @@ function App() {
         <span>猶興館</span>
       </div>
       <main className="app-shell">
-      <section className="hero-card">
+      <section className={`hero-card${isHomeScreen ? '' : ' compact-hero'}`}>
         <div className="hero-content">
           <div className="hero-copy">
             <div className="school-identity" aria-label="Yuukoukan High School identity">
@@ -610,6 +618,9 @@ function App() {
             </div>
             <p className="eyebrow">Version 1</p>
             <h1>English Practice</h1>
+            {!isHomeScreen && trimmedNickname && (
+              <p className="nickname-compact">Playing as: <strong>{trimmedNickname}</strong></p>
+            )}
           </div>
           <img
             alt="Yuukoukan mascot"
@@ -617,27 +628,47 @@ function App() {
             src={`${import.meta.env.BASE_URL}images/mascot.svg`}
           />
         </div>
-        <div className="nickname-panel">
-          <label className="nickname-label">
-            Optional nickname
-            <input
-              aria-describedby="privacy-helper"
-              maxLength={24}
-              onChange={(event) => setNickname(event.target.value)}
-              placeholder="Example: Ren"
-              type="text"
-              value={nickname}
-            />
-          </label>
-          {trimmedNickname && (
-            <button className="text-button" onClick={clearNickname} type="button">
-              Clear saved nickname
-            </button>
-          )}
-        </div>
-        <p className="privacy-note" id="privacy-helper">
-          Progress is saved only on this device. Do not use your real full name or student number.
-        </p>
+        {isHomeScreen && (
+          <>
+            <div className={`nickname-panel${showFullNicknameInput ? '' : ' nickname-panel-saved'}`}>
+              {showFullNicknameInput ? (
+                <>
+                  <label className="nickname-label">
+                    Optional nickname
+                    <input
+                      aria-describedby="privacy-helper"
+                      maxLength={24}
+                      onChange={(event) => setNickname(event.target.value)}
+                      placeholder="Example: Ren"
+                      type="text"
+                      value={nickname}
+                    />
+                  </label>
+                  {trimmedNickname && (
+                    <button className="text-button" onClick={() => setIsEditingNickname(false)} type="button">
+                      Done
+                    </button>
+                  )}
+                </>
+              ) : (
+                <div className="nickname-saved-display">
+                  <span>Playing as: <strong>{trimmedNickname}</strong></span>
+                  <button className="text-button" onClick={() => setIsEditingNickname(true)} type="button">
+                    Change nickname
+                  </button>
+                </div>
+              )}
+              {trimmedNickname && (
+                <button className="text-button subtle-text-button" onClick={clearNickname} type="button">
+                  Clear saved nickname
+                </button>
+              )}
+            </div>
+            <p className="privacy-note" id="privacy-helper">
+              Progress is saved only on this device. Do not use your real full name or student number.
+            </p>
+          </>
+        )}
       </section>
 
       {error && <p className="message error-message">{error}</p>}
