@@ -324,7 +324,9 @@ h3 {
 .mode-button:focus-visible,
 .primary-button:focus-visible,
 .secondary-button:focus-visible,
-.text-button:focus-visible {
+.text-button:focus-visible,
+.mixed-review-checkbox:focus-within,
+.question-count-option:focus-within {
   outline: 4px solid rgba(34, 197, 94, 0.42);
   outline-offset: 4px;
 }
@@ -401,6 +403,122 @@ h3 {
   color: #475569;
   display: block;
   font-size: 1rem;
+}
+
+.mixed-review-panel {
+  background:
+    linear-gradient(145deg, rgba(18, 48, 90, 0.97), rgba(15, 61, 64, 0.95)),
+    #12305a;
+  border: 1px solid rgba(167, 243, 208, 0.35);
+  border-radius: 24px;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+  color: #f8fafc;
+  margin-top: 24px;
+  padding: 24px;
+}
+
+.mixed-review-intro {
+  border-bottom: 2px solid rgba(34, 197, 94, 0.8);
+  margin-bottom: 18px;
+  padding-bottom: 14px;
+}
+
+.mixed-review-intro .section-kicker,
+.mixed-review-intro h3,
+.mixed-review-intro p {
+  color: inherit;
+}
+
+.mixed-review-intro .section-kicker {
+  color: #a7f3d0;
+}
+
+.mixed-review-intro h3 {
+  font-size: clamp(1.35rem, 4vw, 1.85rem);
+  margin-bottom: 6px;
+}
+
+.mixed-review-intro p {
+  margin-bottom: 0;
+}
+
+.mixed-review-grid {
+  display: grid;
+  gap: 18px;
+  grid-template-columns: minmax(0, 1.4fr) minmax(210px, 0.6fr);
+}
+
+.mixed-review-fieldset {
+  border: 2px solid rgba(167, 243, 208, 0.28);
+  border-radius: 20px;
+  margin: 0;
+  min-width: 0;
+  padding: 18px;
+}
+
+.mixed-review-fieldset legend {
+  color: #a7f3d0;
+  font-weight: 950;
+  padding: 0 8px;
+}
+
+.mixed-review-lessons,
+.question-count-options {
+  display: grid;
+  gap: 10px;
+}
+
+.mixed-review-checkbox,
+.question-count-option {
+  align-items: center;
+  background: rgba(255, 253, 248, 0.08);
+  border: 2px solid rgba(167, 243, 208, 0.2);
+  border-radius: 16px;
+  cursor: pointer;
+  display: flex;
+  gap: 12px;
+  padding: 13px;
+}
+
+.mixed-review-checkbox:has(input:checked),
+.question-count-option:has(input:checked) {
+  background: rgba(34, 197, 94, 0.18);
+  border-color: #22c55e;
+}
+
+.mixed-review-checkbox input,
+.question-count-option input {
+  accent-color: #22c55e;
+  flex: 0 0 auto;
+  height: 20px;
+  width: 20px;
+}
+
+.mixed-review-checkbox span {
+  display: grid;
+  gap: 2px;
+}
+
+.mixed-review-checkbox small {
+  color: #dbeafe;
+}
+
+.question-count-option span {
+  font-weight: 950;
+}
+
+.mixed-review-helper {
+  color: #fde68a;
+  font-weight: 800;
+  margin: 14px 0 0;
+}
+
+.mixed-review-message {
+  margin: 18px 0 0;
+}
+
+.mixed-review-panel .primary-button {
+  margin-top: 18px;
 }
 
 .section-kicker {
@@ -846,6 +964,15 @@ h3 {
   .nickname-compact {
     justify-content: center;
     width: 100%;
+  }
+
+  .mixed-review-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .mixed-review-panel {
+    border-radius: 18px;
+    padding: 18px;
   }
 
   .primary-button,

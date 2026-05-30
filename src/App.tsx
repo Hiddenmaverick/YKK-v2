@@ -104,6 +104,14 @@ const GOOGLE_FORM_FIELDS = {
 } as const;
 
 type LessonProgressMap = Record<string, LessonProgress>;
+type MixedReviewQuestionCount = '25' | '50' | '100' | 'all';
+
+const MIXED_REVIEW_QUESTION_COUNTS: Array<{ value: MixedReviewQuestionCount; label: string }> = [
+  { value: '25', label: '25' },
+  { value: '50', label: '50' },
+  { value: '100', label: '100' },
+  { value: 'all', label: 'All' },
+];
 
 const isStorageAvailable = () => {
   if (typeof window === 'undefined') {
@@ -307,6 +315,9 @@ function App() {
   const [lessonProgress, setLessonProgress] = useState<LessonProgressMap>(() => readProgress());
   const [progressSaved, setProgressSaved] = useState(false);
   const [currentResultProgress, setCurrentResultProgress] = useState<LessonProgress | null>(null);
+  const [mixedReviewLessonIds, setMixedReviewLessonIds] = useState<string[]>([]);
+  const [mixedReviewQuestionCount, setMixedReviewQuestionCount] = useState<MixedReviewQuestionCount>('25');
+  const [mixedReviewMessage, setMixedReviewMessage] = useState('');
 
   useEffect(() => {
     const trimmedNickname = nickname.trim();
@@ -362,6 +373,7 @@ function App() {
     const lessonIds = new Set(selectedSubject.lessonIds);
     return lessons.filter((lesson) => lesson.categoryId === selectedSubject.id || lessonIds.has(lesson.id));
   }, [lessons, selectedSubject]);
+  const hasMixedReviewLessonSelection = mixedReviewLessonIds.length > 0;
   const quizComplete = questions.length > 0 && showResults;
 
   useEffect(() => {
@@ -403,6 +415,9 @@ function App() {
     setShowResults(false);
     setProgressSaved(false);
     setCurrentResultProgress(null);
+    setMixedReviewLessonIds([]);
+    setMixedReviewQuestionCount('25');
+    setMixedReviewMessage('');
     setCurrentQuestionIndex(0);
     resetAnswerState();
     setError('');
@@ -417,6 +432,9 @@ function App() {
     setShowResults(false);
     setProgressSaved(false);
     setCurrentResultProgress(null);
+    setMixedReviewLessonIds([]);
+    setMixedReviewQuestionCount('25');
+    setMixedReviewMessage('');
     setCurrentQuestionIndex(0);
     resetAnswerState();
     setError('');
@@ -430,9 +448,29 @@ function App() {
     setShowResults(false);
     setProgressSaved(false);
     setCurrentResultProgress(null);
+    setMixedReviewMessage('');
     setCurrentQuestionIndex(0);
     resetAnswerState();
     setError('');
+  };
+
+  const toggleMixedReviewLesson = (lessonId: string) => {
+    setMixedReviewMessage('');
+    setMixedReviewLessonIds((lessonIds) =>
+      lessonIds.includes(lessonId)
+        ? lessonIds.filter((currentLessonId) => currentLessonId !== lessonId)
+        : [...lessonIds, lessonId],
+    );
+  };
+
+  const startMixedReviewPlaceholder = () => {
+    if (!hasMixedReviewLessonSelection) {
+      return;
+    }
+
+    // Mixed Review quiz generation is intentionally left for a later PR.
+    // This keeps the existing lesson Practice Mode and Quiz Mode flows unchanged.
+    setMixedReviewMessage('Mixed Review setup saved for now. The combined quiz will be connected in a future update.');
   };
 
   const startAttempt = async (mode: AttemptMode) => {
@@ -739,6 +777,70 @@ function App() {
               );
             })}
           </div>
+
+          <section className="mixed-review-panel" aria-labelledby="mixed-review-title">
+            <div className="mixed-review-intro">
+              <p className="section-kicker">{selectedSubject.title}</p>
+              <h3 id="mixed-review-title">Mixed Review</h3>
+              <p>Choose lessons from this subject and take one combined quiz.</p>
+            </div>
+
+            <div className="mixed-review-grid">
+              <fieldset className="mixed-review-fieldset">
+                <legend>Lessons / Units</legend>
+                <div className="mixed-review-lessons">
+                  {selectedSubjectLessons.map((lesson) => (
+                    <label className="mixed-review-checkbox" key={lesson.id}>
+                      <input
+                        checked={mixedReviewLessonIds.includes(lesson.id)}
+                        onChange={() => toggleMixedReviewLesson(lesson.id)}
+                        type="checkbox"
+                      />
+                      <span>
+                        <strong>{lesson.title}</strong>
+                        <small>{lesson.description}</small>
+                      </span>
+                    </label>
+                  ))}
+                </div>
+                {!hasMixedReviewLessonSelection && (
+                  <p className="mixed-review-helper">Choose at least one lesson or unit to start a Mixed Review.</p>
+                )}
+              </fieldset>
+
+              <fieldset className="mixed-review-fieldset">
+                <legend>Number of questions</legend>
+                <div className="question-count-options">
+                  {MIXED_REVIEW_QUESTION_COUNTS.map((option) => (
+                    <label className="question-count-option" key={option.value}>
+                      <input
+                        checked={mixedReviewQuestionCount === option.value}
+                        name="mixed-review-question-count"
+                        onChange={() => {
+                          setMixedReviewQuestionCount(option.value);
+                          setMixedReviewMessage('');
+                        }}
+                        type="radio"
+                        value={option.value}
+                      />
+                      <span>{option.label}</span>
+                    </label>
+                  ))}
+                </div>
+              </fieldset>
+            </div>
+
+            {mixedReviewMessage && <p className="message mixed-review-message">{mixedReviewMessage}</p>}
+
+            <button
+              className="primary-button"
+              disabled={!hasMixedReviewLessonSelection}
+              onClick={startMixedReviewPlaceholder}
+              type="button"
+            >
+              Start Mixed Review
+            </button>
+          </section>
         </section>
       )}
 
