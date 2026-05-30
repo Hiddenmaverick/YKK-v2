@@ -107,10 +107,10 @@ const GOOGLE_FORM_FIELDS = {
 
 type LessonProgressMap = Record<string, LessonProgress>;
 const MIXED_REVIEW_QUESTION_COUNTS: Array<{ value: MixedQuizQuestionCount; label: string }> = [
-  { value: 25, label: '25' },
-  { value: 50, label: '50' },
-  { value: 100, label: '100' },
-  { value: 'all', label: 'All' },
+  { value: 25, label: '25 questions' },
+  { value: 50, label: '50 questions' },
+  { value: 100, label: '100 questions' },
+  { value: 'all', label: 'All available' },
 ];
 
 const isStorageAvailable = () => {
@@ -374,11 +374,23 @@ function App() {
     const lessonIds = new Set(selectedSubject.lessonIds);
     return lessons.filter((lesson) => lesson.categoryId === selectedSubject.id || lessonIds.has(lesson.id));
   }, [lessons, selectedSubject]);
-  const hasMixedReviewLessonSelection = mixedReviewLessonIds.length > 0;
+  const hasMixedReviewLessons = selectedSubjectLessons.length > 0;
+  const selectedMixedReviewLessons = useMemo(() => {
+    const selectedLessonIdSet = new Set(mixedReviewLessonIds);
+    return selectedSubjectLessons.filter((lesson) => selectedLessonIdSet.has(lesson.id));
+  }, [mixedReviewLessonIds, selectedSubjectLessons]);
+  const hasMixedReviewLessonSelection = selectedMixedReviewLessons.length > 0;
+  const mixedReviewStartHelperId = 'mixed-review-start-helper';
+  const mixedReviewStartButtonText = hasMixedReviewLessonSelection
+    ? 'Start Mixed Review'
+    : 'Choose a lesson/unit first';
+  const mixedReviewSelectionSummary = hasMixedReviewLessonSelection
+    ? `${selectedMixedReviewLessons.length} selected`
+    : 'No lessons or units selected yet';
   const quizComplete = questions.length > 0 && showResults;
 
   useEffect(() => {
-    if (!quizComplete || !selectedLesson || !currentResultProgress || progressSaved) {
+    if (isMixedReviewAttempt || !quizComplete || !selectedLesson || !currentResultProgress || progressSaved) {
       return;
     }
 
@@ -391,7 +403,7 @@ function App() {
       setLessonProgress(nextProgressMap);
       setProgressSaved(true);
     }
-  }, [currentResultProgress, lessonProgress, progressSaved, quizComplete, selectedLesson]);
+  }, [currentResultProgress, isMixedReviewAttempt, lessonProgress, progressSaved, quizComplete, selectedLesson]);
 
   const resetAnswerState = () => {
     setSelectedChoice('');
@@ -400,10 +412,6 @@ function App() {
   };
 
   const chooseSubject = (subject: Subject) => {
-    if (subject.lessonIds.length === 0) {
-      return;
-    }
-
     if (nickname.trim()) {
       setIsEditingNickname(false);
     }
@@ -482,12 +490,12 @@ function App() {
   };
 
   const startMixedReview = async () => {
-    if (!selectedSubject || !hasMixedReviewLessonSelection) {
+    if (!selectedSubject || !hasMixedReviewLessons || !hasMixedReviewLessonSelection) {
+      setMixedReviewMessage('Choose at least one lesson or unit to start a Mixed Review.');
       return;
     }
 
-    const selectedLessonIdSet = new Set(mixedReviewLessonIds);
-    const selectedLessons = selectedSubjectLessons.filter((lesson) => selectedLessonIdSet.has(lesson.id));
+    const selectedLessons = selectedMixedReviewLessons;
 
     if (selectedLessons.length === 0) {
       setMixedReviewMessage('Choose at least one lesson or unit to start a Mixed Review.');
@@ -698,9 +706,11 @@ function App() {
   const googleFormUrl = selectedLesson && currentResultProgress
     ? buildGoogleFormUrl({
         nickname: trimmedNickname,
-        lesson: selectedMode
-          ? `${selectedLesson.categoryTitle} - ${selectedLesson.title} (${getModeLabel(selectedMode)})`
-          : `${selectedLesson.categoryTitle} - ${selectedLesson.title}`,
+        lesson: isMixedReviewAttempt
+          ? `${selectedLesson.categoryTitle} - Mixed Review (${selectedLesson.description})`
+          : selectedMode
+            ? `${selectedLesson.categoryTitle} - ${selectedLesson.title} (${getModeLabel(selectedMode)})`
+            : `${selectedLesson.categoryTitle} - ${selectedLesson.title}`,
         score: `${score} / ${questions.length}`,
         percentage: `${percentage}%`,
         completedCount: String(currentResultProgress.completedCount),
@@ -810,9 +820,7 @@ function App() {
 
               return (
                 <button
-                  aria-disabled={isComingSoon}
                   className={`subject-card${isComingSoon ? ' coming-soon' : ''}`}
-                  disabled={isComingSoon}
                   key={subject.id}
                   onClick={() => chooseSubject(subject)}
                   type="button"
@@ -820,7 +828,7 @@ function App() {
                   <span className="subject-title-ja">{primaryTitle}</span>
                   {secondaryTitle && <span className="subject-title-en">{secondaryTitle}</span>}
                   <small>{subject.description}</small>
-                  {isComingSoon && <strong className="coming-soon-label">Coming soon</strong>}
+                  {isComingSoon && <strong className="coming-soon-label">No lessons yet</strong>}
                 </button>
               );
             })}
@@ -839,88 +847,111 @@ function App() {
               Back to subjects
             </button>
           </div>
-          <div className="lesson-grid">
-            {selectedSubjectLessons.map((lesson) => {
-              const progress = lessonProgress[lesson.id];
+          {hasMixedReviewLessons ? (
+            <div className="lesson-grid">
+              {selectedSubjectLessons.map((lesson) => {
+                const progress = lessonProgress[lesson.id];
 
-              return (
-                <button className="lesson-card" key={lesson.id} onClick={() => chooseLesson(lesson)} type="button">
-                  <span>{lesson.title}</span>
-                  <small>{lesson.description}</small>
-                  {progress && (
-                    <div className="lesson-progress">
-                      <p>Last score: {progress.lastScore} / {progress.lastTotal}</p>
-                      <p>Best score: {progress.bestScore} / {progress.bestTotal ?? progress.lastTotal}</p>
-                      <p>Completed: {progress.completedCount} times</p>
-                    </div>
-                  )}
-                </button>
-              );
-            })}
-          </div>
+                return (
+                  <button className="lesson-card" key={lesson.id} onClick={() => chooseLesson(lesson)} type="button">
+                    <span>{lesson.title}</span>
+                    <small>{lesson.description}</small>
+                    {progress && (
+                      <div className="lesson-progress">
+                        <p>Last score: {progress.lastScore} / {progress.lastTotal}</p>
+                        <p>Best score: {progress.bestScore} / {progress.bestTotal ?? progress.lastTotal}</p>
+                        <p>Completed: {progress.completedCount} times</p>
+                      </div>
+                    )}
+                  </button>
+                );
+              })}
+            </div>
+          ) : (
+            <p className="message">No lessons or units are available for this subject yet. Please check back later.</p>
+          )}
 
           <section className="mixed-review-panel" aria-labelledby="mixed-review-title">
             <div className="mixed-review-intro">
               <p className="section-kicker">{selectedSubject.title}</p>
               <h3 id="mixed-review-title">Mixed Review</h3>
-              <p>Choose lessons from this subject and take one combined quiz.</p>
+              <p>Pick one or more lessons or units, then take a quiz-style review with results at the end.</p>
             </div>
 
-            <div className="mixed-review-grid">
-              <fieldset className="mixed-review-fieldset">
-                <legend>Lessons / Units</legend>
-                <div className="mixed-review-lessons">
-                  {selectedSubjectLessons.map((lesson) => (
-                    <label className="mixed-review-checkbox" key={lesson.id}>
-                      <input
-                        checked={mixedReviewLessonIds.includes(lesson.id)}
-                        onChange={() => toggleMixedReviewLesson(lesson.id)}
-                        type="checkbox"
-                      />
-                      <span>
-                        <strong>{lesson.title}</strong>
-                        <small>{lesson.description}</small>
-                      </span>
-                    </label>
-                  ))}
+            {hasMixedReviewLessons ? (
+              <>
+                <div className="mixed-review-grid">
+                  <fieldset className="mixed-review-fieldset">
+                    <legend>Lessons / Units</legend>
+                    <p className="mixed-review-summary">{mixedReviewSelectionSummary}</p>
+                    {hasMixedReviewLessonSelection && (
+                      <div className="mixed-review-selected-list" aria-label="Selected Mixed Review lessons or units">
+                        {selectedMixedReviewLessons.map((lesson) => (
+                          <span key={lesson.id}>{lesson.title}</span>
+                        ))}
+                      </div>
+                    )}
+                    <div className="mixed-review-lessons">
+                      {selectedSubjectLessons.map((lesson) => (
+                        <label className="mixed-review-checkbox" key={lesson.id}>
+                          <input
+                            checked={mixedReviewLessonIds.includes(lesson.id)}
+                            onChange={() => toggleMixedReviewLesson(lesson.id)}
+                            type="checkbox"
+                          />
+                          <span>
+                            <strong>{lesson.title}</strong>
+                            <small>{lesson.description}</small>
+                          </span>
+                        </label>
+                      ))}
+                    </div>
+                  </fieldset>
+
+                  <fieldset className="mixed-review-fieldset">
+                    <legend>Question count</legend>
+                    <p className="mixed-review-summary">If fewer questions are available, the review will use all available questions.</p>
+                    <div className="question-count-options">
+                      {MIXED_REVIEW_QUESTION_COUNTS.map((option) => (
+                        <label className="question-count-option" key={option.value}>
+                          <input
+                            checked={mixedReviewQuestionCount === option.value}
+                            name="mixed-review-question-count"
+                            onChange={() => {
+                              setMixedReviewQuestionCount(option.value);
+                              setMixedReviewMessage('');
+                            }}
+                            type="radio"
+                            value={option.value}
+                          />
+                          <span>{option.label}</span>
+                        </label>
+                      ))}
+                    </div>
+                  </fieldset>
                 </div>
-                {!hasMixedReviewLessonSelection && (
-                  <p className="mixed-review-helper">Choose at least one lesson or unit to start a Mixed Review.</p>
-                )}
-              </fieldset>
 
-              <fieldset className="mixed-review-fieldset">
-                <legend>Number of questions</legend>
-                <div className="question-count-options">
-                  {MIXED_REVIEW_QUESTION_COUNTS.map((option) => (
-                    <label className="question-count-option" key={option.value}>
-                      <input
-                        checked={mixedReviewQuestionCount === option.value}
-                        name="mixed-review-question-count"
-                        onChange={() => {
-                          setMixedReviewQuestionCount(option.value);
-                          setMixedReviewMessage('');
-                        }}
-                        type="radio"
-                        value={option.value}
-                      />
-                      <span>{option.label}</span>
-                    </label>
-                  ))}
-                </div>
-              </fieldset>
-            </div>
+                <p className="mixed-review-helper" id={mixedReviewStartHelperId}>
+                  {hasMixedReviewLessonSelection
+                    ? 'Ready when you are. You will see your score and missed-question review at the end.'
+                    : 'Choose at least one lesson or unit before starting.'}
+                </p>
 
-            {mixedReviewMessage && <p className="message mixed-review-message">{mixedReviewMessage}</p>}
+                {mixedReviewMessage && <p className="message mixed-review-message">{mixedReviewMessage}</p>}
 
-            <button
-              className="primary-button"
-              disabled={!hasMixedReviewLessonSelection}
-              onClick={startMixedReview}
-              type="button"
-            >
-              Start Mixed Review
-            </button>
+                <button
+                  aria-describedby={mixedReviewStartHelperId}
+                  className="primary-button"
+                  disabled={!hasMixedReviewLessonSelection}
+                  onClick={startMixedReview}
+                  type="button"
+                >
+                  {mixedReviewStartButtonText}
+                </button>
+              </>
+            ) : (
+              <p className="message mixed-review-message">Mixed Review will be available after lessons or units are added for this subject.</p>
+            )}
           </section>
         </section>
       )}
@@ -1039,7 +1070,7 @@ function App() {
 
       {!isLoading && quizComplete && (
         <section className="card results-card">
-          <h2>Final results</h2>
+          <h2>{isMixedReviewAttempt ? 'Mixed Review results' : 'Final results'}</h2>
           <div className="results-summary">
             {isMixedReviewAttempt && <p><strong>Review type:</strong> Mixed Review</p>}
             {selectedMode && <p><strong>Mode:</strong> {getModeLabel(selectedMode)}</p>}
@@ -1049,9 +1080,11 @@ function App() {
             <p><strong>Incorrect:</strong> {incorrectCount}</p>
             <p className="result-message">{getResultMessage(percentage, trimmedNickname)}</p>
             <p className="local-save-message">
-              {progressSaved
-                ? 'Progress saved locally on this device.'
-                : 'Progress will be saved locally on this device when storage is available.'}
+              {isMixedReviewAttempt
+                ? 'Mixed Review results are not added to normal lesson/unit progress.'
+                : progressSaved
+                  ? 'Progress saved locally on this device.'
+                  : 'Progress will be saved locally on this device when storage is available.'}
             </p>
           </div>
 
