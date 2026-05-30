@@ -1,4 +1,6 @@
 import { useEffect, useMemo, useState } from 'react';
+import { buildMixedQuizQuestionPool } from './quizHelpers';
+import type { MixedQuizQuestionCount } from './quizHelpers';
 import type { AnswerReview, AttemptMode, Lesson, LessonProgress, Question, Subject } from './types';
 
 const normalizeAnswer = (value: string | boolean) =>
@@ -104,12 +106,10 @@ const GOOGLE_FORM_FIELDS = {
 } as const;
 
 type LessonProgressMap = Record<string, LessonProgress>;
-type MixedReviewQuestionCount = '25' | '50' | '100' | 'all';
-
-const MIXED_REVIEW_QUESTION_COUNTS: Array<{ value: MixedReviewQuestionCount; label: string }> = [
-  { value: '25', label: '25' },
-  { value: '50', label: '50' },
-  { value: '100', label: '100' },
+const MIXED_REVIEW_QUESTION_COUNTS: Array<{ value: MixedQuizQuestionCount; label: string }> = [
+  { value: 25, label: '25' },
+  { value: 50, label: '50' },
+  { value: 100, label: '100' },
   { value: 'all', label: 'All' },
 ];
 
@@ -316,8 +316,9 @@ function App() {
   const [progressSaved, setProgressSaved] = useState(false);
   const [currentResultProgress, setCurrentResultProgress] = useState<LessonProgress | null>(null);
   const [mixedReviewLessonIds, setMixedReviewLessonIds] = useState<string[]>([]);
-  const [mixedReviewQuestionCount, setMixedReviewQuestionCount] = useState<MixedReviewQuestionCount>('25');
+  const [mixedReviewQuestionCount, setMixedReviewQuestionCount] = useState<MixedQuizQuestionCount>(25);
   const [mixedReviewMessage, setMixedReviewMessage] = useState('');
+  const [isMixedReviewAttempt, setIsMixedReviewAttempt] = useState(false);
 
   useEffect(() => {
     const trimmedNickname = nickname.trim();
@@ -415,8 +416,9 @@ function App() {
     setShowResults(false);
     setProgressSaved(false);
     setCurrentResultProgress(null);
+    setIsMixedReviewAttempt(false);
     setMixedReviewLessonIds([]);
-    setMixedReviewQuestionCount('25');
+    setMixedReviewQuestionCount(25);
     setMixedReviewMessage('');
     setCurrentQuestionIndex(0);
     resetAnswerState();
@@ -432,8 +434,9 @@ function App() {
     setShowResults(false);
     setProgressSaved(false);
     setCurrentResultProgress(null);
+    setIsMixedReviewAttempt(false);
     setMixedReviewLessonIds([]);
-    setMixedReviewQuestionCount('25');
+    setMixedReviewQuestionCount(25);
     setMixedReviewMessage('');
     setCurrentQuestionIndex(0);
     resetAnswerState();
@@ -448,6 +451,7 @@ function App() {
     setShowResults(false);
     setProgressSaved(false);
     setCurrentResultProgress(null);
+    setIsMixedReviewAttempt(false);
     setMixedReviewMessage('');
     setCurrentQuestionIndex(0);
     resetAnswerState();
@@ -463,14 +467,84 @@ function App() {
     );
   };
 
-  const startMixedReviewPlaceholder = () => {
-    if (!hasMixedReviewLessonSelection) {
+  const createMixedReviewLesson = (subject: Subject, selectedLessons: Lesson[]): Lesson => {
+    const mixedReviewLessonKey = selectedLessons.map((lesson) => lesson.id).sort().join('+');
+
+    return {
+      id: `mixed-review:${subject.id}:${mixedReviewLessonKey}:${mixedReviewQuestionCount}`,
+      title: `Mixed Review (${mixedReviewQuestionCount === 'all' ? 'All' : mixedReviewQuestionCount} questions)`,
+      description: selectedLessons.map((lesson) => lesson.title).join(' + '),
+      questionFile: '',
+      categoryId: subject.id,
+      categoryTitle: subject.title,
+      categoryDescription: subject.description,
+    };
+  };
+
+  const startMixedReview = async () => {
+    if (!selectedSubject || !hasMixedReviewLessonSelection) {
       return;
     }
 
-    // Mixed Review quiz generation is intentionally left for a later PR.
-    // This keeps the existing lesson Practice Mode and Quiz Mode flows unchanged.
-    setMixedReviewMessage('Mixed Review setup saved for now. The combined quiz will be connected in a future update.');
+    const selectedLessonIdSet = new Set(mixedReviewLessonIds);
+    const selectedLessons = selectedSubjectLessons.filter((lesson) => selectedLessonIdSet.has(lesson.id));
+
+    if (selectedLessons.length === 0) {
+      setMixedReviewMessage('Choose at least one lesson or unit to start a Mixed Review.');
+      return;
+    }
+
+    setIsLoading(true);
+    setError('');
+    setMixedReviewMessage('');
+    setSelectedLesson(createMixedReviewLesson(selectedSubject, selectedLessons));
+    setSelectedMode('quiz');
+    setIsMixedReviewAttempt(true);
+    setQuestions([]);
+    setReviews([]);
+    setShowResults(false);
+    setProgressSaved(false);
+    setCurrentResultProgress(null);
+    setCurrentQuestionIndex(0);
+    resetAnswerState();
+
+    try {
+      const lessonQuestionEntries = await Promise.all(
+        selectedLessons.map(async (lesson) => {
+          const response = await fetch(`${import.meta.env.BASE_URL}data/questions/${lesson.questionFile}`);
+
+          if (!response.ok) {
+            throw new Error(`Could not load the questions for ${lesson.title}.`);
+          }
+
+          return [lesson.id, (await response.json()) as Question[]] as const;
+        }),
+      );
+      const questionsByLessonId = Object.fromEntries(lessonQuestionEntries);
+      const mixedQuestions = buildMixedQuizQuestionPool(
+        selectedSubjectLessons,
+        questionsByLessonId,
+        mixedReviewLessonIds,
+        mixedReviewQuestionCount,
+      ).map(prepareQuestionForQuiz);
+
+      if (mixedQuestions.length === 0) {
+        setSelectedLesson(null);
+        setSelectedMode(null);
+        setIsMixedReviewAttempt(false);
+        setMixedReviewMessage('No questions are available for the selected lessons or units yet.');
+        return;
+      }
+
+      setQuestions(mixedQuestions);
+    } catch (loadError) {
+      setSelectedLesson(null);
+      setSelectedMode(null);
+      setIsMixedReviewAttempt(false);
+      setError(loadError instanceof Error ? loadError.message : 'Could not load Mixed Review questions.');
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   const startAttempt = async (mode: AttemptMode) => {
@@ -481,6 +555,7 @@ function App() {
     setIsLoading(true);
     setError('');
     setSelectedMode(mode);
+    setIsMixedReviewAttempt(false);
     setReviews([]);
     setShowResults(false);
     setProgressSaved(false);
@@ -576,6 +651,11 @@ function App() {
   };
 
   const retryLesson = () => {
+    if (isMixedReviewAttempt) {
+      startMixedReview();
+      return;
+    }
+
     if (selectedMode) {
       startAttempt(selectedMode);
     }
@@ -589,6 +669,7 @@ function App() {
     setShowResults(false);
     setProgressSaved(false);
     setCurrentResultProgress(null);
+    setIsMixedReviewAttempt(false);
     setCurrentQuestionIndex(0);
     resetAnswerState();
     setError('');
@@ -835,7 +916,7 @@ function App() {
             <button
               className="primary-button"
               disabled={!hasMixedReviewLessonSelection}
-              onClick={startMixedReviewPlaceholder}
+              onClick={startMixedReview}
               type="button"
             >
               Start Mixed Review
@@ -882,7 +963,7 @@ function App() {
       {!isLoading && selectedLesson && currentQuestion && !quizComplete && (
         <section className="card quiz-card">
           <p className="progress-text">
-            {selectedMode ? `${getModeLabel(selectedMode)} · ` : ''}Question {currentQuestionIndex + 1} of {questions.length}
+            {isMixedReviewAttempt ? 'Mixed Review · ' : ''}{selectedMode ? `${getModeLabel(selectedMode)} · ` : ''}Question {currentQuestionIndex + 1} of {questions.length}
           </p>
           <h2>{currentQuestion.prompt}</h2>
 
@@ -960,6 +1041,7 @@ function App() {
         <section className="card results-card">
           <h2>Final results</h2>
           <div className="results-summary">
+            {isMixedReviewAttempt && <p><strong>Review type:</strong> Mixed Review</p>}
             {selectedMode && <p><strong>Mode:</strong> {getModeLabel(selectedMode)}</p>}
             <p className="score-text">Score: {score} / {questions.length}</p>
             <p><strong>Percentage:</strong> {percentage}%</p>
@@ -988,8 +1070,8 @@ function App() {
             <p className="message success-message">No missed questions. Great work.</p>
           ) : (
             <ol className="review-list">
-              {missedReviews.map((review) => (
-                <li key={review.question.id} className="review-incorrect">
+              {missedReviews.map((review, index) => (
+                <li key={`${review.question.id}-${index}`} className="review-incorrect">
                   <p><strong>{review.question.prompt}</strong></p>
                   <p><strong>Your answer:</strong> {formatAnswer(review.studentAnswer)}</p>
                   <p><strong>Correct answer:</strong> {getReviewAnswer(review.question)}</p>

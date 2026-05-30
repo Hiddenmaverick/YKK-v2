@@ -16,17 +16,16 @@ const shuffleArray = <T,>(items: readonly T[], random: () => number) => {
 };
 
 export const buildMixedQuizQuestionPool = (
-  lessons: readonly Lesson[],
+  subjectLessons: readonly Lesson[],
   questionsByLessonId: LessonQuestionMap,
-  subjectId: string,
   selectedLessonIds: readonly string[],
   requestedQuestionCount: MixedQuizQuestionCount,
   random: () => number = Math.random,
 ) => {
   const selectedLessonIdSet = new Set(selectedLessonIds);
   const selectedSubjectLessonIds = new Set(
-    lessons
-      .filter((lesson) => lesson.categoryId === subjectId && selectedLessonIdSet.has(lesson.id))
+    subjectLessons
+      .filter((lesson) => selectedLessonIdSet.has(lesson.id))
       .map((lesson) => lesson.id),
   );
 
