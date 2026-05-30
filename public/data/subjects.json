@@ -1,0 +1,24 @@
+[
+  {
+    "id": "communication",
+    "title": "コミュニケーション英語 / Communication English",
+    "description": "Practice Communication English lessons and units.",
+    "lessonIds": [
+      "lesson-01",
+      "lesson-02",
+      "lesson-03"
+    ]
+  },
+  {
+    "id": "logic-expression",
+    "title": "論理・表現 / Logic and Expression",
+    "description": "Logic and Expression lessons are coming soon.",
+    "lessonIds": []
+  },
+  {
+    "id": "vocabulary",
+    "title": "語彙 / Vocabulary",
+    "description": "Vocabulary lessons are coming soon.",
+    "lessonIds": []
+  }
+]

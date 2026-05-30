@@ -6,6 +6,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const projectRoot = path.resolve(__dirname, '..');
 const csvPath = path.join(projectRoot, 'teacher-content', 'questions.csv');
 const lessonsPath = path.join(projectRoot, 'public', 'data', 'lessons.json');
+const subjectsPath = path.join(projectRoot, 'public', 'data', 'subjects.json');
 const questionsDir = path.join(projectRoot, 'public', 'data', 'questions');
 
 const optionColumns = [
@@ -19,7 +20,32 @@ const optionColumns = [
   'option_h',
 ];
 
+const categoryColumns = [
+  'category_id',
+  'category_title',
+  'category_description',
+];
+
+const defaultSubjects = [
+  {
+    id: 'communication',
+    title: 'コミュニケーション英語 / Communication English',
+    description: 'Practice Communication English lessons and units.',
+  },
+  {
+    id: 'logic-expression',
+    title: '論理・表現 / Logic and Expression',
+    description: 'Logic and Expression lessons are coming soon.',
+  },
+  {
+    id: 'vocabulary',
+    title: '語彙 / Vocabulary',
+    description: 'Vocabulary lessons are coming soon.',
+  },
+];
+
 const expectedColumns = [
+  ...categoryColumns,
   'lesson_id',
   'lesson_title',
   'lesson_description',
@@ -33,6 +59,7 @@ const expectedColumns = [
 ];
 
 const requiredFields = [
+  ...categoryColumns,
   'lesson_id',
   'lesson_title',
   'lesson_description',
@@ -291,6 +318,28 @@ function toQuestion(row, rowNumber, errors) {
   };
 }
 
+function validateConsistentCategory({ categoriesById, row, rowNumber, errors }) {
+  const existingCategory = categoriesById.get(row.category_id);
+
+  if (!existingCategory) {
+    categoriesById.set(row.category_id, {
+      id: row.category_id,
+      title: row.category_title,
+      description: row.category_description,
+      firstRow: rowNumber,
+    });
+    return;
+  }
+
+  if (row.category_title && existingCategory.title !== row.category_title) {
+    addError(errors, rowNumber, `category_title for category_id "${row.category_id}" does not match row ${existingCategory.firstRow}. Use exactly "${existingCategory.title}" or update all rows for this category.`);
+  }
+
+  if (row.category_description && existingCategory.description !== row.category_description) {
+    addError(errors, rowNumber, `category_description for category_id "${row.category_id}" does not match row ${existingCategory.firstRow}. Use exactly "${existingCategory.description}" or update all rows for this category.`);
+  }
+}
+
 function validateHeader(header) {
   const trimmedHeader = header.map((column) => column.trim());
   const duplicateColumns = trimmedHeader.filter((column, index) => trimmedHeader.indexOf(column) !== index);
@@ -322,9 +371,9 @@ function printValidationErrors(errors) {
   console.error(`Fix ${errors.length === 1 ? 'it' : 'them'} and run npm run generate-content again.`);
 }
 
-function printSuccessSummary(lessons) {
+function printSuccessSummary(lessons, subjects) {
   const questionCount = lessons.reduce((count, lesson) => count + lesson.questions.length, 0);
-  console.log(`Generated ${lessons.length} ${lessons.length === 1 ? 'lesson' : 'lessons'} and ${questionCount} ${questionCount === 1 ? 'question' : 'questions'}.`);
+  console.log(`Generated ${subjects.length} ${subjects.length === 1 ? 'subject' : 'subjects'}, ${lessons.length} ${lessons.length === 1 ? 'lesson' : 'lessons'}, and ${questionCount} ${questionCount === 1 ? 'question' : 'questions'}.`);
   for (const lesson of lessons) {
     console.log(`${lesson.id}: ${lesson.questions.length} ${lesson.questions.length === 1 ? 'question' : 'questions'}`);
   }
@@ -341,12 +390,17 @@ async function main() {
   const header = validateHeader(rows[0].values);
   const errors = [];
   const lessons = [];
+  const categoriesById = new Map();
   const lessonsById = new Map();
   const questionIdsByLesson = new Map();
 
   for (const csvRow of rows.slice(1)) {
     const row = normalizeRow(header, csvRow, errors);
     const lessonId = row.lesson_id;
+
+    if (row.category_id) {
+      validateConsistentCategory({ categoriesById, row, rowNumber: csvRow.line, errors });
+    }
 
     if (lessonId) {
       if (!lessonsById.has(lessonId)) {
@@ -355,6 +409,9 @@ async function main() {
           title: row.lesson_title,
           description: row.lesson_description,
           questionFile: `${lessonId}.json`,
+          categoryId: row.category_id,
+          categoryTitle: row.category_title,
+          categoryDescription: row.category_description,
           questions: [],
           firstRow: csvRow.line,
         };
@@ -363,6 +420,9 @@ async function main() {
         questionIdsByLesson.set(lessonId, new Map());
       } else {
         const lesson = lessonsById.get(lessonId);
+        if (row.category_id && lesson.categoryId !== row.category_id) {
+          addError(errors, csvRow.line, `category_id for lesson_id "${lessonId}" does not match row ${lesson.firstRow}. Use exactly "${lesson.categoryId}" or move the lesson by updating all rows for this lesson.`);
+        }
         if (row.lesson_title && lesson.title !== row.lesson_title) {
           addError(errors, csvRow.line, `lesson_title for lesson_id "${lessonId}" does not match row ${lesson.firstRow}. Use exactly "${lesson.title}" or update all rows for this lesson.`);
         }
@@ -397,11 +457,25 @@ async function main() {
     throw new Error('CSV file has a header but no question rows. Add at least one question row.');
   }
 
-  const generatedLessons = lessons.map(({ id, title, description, questionFile }) => ({
+  const generatedLessons = lessons.map(({ id, title, description, questionFile, categoryId, categoryTitle, categoryDescription }) => ({
     id,
     title,
     description,
     questionFile,
+    categoryId,
+    categoryTitle,
+    categoryDescription,
+  }));
+
+  const orderedCategoryIds = new Set(defaultSubjects.map((subject) => subject.id));
+  const generatedSubjects = [
+    ...defaultSubjects.map((defaultSubject) => categoriesById.get(defaultSubject.id) ?? defaultSubject),
+    ...[...categoriesById.values()].filter((category) => !orderedCategoryIds.has(category.id)),
+  ].map(({ id, title, description }) => ({
+    id,
+    title,
+    description,
+    lessonIds: lessons.filter((lesson) => lesson.categoryId === id).map((lesson) => lesson.id),
   }));
 
   await mkdir(questionsDir, { recursive: true });
@@ -415,13 +489,14 @@ async function main() {
   }
 
   await writeFile(lessonsPath, `${JSON.stringify(generatedLessons, null, 2)}\n`);
+  await writeFile(subjectsPath, `${JSON.stringify(generatedSubjects, null, 2)}\n`);
 
   for (const lesson of lessons) {
     const outputPath = path.join(questionsDir, lesson.questionFile);
     await writeFile(outputPath, `${JSON.stringify(lesson.questions, null, 2)}\n`);
   }
 
-  printSuccessSummary(lessons);
+  printSuccessSummary(lessons, generatedSubjects);
 }
 
 main().catch((error) => {

@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from 'react';
-import type { AnswerReview, AttemptMode, Lesson, LessonProgress, Question } from './types';
+import type { AnswerReview, AttemptMode, Lesson, LessonProgress, Question, Subject } from './types';
 
 const normalizeAnswer = (value: string | boolean) =>
   String(value).trim().toLowerCase().replace(/\s+/g, ' ');
@@ -49,6 +49,15 @@ const isAttemptMode = (value: unknown): value is AttemptMode => value === 'pract
 const getModeLabel = (mode: AttemptMode) => ATTEMPT_MODES[mode].label;
 
 const getOptionalModeLabel = (mode: unknown) => (isAttemptMode(mode) ? getModeLabel(mode) : '');
+
+const splitBilingualTitle = (title: string) => {
+  const [primaryTitle, secondaryTitle] = title.split(' / ');
+
+  return {
+    primaryTitle: primaryTitle || title,
+    secondaryTitle: secondaryTitle || '',
+  };
+};
 
 const getAcceptedAnswers = (question: Question): Array<string | boolean> => {
   if (question.type === 'fill-in-the-blank' || question.type === 'multiple-choice') {
@@ -279,7 +288,9 @@ const getResultMessage = (percentage: number, nickname: string) => {
 };
 
 function App() {
+  const [subjects, setSubjects] = useState<Subject[]>([]);
   const [lessons, setLessons] = useState<Lesson[]>([]);
+  const [selectedSubject, setSelectedSubject] = useState<Subject | null>(null);
   const [selectedLesson, setSelectedLesson] = useState<Lesson | null>(null);
   const [questions, setQuestions] = useState<Question[]>([]);
   const [selectedMode, setSelectedMode] = useState<AttemptMode | null>(null);
@@ -308,24 +319,33 @@ function App() {
   }, [nickname]);
 
   useEffect(() => {
-    const loadLessons = async () => {
+    const loadContent = async () => {
       try {
-        const response = await fetch(`${import.meta.env.BASE_URL}data/lessons.json`);
+        const [subjectResponse, lessonResponse] = await Promise.all([
+          fetch(`${import.meta.env.BASE_URL}data/subjects.json`),
+          fetch(`${import.meta.env.BASE_URL}data/lessons.json`),
+        ]);
 
-        if (!response.ok) {
+        if (!subjectResponse.ok) {
+          throw new Error('Could not load the subject list.');
+        }
+
+        if (!lessonResponse.ok) {
           throw new Error('Could not load the lesson list.');
         }
 
-        const lessonData = (await response.json()) as Lesson[];
+        const subjectData = (await subjectResponse.json()) as Subject[];
+        const lessonData = (await lessonResponse.json()) as Lesson[];
+        setSubjects(subjectData);
         setLessons(lessonData);
       } catch (loadError) {
-        setError(loadError instanceof Error ? loadError.message : 'Could not load lessons.');
+        setError(loadError instanceof Error ? loadError.message : 'Could not load content.');
       } finally {
         setIsLoading(false);
       }
     };
 
-    loadLessons();
+    loadContent();
   }, []);
 
   const currentQuestion = questions[currentQuestionIndex];
@@ -333,6 +353,14 @@ function App() {
   const incorrectCount = reviews.length - score;
   const percentage = questions.length > 0 ? Math.round((score / questions.length) * 100) : 0;
   const missedReviews = useMemo(() => reviews.filter((review) => !review.isCorrect), [reviews]);
+  const selectedSubjectLessons = useMemo(() => {
+    if (!selectedSubject) {
+      return [];
+    }
+
+    const lessonIds = new Set(selectedSubject.lessonIds);
+    return lessons.filter((lesson) => lesson.categoryId === selectedSubject.id || lessonIds.has(lesson.id));
+  }, [lessons, selectedSubject]);
   const quizComplete = questions.length > 0 && showResults;
 
   useEffect(() => {
@@ -355,6 +383,38 @@ function App() {
     setSelectedChoice('');
     setBlankAnswer('');
     setFeedback(null);
+  };
+
+  const chooseSubject = (subject: Subject) => {
+    if (subject.lessonIds.length === 0) {
+      return;
+    }
+
+    setSelectedSubject(subject);
+    setSelectedLesson(null);
+    setQuestions([]);
+    setSelectedMode(null);
+    setReviews([]);
+    setShowResults(false);
+    setProgressSaved(false);
+    setCurrentResultProgress(null);
+    setCurrentQuestionIndex(0);
+    resetAnswerState();
+    setError('');
+  };
+
+  const backToSubjects = () => {
+    setSelectedSubject(null);
+    setSelectedLesson(null);
+    setQuestions([]);
+    setSelectedMode(null);
+    setReviews([]);
+    setShowResults(false);
+    setProgressSaved(false);
+    setCurrentResultProgress(null);
+    setCurrentQuestionIndex(0);
+    resetAnswerState();
+    setError('');
   };
 
   const chooseLesson = (lesson: Lesson) => {
@@ -511,7 +571,9 @@ function App() {
   const googleFormUrl = selectedLesson && currentResultProgress
     ? buildGoogleFormUrl({
         nickname: trimmedNickname,
-        lesson: selectedMode ? `${selectedLesson.title} (${getModeLabel(selectedMode)})` : selectedLesson.title,
+        lesson: selectedMode
+          ? `${selectedLesson.categoryTitle} - ${selectedLesson.title} (${getModeLabel(selectedMode)})`
+          : `${selectedLesson.categoryTitle} - ${selectedLesson.title}`,
         score: `${score} / ${questions.length}`,
         percentage: `${percentage}%`,
         completedCount: String(currentResultProgress.completedCount),
@@ -581,22 +643,58 @@ function App() {
       {error && <p className="message error-message">{error}</p>}
       {isLoading && <p className="message">Loading...</p>}
 
-      {!isLoading && !selectedLesson && (
+      {!isLoading && !selectedSubject && (
         <section className="card">
           <div className="section-heading-row">
-            <h2>Choose a lesson</h2>
+            <h2>Choose a Subject</h2>
             {hasSavedProgress && (
               <button className="text-button" onClick={clearProgress} type="button">
                 Clear saved progress
               </button>
             )}
           </div>
+          <div className="subject-grid">
+            {subjects.map((subject) => {
+              const { primaryTitle, secondaryTitle } = splitBilingualTitle(subject.title);
+              const isComingSoon = subject.lessonIds.length === 0;
+
+              return (
+                <button
+                  aria-disabled={isComingSoon}
+                  className={`subject-card${isComingSoon ? ' coming-soon' : ''}`}
+                  disabled={isComingSoon}
+                  key={subject.id}
+                  onClick={() => chooseSubject(subject)}
+                  type="button"
+                >
+                  <span className="subject-title-ja">{primaryTitle}</span>
+                  {secondaryTitle && <span className="subject-title-en">{secondaryTitle}</span>}
+                  <small>{subject.description}</small>
+                  {isComingSoon && <strong className="coming-soon-label">Coming soon</strong>}
+                </button>
+              );
+            })}
+          </div>
+        </section>
+      )}
+
+      {!isLoading && selectedSubject && !selectedLesson && (
+        <section className="card">
+          <div className="section-heading-row">
+            <div>
+              <p className="section-kicker">{selectedSubject.title}</p>
+              <h2>Choose a Lesson or Unit</h2>
+            </div>
+            <button className="text-button" onClick={backToSubjects} type="button">
+              Back to subjects
+            </button>
+          </div>
           <div className="lesson-grid">
-            {lessons.map((lesson) => {
+            {selectedSubjectLessons.map((lesson) => {
               const progress = lessonProgress[lesson.id];
 
               return (
-                <button className="lesson-card" key={lesson.id} onClick={() => chooseLesson(lesson)}>
+                <button className="lesson-card" key={lesson.id} onClick={() => chooseLesson(lesson)} type="button">
                   <span>{lesson.title}</span>
                   <small>{lesson.description}</small>
                   {progress && (
@@ -615,6 +713,10 @@ function App() {
 
       {!isLoading && selectedLesson && questions.length === 0 && (
         <section className="card lesson-start">
+          <button className="text-button back-link" onClick={chooseAnotherLesson} type="button">
+            Back to lessons
+          </button>
+          <p className="section-kicker">{selectedLesson.categoryTitle}</p>
           <h2>{selectedLesson.title}</h2>
           <p>{selectedLesson.description}</p>
           {lessonProgress[selectedLesson.id] && (
@@ -639,7 +741,7 @@ function App() {
               <span>{ATTEMPT_MODES.quiz.label}</span>
               <small>{ATTEMPT_MODES.quiz.description}</small>
             </button>
-            <button className="secondary-button" onClick={chooseAnotherLesson}>Choose another lesson</button>
+            <button className="secondary-button" onClick={chooseAnotherLesson} type="button">Back to lesson selection</button>
           </div>
         </section>
       )}
@@ -765,7 +867,7 @@ function App() {
           )}
           <div className="button-row">
             <button className="primary-button" onClick={retryLesson}>Retry</button>
-            <button className="secondary-button" onClick={chooseAnotherLesson}>Choose another lesson</button>
+            <button className="secondary-button" onClick={chooseAnotherLesson} type="button">Back to lesson selection</button>
           </div>
         </section>
       )}
