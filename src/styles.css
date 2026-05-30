@@ -44,10 +44,94 @@ input:disabled {
   opacity: 0.75;
 }
 
+.yuukoukan-rain {
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  position: fixed;
+  z-index: 0;
+}
+
+.yuukoukan-rain span {
+  animation: yuukoukan-fall var(--fall-duration, 32s) linear infinite;
+  color: #9bd8cf;
+  font-size: var(--rain-size, 36px);
+  font-weight: 800;
+  left: var(--rain-left, 80%);
+  letter-spacing: 0.14em;
+  line-height: 1;
+  opacity: var(--rain-opacity, 0.11);
+  position: absolute;
+  text-shadow: 0 0 18px rgba(155, 216, 207, 0.12);
+  top: 0;
+  transform: translate3d(0, -28vh, 0);
+  writing-mode: vertical-rl;
+}
+
+.yuukoukan-rain span:nth-child(1) {
+  --fall-duration: 38s;
+  --rain-left: 6%;
+  --rain-opacity: 0.08;
+  --rain-size: 30px;
+  animation-delay: -17s;
+}
+
+.yuukoukan-rain span:nth-child(2) {
+  --fall-duration: 34s;
+  --rain-left: 58%;
+  --rain-opacity: 0.09;
+  --rain-size: 34px;
+  animation-delay: -6s;
+}
+
+.yuukoukan-rain span:nth-child(3) {
+  --fall-duration: 29s;
+  --rain-left: 72%;
+  --rain-opacity: 0.13;
+  --rain-size: 42px;
+  animation-delay: -22s;
+}
+
+.yuukoukan-rain span:nth-child(4) {
+  --fall-duration: 40s;
+  --rain-left: 84%;
+  --rain-opacity: 0.12;
+  --rain-size: 36px;
+  animation-delay: -11s;
+}
+
+.yuukoukan-rain span:nth-child(5) {
+  --fall-duration: 27s;
+  --rain-left: 93%;
+  --rain-opacity: 0.1;
+  --rain-size: 32px;
+  animation-delay: -2s;
+}
+
+.yuukoukan-rain span:nth-child(6) {
+  --fall-duration: 36s;
+  --rain-left: 98%;
+  --rain-opacity: 0.08;
+  --rain-size: 40px;
+  animation-delay: -28s;
+}
+
+@keyframes yuukoukan-fall {
+  from {
+    transform: translate3d(0, -28vh, 0);
+  }
+
+  to {
+    transform: translate3d(0, 118vh, 0);
+  }
+}
+
 .app-shell {
   margin: 0 auto;
   max-width: 1040px;
   padding: 28px 24px 40px;
+  position: relative;
+  z-index: 1;
 }
 
 .hero-card,
@@ -561,6 +645,41 @@ h3 {
   color: #14532d;
   font-weight: 800;
   margin-bottom: 14px;
+}
+
+@media (max-width: 900px) {
+  .yuukoukan-rain span {
+    opacity: 0.07;
+  }
+
+  .yuukoukan-rain span:nth-child(1),
+  .yuukoukan-rain span:nth-child(2),
+  .yuukoukan-rain span:nth-child(6) {
+    display: none;
+  }
+}
+
+@media (max-width: 520px) {
+  .yuukoukan-rain span {
+    display: none;
+  }
+
+  .yuukoukan-rain span:nth-child(4) {
+    --rain-left: 90%;
+    --rain-size: 28px;
+    animation: none;
+    display: block;
+    opacity: 0.06;
+    transform: translate3d(0, 18vh, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .yuukoukan-rain span {
+    animation: none;
+    opacity: 0.06;
+    transform: translate3d(0, 18vh, 0);
+  }
 }
 
 @media (max-width: 720px) {
