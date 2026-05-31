@@ -296,44 +296,72 @@ const getResultMessage = (percentage: number, nickname: string) => {
     : 'Try again after reviewing the explanations.';
 };
 
+type Announcement = {
+  active: boolean;
+  message: string;
+};
+
 type ScheduleEvent = {
   date: string;
   title: string;
   description: string;
 };
 
-const ENGLISH_SCHEDULE_MONTH = new Date(2026, 4, 1);
-const ENGLISH_SCHEDULE_EVENTS: ScheduleEvent[] = [
-  {
-    date: '2026-05-18',
-    title: '単語小テスト',
-    description: 'Vocabulary Unit 4',
-  },
-  {
-    date: '2026-05-24',
-    title: 'Lesson 3 Quiz',
-    description: 'Communication English',
-  },
-  {
-    date: '2026-05-30',
-    title: 'Final Review',
-    description: 'Mixed Review',
-  },
-];
+const DEFAULT_ANNOUNCEMENT_MESSAGE =
+  'Welcome to English Practice　｜　Start Studying から学習を始めましょう';
+const DEFAULT_SCHEDULE_MONTH = new Date(2026, 4, 1);
+const MAX_UPCOMING_EVENTS = 5;
 
 const formatScheduleDateKey = (year: number, monthIndex: number, day: number) =>
   `${year}-${String(monthIndex + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
 
-const EnglishScheduleCalendar = () => {
-  const displayedYear = ENGLISH_SCHEDULE_MONTH.getFullYear();
-  const displayedMonth = ENGLISH_SCHEDULE_MONTH.getMonth();
-  const firstWeekday = ENGLISH_SCHEDULE_MONTH.getDay();
+const isScheduleEventDate = (value: string) => /^\d{4}-\d{2}-\d{2}$/.test(value);
+
+const toScheduleDate = (dateKey: string) => {
+  const [year, month, day] = dateKey.split('-').map(Number);
+  return new Date(year, month - 1, day);
+};
+
+const isAnnouncement = (value: unknown): value is Announcement => {
+  if (!value || typeof value !== 'object') {
+    return false;
+  }
+
+  const announcement = value as Record<string, unknown>;
+  return typeof announcement.active === 'boolean' && typeof announcement.message === 'string';
+};
+
+const isScheduleEvent = (value: unknown): value is ScheduleEvent => {
+  if (!value || typeof value !== 'object') {
+    return false;
+  }
+
+  const event = value as Record<string, unknown>;
+  return (
+    typeof event.date === 'string' &&
+    isScheduleEventDate(event.date) &&
+    typeof event.title === 'string' &&
+    typeof event.description === 'string'
+  );
+};
+
+const EnglishScheduleCalendar = ({ events }: { events: ScheduleEvent[] }) => {
+  const sortedEvents = useMemo(
+    () => [...events].sort((first, second) => first.date.localeCompare(second.date)),
+    [events],
+  );
+  const displayMonthDate = sortedEvents.length > 0 ? toScheduleDate(sortedEvents[0].date) : DEFAULT_SCHEDULE_MONTH;
+  const displayedYear = displayMonthDate.getFullYear();
+  const displayedMonth = displayMonthDate.getMonth();
+  const displayedMonthStart = new Date(displayedYear, displayedMonth, 1);
+  const firstWeekday = displayedMonthStart.getDay();
   const daysInMonth = new Date(displayedYear, displayedMonth + 1, 0).getDate();
   const monthLabel = new Intl.DateTimeFormat('en-US', {
     month: 'long',
     year: 'numeric',
-  }).format(ENGLISH_SCHEDULE_MONTH);
-  const eventsByDate = new Map(ENGLISH_SCHEDULE_EVENTS.map((event) => [event.date, event]));
+  }).format(displayedMonthStart);
+  const eventsByDate = new Map(sortedEvents.map((event) => [event.date, event]));
+  const upcomingEvents = sortedEvents.slice(0, MAX_UPCOMING_EVENTS);
   const calendarCells = [
     ...Array.from({ length: firstWeekday }, () => null),
     ...Array.from({ length: daysInMonth }, (_, index) => index + 1),
@@ -359,12 +387,11 @@ const EnglishScheduleCalendar = () => {
 
           const dateKey = formatScheduleDateKey(displayedYear, displayedMonth, day);
           const event = eventsByDate.get(dateKey);
+          const eventLabel = event?.description ? `${event.title} / ${event.description}` : event?.title;
 
           return (
             <span
-              aria-label={
-                event ? `${monthLabel} ${day}: ${event.title} / ${event.description}` : `${monthLabel} ${day}`
-              }
+              aria-label={eventLabel ? `${monthLabel} ${day}: ${eventLabel}` : `${monthLabel} ${day}`}
               className={`english-schedule-day${event ? ' english-schedule-day-event' : ''}`}
               key={dateKey}
             >
@@ -375,25 +402,29 @@ const EnglishScheduleCalendar = () => {
       </div>
       <div className="english-schedule-events">
         <h3>Upcoming events</h3>
-        <ul>
-          {ENGLISH_SCHEDULE_EVENTS.map((event) => {
-            const eventDate = new Date(`${event.date}T00:00:00`);
-            const eventDay = new Intl.DateTimeFormat('en-US', {
-              month: 'short',
-              day: 'numeric',
-            }).format(eventDate);
+        {upcomingEvents.length > 0 ? (
+          <ul>
+            {upcomingEvents.map((event) => {
+              const eventDate = toScheduleDate(event.date);
+              const eventDay = new Intl.DateTimeFormat('en-US', {
+                month: 'short',
+                day: 'numeric',
+              }).format(eventDate);
 
-            return (
-              <li key={event.date}>
-                <time dateTime={event.date}>{eventDay}</time>
-                <div>
-                  <strong>{event.title}</strong>
-                  <span>{event.description}</span>
-                </div>
-              </li>
-            );
-          })}
-        </ul>
+              return (
+                <li key={`${event.date}-${event.title}`}>
+                  <time dateTime={event.date}>{eventDay}</time>
+                  <div>
+                    <strong>{event.title}</strong>
+                    {event.description && <span>{event.description}</span>}
+                  </div>
+                </li>
+              );
+            })}
+          </ul>
+        ) : (
+          <p className="english-schedule-empty">No English events scheduled.</p>
+        )}
       </div>
     </aside>
   );
@@ -426,6 +457,8 @@ function App() {
   const [isStudyMode, setIsStudyMode] = useState(false);
   const [showHomeLeaveWarning, setShowHomeLeaveWarning] = useState(false);
   const [skipHomeLeaveWarning, setSkipHomeLeaveWarning] = useState(false);
+  const [announcementMessage, setAnnouncementMessage] = useState(DEFAULT_ANNOUNCEMENT_MESSAGE);
+  const [scheduleEvents, setScheduleEvents] = useState<ScheduleEvent[]>([]);
 
   useEffect(() => {
     const trimmedNickname = nickname.trim();
@@ -467,6 +500,44 @@ function App() {
 
     loadContent();
   }, []);
+
+  useEffect(() => {
+    const loadHomepageContent = async () => {
+      const [announcementResult, scheduleResult] = await Promise.allSettled([
+        fetch(`${import.meta.env.BASE_URL}data/announcements.json`),
+        fetch(`${import.meta.env.BASE_URL}data/calendar-events.json`),
+      ]);
+
+      if (announcementResult.status === 'fulfilled' && announcementResult.value.ok) {
+        try {
+          const announcementData = (await announcementResult.value.json()) as unknown;
+          if (Array.isArray(announcementData) && announcementData.every(isAnnouncement)) {
+            const activeMessages = announcementData
+              .filter((announcement) => announcement.active)
+              .map((announcement) => announcement.message.trim())
+              .filter((message) => message !== '');
+            setAnnouncementMessage(activeMessages.join('　｜　'));
+          }
+        } catch {
+          setAnnouncementMessage(DEFAULT_ANNOUNCEMENT_MESSAGE);
+        }
+      }
+
+      if (scheduleResult.status === 'fulfilled' && scheduleResult.value.ok) {
+        try {
+          const scheduleData = (await scheduleResult.value.json()) as unknown;
+          if (Array.isArray(scheduleData) && scheduleData.every(isScheduleEvent)) {
+            setScheduleEvents(scheduleData);
+          }
+        } catch {
+          setScheduleEvents([]);
+        }
+      }
+    };
+
+    loadHomepageContent();
+  }, []);
+
 
   const currentQuestion = questions[currentQuestionIndex];
   const score = useMemo(() => reviews.filter((review) => review.isCorrect).length, [reviews]);
@@ -985,16 +1056,16 @@ function App() {
                 <span>学習を始める</span>
               </button>
             </div>
-            <aside className="english-notice-ribbon" aria-label="英語のお知らせ">
-              <span className="english-notice-label">英語のお知らせ</span>
-              <div className="english-notice-track" aria-live="polite">
-                <p>
-                  5/18 単語小テストがあります　｜　Vocabulary Unit 4 を復習しましょう　｜　Mixed Review で Lesson 1〜3 を確認できます
-                </p>
-              </div>
-            </aside>
+            {announcementMessage && (
+              <aside className="english-notice-ribbon" aria-label="英語のお知らせ">
+                <span className="english-notice-label">英語のお知らせ</span>
+                <div className="english-notice-track" aria-live="polite">
+                  <p>{announcementMessage}</p>
+                </div>
+              </aside>
+            )}
           </div>
-            <EnglishScheduleCalendar />
+            <EnglishScheduleCalendar events={scheduleEvents} />
           </div>
         ) : (
           heroCard
