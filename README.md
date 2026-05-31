@@ -22,15 +22,15 @@ Build the production site:
 npm run build
 ```
 
-## Editing Lessons with the CSV File
+## Editing Teacher Content with CSV Files
 
-Teachers can edit lesson and question content in `teacher-content/questions.csv` and homepage content in `teacher-content/announcements.csv` and `teacher-content/calendar-events.csv` with Excel, Google Sheets, LibreOffice Calc, Numbers, or another spreadsheet editor. The website still reads generated JSON from `public/data`, so students will see the same quiz and homepage behavior after the JSON is regenerated.
+Teachers can edit lesson and question content in `teacher-content/questions.csv` and homepage content in `teacher-content/announcements.csv` and `teacher-content/calendar-events.csv` with Excel, Google Sheets, LibreOffice Calc, Numbers, or another spreadsheet editor. Use UTF-8 CSV files; Google Sheets is preferred for Japanese text because it helps avoid mojibake/encoding problems. The website still reads generated JSON from `public/data`, so students will see the same quiz and homepage behavior after the JSON is regenerated. Generated JSON files are build/output files, not the teacher-editing source, and should not be hand-edited.
 
 ### Recommended editing workflow
 
 1. Open the CSV file you need in Excel, Google Sheets, or another spreadsheet editor. Use `teacher-content/questions.csv` for lesson questions, `teacher-content/announcements.csv` for the homepage message ribbon, or `teacher-content/calendar-events.csv` for the English Schedule calendar.
 2. Edit rows or add new rows. Keep each header row exactly the same.
-3. Save or export the file as CSV.
+3. Save or export the file as a UTF-8 CSV. Google Sheets is recommended for Japanese text.
 4. Generate the website JSON files:
 
 ```bash
@@ -43,15 +43,18 @@ npm run generate-content
 npm run build
 ```
 
-6. Commit the updated CSV file and generated JSON files together. For questions, this usually means `teacher-content/questions.csv`, `public/data/lessons.json`, and matching files in `public/data/questions/`. For homepage content, commit the matching `teacher-content/announcements.csv`, `teacher-content/calendar-events.csv`, `public/data/announcements.json`, and `public/data/calendar-events.json` files.
+6. Commit the updated CSV file and generated JSON files together. For questions, this usually means `teacher-content/questions.csv`, `public/data/lessons.json`, and matching files in `public/data/questions/`. For homepage content, commit the matching `teacher-content/announcements.csv`, `teacher-content/calendar-events.csv`, `public/data/announcements.json`, and `public/data/calendar-events.json` files. Do not hand-edit generated JSON files; rerun the generator instead.
 
 ### Content safety reminders
 
-- Do not add student names, student numbers, emails, photos, addresses, health information, or other personal information.
+- Do not add student real names, student numbers, emails, photos, addresses, health information, or other personal information.
+- Nicknames should be anonymous. Progress is saved locally on the device unless students manually submit results through the existing result submission flow.
 - Do not add copyrighted textbook content, textbook questions, audio, images, or other protected content without permission.
 - Keep examples original, short, classroom-appropriate, and useful for English practice.
 
 ### Question CSV columns
+
+Edit `teacher-content/questions.csv`, run `npm run generate-content`, and do not hand-edit generated question JSON in `public/data/questions/`.
 
 | Column | What to write |
 | --- | --- |
@@ -94,7 +97,7 @@ True-false questions use two buttons, **True** and **False**, and show feedback 
 
 ### Homepage announcement CSV columns
 
-`teacher-content/announcements.csv` controls the homepage 英語のお知らせ ribbon.
+`teacher-content/announcements.csv` controls the homepage 英語のお知らせ ribbon. The ribbon uses rows where `active` is `true`; run `npm run generate-content` after editing, and do not hand-edit `public/data/announcements.json`.
 
 | Column | What to write |
 | --- | --- |
@@ -103,7 +106,7 @@ True-false questions use two buttons, **True** and **False**, and show feedback 
 
 ### Homepage calendar CSV columns
 
-`teacher-content/calendar-events.csv` controls the English Schedule calendar on the homepage.
+`teacher-content/calendar-events.csv` controls the English Schedule calendar on the homepage. Run `npm run generate-content` after editing, and do not hand-edit `public/data/calendar-events.json`.
 
 | Column | What to write |
 | --- | --- |

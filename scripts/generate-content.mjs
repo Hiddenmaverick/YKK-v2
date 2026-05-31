@@ -509,12 +509,15 @@ function printValidationErrors(errors) {
   console.error(`Fix ${errors.length === 1 ? 'it' : 'them'} and run npm run generate-content again.`);
 }
 
-function printSuccessSummary(lessons, subjects) {
+function printSuccessSummary({ lessons, subjects, announcements, calendarEvents }) {
   const questionCount = lessons.reduce((count, lesson) => count + lesson.questions.length, 0);
-  console.log(`Generated ${subjects.length} ${subjects.length === 1 ? 'subject' : 'subjects'}, ${lessons.length} ${lessons.length === 1 ? 'lesson' : 'lessons'}, and ${questionCount} ${questionCount === 1 ? 'question' : 'questions'}.`);
-  for (const lesson of lessons) {
-    console.log(`${lesson.id}: ${lesson.questions.length} ${lesson.questions.length === 1 ? 'question' : 'questions'}`);
-  }
+
+  console.log('Generated content:');
+  console.log(`- Subjects: ${subjects.length}`);
+  console.log(`- Lessons: ${lessons.length}`);
+  console.log(`- Questions: ${questionCount}`);
+  console.log(`- Active announcements: ${announcements.length}`);
+  console.log(`- Calendar events: ${calendarEvents.length}`);
 }
 
 async function main() {
@@ -640,8 +643,12 @@ async function main() {
     await writeFile(outputPath, `${JSON.stringify(lesson.questions, null, 2)}\n`);
   }
 
-  printSuccessSummary(lessons, generatedSubjects);
-  console.log(`Generated ${announcements.length} active ${announcements.length === 1 ? 'announcement' : 'announcements'} and ${calendarEvents.length} calendar ${calendarEvents.length === 1 ? 'event' : 'events'}.`);
+  printSuccessSummary({
+    lessons,
+    subjects: generatedSubjects,
+    announcements,
+    calendarEvents,
+  });
 }
 
 main().catch((error) => {
