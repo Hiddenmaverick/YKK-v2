@@ -164,22 +164,78 @@ input:disabled {
 .home-start-panel {
   display: flex;
   justify-content: center;
-  margin: 18px 0 16px;
+  margin: -4px 0 18px;
 }
 
 .start-study-button {
   align-items: center;
+  border: 2px solid rgba(167, 243, 208, 0.55);
   display: inline-flex;
   flex-wrap: wrap;
   font-size: 1.1rem;
   gap: 10px;
   justify-content: center;
-  min-width: min(100%, 280px);
+  min-width: min(100%, 300px);
 }
 
 .start-study-button span:last-child {
   color: #dcfce7;
   font-size: 1rem;
+}
+
+.english-notice-ribbon {
+  align-items: center;
+  background: #fff8e8;
+  border: 3px solid #86efac;
+  border-radius: 22px;
+  box-shadow: 0 16px 36px rgba(3, 7, 18, 0.22);
+  color: #12305a;
+  display: flex;
+  gap: 14px;
+  margin: 0 auto 24px;
+  max-width: 920px;
+  overflow: hidden;
+  padding: 12px 16px;
+}
+
+.english-notice-label {
+  background: #12305a;
+  border-radius: 999px;
+  color: #f8fafc;
+  flex: 0 0 auto;
+  font-size: 0.92rem;
+  font-weight: 950;
+  letter-spacing: 0.04em;
+  padding: 8px 13px;
+}
+
+.english-notice-track {
+  flex: 1 1 auto;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.english-notice-track p {
+  animation: english-notice-scroll 24s linear infinite;
+  font-weight: 900;
+  margin: 0;
+  min-width: max-content;
+  padding-left: 100%;
+  white-space: nowrap;
+}
+
+.english-notice-ribbon:hover .english-notice-track p {
+  animation-play-state: paused;
+}
+
+@keyframes english-notice-scroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-100%);
+  }
 }
 
 .modal-backdrop {
@@ -416,6 +472,7 @@ h3 {
 .primary-button:focus-visible,
 .secondary-button:focus-visible,
 .text-button:focus-visible,
+.start-study-button:focus-visible,
 .mixed-review-checkbox:focus-within,
 .question-count-option:focus-within {
   outline: 4px solid rgba(34, 197, 94, 0.42);
@@ -1020,6 +1077,26 @@ h3 {
   }
 }
 
+@media (max-width: 640px) {
+  .english-notice-ribbon {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 10px;
+    padding: 14px;
+  }
+
+  .english-notice-track {
+    overflow: visible;
+  }
+
+  .english-notice-track p {
+    animation: none;
+    min-width: 0;
+    padding-left: 0;
+    white-space: normal;
+  }
+}
+
 @media (max-width: 520px) {
   .yuukoukan-rain span {
     display: none;
@@ -1036,6 +1113,13 @@ h3 {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .english-notice-track p {
+    animation: none;
+    min-width: 0;
+    padding-left: 0;
+    white-space: normal;
+  }
+
   .yuukoukan-rain span {
     animation: none;
     opacity: 0.06;
