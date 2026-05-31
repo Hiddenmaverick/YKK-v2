@@ -116,6 +116,54 @@ input:disabled {
   animation-delay: -28s;
 }
 
+.yuukoukan-rain span:nth-child(7) {
+  --fall-duration: 31s;
+  --rain-left: 16%;
+  --rain-opacity: 0.07;
+  --rain-size: 28px;
+  animation-delay: -24s;
+}
+
+.yuukoukan-rain span:nth-child(8) {
+  --fall-duration: 43s;
+  --rain-left: 34%;
+  --rain-opacity: 0.08;
+  --rain-size: 38px;
+  animation-delay: -13s;
+}
+
+.yuukoukan-rain span:nth-child(9) {
+  --fall-duration: 35s;
+  --rain-left: 48%;
+  --rain-opacity: 0.07;
+  --rain-size: 31px;
+  animation-delay: -30s;
+}
+
+.yuukoukan-rain span:nth-child(10) {
+  --fall-duration: 28s;
+  --rain-left: 66%;
+  --rain-opacity: 0.09;
+  --rain-size: 36px;
+  animation-delay: -9s;
+}
+
+.yuukoukan-rain span:nth-child(11) {
+  --fall-duration: 39s;
+  --rain-left: 78%;
+  --rain-opacity: 0.08;
+  --rain-size: 29px;
+  animation-delay: -19s;
+}
+
+.yuukoukan-rain span:nth-child(12) {
+  --fall-duration: 33s;
+  --rain-left: 88%;
+  --rain-opacity: 0.07;
+  --rain-size: 34px;
+  animation-delay: -4s;
+}
+
 @keyframes yuukoukan-fall {
   from {
     transform: translate3d(0, -28vh, 0);
@@ -196,12 +244,12 @@ input:disabled {
   box-shadow: 0 18px 38px rgba(22, 163, 74, 0.34), 0 0 0 8px rgba(134, 239, 172, 0.12);
   display: inline-flex;
   flex-wrap: wrap;
-  font-size: 1.32rem;
-  gap: 12px;
+  font-size: 1.68rem;
+  gap: 16px;
   justify-content: center;
-  min-height: 78px;
-  min-width: min(100%, 430px);
-  padding: 21px 42px;
+  min-height: 124px;
+  min-width: min(100%, 680px);
+  padding: 32px 64px;
 }
 
 .start-study-button:hover,
@@ -211,7 +259,7 @@ input:disabled {
 
 .start-study-button span:last-child {
   color: #dcfce7;
-  font-size: 1.14rem;
+  font-size: 1.34rem;
 }
 
 .english-notice-ribbon {
@@ -603,6 +651,7 @@ h3 {
   line-height: 1.35;
   margin-bottom: 0;
   padding: 6px 10px;
+  text-align: center;
 }
 
 .message {
@@ -1165,6 +1214,11 @@ h3 {
   padding: 8px 14px;
 }
 
+.nickname-saved-display strong,
+.nickname-compact strong {
+  font-size: 1.08em;
+}
+
 .nickname-compact {
   font-size: 0.92rem;
   margin: 14px 0 0;
@@ -1184,6 +1238,12 @@ h3 {
 .subtle-text-button {
   font-size: 0.9rem;
   opacity: 0.78;
+}
+
+.nickname-action-button {
+  font-size: 0.72rem;
+  line-height: 1.1;
+  padding: 4px 0;
 }
 
 .card .text-button {
@@ -1285,7 +1345,13 @@ h3 {
 
   .yuukoukan-rain span:nth-child(1),
   .yuukoukan-rain span:nth-child(2),
-  .yuukoukan-rain span:nth-child(6) {
+  .yuukoukan-rain span:nth-child(6),
+  .yuukoukan-rain span:nth-child(7),
+  .yuukoukan-rain span:nth-child(8),
+  .yuukoukan-rain span:nth-child(9),
+  .yuukoukan-rain span:nth-child(10),
+  .yuukoukan-rain span:nth-child(11),
+  .yuukoukan-rain span:nth-child(12) {
     display: none;
   }
 }
@@ -1381,14 +1447,15 @@ h3 {
   }
 
   .start-study-button {
-    font-size: 1.18rem;
-    min-height: 66px;
+    font-size: 1.38rem;
+    min-height: 104px;
     min-width: 0;
-    padding: 17px 26px;
+    padding: 24px 32px;
+    width: 100%;
   }
 
   .start-study-button span:last-child {
-    font-size: 1.04rem;
+    font-size: 1.14rem;
   }
 
   .english-schedule-card {
