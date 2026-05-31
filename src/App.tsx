@@ -862,18 +862,32 @@ function App() {
                 </button>
               )}
             </div>
-            <div className="home-start-panel">
-              <button className="primary-button start-study-button" onClick={startStudying} type="button">
-                <span>Start Studying</span>
-                <span>学習を始める</span>
-              </button>
-            </div>
             <p className="privacy-note" id="privacy-helper">
               Progress is saved only on this device. Do not use your real full name or student number.
             </p>
           </>
         )}
       </section>
+
+      {isHomeScreen && (
+        <div className="home-start-panel">
+          <button className="primary-button start-study-button" onClick={startStudying} type="button">
+            <span>Start Studying</span>
+            <span>学習を始める</span>
+          </button>
+        </div>
+      )}
+
+      {isHomeScreen && (
+        <aside className="english-notice-ribbon" aria-label="英語のお知らせ">
+          <span className="english-notice-label">英語のお知らせ</span>
+          <div className="english-notice-track" aria-live="polite">
+            <p>
+              5/18 単語小テストがあります　｜　Vocabulary Unit 4 を復習しましょう　｜　Mixed Review で Lesson 1〜3 を確認できます
+            </p>
+          </div>
+        </aside>
+      )}
 
       {error && <p className="message error-message">{error}</p>}
       {isLoading && <p className="message">Loading...</p>}
@@ -1202,26 +1216,26 @@ function App() {
             className="leave-warning-dialog"
             role="dialog"
           >
-            <h2 id="home-leave-warning-title">Return to homepage?</h2>
-            <p>Your current quiz progress will be lost.</p>
+            <h2 id="home-leave-warning-title">ホームに戻りますか？</h2>
+            <p>現在の問題の進み具合は保存されません。</p>
             <label className="leave-warning-checkbox">
               <input
                 checked={skipHomeLeaveWarning}
                 onChange={(event) => setSkipHomeLeaveWarning(event.target.checked)}
                 type="checkbox"
               />
-              <span>Don’t show this warning again on this device.</span>
+              <span>この端末では次回から表示しない</span>
             </label>
             <div className="button-row">
               <button className="primary-button" onClick={confirmReturnHome} type="button">
-                Return to homepage
+                ホームに戻る
               </button>
               <button
                 className="secondary-button"
                 onClick={() => setShowHomeLeaveWarning(false)}
                 type="button"
               >
-                Keep studying
+                学習を続ける
               </button>
             </div>
           </section>
