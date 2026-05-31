@@ -5,6 +5,10 @@ import { fileURLToPath } from 'node:url';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const projectRoot = path.resolve(__dirname, '..');
 const csvPath = path.join(projectRoot, 'teacher-content', 'questions.csv');
+const announcementsCsvPath = path.join(projectRoot, 'teacher-content', 'announcements.csv');
+const calendarEventsCsvPath = path.join(projectRoot, 'teacher-content', 'calendar-events.csv');
+const announcementsPath = path.join(projectRoot, 'public', 'data', 'announcements.json');
+const calendarEventsPath = path.join(projectRoot, 'public', 'data', 'calendar-events.json');
 const lessonsPath = path.join(projectRoot, 'public', 'data', 'lessons.json');
 const subjectsPath = path.join(projectRoot, 'public', 'data', 'subjects.json');
 const questionsDir = path.join(projectRoot, 'public', 'data', 'questions');
@@ -340,7 +344,7 @@ function validateConsistentCategory({ categoriesById, row, rowNumber, errors }) 
   }
 }
 
-function validateHeader(header) {
+function validateQuestionsHeader(header) {
   const trimmedHeader = header.map((column) => column.trim());
   const duplicateColumns = trimmedHeader.filter((column, index) => trimmedHeader.indexOf(column) !== index);
   const missingColumns = expectedColumns.filter((column) => !trimmedHeader.includes(column));
@@ -361,6 +365,140 @@ function validateHeader(header) {
   }
 
   return trimmedHeader;
+}
+
+
+function validateSimpleHeader({ header, expectedHeader, fileName }) {
+  const trimmedHeader = header.map((column) => column.trim());
+  const duplicateColumns = trimmedHeader.filter((column, index) => trimmedHeader.indexOf(column) !== index);
+  const missingColumns = expectedHeader.filter((column) => !trimmedHeader.includes(column));
+  const extraColumns = trimmedHeader.filter((column) => !expectedHeader.includes(column));
+
+  if (missingColumns.length > 0 || extraColumns.length > 0 || duplicateColumns.length > 0) {
+    const parts = [];
+    if (missingColumns.length > 0) {
+      parts.push(`missing columns: ${missingColumns.join(', ')}`);
+    }
+    if (extraColumns.length > 0) {
+      parts.push(`unexpected columns: ${extraColumns.join(', ')}`);
+    }
+    if (duplicateColumns.length > 0) {
+      parts.push(`duplicate columns: ${[...new Set(duplicateColumns)].join(', ')}`);
+    }
+    throw new Error(`${fileName} header is not valid (${parts.join('; ')}). Expected these columns: ${expectedHeader.join(', ')}`);
+  }
+
+  return trimmedHeader;
+}
+
+function normalizeSimpleRow(header, csvRow, errors) {
+  const values = csvRow.values.map((value) => value.trim());
+  if (values.length > header.length) {
+    addError(errors, csvRow.line, `found ${values.length} cells, but the header has ${header.length}. Check for an extra comma or add quotes around text that contains commas.`);
+  }
+
+  return Object.fromEntries(header.map((column, index) => [column, values[index] ?? '']));
+}
+
+function isValidDateString(value) {
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(value)) {
+    return false;
+  }
+
+  const [year, month, day] = value.split('-').map(Number);
+  const date = new Date(Date.UTC(year, month - 1, day));
+  return date.getUTCFullYear() === year && date.getUTCMonth() === month - 1 && date.getUTCDate() === day;
+}
+
+async function generateAnnouncements() {
+  const csvText = await readFile(announcementsCsvPath, 'utf8');
+  const rows = parseCsv(csvText).filter((row) => !isBlankRow(row.values));
+
+  if (rows.length === 0) {
+    throw new Error('announcements.csv is empty. Add the header row: active,message');
+  }
+
+  const header = validateSimpleHeader({
+    header: rows[0].values,
+    expectedHeader: ['active', 'message'],
+    fileName: 'announcements.csv',
+  });
+  const errors = [];
+  const announcements = [];
+
+  for (const csvRow of rows.slice(1)) {
+    const row = normalizeSimpleRow(header, csvRow, errors);
+    const normalizedActive = row.active.toLocaleLowerCase();
+
+    if (!row.active) {
+      addError(errors, csvRow.line, 'missing required field "active". Use true or false.');
+      continue;
+    }
+
+    if (normalizedActive !== 'true' && normalizedActive !== 'false') {
+      addError(errors, csvRow.line, 'active must be either "true" or "false".');
+      continue;
+    }
+
+    if (normalizedActive === 'true') {
+      if (!row.message) {
+        addError(errors, csvRow.line, 'message is required when active is true. Add an announcement message or set active to false.');
+        continue;
+      }
+
+      announcements.push({
+        active: true,
+        message: row.message,
+      });
+    }
+  }
+
+  return { announcements, errors };
+}
+
+async function generateCalendarEvents() {
+  const csvText = await readFile(calendarEventsCsvPath, 'utf8');
+  const rows = parseCsv(csvText).filter((row) => !isBlankRow(row.values));
+
+  if (rows.length === 0) {
+    throw new Error('calendar-events.csv is empty. Add the header row: date,title,description');
+  }
+
+  const header = validateSimpleHeader({
+    header: rows[0].values,
+    expectedHeader: ['date', 'title', 'description'],
+    fileName: 'calendar-events.csv',
+  });
+  const errors = [];
+  const calendarEvents = [];
+
+  for (const csvRow of rows.slice(1)) {
+    const row = normalizeSimpleRow(header, csvRow, errors);
+
+    if (!row.date) {
+      addError(errors, csvRow.line, 'missing required field "date". Use YYYY-MM-DD.');
+    } else if (!/^\d{4}-\d{2}-\d{2}$/.test(row.date)) {
+      addError(errors, csvRow.line, 'date must use YYYY-MM-DD format, for example 2026-05-18.');
+    } else if (!isValidDateString(row.date)) {
+      addError(errors, csvRow.line, 'date must be a real calendar date. Check the month and day.');
+    }
+
+    if (!row.title) {
+      addError(errors, csvRow.line, 'missing required field "title". Add a short event title.');
+    }
+
+    if (row.date && isValidDateString(row.date) && row.title) {
+      calendarEvents.push({
+        date: row.date,
+        title: row.title,
+        description: row.description,
+      });
+    }
+  }
+
+  calendarEvents.sort((first, second) => first.date.localeCompare(second.date));
+
+  return { calendarEvents, errors };
 }
 
 function printValidationErrors(errors) {
@@ -387,7 +525,7 @@ async function main() {
     throw new Error('CSV file is empty. Add the header row and at least one question row.');
   }
 
-  const header = validateHeader(rows[0].values);
+  const header = validateQuestionsHeader(rows[0].values);
   const errors = [];
   const lessons = [];
   const categoriesById = new Map();
@@ -447,8 +585,12 @@ async function main() {
     }
   }
 
-  if (errors.length > 0) {
-    printValidationErrors(errors);
+  const { announcements, errors: announcementErrors } = await generateAnnouncements();
+  const { calendarEvents, errors: calendarEventErrors } = await generateCalendarEvents();
+  const allErrors = [...errors, ...announcementErrors, ...calendarEventErrors];
+
+  if (allErrors.length > 0) {
+    printValidationErrors(allErrors);
     process.exitCode = 1;
     return;
   }
@@ -490,6 +632,8 @@ async function main() {
 
   await writeFile(lessonsPath, `${JSON.stringify(generatedLessons, null, 2)}\n`);
   await writeFile(subjectsPath, `${JSON.stringify(generatedSubjects, null, 2)}\n`);
+  await writeFile(announcementsPath, `${JSON.stringify(announcements, null, 2)}\n`);
+  await writeFile(calendarEventsPath, `${JSON.stringify(calendarEvents, null, 2)}\n`);
 
   for (const lesson of lessons) {
     const outputPath = path.join(questionsDir, lesson.questionFile);
@@ -497,6 +641,7 @@ async function main() {
   }
 
   printSuccessSummary(lessons, generatedSubjects);
+  console.log(`Generated ${announcements.length} active ${announcements.length === 1 ? 'announcement' : 'announcements'} and ${calendarEvents.length} calendar ${calendarEvents.length === 1 ? 'event' : 'events'}.`);
 }
 
 main().catch((error) => {

@@ -409,6 +409,13 @@ input:disabled {
   font-weight: 800;
 }
 
+.english-schedule-empty {
+  color: #dbeafe;
+  font-size: 0.9rem;
+  font-weight: 800;
+  margin: 0;
+}
+
 @keyframes english-notice-scroll {
   from {
     transform: translateX(0);
