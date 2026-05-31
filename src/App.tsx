@@ -92,6 +92,7 @@ const getReviewAnswer = (question: Question) =>
 
 const NICKNAME_STORAGE_KEY = 'ykk-practice-nickname';
 const PROGRESS_STORAGE_KEY = 'ykk-practice-progress';
+const SKIP_HOME_LEAVE_WARNING_STORAGE_KEY = 'ykk-skip-home-leave-warning';
 const GOOGLE_FORM_BASE_URL =
   'https://docs.google.com/forms/d/e/1FAIpQLScxaQqfSfsYaUIFzwUGW2G2TqCpccChC66LHq5gBI1HsQpm6A/viewform?usp=pp_url';
 const GOOGLE_FORM_FIELDS = {
@@ -319,6 +320,9 @@ function App() {
   const [mixedReviewQuestionCount, setMixedReviewQuestionCount] = useState<MixedQuizQuestionCount>(25);
   const [mixedReviewMessage, setMixedReviewMessage] = useState('');
   const [isMixedReviewAttempt, setIsMixedReviewAttempt] = useState(false);
+  const [isStudyMode, setIsStudyMode] = useState(false);
+  const [showHomeLeaveWarning, setShowHomeLeaveWarning] = useState(false);
+  const [skipHomeLeaveWarning, setSkipHomeLeaveWarning] = useState(false);
 
   useEffect(() => {
     const trimmedNickname = nickname.trim();
@@ -409,6 +413,40 @@ function App() {
     setSelectedChoice('');
     setBlankAnswer('');
     setFeedback(null);
+  };
+
+  const resetStudyNavigation = () => {
+    setSelectedSubject(null);
+    setSelectedLesson(null);
+    setQuestions([]);
+    setSelectedMode(null);
+    setReviews([]);
+    setShowResults(false);
+    setProgressSaved(false);
+    setCurrentResultProgress(null);
+    setIsMixedReviewAttempt(false);
+    setMixedReviewLessonIds([]);
+    setMixedReviewQuestionCount(25);
+    setMixedReviewMessage('');
+    setCurrentQuestionIndex(0);
+    resetAnswerState();
+    setError('');
+  };
+
+  const startStudying = () => {
+    if (nickname.trim()) {
+      setIsEditingNickname(false);
+    }
+
+    resetStudyNavigation();
+    setIsStudyMode(true);
+  };
+
+  const returnHome = () => {
+    resetStudyNavigation();
+    setIsStudyMode(false);
+    setShowHomeLeaveWarning(false);
+    setSkipHomeLeaveWarning(false);
   };
 
   const chooseSubject = (subject: Subject) => {
@@ -683,6 +721,30 @@ function App() {
     setError('');
   };
 
+  const isActiveAttempt = Boolean(selectedLesson && currentQuestion && !quizComplete);
+
+  const handleMascotHomeClick = () => {
+    if (!isStudyMode) {
+      return;
+    }
+
+    if (isActiveAttempt && readStorageValue(SKIP_HOME_LEAVE_WARNING_STORAGE_KEY) !== 'true') {
+      setSkipHomeLeaveWarning(false);
+      setShowHomeLeaveWarning(true);
+      return;
+    }
+
+    returnHome();
+  };
+
+  const confirmReturnHome = () => {
+    if (skipHomeLeaveWarning) {
+      writeStorageValue(SKIP_HOME_LEAVE_WARNING_STORAGE_KEY, 'true');
+    }
+
+    returnHome();
+  };
+
   const clearNickname = () => {
     setNickname('');
     setIsEditingNickname(true);
@@ -701,7 +763,7 @@ function App() {
 
   const hasSavedProgress = Object.keys(lessonProgress).length > 0;
   const trimmedNickname = nickname.trim();
-  const isHomeScreen = !selectedSubject;
+  const isHomeScreen = !isStudyMode;
   const showFullNicknameInput = isHomeScreen && (!trimmedNickname || isEditingNickname);
   const googleFormUrl = selectedLesson && currentResultProgress
     ? buildGoogleFormUrl({
@@ -751,11 +813,18 @@ function App() {
               <p className="nickname-compact">Playing as: <strong>{trimmedNickname}</strong></p>
             )}
           </div>
-          <img
-            alt="Yuukoukan mascot"
-            className="mascot-image"
-            src={`${import.meta.env.BASE_URL}images/mascot.svg`}
-          />
+          <button
+            aria-label="Return to homepage"
+            className="mascot-home-button"
+            onClick={handleMascotHomeClick}
+            type="button"
+          >
+            <img
+              alt="Yuukoukan mascot"
+              className="mascot-image"
+              src={`${import.meta.env.BASE_URL}images/mascot.svg`}
+            />
+          </button>
         </div>
         {isHomeScreen && (
           <>
@@ -793,6 +862,12 @@ function App() {
                 </button>
               )}
             </div>
+            <div className="home-start-panel">
+              <button className="primary-button start-study-button" onClick={startStudying} type="button">
+                <span>Start Studying</span>
+                <span>学習を始める</span>
+              </button>
+            </div>
             <p className="privacy-note" id="privacy-helper">
               Progress is saved only on this device. Do not use your real full name or student number.
             </p>
@@ -803,7 +878,7 @@ function App() {
       {error && <p className="message error-message">{error}</p>}
       {isLoading && <p className="message">Loading...</p>}
 
-      {!isLoading && !selectedSubject && (
+      {!isLoading && isStudyMode && !selectedSubject && (
         <section className="card">
           <div className="section-heading-row">
             <h2>Choose a Subject</h2>
@@ -836,7 +911,7 @@ function App() {
         </section>
       )}
 
-      {!isLoading && selectedSubject && !selectedLesson && (
+      {!isLoading && isStudyMode && selectedSubject && !selectedLesson && (
         <section className="card">
           <div className="section-heading-row">
             <div>
@@ -956,7 +1031,7 @@ function App() {
         </section>
       )}
 
-      {!isLoading && selectedLesson && questions.length === 0 && (
+      {!isLoading && isStudyMode && selectedLesson && questions.length === 0 && (
         <section className="card lesson-start">
           <button className="text-button back-link" onClick={chooseAnotherLesson} type="button">
             Back to lessons
@@ -991,7 +1066,7 @@ function App() {
         </section>
       )}
 
-      {!isLoading && selectedLesson && currentQuestion && !quizComplete && (
+      {!isLoading && isStudyMode && selectedLesson && currentQuestion && !quizComplete && (
         <section className="card quiz-card">
           <p className="progress-text">
             {isMixedReviewAttempt ? 'Mixed Review · ' : ''}{selectedMode ? `${getModeLabel(selectedMode)} · ` : ''}Question {currentQuestionIndex + 1} of {questions.length}
@@ -1068,7 +1143,7 @@ function App() {
         </section>
       )}
 
-      {!isLoading && quizComplete && (
+      {!isLoading && isStudyMode && quizComplete && (
         <section className="card results-card">
           <h2>{isMixedReviewAttempt ? 'Mixed Review results' : 'Final results'}</h2>
           <div className="results-summary">
@@ -1118,6 +1193,39 @@ function App() {
             <button className="secondary-button" onClick={chooseAnotherLesson} type="button">Back to lesson selection</button>
           </div>
         </section>
+      )}
+      {showHomeLeaveWarning && (
+        <div className="modal-backdrop" role="presentation">
+          <section
+            aria-labelledby="home-leave-warning-title"
+            aria-modal="true"
+            className="leave-warning-dialog"
+            role="dialog"
+          >
+            <h2 id="home-leave-warning-title">Return to homepage?</h2>
+            <p>Your current quiz progress will be lost.</p>
+            <label className="leave-warning-checkbox">
+              <input
+                checked={skipHomeLeaveWarning}
+                onChange={(event) => setSkipHomeLeaveWarning(event.target.checked)}
+                type="checkbox"
+              />
+              <span>Don’t show this warning again on this device.</span>
+            </label>
+            <div className="button-row">
+              <button className="primary-button" onClick={confirmReturnHome} type="button">
+                Return to homepage
+              </button>
+              <button
+                className="secondary-button"
+                onClick={() => setShowHomeLeaveWarning(false)}
+                type="button"
+              >
+                Keep studying
+              </button>
+            </div>
+          </section>
+        </div>
       )}
       </main>
     </>
