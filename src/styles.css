@@ -235,7 +235,7 @@ input:disabled {
 .home-start-panel {
   display: flex;
   justify-content: center;
-  margin: 56px 0 52px;
+  margin: 76px 0 70px;
 }
 
 .start-study-button {
@@ -247,9 +247,10 @@ input:disabled {
   font-size: 1.68rem;
   gap: 16px;
   justify-content: center;
-  min-height: 124px;
-  min-width: min(100%, 680px);
-  padding: 32px 64px;
+  min-height: 138px;
+  min-width: 0;
+  padding: 38px 52px;
+  width: min(100%, 560px);
 }
 
 .start-study-button:hover,
@@ -1443,14 +1444,13 @@ h3 {
   }
 
   .home-start-panel {
-    margin: 36px 0 34px;
+    margin: 49px 0 46px;
   }
 
   .start-study-button {
     font-size: 1.38rem;
-    min-height: 104px;
-    min-width: 0;
-    padding: 24px 32px;
+    min-height: 116px;
+    padding: 28px 30px;
     width: 100%;
   }
 
