@@ -971,7 +971,7 @@ function App() {
             <p className="school-name">長崎県立 猶興館高等学校</p>
             <p className="school-meta">YUUKOUKAN HIGH SCHOOL · EST. 1880</p>
           </div>
-          <p className="eyebrow">Version 1</p>
+          <p className="eyebrow">VERSION 2</p>
           <h1>English Practice</h1>
           {!isHomeScreen && trimmedNickname && (
             <p className="nickname-compact">Playing as: <strong>{trimmedNickname}</strong></p>
@@ -1015,14 +1015,22 @@ function App() {
               ) : (
                 <div className="nickname-saved-display">
                   <span>Playing as: <strong>{trimmedNickname}</strong></span>
-                  <button className="text-button" onClick={() => setIsEditingNickname(true)} type="button">
-                    Change nickname
+                  <button
+                    className="text-button nickname-action-button"
+                    onClick={() => setIsEditingNickname(true)}
+                    type="button"
+                  >
+                    change
                   </button>
                 </div>
               )}
               {trimmedNickname && (
-                <button className="text-button subtle-text-button" onClick={clearNickname} type="button">
-                  Clear saved nickname
+                <button
+                  className="text-button subtle-text-button nickname-action-button"
+                  onClick={clearNickname}
+                  type="button"
+                >
+                  clear
                 </button>
               )}
             </div>
@@ -1037,6 +1045,12 @@ function App() {
   return (
     <>
       <div className="yuukoukan-rain" aria-hidden="true">
+        <span>猶興館</span>
+        <span>猶興館</span>
+        <span>猶興館</span>
+        <span>猶興館</span>
+        <span>猶興館</span>
+        <span>猶興館</span>
         <span>猶興館</span>
         <span>猶興館</span>
         <span>猶興館</span>
