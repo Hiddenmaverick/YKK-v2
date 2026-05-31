@@ -134,6 +134,29 @@ input:disabled {
   z-index: 1;
 }
 
+.home-shell {
+  max-width: 1320px;
+}
+
+.home-layout {
+  align-items: start;
+  display: grid;
+  gap: 28px;
+  grid-template-columns: minmax(0, 0.45fr) minmax(0, 920px) minmax(280px, 320px);
+}
+
+.home-main-column {
+  min-width: 0;
+}
+
+.home-main-column .hero-card {
+  margin-bottom: 0;
+}
+
+.home-layout-spacer {
+  min-height: 1px;
+}
+
 
 .hero-card,
 .card {
@@ -164,7 +187,7 @@ input:disabled {
 .home-start-panel {
   display: flex;
   justify-content: center;
-  margin: -4px 0 18px;
+  margin: 28px 0 26px;
 }
 
 .start-study-button {
@@ -226,6 +249,156 @@ input:disabled {
 
 .english-notice-ribbon:hover .english-notice-track p {
   animation-play-state: paused;
+}
+
+.english-schedule-card {
+  background:
+    linear-gradient(145deg, rgba(45, 82, 124, 0.98), rgba(31, 64, 105, 0.98)),
+    #2d527c;
+  border: 1px solid rgba(167, 243, 208, 0.28);
+  border-radius: 28px;
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.24);
+  color: #f8fafc;
+  overflow: hidden;
+  padding: 22px;
+  position: sticky;
+  top: 24px;
+}
+
+.english-schedule-card::after {
+  background: #22c55e;
+  border-radius: 999px;
+  bottom: 0;
+  content: "";
+  height: 6px;
+  left: 22px;
+  position: absolute;
+  right: 22px;
+}
+
+.english-schedule-header {
+  border-bottom: 2px solid rgba(167, 243, 208, 0.35);
+  margin-bottom: 16px;
+  padding-bottom: 13px;
+}
+
+.english-schedule-kicker {
+  color: #a7f3d0;
+  font-size: 0.74rem;
+  font-weight: 950;
+  letter-spacing: 0.14em;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+}
+
+.english-schedule-header h2 {
+  color: #f8fafc;
+  font-size: 1.45rem;
+  letter-spacing: -0.02em;
+  margin-bottom: 2px;
+}
+
+.english-schedule-header p:last-child {
+  color: #dbeafe;
+  font-weight: 900;
+  margin-bottom: 0;
+}
+
+.english-schedule-grid {
+  display: grid;
+  gap: 7px;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+}
+
+.english-schedule-weekday {
+  color: #c9f7df;
+  font-size: 0.68rem;
+  font-weight: 950;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.english-schedule-day {
+  align-items: center;
+  aspect-ratio: 1;
+  background: #6f92bb;
+  border: 1px solid rgba(219, 234, 254, 0.22);
+  border-radius: 10px;
+  color: #f8fafc;
+  display: flex;
+  font-size: 0.86rem;
+  font-weight: 950;
+  justify-content: center;
+  min-width: 0;
+}
+
+.english-schedule-day-empty {
+  background: rgba(111, 146, 187, 0.24);
+  border-color: transparent;
+}
+
+.english-schedule-day-event {
+  background: #86efac;
+  border-color: rgba(240, 253, 244, 0.9);
+  box-shadow: 0 0 0 2px rgba(34, 197, 94, 0.24);
+  color: #12305a;
+}
+
+.english-schedule-events {
+  margin-top: 18px;
+  padding-bottom: 6px;
+}
+
+.english-schedule-events h3 {
+  color: #f8fafc;
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+.english-schedule-events ul {
+  display: grid;
+  gap: 10px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.english-schedule-events li {
+  align-items: center;
+  background: rgba(219, 234, 254, 0.13);
+  border: 1px solid rgba(167, 243, 208, 0.18);
+  border-radius: 16px;
+  display: grid;
+  gap: 10px;
+  grid-template-columns: auto 1fr;
+  padding: 10px;
+}
+
+.english-schedule-events time {
+  background: rgba(167, 243, 208, 0.95);
+  border-radius: 999px;
+  color: #12305a;
+  font-size: 0.78rem;
+  font-weight: 950;
+  padding: 6px 9px;
+  white-space: nowrap;
+}
+
+.english-schedule-events strong,
+.english-schedule-events span {
+  display: block;
+}
+
+.english-schedule-events strong {
+  color: #f8fafc;
+  font-size: 0.95rem;
+  line-height: 1.25;
+}
+
+.english-schedule-events span {
+  color: #dbeafe;
+  font-size: 0.86rem;
+  font-weight: 800;
 }
 
 @keyframes english-notice-scroll {
@@ -1065,6 +1238,30 @@ h3 {
   margin-bottom: 14px;
 }
 
+@media (max-width: 1100px) {
+  .home-layout {
+    grid-template-columns: minmax(0, 1fr) minmax(270px, 300px);
+  }
+
+  .home-layout-spacer {
+    display: none;
+  }
+}
+
+@media (max-width: 860px) {
+  .home-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .english-schedule-card {
+    margin: 0 auto;
+    max-width: 420px;
+    position: relative;
+    top: auto;
+    width: 100%;
+  }
+}
+
 @media (max-width: 900px) {
   .yuukoukan-rain span {
     opacity: 0.07;
@@ -1161,6 +1358,15 @@ h3 {
 
   .nickname-panel {
     align-items: stretch;
+  }
+
+  .home-start-panel {
+    margin: 24px 0 22px;
+  }
+
+  .english-schedule-card {
+    border-radius: 20px;
+    padding: 18px;
   }
 
   .compact-hero {

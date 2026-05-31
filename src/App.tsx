@@ -296,6 +296,109 @@ const getResultMessage = (percentage: number, nickname: string) => {
     : 'Try again after reviewing the explanations.';
 };
 
+type ScheduleEvent = {
+  date: string;
+  title: string;
+  description: string;
+};
+
+const ENGLISH_SCHEDULE_MONTH = new Date(2026, 4, 1);
+const ENGLISH_SCHEDULE_EVENTS: ScheduleEvent[] = [
+  {
+    date: '2026-05-18',
+    title: '単語小テスト',
+    description: 'Vocabulary Unit 4',
+  },
+  {
+    date: '2026-05-24',
+    title: 'Lesson 3 Quiz',
+    description: 'Communication English',
+  },
+  {
+    date: '2026-05-30',
+    title: 'Final Review',
+    description: 'Mixed Review',
+  },
+];
+
+const formatScheduleDateKey = (year: number, monthIndex: number, day: number) =>
+  `${year}-${String(monthIndex + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
+
+const EnglishScheduleCalendar = () => {
+  const displayedYear = ENGLISH_SCHEDULE_MONTH.getFullYear();
+  const displayedMonth = ENGLISH_SCHEDULE_MONTH.getMonth();
+  const firstWeekday = ENGLISH_SCHEDULE_MONTH.getDay();
+  const daysInMonth = new Date(displayedYear, displayedMonth + 1, 0).getDate();
+  const monthLabel = new Intl.DateTimeFormat('en-US', {
+    month: 'long',
+    year: 'numeric',
+  }).format(ENGLISH_SCHEDULE_MONTH);
+  const eventsByDate = new Map(ENGLISH_SCHEDULE_EVENTS.map((event) => [event.date, event]));
+  const calendarCells = [
+    ...Array.from({ length: firstWeekday }, () => null),
+    ...Array.from({ length: daysInMonth }, (_, index) => index + 1),
+  ];
+
+  return (
+    <aside className="english-schedule-card" aria-labelledby="english-schedule-title">
+      <div className="english-schedule-header">
+        <p className="english-schedule-kicker">Homepage Calendar</p>
+        <h2 id="english-schedule-title">English Schedule</h2>
+        <p>{monthLabel}</p>
+      </div>
+      <div className="english-schedule-grid" aria-label={`${monthLabel} English schedule calendar`}>
+        {['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].map((weekday) => (
+          <span className="english-schedule-weekday" key={weekday}>
+            {weekday}
+          </span>
+        ))}
+        {calendarCells.map((day, index) => {
+          if (day === null) {
+            return <span className="english-schedule-day english-schedule-day-empty" key={`empty-${index}`} />;
+          }
+
+          const dateKey = formatScheduleDateKey(displayedYear, displayedMonth, day);
+          const event = eventsByDate.get(dateKey);
+
+          return (
+            <span
+              aria-label={
+                event ? `${monthLabel} ${day}: ${event.title} / ${event.description}` : `${monthLabel} ${day}`
+              }
+              className={`english-schedule-day${event ? ' english-schedule-day-event' : ''}`}
+              key={dateKey}
+            >
+              {day}
+            </span>
+          );
+        })}
+      </div>
+      <div className="english-schedule-events">
+        <h3>Upcoming events</h3>
+        <ul>
+          {ENGLISH_SCHEDULE_EVENTS.map((event) => {
+            const eventDate = new Date(`${event.date}T00:00:00`);
+            const eventDay = new Intl.DateTimeFormat('en-US', {
+              month: 'short',
+              day: 'numeric',
+            }).format(eventDate);
+
+            return (
+              <li key={event.date}>
+                <time dateTime={event.date}>{eventDay}</time>
+                <div>
+                  <strong>{event.title}</strong>
+                  <span>{event.description}</span>
+                </div>
+              </li>
+            );
+          })}
+        </ul>
+      </div>
+    </aside>
+  );
+};
+
 function App() {
   const [subjects, setSubjects] = useState<Subject[]>([]);
   const [lessons, setLessons] = useState<Lesson[]>([]);
@@ -789,44 +892,34 @@ function App() {
     window.open(googleFormUrl, '_blank', 'noopener,noreferrer');
   };
 
-  return (
-    <>
-      <div className="yuukoukan-rain" aria-hidden="true">
-        <span>猶興館</span>
-        <span>猶興館</span>
-        <span>猶興館</span>
-        <span>猶興館</span>
-        <span>猶興館</span>
-        <span>猶興館</span>
-      </div>
-      <main className="app-shell">
-      <section className={`hero-card${isHomeScreen ? '' : ' compact-hero'}`}>
-        <div className="hero-content">
-          <div className="hero-copy">
-            <div className="school-identity" aria-label="Yuukoukan High School identity">
-              <p className="school-name">長崎県立 猶興館高等学校</p>
-              <p className="school-meta">YUUKOUKAN HIGH SCHOOL · EST. 1880</p>
-            </div>
-            <p className="eyebrow">Version 1</p>
-            <h1>English Practice</h1>
-            {!isHomeScreen && trimmedNickname && (
-              <p className="nickname-compact">Playing as: <strong>{trimmedNickname}</strong></p>
-            )}
+  const heroCard = (
+    <section className={`hero-card${isHomeScreen ? '' : ' compact-hero'}`}>
+      <div className="hero-content">
+        <div className="hero-copy">
+          <div className="school-identity" aria-label="Yuukoukan High School identity">
+            <p className="school-name">長崎県立 猶興館高等学校</p>
+            <p className="school-meta">YUUKOUKAN HIGH SCHOOL · EST. 1880</p>
           </div>
-          <button
-            aria-label="Return to homepage"
-            className="mascot-home-button"
-            onClick={handleMascotHomeClick}
-            type="button"
-          >
-            <img
-              alt="Yuukoukan mascot"
-              className="mascot-image"
-              src={`${import.meta.env.BASE_URL}images/mascot.svg`}
-            />
-          </button>
+          <p className="eyebrow">Version 1</p>
+          <h1>English Practice</h1>
+          {!isHomeScreen && trimmedNickname && (
+            <p className="nickname-compact">Playing as: <strong>{trimmedNickname}</strong></p>
+          )}
         </div>
-        {isHomeScreen && (
+        <button
+          aria-label="Return to homepage"
+          className="mascot-home-button"
+          onClick={handleMascotHomeClick}
+          type="button"
+        >
+          <img
+            alt="Yuukoukan mascot"
+            className="mascot-image"
+            src={`${import.meta.env.BASE_URL}images/mascot.svg`}
+          />
+        </button>
+      </div>
+      {isHomeScreen && (
           <>
             <div className={`nickname-panel${showFullNicknameInput ? '' : ' nickname-panel-saved'}`}>
               {showFullNicknameInput ? (
@@ -866,31 +959,49 @@ function App() {
               Progress is saved only on this device. Do not use your real full name or student number.
             </p>
           </>
-        )}
-      </section>
-
-      {isHomeScreen && (
-        <div className="home-start-panel">
-          <button className="primary-button start-study-button" onClick={startStudying} type="button">
-            <span>Start Studying</span>
-            <span>学習を始める</span>
-          </button>
-        </div>
       )}
+    </section>
+  );
 
-      {isHomeScreen && (
-        <aside className="english-notice-ribbon" aria-label="英語のお知らせ">
-          <span className="english-notice-label">英語のお知らせ</span>
-          <div className="english-notice-track" aria-live="polite">
-            <p>
-              5/18 単語小テストがあります　｜　Vocabulary Unit 4 を復習しましょう　｜　Mixed Review で Lesson 1〜3 を確認できます
-            </p>
+  return (
+    <>
+      <div className="yuukoukan-rain" aria-hidden="true">
+        <span>猶興館</span>
+        <span>猶興館</span>
+        <span>猶興館</span>
+        <span>猶興館</span>
+        <span>猶興館</span>
+        <span>猶興館</span>
+      </div>
+      <main className={`app-shell${isHomeScreen ? ' home-shell' : ''}`}>
+        {isHomeScreen ? (
+          <div className="home-layout">
+          <div className="home-layout-spacer" aria-hidden="true" />
+          <div className="home-main-column">
+            {heroCard}
+            <div className="home-start-panel">
+              <button className="primary-button start-study-button" onClick={startStudying} type="button">
+                <span>Start Studying</span>
+                <span>学習を始める</span>
+              </button>
+            </div>
+            <aside className="english-notice-ribbon" aria-label="英語のお知らせ">
+              <span className="english-notice-label">英語のお知らせ</span>
+              <div className="english-notice-track" aria-live="polite">
+                <p>
+                  5/18 単語小テストがあります　｜　Vocabulary Unit 4 を復習しましょう　｜　Mixed Review で Lesson 1〜3 を確認できます
+                </p>
+              </div>
+            </aside>
           </div>
-        </aside>
-      )}
+            <EnglishScheduleCalendar />
+          </div>
+        ) : (
+          heroCard
+        )}
 
-      {error && <p className="message error-message">{error}</p>}
-      {isLoading && <p className="message">Loading...</p>}
+        {error && <p className="message error-message">{error}</p>}
+        {isLoading && <p className="message">Loading...</p>}
 
       {!isLoading && isStudyMode && !selectedSubject && (
         <section className="card">
