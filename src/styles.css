@@ -196,12 +196,12 @@ input:disabled {
   box-shadow: 0 18px 38px rgba(22, 163, 74, 0.34), 0 0 0 8px rgba(134, 239, 172, 0.12);
   display: inline-flex;
   flex-wrap: wrap;
-  font-size: 1.22rem;
+  font-size: 1.32rem;
   gap: 12px;
   justify-content: center;
-  min-height: 68px;
-  min-width: min(100%, 390px);
-  padding: 18px 34px;
+  min-height: 78px;
+  min-width: min(100%, 430px);
+  padding: 21px 42px;
 }
 
 .start-study-button:hover,
@@ -211,7 +211,7 @@ input:disabled {
 
 .start-study-button span:last-child {
   color: #dcfce7;
-  font-size: 1.08rem;
+  font-size: 1.14rem;
 }
 
 .english-notice-ribbon {
@@ -588,13 +588,14 @@ h3 {
 }
 
 .privacy-note {
-  background: rgba(7, 20, 38, 0.42);
-  border: 1px solid rgba(167, 243, 208, 0.22);
-  border-radius: 16px;
+  background: rgba(7, 20, 38, 0.24);
+  border: 1px solid rgba(167, 243, 208, 0.16);
+  border-radius: 10px;
   color: #dbeafe;
-  font-size: 1.05rem;
+  font-size: 0.82rem;
+  line-height: 1.35;
   margin-bottom: 0;
-  padding: 13px 16px;
+  padding: 6px 10px;
 }
 
 .message {
@@ -1373,14 +1374,14 @@ h3 {
   }
 
   .start-study-button {
-    font-size: 1.14rem;
-    min-height: 62px;
+    font-size: 1.18rem;
+    min-height: 66px;
     min-width: 0;
-    padding: 16px 22px;
+    padding: 17px 26px;
   }
 
   .start-study-button span:last-child {
-    font-size: 1.02rem;
+    font-size: 1.04rem;
   }
 
   .english-schedule-card {

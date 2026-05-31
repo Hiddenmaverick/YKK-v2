@@ -956,7 +956,7 @@ function App() {
               )}
             </div>
             <p className="privacy-note" id="privacy-helper">
-              Progress is saved only on this device. Do not use your real full name or student number.
+              進み具合はこの端末だけに保存されます。本名や出席番号は使わないでください。
             </p>
           </>
       )}
