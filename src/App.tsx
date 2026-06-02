@@ -1506,7 +1506,6 @@ const AccessGate = ({ onUnlock }: { onUnlock: () => void }) => {
 
   return (
     <main className={`access-gate${isUnlocking ? ' access-gate-unlocking' : ''}`} style={gateStyle}>
-      <div className="access-gate-overlay" aria-hidden="true" />
       <section className="access-gate-card" aria-labelledby="access-gate-title">
         <p className="access-gate-kicker">Yuukoukan High School</p>
         <h1 id="access-gate-title">猶興館 English Practice</h1>

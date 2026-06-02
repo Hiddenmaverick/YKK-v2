@@ -177,14 +177,10 @@ input:disabled {
 
 .access-gate {
   align-items: center;
-  background-image:
-    linear-gradient(rgba(3, 7, 18, 0.62), rgba(3, 7, 18, 0.78)),
-    var(--access-gate-background-image),
-    radial-gradient(circle at 20% 10%, rgba(34, 197, 94, 0.22), transparent 30rem),
-    linear-gradient(135deg, #06111f 0%, #0b1f37 52%, #06140f 100%);
+  background-image: var(--access-gate-background-image);
   background-position: center;
   background-repeat: no-repeat;
-  background-size: auto, cover, auto, auto;
+  background-size: cover;
   display: flex;
   isolation: isolate;
   justify-content: center;
@@ -198,15 +194,6 @@ input:disabled {
 
 .access-gate-unlocking {
   opacity: 0;
-}
-
-.access-gate-overlay {
-  background:
-    radial-gradient(circle at center, rgba(20, 83, 45, 0.14), transparent 18rem),
-    linear-gradient(135deg, rgba(3, 7, 18, 0.5), rgba(7, 20, 38, 0.82));
-  inset: 0;
-  position: absolute;
-  z-index: -1;
 }
 
 .access-gate-card {
