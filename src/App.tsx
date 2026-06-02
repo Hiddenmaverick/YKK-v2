@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState } from 'react';
+import type { CSSProperties, FormEvent } from 'react';
 import { buildMixedQuizQuestionPool } from './quizHelpers';
 import type { MixedQuizQuestionCount } from './quizHelpers';
 import type { AnswerReview, AttemptMode, Lesson, LessonProgress, Question, Subject } from './types';
@@ -93,6 +94,8 @@ const getReviewAnswer = (question: Question) =>
 const NICKNAME_STORAGE_KEY = 'ykk-practice-nickname';
 const PROGRESS_STORAGE_KEY = 'ykk-practice-progress';
 const SKIP_HOME_LEAVE_WARNING_STORAGE_KEY = 'ykk-skip-home-leave-warning';
+const ACCESS_GATE_STORAGE_KEY = 'ykk-site-unlocked';
+const ACCESS_CODE_SHA256_HASH = '544cff476a8f3e20f195104b207925fc83b3087f064d88a7168bfb10e0575602';
 const GOOGLE_FORM_BASE_URL =
   'https://docs.google.com/forms/d/e/1FAIpQLScxaQqfSfsYaUIFzwUGW2G2TqCpccChC66LHq5gBI1HsQpm6A/viewform?usp=pp_url';
 const GOOGLE_FORM_FIELDS = {
@@ -430,7 +433,7 @@ const EnglishScheduleCalendar = ({ events }: { events: ScheduleEvent[] }) => {
   );
 };
 
-function App() {
+function AppContent() {
   const [subjects, setSubjects] = useState<Subject[]>([]);
   const [lessons, setLessons] = useState<Lesson[]>([]);
   const [selectedSubject, setSelectedSubject] = useState<Subject | null>(null);
@@ -1440,6 +1443,108 @@ function App() {
       </main>
     </>
   );
+}
+
+
+const sha256Hex = async (value: string) => {
+  const encodedValue = new TextEncoder().encode(value);
+  const digest = await window.crypto.subtle.digest('SHA-256', encodedValue);
+
+  return Array.from(new Uint8Array(digest))
+    .map((byte) => byte.toString(16).padStart(2, '0'))
+    .join('');
+};
+
+const prefersReducedMotion = () => {
+  if (typeof window === 'undefined') {
+    return false;
+  }
+
+  return window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+};
+
+const AccessGate = ({ onUnlock }: { onUnlock: () => void }) => {
+  const gateStyle = {
+    '--access-gate-background-image': `url("${import.meta.env.BASE_URL}images/school-gate.jpg")`,
+  } as CSSProperties;
+  const [accessCode, setAccessCode] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
+  const [isChecking, setIsChecking] = useState(false);
+  const [isUnlocking, setIsUnlocking] = useState(false);
+
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+
+    if (isChecking || isUnlocking) {
+      return;
+    }
+
+    setErrorMessage('');
+    setIsChecking(true);
+
+    try {
+      if (!window.crypto?.subtle) {
+        throw new Error('Web Crypto API is not available.');
+      }
+
+      const enteredCodeHash = await sha256Hex(accessCode.trim());
+
+      if (enteredCodeHash !== ACCESS_CODE_SHA256_HASH) {
+        setErrorMessage('クラスコードが違います。');
+        setIsChecking(false);
+        return;
+      }
+
+      writeStorageValue(ACCESS_GATE_STORAGE_KEY, 'true');
+      setIsUnlocking(true);
+      window.setTimeout(onUnlock, prefersReducedMotion() ? 0 : 240);
+    } catch {
+      setErrorMessage('クラスコードが違います。');
+      setIsChecking(false);
+    }
+  };
+
+  return (
+    <main className={`access-gate${isUnlocking ? ' access-gate-unlocking' : ''}`} style={gateStyle}>
+      <div className="access-gate-overlay" aria-hidden="true" />
+      <section className="access-gate-card" aria-labelledby="access-gate-title">
+        <p className="access-gate-kicker">Yuukoukan High School</p>
+        <h1 id="access-gate-title">猶興館 English Practice</h1>
+        <p className="access-gate-subtitle">このサイトは猶興館高校の英語学習用です。</p>
+        <form className="access-gate-form" onSubmit={handleSubmit}>
+          <label htmlFor="class-access-code">クラスコードを入力してください</label>
+          <input
+            aria-describedby={errorMessage ? 'access-gate-error' : undefined}
+            aria-invalid={errorMessage ? 'true' : 'false'}
+            autoComplete="off"
+            autoFocus
+            id="class-access-code"
+            onChange={(event) => setAccessCode(event.target.value)}
+            type="password"
+            value={accessCode}
+          />
+          {errorMessage && (
+            <p className="access-gate-error" id="access-gate-error" role="alert">
+              {errorMessage}
+            </p>
+          )}
+          <button className="access-gate-button" disabled={isChecking || isUnlocking} type="submit">
+            {isChecking || isUnlocking ? '確認中…' : '入る'}
+          </button>
+        </form>
+      </section>
+    </main>
+  );
+};
+
+function App() {
+  const [isUnlocked, setIsUnlocked] = useState(() => readStorageValue(ACCESS_GATE_STORAGE_KEY) === 'true');
+
+  if (!isUnlocked) {
+    return <AccessGate onUnlock={() => setIsUnlocked(true)} />;
+  }
+
+  return <AppContent />;
 }
 
 export default App;
