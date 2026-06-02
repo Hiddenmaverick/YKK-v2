@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from 'react';
 import type { CSSProperties, FormEvent } from 'react';
+import VocabWarmupDrawer from './components/VocabWarmupDrawer';
 import { buildMixedQuizQuestionPool } from './quizHelpers';
 import type { MixedQuizQuestionCount } from './quizHelpers';
 import type { AnswerReview, AttemptMode, Lesson, LessonProgress, Question, Subject } from './types';
@@ -1047,6 +1048,7 @@ function AppContent() {
 
   return (
     <>
+      <VocabWarmupDrawer hidden={isActiveAttempt} lessons={lessons} />
       <div className="yuukoukan-rain" aria-hidden="true">
         <span>猶興館</span>
         <span>猶興館</span>
