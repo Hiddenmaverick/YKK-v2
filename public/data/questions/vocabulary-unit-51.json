@@ -1,0 +1,230 @@
+[
+  {
+    "id": "q1",
+    "type": "multiple-choice",
+    "prompt": "What does \"academic\" mean?",
+    "choices": [
+      "学問の",
+      "初歩的な",
+      "教育の",
+      "結論の",
+      "論理的な",
+      "一般的な",
+      "形式ばった",
+      "典型的な"
+    ],
+    "answer": [
+      "学問の",
+      "学問的な"
+    ],
+    "explanation": "academic = 学問の；学問的な（例：academic studies 学問的な研究）"
+  },
+  {
+    "id": "q2",
+    "type": "multiple-choice",
+    "prompt": "What does \"elementary\" mean?",
+    "choices": [
+      "初歩的な",
+      "学問的な",
+      "高度な",
+      "結論の",
+      "先輩の",
+      "論理的な",
+      "一般的な",
+      "典型的な"
+    ],
+    "answer": [
+      "初歩的な",
+      "小学校の"
+    ],
+    "explanation": "elementary = 小学校の；初歩的な（例：an elementary class 初歩的なクラス）"
+  },
+  {
+    "id": "q3",
+    "type": "multiple-choice",
+    "prompt": "What does \"lecture\" mean?",
+    "choices": [
+      "講義",
+      "学期",
+      "序論",
+      "結論",
+      "部門",
+      "段落",
+      "概要",
+      "言語"
+    ],
+    "answer": "講義",
+    "explanation": "lecture = 講義；講演（例：give a lecture 講義をする）"
+  },
+  {
+    "id": "q4",
+    "type": "multiple-choice",
+    "prompt": "What does \"department\" mean?",
+    "choices": [
+      "部門",
+      "講義",
+      "学期",
+      "序論",
+      "教授",
+      "概要",
+      "段落",
+      "結論"
+    ],
+    "answer": [
+      "部門",
+      "売り場"
+    ],
+    "explanation": "department = ①部門；学科 ②（百貨店の）売り場（例：the French department フランス語学科）"
+  },
+  {
+    "id": "q5",
+    "type": "multiple-choice",
+    "prompt": "What does \"semester\" mean?",
+    "choices": [
+      "学期",
+      "講義",
+      "序論",
+      "結論",
+      "学科",
+      "段落",
+      "概要",
+      "言語"
+    ],
+    "answer": "学期",
+    "explanation": "semester = （主に大学の）学期（例：a semester starts 学期が始まる）"
+  },
+  {
+    "id": "q6",
+    "type": "multiple-choice",
+    "prompt": "What does \"professor\" mean?",
+    "choices": [
+      "（大学の）教授",
+      "先輩",
+      "後輩",
+      "若者たち",
+      "学期",
+      "児童",
+      "指導者",
+      "研究者"
+    ],
+    "answer": "（大学の）教授",
+    "explanation": "professor = （大学の）教授（例：a professor of literature 文学の教授）"
+  },
+  {
+    "id": "q7",
+    "type": "multiple-choice",
+    "prompt": "What does \"senior\" mean?",
+    "choices": [
+      "地位が上の",
+      "地位が下の",
+      "初歩的な",
+      "学問的な",
+      "高齢の",
+      "一般的な",
+      "論理的な",
+      "教育の"
+    ],
+    "answer": [
+      "地位が上の",
+      "先輩の"
+    ],
+    "explanation": "senior = 地位が上の；先輩の（例：be senior to him 彼の先輩だ）"
+  },
+  {
+    "id": "q8",
+    "type": "multiple-choice",
+    "prompt": "What does \"junior\" mean?",
+    "choices": [
+      "地位が下の",
+      "地位が上の",
+      "高齢の",
+      "初歩的な",
+      "年配の",
+      "一般的な",
+      "論理的な",
+      "教育の"
+    ],
+    "answer": [
+      "地位が下の",
+      "後輩の"
+    ],
+    "explanation": "junior = 地位が下の；後輩の（例：be junior to her 彼女の後輩だ）"
+  },
+  {
+    "id": "q9",
+    "type": "multiple-choice",
+    "prompt": "What does \"youth\" mean?",
+    "choices": [
+      "若者たち",
+      "年配の人たち",
+      "先輩",
+      "後輩",
+      "学期",
+      "感情",
+      "気分",
+      "欲望"
+    ],
+    "answer": [
+      "若者たち",
+      "青年期"
+    ],
+    "explanation": "youth = ①（the ~）若者たち ②青年期（例：the youth of today 今日の若者たち）"
+  },
+  {
+    "id": "q10",
+    "type": "multiple-choice",
+    "prompt": "What does \"elderly\" mean?",
+    "choices": [
+      "高齢の",
+      "地位が上の",
+      "初歩的な",
+      "若い",
+      "学問的な",
+      "論理的な",
+      "一般的な",
+      "教育の"
+    ],
+    "answer": [
+      "高齢の",
+      "年配の人たち"
+    ],
+    "explanation": "elderly = ①（the ~）年配の人たち ②高齢の；年配の（例：be free for the elderly お年寄りは無料だ）"
+  },
+  {
+    "id": "q11",
+    "type": "multiple-choice",
+    "prompt": "What does \"introduction\" mean?",
+    "choices": [
+      "序論",
+      "結論",
+      "講義",
+      "学期",
+      "部門",
+      "段落",
+      "概要",
+      "言語"
+    ],
+    "answer": [
+      "序論",
+      "紹介"
+    ],
+    "explanation": "introduction = ①序論；前置き ②紹介；導入（例：the introduction of a book 本の序論）"
+  },
+  {
+    "id": "q12",
+    "type": "multiple-choice",
+    "prompt": "What does \"conclusion\" mean?",
+    "choices": [
+      "結論",
+      "序論",
+      "講義",
+      "学期",
+      "部門",
+      "段落",
+      "概要",
+      "言語"
+    ],
+    "answer": "結論",
+    "explanation": "conclusion = 結論；結び（例：end with a conclusion 結論で締めくくられる）"
+  }
+]

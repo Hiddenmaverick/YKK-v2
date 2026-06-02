@@ -108,13 +108,13 @@
       "Teacher problem explains why?"
     ],
     "answer": "Could you explain this problem, please?",
-    "explanation": "'Could you ... please?' is a polite way to ask a teacher or classmate for help. The verb 'explain' is followed by the thing you want to understand."
+    "explanation": "Could you ... please?' is a polite way to ask a teacher or classmate for help. The verb 'explain' is followed by the thing you want to understand."
   },
   {
     "id": "q10",
     "type": "true-false",
     "prompt": "True or false: \"May I borrow your notes?\" is a polite classroom request.",
     "answer": true,
-    "explanation": "'May I ...?' is a polite way to ask permission in a classroom. Asking to borrow notes is a natural school-life situation."
+    "explanation": "May I ...?' is a polite way to ask permission in a classroom. Asking to borrow notes is a natural school-life situation."
   }
 ]

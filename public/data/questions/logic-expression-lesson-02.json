@@ -14,7 +14,7 @@
       "then"
     ],
     "answer": "because",
-    "explanation": "'Because' introduces a reason. The second part explains why the speaker likes reading books."
+    "explanation": "Because' introduces a reason. The second part explains why the speaker likes reading books."
   },
   {
     "id": "q2",
@@ -24,7 +24,7 @@
       "because",
       "since"
     ],
-    "explanation": "'Because' and 'since' can introduce a reason. Both fit this simple explanation."
+    "explanation": "Because' and 'since' can introduce a reason. Both fit this simple explanation."
   },
   {
     "id": "q3",
@@ -55,6 +55,6 @@
     "type": "fill-in-the-blank",
     "prompt": "Fill in the blank: For this _____, we should start the project early.",
     "answer": "reason",
-    "explanation": "'For this reason' connects the previous idea to a conclusion or suggestion."
+    "explanation": "For this reason' connects the previous idea to a conclusion or suggestion."
   }
 ]
