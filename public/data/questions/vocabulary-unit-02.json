@@ -45,7 +45,7 @@
       "explain"
     ],
     "answer": "arrive",
-    "explanation": "'Arrive' means to reach a place. 'Depart' means to leave a place."
+    "explanation": "Arrive' means to reach a place. 'Depart' means to leave a place."
   },
   {
     "id": "q5",
@@ -55,6 +55,6 @@
       "depart",
       "leave"
     ],
-    "explanation": "'Depart' and 'leave' both mean to go away from a place. They are common words in travel information."
+    "explanation": "Depart' and 'leave' both mean to go away from a place. They are common words in travel information."
   }
 ]

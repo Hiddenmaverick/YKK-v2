@@ -61,5 +61,23 @@
     "categoryId": "vocabulary",
     "categoryTitle": "語彙 / Vocabulary",
     "categoryDescription": "Practice Vocabulary lessons and units."
+  },
+  {
+    "id": "vocabulary-unit-51",
+    "title": "Unit 51: Academic Life",
+    "description": "Practice vocabulary related to academic life, school roles, and age groups.",
+    "questionFile": "vocabulary-unit-51.json",
+    "categoryId": "vocabulary",
+    "categoryTitle": "語彙 / Vocabulary",
+    "categoryDescription": "Practice Vocabulary lessons and units."
+  },
+  {
+    "id": "vocabulary-unit-52",
+    "title": "Unit 52: Education and Learning",
+    "description": "Practice vocabulary related to learning, school records, and self-improvement.",
+    "questionFile": "vocabulary-unit-52.json",
+    "categoryId": "vocabulary",
+    "categoryTitle": "語彙 / Vocabulary",
+    "categoryDescription": "Practice Vocabulary lessons and units."
   }
 ]

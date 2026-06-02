@@ -24,7 +24,7 @@
       "take",
       "catch"
     ],
-    "explanation": "'Take the bus' is the most common phrase. 'Catch the bus' is also natural when the meaning is getting on a bus at the right time."
+    "explanation": "Take the bus' is the most common phrase. 'Catch the bus' is also natural when the meaning is getting on a bus at the right time."
   },
   {
     "id": "q3",
@@ -51,7 +51,7 @@
       "lend",
       "pass"
     ],
-    "explanation": "'Lend me your eraser' means let me use it for a short time. 'Pass me your eraser' is also natural if the eraser is nearby."
+    "explanation": "Lend me your eraser' means let me use it for a short time. 'Pass me your eraser' is also natural if the eraser is nearby."
   },
   {
     "id": "q5",
@@ -64,7 +64,7 @@
       "No, I didn't go there."
     ],
     "answer": "You're welcome.",
-    "explanation": "'You're welcome' is a polite response to 'Thank you.' Teachers can also point out natural alternatives such as 'No problem' for casual situations."
+    "explanation": "You're welcome' is a polite response to 'Thank you.' Teachers can also point out natural alternatives such as 'No problem' for casual situations."
   },
   {
     "id": "q6",
@@ -91,7 +91,7 @@
       "Could you speak a little more slowly, please?",
       "Could you please speak a little more slowly?"
     ],
-    "explanation": "'Could you ... please?' and 'Could you please ...?' are polite request patterns. Both correct choices ask someone to speak more slowly in a respectful way."
+    "explanation": "Could you ... please?' and 'Could you please ...?' are polite request patterns. Both correct choices ask someone to speak more slowly in a respectful way."
   },
   {
     "id": "q8",
@@ -118,6 +118,6 @@
     "type": "true-false",
     "prompt": "True or false: \"You're welcome\" is a natural response to \"Thank you.\"",
     "answer": true,
-    "explanation": "'You're welcome' is a polite and natural answer after someone says 'Thank you.' Students can also learn casual responses such as 'No problem.'"
+    "explanation": "You're welcome' is a polite and natural answer after someone says 'Thank you.' Students can also learn casual responses such as 'No problem.'"
   }
 ]

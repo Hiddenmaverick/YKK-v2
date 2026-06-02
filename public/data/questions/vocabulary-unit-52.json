@@ -1,0 +1,189 @@
+[
+  {
+    "id": "q1",
+    "type": "multiple-choice",
+    "prompt": "What does \"educational\" mean?",
+    "choices": [
+      "教育の",
+      "学問的な",
+      "平均の",
+      "改革的な",
+      "初歩的な",
+      "論理的な",
+      "一般的な",
+      "形式ばった"
+    ],
+    "answer": "教育の",
+    "explanation": "educational = 教育の（例：educational background 教育の経歴）"
+  },
+  {
+    "id": "q2",
+    "type": "multiple-choice",
+    "prompt": "What does \"background\" mean?",
+    "choices": [
+      "経歴",
+      "成績",
+      "平均点",
+      "復習",
+      "学科",
+      "段落",
+      "概要",
+      "言語"
+    ],
+    "answer": "経歴",
+    "explanation": "background = ①経歴 ②背景（例：educational background 教育の経歴）"
+  },
+  {
+    "id": "q3",
+    "type": "multiple-choice",
+    "prompt": "What does \"average\" mean?",
+    "choices": [
+      "平均の",
+      "教育の",
+      "経歴の",
+      "復習する",
+      "改革的な",
+      "論理的な",
+      "典型的な",
+      "一般的な"
+    ],
+    "answer": "平均の",
+    "explanation": "average = ①平均の ②平均；平均点（例：the average score 平均点）"
+  },
+  {
+    "id": "q4",
+    "type": "multiple-choice",
+    "prompt": "What does \"score\" mean?",
+    "choices": [
+      "得点",
+      "平均",
+      "経歴",
+      "後悔",
+      "復習",
+      "概要",
+      "段落",
+      "学科"
+    ],
+    "answer": "得点",
+    "explanation": "score = ①得点 ②成績（例：the average score 平均点）"
+  },
+  {
+    "id": "q5",
+    "type": "multiple-choice",
+    "prompt": "What does \"kindergarten\" mean?",
+    "choices": [
+      "幼稚園",
+      "小学校",
+      "中学校",
+      "学科",
+      "児童",
+      "学期",
+      "序論",
+      "教授"
+    ],
+    "answer": "幼稚園",
+    "explanation": "kindergarten = 幼稚園（例：a kindergarten pupil 幼稚園児）"
+  },
+  {
+    "id": "q6",
+    "type": "multiple-choice",
+    "prompt": "What does \"pupil\" mean?",
+    "choices": [
+      "児童",
+      "教授",
+      "平均点",
+      "幼稚園児",
+      "成績",
+      "若者たち",
+      "後輩",
+      "先輩"
+    ],
+    "answer": "児童",
+    "explanation": "pupil = ①児童；生徒 ②瞳（例：a kindergarten pupil 幼稚園児）"
+  },
+  {
+    "id": "q7",
+    "type": "multiple-choice",
+    "prompt": "What does \"review\" mean?",
+    "choices": [
+      "復習する",
+      "回復する",
+      "取り除く",
+      "後悔する",
+      "改革する",
+      "発音する",
+      "要約する",
+      "証明する"
+    ],
+    "answer": "復習する",
+    "explanation": "review = ①復習する；見直す ②批評；論評（例：review what I learned 学んだことを復習する）"
+  },
+  {
+    "id": "q8",
+    "type": "multiple-choice",
+    "prompt": "What does \"regret\" mean?",
+    "choices": [
+      "後悔する",
+      "復習する",
+      "回復する",
+      "改革する",
+      "取り除く",
+      "発音する",
+      "要約する",
+      "証明する"
+    ],
+    "answer": "後悔する",
+    "explanation": "regret = ①後悔する ②後悔；残念（例：regret not learning A Aを学ばなかったことを後悔する）"
+  },
+  {
+    "id": "q9",
+    "type": "multiple-choice",
+    "prompt": "What does \"remove\" mean?",
+    "choices": [
+      "取り除く",
+      "回復する",
+      "改革する",
+      "後悔する",
+      "復習する",
+      "発音する",
+      "要約する",
+      "証明する"
+    ],
+    "answer": "取り除く",
+    "explanation": "remove = ①取り除く ②脱ぐ（例：remove a sentence 文を取り除く）"
+  },
+  {
+    "id": "q10",
+    "type": "multiple-choice",
+    "prompt": "What does \"reform\" mean?",
+    "choices": [
+      "改革する",
+      "回復する",
+      "取り除く",
+      "後悔する",
+      "復習する",
+      "発音する",
+      "要約する",
+      "証明する"
+    ],
+    "answer": "改革する",
+    "explanation": "reform = 改革する；改革（例：reform the system 制度を改革する）"
+  },
+  {
+    "id": "q11",
+    "type": "multiple-choice",
+    "prompt": "What does \"recover\" mean?",
+    "choices": [
+      "回復する",
+      "改革する",
+      "取り除く",
+      "後悔する",
+      "復習する",
+      "発音する",
+      "要約する",
+      "証明する"
+    ],
+    "answer": "回復する",
+    "explanation": "recover = 回復する（例：recover from the flu インフルエンザから回復する）"
+  }
+]

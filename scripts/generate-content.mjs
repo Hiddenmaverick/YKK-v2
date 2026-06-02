@@ -76,7 +76,36 @@ const requiredFields = [
 
 const validQuestionTypes = ['multiple-choice', 'fill-in-the-blank', 'true-false'];
 
+function detectDelimiter(text) {
+  const firstLine = text.split(/\r?\n/, 1)[0] ?? '';
+  return firstLine.includes('\t') && !firstLine.includes(',') ? '\t' : ',';
+}
+
+function trimTrailingEmptyCells(values) {
+  const trimmedValues = [...values];
+
+  while (trimmedValues.length > 0 && trimmedValues[trimmedValues.length - 1].trim() === '') {
+    trimmedValues.pop();
+  }
+
+  return trimmedValues;
+}
+
+function parseTsv(text) {
+  return text
+    .split(/\r?\n/)
+    .filter((line, index, lines) => line !== '' || index < lines.length - 1)
+    .map((lineText, index) => ({
+      values: trimTrailingEmptyCells(lineText.split('\t')),
+      line: index + 1,
+    }));
+}
+
 function parseCsv(text) {
+  if (detectDelimiter(text) === '\t') {
+    return parseTsv(text);
+  }
+
   const rows = [];
   let row = [];
   let field = '';

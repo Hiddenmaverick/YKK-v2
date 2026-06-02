@@ -14,7 +14,7 @@
       "Useful school is uniforms."
     ],
     "answer": "I think school uniforms are useful.",
-    "explanation": "'I think ...' is a clear and polite way to begin an opinion. The sentence also has a complete subject and verb."
+    "explanation": "I think ...' is a clear and polite way to begin an opinion. The sentence also has a complete subject and verb."
   },
   {
     "id": "q2",
@@ -24,14 +24,14 @@
       "opinion",
       "view"
     ],
-    "explanation": "'In my opinion' is a common expression for giving an idea. 'In my view' is also acceptable."
+    "explanation": "In my opinion' is a common expression for giving an idea. 'In my view' is also acceptable."
   },
   {
     "id": "q3",
     "type": "true-false",
     "prompt": "True or false: \"I agree with you\" is a natural way to show that you have the same opinion.",
     "answer": true,
-    "explanation": "'I agree with you' directly and naturally shows that your opinion is the same as another person's opinion."
+    "explanation": "I agree with you' directly and naturally shows that your opinion is the same as another person's opinion."
   },
   {
     "id": "q4",
@@ -48,7 +48,7 @@
       "I never listen to you."
     ],
     "answer": "I see your point, but I have a different opinion.",
-    "explanation": "'I see your point, but ...' is a polite way to disagree because it first recognizes the other person's idea."
+    "explanation": "I see your point, but ...' is a polite way to disagree because it first recognizes the other person's idea."
   },
   {
     "id": "q5",
@@ -58,6 +58,6 @@
       "believe",
       "think"
     ],
-    "explanation": "'I believe that ...' and 'I think that ...' are useful patterns for stating an opinion with a full sentence after 'that.'"
+    "explanation": "I believe that ...' and 'I think that ...' are useful patterns for stating an opinion with a full sentence after 'that.'"
   }
 ]
