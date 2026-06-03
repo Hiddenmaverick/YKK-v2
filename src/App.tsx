@@ -389,6 +389,10 @@ const EnglishScheduleCalendar = ({ events }: { events: ScheduleEvent[] }) => {
     );
   };
 
+  const showToday = () => {
+    setSelectedMonthStart(getMonthStart());
+  };
+
   return (
     <aside className="english-schedule-card" aria-labelledby="english-schedule-title">
       <div className="english-schedule-header">
@@ -403,6 +407,15 @@ const EnglishScheduleCalendar = ({ events }: { events: ScheduleEvent[] }) => {
               type="button"
             >
               ‹
+            </button>
+            <button
+              aria-label="Show current month"
+              className="english-schedule-today-button"
+              disabled={isViewingCurrentMonth}
+              onClick={showToday}
+              type="button"
+            >
+              Today
             </button>
             <button
               aria-label="Show next month"
