@@ -313,8 +313,9 @@ type ScheduleEvent = {
 
 const DEFAULT_ANNOUNCEMENT_MESSAGE =
   'Welcome to English Practice　｜　Start Studying から学習を始めましょう';
-const DEFAULT_SCHEDULE_MONTH = new Date(2026, 4, 1);
-const MAX_UPCOMING_EVENTS = 5;
+const WEEKDAY_LABELS = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+
+const getMonthStart = (date = new Date()) => new Date(date.getFullYear(), date.getMonth(), 1);
 
 const formatScheduleDateKey = (year: number, monthIndex: number, day: number) =>
   `${year}-${String(monthIndex + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
@@ -350,36 +351,73 @@ const isScheduleEvent = (value: unknown): value is ScheduleEvent => {
 };
 
 const EnglishScheduleCalendar = ({ events }: { events: ScheduleEvent[] }) => {
-  const sortedEvents = useMemo(
-    () => [...events].sort((first, second) => first.date.localeCompare(second.date)),
-    [events],
-  );
-  const displayMonthDate = sortedEvents.length > 0 ? toScheduleDate(sortedEvents[0].date) : DEFAULT_SCHEDULE_MONTH;
-  const displayedYear = displayMonthDate.getFullYear();
-  const displayedMonth = displayMonthDate.getMonth();
-  const displayedMonthStart = new Date(displayedYear, displayedMonth, 1);
-  const firstWeekday = displayedMonthStart.getDay();
+  const [selectedMonthStart, setSelectedMonthStart] = useState(() => getMonthStart());
+  const today = getMonthStart(new Date());
+  const todayDate = new Date();
+  const displayedYear = selectedMonthStart.getFullYear();
+  const displayedMonth = selectedMonthStart.getMonth();
+  const firstWeekday = selectedMonthStart.getDay();
   const daysInMonth = new Date(displayedYear, displayedMonth + 1, 0).getDate();
   const monthLabel = new Intl.DateTimeFormat('en-US', {
     month: 'long',
     year: 'numeric',
-  }).format(displayedMonthStart);
-  const eventsByDate = new Map(sortedEvents.map((event) => [event.date, event]));
-  const upcomingEvents = sortedEvents.slice(0, MAX_UPCOMING_EVENTS);
+  }).format(selectedMonthStart);
+  const currentMonthKey = formatScheduleDateKey(displayedYear, displayedMonth, 1).slice(0, 7);
+  const todayKey = formatScheduleDateKey(todayDate.getFullYear(), todayDate.getMonth(), todayDate.getDate());
+  const isViewingCurrentMonth =
+    displayedYear === today.getFullYear() && displayedMonth === today.getMonth();
+  const sortedEvents = useMemo(
+    () => [...events].sort((first, second) => first.date.localeCompare(second.date)),
+    [events],
+  );
+  const selectedMonthEvents = sortedEvents.filter((event) => event.date.startsWith(currentMonthKey));
+  const eventsByDate = selectedMonthEvents.reduce<Map<string, ScheduleEvent[]>>((eventMap, event) => {
+    const dateEvents = eventMap.get(event.date) ?? [];
+    dateEvents.push(event);
+    eventMap.set(event.date, dateEvents);
+    return eventMap;
+  }, new Map());
+  const monthlyEvents = selectedMonthEvents;
   const calendarCells = [
     ...Array.from({ length: firstWeekday }, () => null),
     ...Array.from({ length: daysInMonth }, (_, index) => index + 1),
   ];
 
+  const changeMonth = (monthOffset: number) => {
+    setSelectedMonthStart((currentMonthStart) =>
+      new Date(currentMonthStart.getFullYear(), currentMonthStart.getMonth() + monthOffset, 1),
+    );
+  };
+
   return (
     <aside className="english-schedule-card" aria-labelledby="english-schedule-title">
       <div className="english-schedule-header">
         <p className="english-schedule-kicker">Homepage Calendar</p>
-        <h2 id="english-schedule-title">English Schedule</h2>
-        <p>{monthLabel}</p>
+        <div className="english-schedule-title-row">
+          <h2 id="english-schedule-title">English Schedule</h2>
+          <div className="english-schedule-controls" aria-label="English schedule month navigation">
+            <button
+              aria-label="Show previous month"
+              className="english-schedule-nav-button"
+              onClick={() => changeMonth(-1)}
+              type="button"
+            >
+              ‹
+            </button>
+            <button
+              aria-label="Show next month"
+              className="english-schedule-nav-button"
+              onClick={() => changeMonth(1)}
+              type="button"
+            >
+              ›
+            </button>
+          </div>
+        </div>
+        <p aria-live="polite">{monthLabel}</p>
       </div>
       <div className="english-schedule-grid" aria-label={`${monthLabel} English schedule calendar`}>
-        {['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].map((weekday) => (
+        {WEEKDAY_LABELS.map((weekday) => (
           <span className="english-schedule-weekday" key={weekday}>
             {weekday}
           </span>
@@ -390,13 +428,18 @@ const EnglishScheduleCalendar = ({ events }: { events: ScheduleEvent[] }) => {
           }
 
           const dateKey = formatScheduleDateKey(displayedYear, displayedMonth, day);
-          const event = eventsByDate.get(dateKey);
-          const eventLabel = event?.description ? `${event.title} / ${event.description}` : event?.title;
+          const dayEvents = eventsByDate.get(dateKey) ?? [];
+          const eventLabel = dayEvents
+            .map((event) => (event.description ? `${event.title} / ${event.description}` : event.title))
+            .join('; ');
+          const isToday = isViewingCurrentMonth && dateKey === todayKey;
 
           return (
             <span
               aria-label={eventLabel ? `${monthLabel} ${day}: ${eventLabel}` : `${monthLabel} ${day}`}
-              className={`english-schedule-day${event ? ' english-schedule-day-event' : ''}`}
+              className={`english-schedule-day${dayEvents.length > 0 ? ' english-schedule-day-event' : ''}${
+                isToday ? ' english-schedule-day-today' : ''
+              }`}
               key={dateKey}
             >
               {day}
@@ -405,10 +448,10 @@ const EnglishScheduleCalendar = ({ events }: { events: ScheduleEvent[] }) => {
         })}
       </div>
       <div className="english-schedule-events">
-        <h3>Upcoming events</h3>
-        {upcomingEvents.length > 0 ? (
+        <h3>{monthLabel} events</h3>
+        {monthlyEvents.length > 0 ? (
           <ul>
-            {upcomingEvents.map((event) => {
+            {monthlyEvents.map((event) => {
               const eventDate = toScheduleDate(event.date);
               const eventDay = new Intl.DateTimeFormat('en-US', {
                 month: 'short',
@@ -427,7 +470,7 @@ const EnglishScheduleCalendar = ({ events }: { events: ScheduleEvent[] }) => {
             })}
           </ul>
         ) : (
-          <p className="english-schedule-empty">No English events scheduled.</p>
+          <p className="english-schedule-empty">この月のお知らせはありません。</p>
         )}
       </div>
     </aside>
