@@ -476,29 +476,47 @@ input:disabled {
   gap: 8px;
 }
 
-.english-schedule-nav-button {
+.english-schedule-nav-button,
+.english-schedule-today-button {
   align-items: center;
   background: rgba(167, 243, 208, 0.16);
   border: 1px solid rgba(167, 243, 208, 0.4);
   border-radius: 999px;
   color: #f8fafc;
   display: inline-flex;
-  font-size: 1.2rem;
   font-weight: 950;
   height: 34px;
   justify-content: center;
   line-height: 1;
   transition: background-color 160ms ease, border-color 160ms ease, color 160ms ease;
+}
+
+.english-schedule-nav-button {
+  font-size: 1.2rem;
   width: 34px;
 }
 
-.english-schedule-nav-button:hover {
+.english-schedule-today-button {
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+  padding: 0 12px;
+  text-transform: uppercase;
+}
+
+.english-schedule-nav-button:hover,
+.english-schedule-today-button:hover:not(:disabled) {
   background: rgba(167, 243, 208, 0.95);
   border-color: rgba(240, 253, 244, 0.95);
   color: #12305a;
 }
 
-.english-schedule-nav-button:focus-visible {
+.english-schedule-today-button:disabled {
+  background: rgba(167, 243, 208, 0.08);
+  color: #bbf7d0;
+}
+
+.english-schedule-nav-button:focus-visible,
+.english-schedule-today-button:focus-visible {
   outline: 4px solid rgba(167, 243, 208, 0.34);
   outline-offset: 3px;
 }
@@ -1557,7 +1575,8 @@ h3 {
     white-space: normal;
   }
 
-  .english-schedule-nav-button {
+  .english-schedule-nav-button,
+  .english-schedule-today-button {
     transition: none;
   }
 
