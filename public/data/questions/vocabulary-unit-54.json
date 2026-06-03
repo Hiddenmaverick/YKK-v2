@@ -1,0 +1,206 @@
+[
+  {
+    "id": "q1",
+    "type": "multiple-choice",
+    "prompt": "What does \"summarize\" mean?",
+    "choices": [
+      "要約する",
+      "証明する",
+      "強調する",
+      "否定する",
+      "設立する",
+      "提出する",
+      "批判する",
+      "解釈する"
+    ],
+    "answer": "要約する",
+    "explanation": "summarize = 要約する（例：summarize the passage 本文を要約する）"
+  },
+  {
+    "id": "q2",
+    "type": "multiple-choice",
+    "prompt": "What does \"theme\" mean?",
+    "choices": [
+      "テーマ",
+      "統計",
+      "理論",
+      "調査",
+      "要因",
+      "議論",
+      "地域",
+      "課題"
+    ],
+    "answer": "テーマ",
+    "explanation": "theme = テーマ；主題（例：the theme of the essay レポートのテーマ）"
+  },
+  {
+    "id": "q3",
+    "type": "multiple-choice",
+    "prompt": "What does \"logical\" mean?",
+    "choices": [
+      "論理的な",
+      "典型的な",
+      "効果的な",
+      "一般的な",
+      "形式ばった",
+      "比較的な",
+      "感情的な",
+      "客観的な"
+    ],
+    "answer": "論理的な",
+    "explanation": "logical = 論理的な（例：a logical argument 論理的な主張）"
+  },
+  {
+    "id": "q4",
+    "type": "multiple-choice",
+    "prompt": "What does \"phrase\" mean?",
+    "choices": [
+      "句",
+      "段落",
+      "一節",
+      "語彙",
+      "言語",
+      "文字",
+      "概要",
+      "小論文"
+    ],
+    "answer": "句",
+    "explanation": "phrase = ①句 ②言い回し（例：a useful phrase 便利な言い回し）"
+  },
+  {
+    "id": "q5",
+    "type": "multiple-choice",
+    "prompt": "What does \"passage\" mean?",
+    "choices": [
+      "一節",
+      "段落",
+      "概要",
+      "句",
+      "言語",
+      "小論文",
+      "語彙",
+      "主題"
+    ],
+    "answer": "一節",
+    "explanation": "passage = ①（本文などの）一節 ②通路（例：read the passage 本文の一節を読む）"
+  },
+  {
+    "id": "q6",
+    "type": "multiple-choice",
+    "prompt": "What does \"relatively\" mean?",
+    "choices": [
+      "比較的",
+      "完全に",
+      "たいてい",
+      "ほとんど",
+      "さらに",
+      "それにもかかわらず",
+      "したがって",
+      "しかしながら"
+    ],
+    "answer": "比較的",
+    "explanation": "relatively = 比較的（例：relatively easy 比較的簡単だ）"
+  },
+  {
+    "id": "q7",
+    "type": "multiple-choice",
+    "prompt": "What does \"nearly\" mean?",
+    "choices": [
+      "ほとんど",
+      "したがって",
+      "さらに",
+      "しかしながら",
+      "感情",
+      "恐怖",
+      "統計",
+      "証明する"
+    ],
+    "answer": "ほとんど",
+    "explanation": "nearly = ほとんど；もう少しで（例：nearly finished もう少しで終わる）"
+  },
+  {
+    "id": "q8",
+    "type": "multiple-choice",
+    "prompt": "What does \"completely\" mean?",
+    "choices": [
+      "完全に",
+      "したがって",
+      "さらに",
+      "しかしながら",
+      "理論",
+      "要因",
+      "調査",
+      "批判する"
+    ],
+    "answer": "完全に",
+    "explanation": "completely = 完全に（例：completely different 完全に違う）"
+  },
+  {
+    "id": "q9",
+    "type": "multiple-choice",
+    "prompt": "What does \"partly\" mean?",
+    "choices": [
+      "部分的に",
+      "したがって",
+      "さらに",
+      "しかしながら",
+      "哲学",
+      "地理学",
+      "割合",
+      "設立する"
+    ],
+    "answer": "部分的に",
+    "explanation": "partly = 部分的に；一部は（例：partly my fault 一部は私のせいだ）"
+  },
+  {
+    "id": "q10",
+    "type": "multiple-choice",
+    "prompt": "What does \"mostly\" mean?",
+    "choices": [
+      "たいてい",
+      "したがって",
+      "さらに",
+      "しかしながら",
+      "目標",
+      "知識",
+      "語彙",
+      "解釈する"
+    ],
+    "answer": "たいてい",
+    "explanation": "mostly = たいてい；大部分は（例：mostly correct たいてい正しい）"
+  },
+  {
+    "id": "q11",
+    "type": "multiple-choice",
+    "prompt": "What does \"unless\" mean?",
+    "choices": [
+      "〜でない限り",
+      "〜と違って",
+      "しかしながら",
+      "さらに",
+      "それにもかかわらず",
+      "したがって",
+      "一方で",
+      "つまり"
+    ],
+    "answer": "〜でない限り",
+    "explanation": "unless = 〜でない限り；もし〜でなければ（例：unless you study 勉強しない限り）"
+  },
+  {
+    "id": "q12",
+    "type": "multiple-choice",
+    "prompt": "What does \"unlike\" mean?",
+    "choices": [
+      "〜と違って",
+      "〜でない限り",
+      "しかしながら",
+      "さらに",
+      "それにもかかわらず",
+      "したがって",
+      "一方で",
+      "つまり"
+    ],
+    "answer": "〜と違って",
+    "explanation": "unlike = 〜と違って（例：unlike him, she studies hard 彼と違って、彼女は一生懸命勉強する）"
+  }
+]

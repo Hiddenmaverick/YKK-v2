@@ -45,24 +45,6 @@
     "categoryDescription": "Practice Logic and Expression lessons and units."
   },
   {
-    "id": "vocabulary-unit-01",
-    "title": "Unit 1: Classroom Words",
-    "description": "Practice useful vocabulary for classroom objects, actions, and places.",
-    "questionFile": "vocabulary-unit-01.json",
-    "categoryId": "vocabulary",
-    "categoryTitle": "語彙 / Vocabulary",
-    "categoryDescription": "Practice Vocabulary lessons and units."
-  },
-  {
-    "id": "vocabulary-unit-02",
-    "title": "Unit 2: Travel Words",
-    "description": "Practice useful vocabulary for transportation, places, and travel situations.",
-    "questionFile": "vocabulary-unit-02.json",
-    "categoryId": "vocabulary",
-    "categoryTitle": "語彙 / Vocabulary",
-    "categoryDescription": "Practice Vocabulary lessons and units."
-  },
-  {
     "id": "vocabulary-unit-51",
     "title": "Unit 51: Academic Life",
     "description": "Practice vocabulary related to academic life, school roles, and age groups.",
@@ -76,6 +58,24 @@
     "title": "Unit 52: Education and Learning",
     "description": "Practice vocabulary related to learning, school records, and self-improvement.",
     "questionFile": "vocabulary-unit-52.json",
+    "categoryId": "vocabulary",
+    "categoryTitle": "語彙 / Vocabulary",
+    "categoryDescription": "Practice Vocabulary lessons and units."
+  },
+  {
+    "id": "vocabulary-unit-53",
+    "title": "Unit 53: Writing and Language",
+    "description": "Practice vocabulary related to writing, text structure, and language.",
+    "questionFile": "vocabulary-unit-53.json",
+    "categoryId": "vocabulary",
+    "categoryTitle": "語彙 / Vocabulary",
+    "categoryDescription": "Practice Vocabulary lessons and units."
+  },
+  {
+    "id": "vocabulary-unit-54",
+    "title": "Unit 54: Adverbs and Conjunctions",
+    "description": "Practice adverbs and conjunctions used to express degree, frequency, and conditions.",
+    "questionFile": "vocabulary-unit-54.json",
     "categoryId": "vocabulary",
     "categoryTitle": "語彙 / Vocabulary",
     "categoryDescription": "Practice Vocabulary lessons and units."

@@ -116,8 +116,8 @@
   {
     "id": "q10",
     "type": "true-false",
-    "prompt": "True or false: \"You're welcome\" is a natural response to \"Thank you.\"",
+    "prompt": "True or false: You're welcome is a natural response to Thank you.",
     "answer": true,
-    "explanation": "You're welcome' is a polite and natural answer after someone says 'Thank you.' Students can also learn casual responses such as 'No problem.'"
+    "explanation": "You're welcome is a polite and natural answer after someone says Thank you. Students can also learn casual responses such as No problem."
   }
 ]
