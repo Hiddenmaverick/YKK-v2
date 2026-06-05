@@ -809,6 +809,16 @@ function AppContent() {
     );
   };
 
+  const selectAllMixedReviewLessons = () => {
+    setMixedReviewMessage('');
+    setMixedReviewLessonIds(selectedSubjectLessons.map((lesson) => lesson.id));
+  };
+
+  const clearMixedReviewLessons = () => {
+    setMixedReviewMessage('');
+    setMixedReviewLessonIds([]);
+  };
+
   const createMixedReviewLesson = (subject: Subject, selectedLessons: Lesson[]): Lesson => {
     const mixedReviewLessonKey = selectedLessons.map((lesson) => lesson.id).sort().join('+');
 
@@ -1321,6 +1331,21 @@ function AppContent() {
                   <fieldset className="mixed-review-fieldset">
                     <legend>Lessons / Units</legend>
                     <p className="mixed-review-summary">{mixedReviewSelectionSummary}</p>
+                    {selectedSubjectIsVocabulary && (
+                      <div className="mixed-review-selection-actions" aria-label="Vocabulary Mixed Review selection actions">
+                        <button className="mixed-review-action-button" onClick={selectAllMixedReviewLessons} type="button">
+                          Select all
+                        </button>
+                        <button
+                          className="mixed-review-action-button"
+                          disabled={!hasMixedReviewLessonSelection}
+                          onClick={clearMixedReviewLessons}
+                          type="button"
+                        >
+                          Clear
+                        </button>
+                      </div>
+                    )}
                     {hasMixedReviewLessonSelection && (
                       <div className="mixed-review-selected-list" aria-label="Selected Mixed Review lessons or units">
                         {selectedMixedReviewLessons.map((lesson) => (
