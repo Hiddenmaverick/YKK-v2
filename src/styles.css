@@ -878,9 +878,6 @@ h3 {
 
 .subject-card:focus-visible,
 .lesson-card:focus-visible,
-.vocabulary-unit-button:focus-visible,
-.mixed-review-unit-toggle:focus-visible,
-.mixed-review-bulk-button:focus-visible,
 .mode-button:focus-visible,
 .primary-button:focus-visible,
 .secondary-button:focus-visible,
@@ -888,6 +885,13 @@ h3 {
 .start-study-button:focus-visible,
 .mixed-review-checkbox:focus-within,
 .question-count-option:focus-within {
+  outline: 4px solid rgba(34, 197, 94, 0.42);
+  outline-offset: 4px;
+}
+
+.vocabulary-unit-button:focus-visible,
+.mixed-review-unit-toggle:focus-visible,
+.mixed-review-bulk-button:focus-visible {
   outline: 4px solid rgba(34, 197, 94, 0.42);
   outline-offset: 4px;
 }
