@@ -1,0 +1,206 @@
+[
+  {
+    "id": "q1",
+    "type": "multiple-choice",
+    "prompt": "What does 「factor」 mean?",
+    "choices": [
+      "要因",
+      "方法",
+      "地域",
+      "主張",
+      "課題",
+      "〜を提出する",
+      "心理学",
+      "痛み"
+    ],
+    "answer": "要因",
+    "explanation": "factor = 要因；要素"
+  },
+  {
+    "id": "q2",
+    "type": "multiple-choice",
+    "prompt": "What does 「element」 mean?",
+    "choices": [
+      "要素",
+      "目標",
+      "地区",
+      "討論",
+      "知識",
+      "〜を計算する",
+      "生物学",
+      "症状"
+    ],
+    "answer": "要素",
+    "explanation": "element = 要素；要因"
+  },
+  {
+    "id": "q3",
+    "type": "multiple-choice",
+    "prompt": "What does 「region」 mean?",
+    "choices": [
+      "地域",
+      "要因",
+      "科目",
+      "口論",
+      "割合",
+      "〜を拒否する",
+      "地理学",
+      "筋肉"
+    ],
+    "answer": "地域",
+    "explanation": "region = 地域；地方"
+  },
+  {
+    "id": "q4",
+    "type": "multiple-choice",
+    "prompt": "What does 「district」 mean?",
+    "choices": [
+      "地区",
+      "要素",
+      "方法",
+      "強勢",
+      "感情",
+      "〜を予測する",
+      "経済学",
+      "血液"
+    ],
+    "answer": "地区",
+    "explanation": "district = 地区；地域"
+  },
+  {
+    "id": "q5",
+    "type": "multiple-choice",
+    "prompt": "What does 「debate」 mean?",
+    "choices": [
+      "討論",
+      "知識",
+      "地域",
+      "重点",
+      "目標",
+      "〜を達成する",
+      "哲学",
+      "のど"
+    ],
+    "answer": "討論",
+    "explanation": "debate = 討論；〜を討論する"
+  },
+  {
+    "id": "q6",
+    "type": "multiple-choice",
+    "prompt": "What does 「argument」 mean?",
+    "choices": [
+      "議論",
+      "要因",
+      "課題",
+      "アクセント",
+      "機会",
+      "〜を治療する",
+      "文学",
+      "肺"
+    ],
+    "answer": "議論",
+    "explanation": "argument = ①議論 ②口論 ③主張"
+  },
+  {
+    "id": "q7",
+    "type": "multiple-choice",
+    "prompt": "What does 「refer」 mean?",
+    "choices": [
+      "〜に言及する",
+      "〜を提出する",
+      "〜を強調する",
+      "〜を設立する",
+      "統計",
+      "痛い",
+      "天文学",
+      "お気に入りの"
+    ],
+    "answer": "〜に言及する",
+    "explanation": "refer = ①〜に言及する ②〜を示す ③〜を参照する"
+  },
+  {
+    "id": "q8",
+    "type": "multiple-choice",
+    "prompt": "What does 「mention」 mean?",
+    "choices": [
+      "〜に言及する",
+      "〜を尊敬する",
+      "〜を向上させる",
+      "〜を計算する",
+      "図表",
+      "安定した",
+      "社会学",
+      "胃"
+    ],
+    "answer": "〜に言及する",
+    "explanation": "mention = 〜に言及する；〜を話に出す"
+  },
+  {
+    "id": "q9",
+    "type": "multiple-choice",
+    "prompt": "What does 「stress」 mean?",
+    "choices": [
+      "強勢",
+      "要素",
+      "地域",
+      "知識",
+      "例外",
+      "〜を批判する",
+      "建築学",
+      "薬"
+    ],
+    "answer": "強勢",
+    "explanation": "stress = ①強勢；アクセント ②重点；〜を強調する"
+  },
+  {
+    "id": "q10",
+    "type": "multiple-choice",
+    "prompt": "What does 「emphasize」 mean?",
+    "choices": [
+      "〜を強調する",
+      "〜に応募する",
+      "〜を割る",
+      "〜を裏切る",
+      "要因",
+      "気分",
+      "人類学",
+      "複雑な"
+    ],
+    "answer": "〜を強調する",
+    "explanation": "emphasize = 〜を強調する"
+  },
+  {
+    "id": "q11",
+    "type": "multiple-choice",
+    "prompt": "What does 「found」 mean?",
+    "choices": [
+      "〜を設立する",
+      "〜を想像する",
+      "〜を提出する",
+      "〜を断る",
+      "議論",
+      "保険",
+      "物理学",
+      "効果的な"
+    ],
+    "answer": "〜を設立する",
+    "explanation": "found = 〜を設立する"
+  },
+  {
+    "id": "q12",
+    "type": "multiple-choice",
+    "prompt": "What does 「establish」 mean?",
+    "choices": [
+      "〜を設立する",
+      "〜を軽蔑する",
+      "〜を予測する",
+      "〜を治療する",
+      "主張",
+      "神経",
+      "言語学",
+      "一般的な"
+    ],
+    "answer": "〜を設立する",
+    "explanation": "establish = 〜を設立する"
+  }
+]

@@ -1,0 +1,221 @@
+[
+  {
+    "id": "q1",
+    "type": "multiple-choice",
+    "prompt": "What does 「check out」 mean?",
+    "choices": [
+      "チェックアウトする",
+      "Aを判読する",
+      "Aを配る",
+      "Aを提出する",
+      "Aに加えて",
+      "Aの場合には",
+      "Aを卒業する",
+      "晴れ上がる"
+    ],
+    "answer": "チェックアウトする",
+    "explanation": "check out = チェックアウトする"
+  },
+  {
+    "id": "q2",
+    "type": "multiple-choice",
+    "prompt": "What does 「make out A[A out]」 mean?",
+    "choices": [
+      "Aを判読する",
+      "Aを見分ける",
+      "Aを解決する",
+      "Aを配る",
+      "Aの代わりに",
+      "Aに所属する",
+      "Aを励ます",
+      "Aに基づく"
+    ],
+    "answer": [
+      "Aを判読する",
+      "Aを見分ける"
+    ],
+    "explanation": "make out A[A out] = Aを判読する；Aを見分ける"
+  },
+  {
+    "id": "q3",
+    "type": "multiple-choice",
+    "prompt": "What does 「figure out A[A out]」 mean?",
+    "choices": [
+      "Aを解決する",
+      "Aを理解する",
+      "Aを指摘する",
+      "Aを使い古す",
+      "Aを求める",
+      "Aに同情する",
+      "Aに関連して",
+      "時代遅れの"
+    ],
+    "answer": [
+      "Aを解決する",
+      "Aを理解する"
+    ],
+    "explanation": "figure out A[A out] = Aを解決する；Aを理解する"
+  },
+  {
+    "id": "q4",
+    "type": "multiple-choice",
+    "prompt": "What does 「give out A[A out]」 mean?",
+    "choices": [
+      "Aを配る",
+      "Aを提出する",
+      "Aを判読する",
+      "Aを書き込む",
+      "Aを守る",
+      "Aに備えて",
+      "Aを心配している",
+      "最新の"
+    ],
+    "answer": "Aを配る",
+    "explanation": "give out A[A out] = Aを配る"
+  },
+  {
+    "id": "q5",
+    "type": "multiple-choice",
+    "prompt": "What does 「wear out A[A out]」 mean?",
+    "choices": [
+      "Aを使い古す",
+      "Aを疲れ果てさせる",
+      "Aを解決する",
+      "Aを配る",
+      "Aをひっくり返す",
+      "Aを見送る",
+      "Aに関連して",
+      "Aで混雑している"
+    ],
+    "answer": [
+      "Aを使い古す",
+      "Aを疲れ果てさせる"
+    ],
+    "explanation": "wear out A[A out] = Aを使い古す；Aを疲れ果てさせる"
+  },
+  {
+    "id": "q6",
+    "type": "multiple-choice",
+    "prompt": "What does 「point out A[A out]」 mean?",
+    "choices": [
+      "Aを指摘する",
+      "Aを理解する",
+      "Aを配る",
+      "Aを書き込む",
+      "Aを遠ざけておく",
+      "Aに加えて",
+      "Aの場合には",
+      "結局"
+    ],
+    "answer": "Aを指摘する",
+    "explanation": "point out A[A out] = Aを指摘する"
+  },
+  {
+    "id": "q7",
+    "type": "multiple-choice",
+    "prompt": "What does 「believe in A」 mean?",
+    "choices": [
+      "Aの存在を信じる",
+      "Aの価値を信じる",
+      "Aに所属する",
+      "Aを指摘する",
+      "Aを卒業する",
+      "Aの代わりに",
+      "Aに基づく",
+      "やせる"
+    ],
+    "answer": [
+      "Aの存在を信じる",
+      "Aの価値を信じる"
+    ],
+    "explanation": "believe in A = Aの存在を信じる；Aの価値を信じる"
+  },
+  {
+    "id": "q8",
+    "type": "multiple-choice",
+    "prompt": "What does 「hand in A[A in]」 mean?",
+    "choices": [
+      "Aを提出する",
+      "Aを書き込む",
+      "Aを配る",
+      "Aを判読する",
+      "Aに同情する",
+      "Aを求める",
+      "Aで満たされている",
+      "とりわけ"
+    ],
+    "answer": "Aを提出する",
+    "explanation": "hand in A[A in] = Aを提出する"
+  },
+  {
+    "id": "q9",
+    "type": "multiple-choice",
+    "prompt": "What does 「in place of A」 mean?",
+    "choices": [
+      "Aの代わりに",
+      "Aの場合には",
+      "Aに加えて",
+      "Aに関連して",
+      "Aにもかかわらず",
+      "Aを扱う",
+      "Aを書き込む",
+      "最新の"
+    ],
+    "answer": "Aの代わりに",
+    "explanation": "in place of A = Aの代わりに"
+  },
+  {
+    "id": "q10",
+    "type": "multiple-choice",
+    "prompt": "What does 「in case of A」 mean?",
+    "choices": [
+      "Aの場合には",
+      "Aに備えて",
+      "Aの代わりに",
+      "Aに加えて",
+      "Aに関係なく",
+      "Aを指摘する",
+      "Aを見分ける",
+      "晴れ上がる"
+    ],
+    "answer": [
+      "Aの場合には",
+      "Aに備えて"
+    ],
+    "explanation": "in case of A = Aの場合には；Aに備えて"
+  },
+  {
+    "id": "q11",
+    "type": "multiple-choice",
+    "prompt": "What does 「in addition to A」 mean?",
+    "choices": [
+      "Aに加えて",
+      "Aの場合には",
+      "Aに関連して",
+      "Aの代わりに",
+      "Aを解決する",
+      "Aを卒業する",
+      "Aを疲れ果てさせる",
+      "少なくとも"
+    ],
+    "answer": "Aに加えて",
+    "explanation": "in addition to A = Aに加えて"
+  },
+  {
+    "id": "q12",
+    "type": "multiple-choice",
+    "prompt": "What does 「in connection with A」 mean?",
+    "choices": [
+      "Aに関連して",
+      "Aに加えて",
+      "Aの場合には",
+      "Aの代わりに",
+      "Aを配る",
+      "Aを提出する",
+      "Aに固執する",
+      "やはり"
+    ],
+    "answer": "Aに関連して",
+    "explanation": "in connection with A = Aに関連して"
+  }
+]

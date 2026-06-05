@@ -1,0 +1,172 @@
+[
+  {
+    "id": "q1",
+    "type": "multiple-choice",
+    "prompt": "What does 「jealous」 mean?",
+    "choices": [
+      "ねたんで",
+      "〜を計算する",
+      "化学",
+      "安定した",
+      "目標",
+      "〜を拒否する",
+      "肺",
+      "複雑な"
+    ],
+    "answer": "ねたんで",
+    "explanation": "jealous = ねたんで；うらやんで"
+  },
+  {
+    "id": "q2",
+    "type": "multiple-choice",
+    "prompt": "What does 「upset」 mean?",
+    "choices": [
+      "動揺した",
+      "〜を提出する",
+      "天文学",
+      "割合",
+      "痛み",
+      "〜を導く",
+      "機会",
+      "一般的な"
+    ],
+    "answer": "動揺した",
+    "explanation": "upset = 動揺した；腹を立てて"
+  },
+  {
+    "id": "q3",
+    "type": "multiple-choice",
+    "prompt": "What does 「amused」 mean?",
+    "choices": [
+      "面白がって",
+      "〜を尊敬する",
+      "地理学",
+      "症状",
+      "百分率",
+      "〜を割る",
+      "お気に入りの",
+      "胃"
+    ],
+    "answer": "面白がって",
+    "explanation": "amused = 面白がって"
+  },
+  {
+    "id": "q4",
+    "type": "multiple-choice",
+    "prompt": "What does 「thrilled」 mean?",
+    "choices": [
+      "わくわくして",
+      "〜を批判する",
+      "心理学",
+      "筋肉",
+      "例外",
+      "〜を特定する",
+      "効果的な",
+      "のど"
+    ],
+    "answer": "わくわくして",
+    "explanation": "thrilled = わくわくして；ぞくぞくして"
+  },
+  {
+    "id": "q5",
+    "type": "multiple-choice",
+    "prompt": "What does 「delighted」 mean?",
+    "choices": [
+      "大変うれしく思って",
+      "〜を軽蔑する",
+      "哲学",
+      "情報源",
+      "統計",
+      "〜を研究する",
+      "痛い",
+      "血液"
+    ],
+    "answer": "大変うれしく思って",
+    "explanation": "delighted = 大変うれしく思って"
+  },
+  {
+    "id": "q6",
+    "type": "multiple-choice",
+    "prompt": "What does 「ashamed」 mean?",
+    "choices": [
+      "恥じて",
+      "〜に謝罪する",
+      "経済学",
+      "図表",
+      "薬",
+      "〜を証明する",
+      "安定した",
+      "建築"
+    ],
+    "answer": "恥じて",
+    "explanation": "ashamed = 恥じて"
+  },
+  {
+    "id": "q7",
+    "type": "multiple-choice",
+    "prompt": "What does 「emotion」 mean?",
+    "choices": [
+      "感情",
+      "〜をほめる",
+      "生物学",
+      "大多数",
+      "熱",
+      "〜に応募する",
+      "複雑な",
+      "神経"
+    ],
+    "answer": "感情",
+    "explanation": "emotion = 感情；感動"
+  },
+  {
+    "id": "q8",
+    "type": "multiple-choice",
+    "prompt": "What does 「mood」 mean?",
+    "choices": [
+      "気分",
+      "〜を想像する",
+      "社会学",
+      "要因",
+      "傷",
+      "〜を治療する",
+      "一般的な",
+      "文学"
+    ],
+    "answer": "気分",
+    "explanation": "mood = 気分；機嫌"
+  },
+  {
+    "id": "q9",
+    "type": "multiple-choice",
+    "prompt": "What does 「temper」 mean?",
+    "choices": [
+      "気質",
+      "〜を裏切る",
+      "人類学",
+      "項目",
+      "恐怖",
+      "〜を増やす",
+      "効果的な",
+      "言語学"
+    ],
+    "answer": "気質",
+    "explanation": "temper = 気質；気性"
+  },
+  {
+    "id": "q10",
+    "type": "multiple-choice",
+    "prompt": "What does 「desire」 mean?",
+    "choices": [
+      "欲望",
+      "〜を予測する",
+      "物理学",
+      "保険",
+      "研究所",
+      "〜を断る",
+      "お気に入りの",
+      "肺"
+    ],
+    "answer": "欲望",
+    "explanation": "desire = 欲望；願望"
+  }
+]

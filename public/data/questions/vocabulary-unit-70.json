@@ -1,0 +1,192 @@
+[
+  {
+    "id": "q1",
+    "type": "multiple-choice",
+    "prompt": "What does 「complicated」 mean?",
+    "choices": [
+      "複雑な",
+      "安定した",
+      "効果的な",
+      "一般的な",
+      "お気に入りの",
+      "目標",
+      "〜を提出する",
+      "統計"
+    ],
+    "answer": "複雑な",
+    "explanation": "complicated = 複雑な"
+  },
+  {
+    "id": "q2",
+    "type": "multiple-choice",
+    "prompt": "What does 「complex」 mean?",
+    "choices": [
+      "複雑な",
+      "痛い",
+      "動揺した",
+      "安定した",
+      "効果的な",
+      "知識",
+      "〜を計算する",
+      "心理学"
+    ],
+    "answer": "複雑な",
+    "explanation": "complex = 複雑な；込み入った"
+  },
+  {
+    "id": "q3",
+    "type": "multiple-choice",
+    "prompt": "What does 「benefit」 mean?",
+    "choices": [
+      "利益",
+      "目標",
+      "課題",
+      "影響",
+      "統計",
+      "〜を予測する",
+      "血液",
+      "一般的な"
+    ],
+    "answer": "利益",
+    "explanation": "benefit = 利益；恩恵"
+  },
+  {
+    "id": "q4",
+    "type": "multiple-choice",
+    "prompt": "What does 「advantage」 mean?",
+    "choices": [
+      "利点",
+      "例外",
+      "方法",
+      "割合",
+      "症状",
+      "〜を拒否する",
+      "哲学",
+      "安定した"
+    ],
+    "answer": "利点",
+    "explanation": "advantage = 利点；強み"
+  },
+  {
+    "id": "q5",
+    "type": "multiple-choice",
+    "prompt": "What does 「form」 mean?",
+    "choices": [
+      "形",
+      "方法",
+      "課題",
+      "保険",
+      "図表",
+      "〜を達成する",
+      "のど",
+      "効果的な"
+    ],
+    "answer": "形",
+    "explanation": "form = ①形；形式 ②用紙 ③〜を形作る"
+  },
+  {
+    "id": "q6",
+    "type": "multiple-choice",
+    "prompt": "What does 「shape」 mean?",
+    "choices": [
+      "形",
+      "状態",
+      "目標",
+      "知識",
+      "筋肉",
+      "〜を批判する",
+      "天文学",
+      "お気に入りの"
+    ],
+    "answer": [
+      "形",
+      "状態"
+    ],
+    "explanation": "shape = ①形 ②状態；調子"
+  },
+  {
+    "id": "q7",
+    "type": "multiple-choice",
+    "prompt": "What does 「opportunity」 mean?",
+    "choices": [
+      "機会",
+      "目標",
+      "課題",
+      "研究",
+      "感情",
+      "〜に応募する",
+      "肺",
+      "複雑な"
+    ],
+    "answer": "機会",
+    "explanation": "opportunity = 機会；好機"
+  },
+  {
+    "id": "q8",
+    "type": "multiple-choice",
+    "prompt": "What does 「occasion」 mean?",
+    "choices": [
+      "特定の時",
+      "方法",
+      "例外",
+      "気分",
+      "統計",
+      "〜を尊敬する",
+      "経済学",
+      "安定した"
+    ],
+    "answer": "特定の時",
+    "explanation": "occasion = ①特定の時；機会 ②行事"
+  },
+  {
+    "id": "q9",
+    "type": "multiple-choice",
+    "prompt": "What does 「hardly」 mean?",
+    "choices": [
+      "ほとんど〜ない",
+      "すぐに",
+      "たいてい",
+      "完全に",
+      "慎重に",
+      "〜を提出する",
+      "割合",
+      "効果的な"
+    ],
+    "answer": "ほとんど〜ない",
+    "explanation": "hardly = ほとんど〜ない"
+  },
+  {
+    "id": "q10",
+    "type": "multiple-choice",
+    "prompt": "What does 「scarcely」 mean?",
+    "choices": [
+      "ほとんど〜ない",
+      "よく",
+      "すでに",
+      "明らかに",
+      "静かに",
+      "〜を計算する",
+      "図表",
+      "一般的な"
+    ],
+    "answer": "ほとんど〜ない",
+    "explanation": "scarcely = ほとんど〜ない"
+  },
+  {
+    "id": "q11",
+    "type": "multiple-choice",
+    "prompt": "What does 「seldom」 mean?",
+    "choices": [
+      "めったに〜ない",
+      "いつも",
+      "時々",
+      "すぐに",
+      "完全に",
+      "〜を予測する",
+      "目標",
+      "安定した"
+    ],
+    "answer": "めったに〜ない",
+    "explanation": "seldom = めったに〜ない"
+  }
+]

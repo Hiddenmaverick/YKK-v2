@@ -1,0 +1,206 @@
+[
+  {
+    "id": "q1",
+    "type": "multiple-choice",
+    "prompt": "What does 「favorite」 mean?",
+    "choices": [
+      "お気に入りの",
+      "一般的な",
+      "効果的な",
+      "安定した",
+      "複雑な",
+      "目標",
+      "〜を提出する",
+      "知識"
+    ],
+    "answer": "お気に入りの",
+    "explanation": "favorite = お気に入りの；大好きな"
+  },
+  {
+    "id": "q2",
+    "type": "multiple-choice",
+    "prompt": "What does 「subject」 mean?",
+    "choices": [
+      "科目",
+      "課題",
+      "方法",
+      "知識",
+      "心理学",
+      "〜を達成する",
+      "気分",
+      "割合"
+    ],
+    "answer": "科目",
+    "explanation": "subject = ①科目 ②主題 ③主語"
+  },
+  {
+    "id": "q3",
+    "type": "multiple-choice",
+    "prompt": "What does 「general」 mean?",
+    "choices": [
+      "一般的な",
+      "お気に入りの",
+      "効果的な",
+      "痛い",
+      "安定した",
+      "欲求不満で",
+      "方法",
+      "〜を予測する"
+    ],
+    "answer": "一般的な",
+    "explanation": "general = 一般的な；全体的な"
+  },
+  {
+    "id": "q4",
+    "type": "multiple-choice",
+    "prompt": "What does 「knowledge」 mean?",
+    "choices": [
+      "知識",
+      "技術",
+      "目標",
+      "科目",
+      "感情",
+      "統計",
+      "〜を拒否する",
+      "建築学"
+    ],
+    "answer": "知識",
+    "explanation": "knowledge = 知識"
+  },
+  {
+    "id": "q5",
+    "type": "multiple-choice",
+    "prompt": "What does 「achieve」 mean?",
+    "choices": [
+      "〜を達成する",
+      "〜を向上させる",
+      "〜を提出する",
+      "〜を計算する",
+      "〜を予測する",
+      "目標",
+      "症状",
+      "哲学"
+    ],
+    "answer": "〜を達成する",
+    "explanation": "achieve = 〜を達成する；〜を獲得する"
+  },
+  {
+    "id": "q6",
+    "type": "multiple-choice",
+    "prompt": "What does 「goal」 mean?",
+    "choices": [
+      "目標",
+      "科目",
+      "課題",
+      "割合",
+      "欲望",
+      "化学",
+      "〜を導く",
+      "効果的な"
+    ],
+    "answer": "目標",
+    "explanation": "goal = 目標"
+  },
+  {
+    "id": "q7",
+    "type": "multiple-choice",
+    "prompt": "What does 「improve」 mean?",
+    "choices": [
+      "〜を向上させる",
+      "〜を達成する",
+      "〜を提出する",
+      "〜を批判する",
+      "〜を治療する",
+      "技術",
+      "恐怖",
+      "経済学"
+    ],
+    "answer": "〜を向上させる",
+    "explanation": "improve = 〜を向上させる；向上する"
+  },
+  {
+    "id": "q8",
+    "type": "multiple-choice",
+    "prompt": "What does 「skill」 mean?",
+    "choices": [
+      "技術",
+      "知識",
+      "方法",
+      "任務",
+      "筋肉",
+      "例外",
+      "〜に応募する",
+      "社会学"
+    ],
+    "answer": "技術",
+    "explanation": "skill = 技術；能力"
+  },
+  {
+    "id": "q9",
+    "type": "multiple-choice",
+    "prompt": "What does 「submit」 mean?",
+    "choices": [
+      "〜を提出する",
+      "〜を達成する",
+      "〜を向上させる",
+      "〜を尊敬する",
+      "〜を割る",
+      "課題",
+      "肺",
+      "天文学"
+    ],
+    "answer": "〜を提出する",
+    "explanation": "submit = 〜を提出する"
+  },
+  {
+    "id": "q10",
+    "type": "multiple-choice",
+    "prompt": "What does 「assignment」 mean?",
+    "choices": [
+      "課題",
+      "科目",
+      "目標",
+      "方法",
+      "図表",
+      "のど",
+      "〜を裏切る",
+      "一般的な"
+    ],
+    "answer": "課題",
+    "explanation": "assignment = ①課題 ②任務"
+  },
+  {
+    "id": "q11",
+    "type": "multiple-choice",
+    "prompt": "What does 「effective」 mean?",
+    "choices": [
+      "効果的な",
+      "一般的な",
+      "お気に入りの",
+      "複雑な",
+      "動揺した",
+      "方法",
+      "〜を証明する",
+      "血液"
+    ],
+    "answer": "効果的な",
+    "explanation": "effective = 効果的な"
+  },
+  {
+    "id": "q12",
+    "type": "multiple-choice",
+    "prompt": "What does 「method」 mean?",
+    "choices": [
+      "方法",
+      "技術",
+      "知識",
+      "課題",
+      "研究所",
+      "神経",
+      "〜に謝罪する",
+      "安定した"
+    ],
+    "answer": "方法",
+    "explanation": "method = 方法；方式"
+  }
+]

@@ -1,0 +1,187 @@
+[
+  {
+    "id": "q1",
+    "type": "multiple-choice",
+    "prompt": "What does 「encourage」 mean?",
+    "choices": [
+      "〜するよう勧める",
+      "〜を励ます",
+      "〜を確実にする",
+      "〜を可能にする",
+      "〜を豊かにする",
+      "協力する",
+      "重要である",
+      "物体"
+    ],
+    "answer": [
+      "〜するよう勧める",
+      "〜を励ます"
+    ],
+    "explanation": "encourage = 〜するよう勧める；〜を励ます；激励"
+  },
+  {
+    "id": "q2",
+    "type": "multiple-choice",
+    "prompt": "What does 「ensure」 mean?",
+    "choices": [
+      "〜を確実にする",
+      "〜を励ます",
+      "〜を可能にする",
+      "〜を豊かにする",
+      "競う",
+      "会社",
+      "増加",
+      "対象"
+    ],
+    "answer": "〜を確実にする",
+    "explanation": "ensure = 〜を確実にする"
+  },
+  {
+    "id": "q3",
+    "type": "multiple-choice",
+    "prompt": "What does 「enable」 mean?",
+    "choices": [
+      "〜を可能にする",
+      "〜を確実にする",
+      "〜を励ます",
+      "〜に資格を与える",
+      "集中する",
+      "減少",
+      "仲間",
+      "点"
+    ],
+    "answer": "〜を可能にする",
+    "explanation": "enable = 〜を可能にする；〜できるようにする"
+  },
+  {
+    "id": "q4",
+    "type": "multiple-choice",
+    "prompt": "What does 「enrich」 mean?",
+    "choices": [
+      "〜を豊かにする",
+      "〜を確実にする",
+      "〜を可能にする",
+      "〜を怖がらせる",
+      "協力する",
+      "対象",
+      "増加",
+      "物体"
+    ],
+    "answer": "〜を豊かにする",
+    "explanation": "enrich = 〜を豊かにする"
+  },
+  {
+    "id": "q5",
+    "type": "multiple-choice",
+    "prompt": "What does 「entitle」 mean?",
+    "choices": [
+      "〜に資格を与える",
+      "〜を豊かにする",
+      "〜するよう勧める",
+      "〜を確実にする",
+      "会社",
+      "集中力",
+      "減る",
+      "競う"
+    ],
+    "answer": "〜に資格を与える",
+    "explanation": "entitle = 〜に資格を与える"
+  },
+  {
+    "id": "q6",
+    "type": "multiple-choice",
+    "prompt": "What does 「worsen」 mean?",
+    "choices": [
+      "さらに悪くなる",
+      "〜をさらに悪くする",
+      "〜を豊かにする",
+      "〜を可能にする",
+      "協力する",
+      "増加",
+      "物体",
+      "集中する"
+    ],
+    "answer": [
+      "さらに悪くなる",
+      "〜をさらに悪くする"
+    ],
+    "explanation": "worsen = さらに悪くなる；〜をさらに悪くする"
+  },
+  {
+    "id": "q7",
+    "type": "multiple-choice",
+    "prompt": "What does 「frighten」 mean?",
+    "choices": [
+      "〜を怖がらせる",
+      "〜を励ます",
+      "〜を確実にする",
+      "逃げる",
+      "仲間",
+      "会社",
+      "重要である",
+      "増加"
+    ],
+    "answer": "〜を怖がらせる",
+    "explanation": "frighten = 〜を怖がらせる；恐ろしい"
+  },
+  {
+    "id": "q8",
+    "type": "multiple-choice",
+    "prompt": "What does 「escape」 mean?",
+    "choices": [
+      "〜をまぬがれる",
+      "逃げる",
+      "〜を捜索する",
+      "〜を反射する",
+      "〜を励ます",
+      "減少",
+      "対象",
+      "効果的な"
+    ],
+    "answer": [
+      "〜をまぬがれる",
+      "逃げる"
+    ],
+    "explanation": "escape = 〜をまぬがれる；逃げる"
+  },
+  {
+    "id": "q9",
+    "type": "multiple-choice",
+    "prompt": "What does 「search」 mean?",
+    "choices": [
+      "〜を捜索する",
+      "〜を探す",
+      "〜をまぬがれる",
+      "〜を反射する",
+      "〜を確実にする",
+      "協力する",
+      "点",
+      "集中力"
+    ],
+    "answer": [
+      "〜を捜索する",
+      "〜を探す"
+    ],
+    "explanation": "search = 〜を捜索する；〜を探す"
+  },
+  {
+    "id": "q10",
+    "type": "multiple-choice",
+    "prompt": "What does 「reflect」 mean?",
+    "choices": [
+      "〜を反射する",
+      "〜を熟考する",
+      "〜を捜索する",
+      "〜を豊かにする",
+      "〜に資格を与える",
+      "競う",
+      "物体",
+      "増加"
+    ],
+    "answer": [
+      "〜を反射する",
+      "〜を熟考する"
+    ],
+    "explanation": "reflect = ①〜を映す；〜を反射する ②〜を熟考する ③映像；反射；熟考"
+  }
+]

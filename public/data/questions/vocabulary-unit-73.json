@@ -1,0 +1,215 @@
+[
+  {
+    "id": "q1",
+    "type": "multiple-choice",
+    "prompt": "What does 「belong to A」 mean?",
+    "choices": [
+      "Aに所属する",
+      "Aのものである",
+      "Aの頭に浮かぶ",
+      "Aを卒業する",
+      "Aを書き込む",
+      "最新の",
+      "太る",
+      "Aを熟考する"
+    ],
+    "answer": [
+      "Aに所属する",
+      "Aのものである"
+    ],
+    "explanation": "belong to A = Aに所属する；Aのものである"
+  },
+  {
+    "id": "q2",
+    "type": "multiple-choice",
+    "prompt": "What does 「occur to A」 mean?",
+    "choices": [
+      "Aの頭に浮かぶ",
+      "Aに所属する",
+      "Aを守る",
+      "Aを卒業する",
+      "Aに苦しむ",
+      "Aを書き込む",
+      "時代遅れの",
+      "やせる"
+    ],
+    "answer": "Aの頭に浮かぶ",
+    "explanation": "occur to A = Aの頭に浮かぶ"
+  },
+  {
+    "id": "q3",
+    "type": "multiple-choice",
+    "prompt": "What does 「stick to A」 mean?",
+    "choices": [
+      "Aに固執する",
+      "Aを守る",
+      "Aを卒業する",
+      "Aの結果として起こる",
+      "Aという結果に終わる",
+      "Aを書き込む",
+      "最新の",
+      "太る"
+    ],
+    "answer": [
+      "Aに固執する",
+      "Aを守る"
+    ],
+    "explanation": "stick to A = ①Aに固執する；Aを守る ②Aにくっつく"
+  },
+  {
+    "id": "q4",
+    "type": "multiple-choice",
+    "prompt": "What does 「graduate from A」 mean?",
+    "choices": [
+      "Aを卒業する",
+      "Aに所属する",
+      "Aを守る",
+      "Aに苦しむ",
+      "Aを除いて",
+      "Aに基づく",
+      "最新の",
+      "太る"
+    ],
+    "answer": "Aを卒業する",
+    "explanation": "graduate from A = Aを卒業する"
+  },
+  {
+    "id": "q5",
+    "type": "multiple-choice",
+    "prompt": "What does 「suffer from A」 mean?",
+    "choices": [
+      "Aを患う",
+      "Aに苦しむ",
+      "Aの頭に浮かぶ",
+      "Aを書き込む",
+      "Aを卒業する",
+      "Aに所属する",
+      "やせる",
+      "とりわけ"
+    ],
+    "answer": [
+      "Aを患う",
+      "Aに苦しむ"
+    ],
+    "explanation": "suffer from A = Aを患う；Aに苦しむ"
+  },
+  {
+    "id": "q6",
+    "type": "multiple-choice",
+    "prompt": "What does 「result from A」 mean?",
+    "choices": [
+      "Aの結果として起こる",
+      "Aという結果に終わる",
+      "Aに固執する",
+      "Aを書き込む",
+      "Aを患う",
+      "Aに所属する",
+      "最新の",
+      "太る"
+    ],
+    "answer": "Aの結果として起こる",
+    "explanation": "result from A = Aの結果として起こる"
+  },
+  {
+    "id": "q7",
+    "type": "multiple-choice",
+    "prompt": "What does 「result in A」 mean?",
+    "choices": [
+      "Aという結果に終わる",
+      "Aの結果として起こる",
+      "Aを卒業する",
+      "Aに苦しむ",
+      "Aの頭に浮かぶ",
+      "Aを守る",
+      "時代遅れの",
+      "やせる"
+    ],
+    "answer": "Aという結果に終わる",
+    "explanation": "result in A = Aという結果に終わる"
+  },
+  {
+    "id": "q8",
+    "type": "multiple-choice",
+    "prompt": "What does 「fill in A[A in]」 mean?",
+    "choices": [
+      "Aを書き込む",
+      "Aを守る",
+      "Aを卒業する",
+      "Aに苦しむ",
+      "Aの頭に浮かぶ",
+      "時代遅れの",
+      "Aを熟考する",
+      "Aを配る"
+    ],
+    "answer": "Aを書き込む",
+    "explanation": "fill in A[A in] = Aを書き込む"
+  },
+  {
+    "id": "q9",
+    "type": "multiple-choice",
+    "prompt": "What does 「put on weight」 mean?",
+    "choices": [
+      "太る",
+      "やせる",
+      "最新の",
+      "時代遅れの",
+      "Aを患う",
+      "Aを書き込む",
+      "Aのものである",
+      "Aに合う"
+    ],
+    "answer": "太る",
+    "explanation": "put on weight = 太る"
+  },
+  {
+    "id": "q10",
+    "type": "multiple-choice",
+    "prompt": "What does 「lose weight」 mean?",
+    "choices": [
+      "やせる",
+      "太る",
+      "最新の",
+      "時代遅れの",
+      "Aに所属する",
+      "Aを卒業する",
+      "Aを求める",
+      "Aに苦しむ"
+    ],
+    "answer": "やせる",
+    "explanation": "lose weight = やせる"
+  },
+  {
+    "id": "q11",
+    "type": "multiple-choice",
+    "prompt": "What does 「up to date」 mean?",
+    "choices": [
+      "最新の",
+      "時代遅れの",
+      "Aの頭に浮かぶ",
+      "Aに固執する",
+      "Aを患う",
+      "Aを書き込む",
+      "やせる",
+      "Aに所属する"
+    ],
+    "answer": "最新の",
+    "explanation": "up to date = 最新の"
+  },
+  {
+    "id": "q12",
+    "type": "multiple-choice",
+    "prompt": "What does 「out of date」 mean?",
+    "choices": [
+      "時代遅れの",
+      "最新の",
+      "Aを卒業する",
+      "Aに苦しむ",
+      "Aのものである",
+      "Aを書き込む",
+      "太る",
+      "Aを守る"
+    ],
+    "answer": "時代遅れの",
+    "explanation": "out of date = 時代遅れの"
+  }
+]

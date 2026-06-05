@@ -113,8 +113,8 @@
   {
     "id": "q10",
     "type": "true-false",
-    "prompt": "True or false: \"May I borrow your notes?\" is a polite classroom request.",
+    "prompt": "True or false: 「May I borrow your notes?」 is a polite classroom request.",
     "answer": true,
-    "explanation": "May I ...?' is a polite way to ask permission in a classroom. Asking to borrow notes is a natural school-life situation."
+    "explanation": "「May I ...?」 is a polite way to ask permission in a classroom. Asking to borrow notes is a natural school-life situation."
   }
 ]

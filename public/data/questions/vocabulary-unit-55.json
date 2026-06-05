@@ -1,0 +1,206 @@
+[
+  {
+    "id": "q1",
+    "type": "multiple-choice",
+    "prompt": "What does \"therefore\" mean?",
+    "choices": [
+      "したがって",
+      "一方で",
+      "つまり",
+      "それゆえに",
+      "感情",
+      "恐怖",
+      "統計",
+      "理論"
+    ],
+    "answer": "したがって",
+    "explanation": "therefore = それで；したがって（例：therefore, we concluded したがって、私たちは結論を出した）"
+  },
+  {
+    "id": "q2",
+    "type": "multiple-choice",
+    "prompt": "What does \"moreover\" mean?",
+    "choices": [
+      "さらに",
+      "一方で",
+      "つまり",
+      "したがって",
+      "目標",
+      "知識",
+      "割合",
+      "調査"
+    ],
+    "answer": "さらに",
+    "explanation": "moreover = さらに；その上（例：moreover, she studied hard さらに、彼女は熱心に勉強した）"
+  },
+  {
+    "id": "q3",
+    "type": "multiple-choice",
+    "prompt": "What does \"furthermore\" mean?",
+    "choices": [
+      "さらに",
+      "一方で",
+      "つまり",
+      "したがって",
+      "哲学",
+      "地理学",
+      "語彙",
+      "課題"
+    ],
+    "answer": "さらに",
+    "explanation": "furthermore = さらに；その上（例：furthermore, the results showed さらに、結果が示した）"
+  },
+  {
+    "id": "q4",
+    "type": "multiple-choice",
+    "prompt": "What does \"however\" mean?",
+    "choices": [
+      "しかしながら",
+      "一方で",
+      "つまり",
+      "したがって",
+      "要因",
+      "地域",
+      "議論",
+      "証明する"
+    ],
+    "answer": "しかしながら",
+    "explanation": "however = しかしながら（例：however, it was difficult しかしながら、それは難しかった）"
+  },
+  {
+    "id": "q5",
+    "type": "multiple-choice",
+    "prompt": "What does \"nevertheless\" mean?",
+    "choices": [
+      "それにもかかわらず",
+      "一方で",
+      "つまり",
+      "したがって",
+      "理論",
+      "統計",
+      "設立する",
+      "批判する"
+    ],
+    "answer": "それにもかかわらず",
+    "explanation": "nevertheless = それにもかかわらず（例：nevertheless, she continued それにもかかわらず、彼女は続けた）"
+  },
+  {
+    "id": "q6",
+    "type": "multiple-choice",
+    "prompt": "What does \"pronounce\" mean?",
+    "choices": [
+      "〜を発音する",
+      "〜を要約する",
+      "〜を証明する",
+      "〜を批判する",
+      "〜を設立する",
+      "〜を解釈する",
+      "〜を否定する",
+      "〜を提出する"
+    ],
+    "answer": "〜を発音する",
+    "explanation": "pronounce = 〜を発音する（例：pronounce the word correctly 単語を正しく発音する）"
+  },
+  {
+    "id": "q7",
+    "type": "multiple-choice",
+    "prompt": "What does \"vocabulary\" mean?",
+    "choices": [
+      "語彙",
+      "意味",
+      "言語",
+      "文字",
+      "段落",
+      "概要",
+      "統計",
+      "理論"
+    ],
+    "answer": "語彙",
+    "explanation": "vocabulary = 語彙（例：expand your vocabulary 語彙を増やす）"
+  },
+  {
+    "id": "q8",
+    "type": "multiple-choice",
+    "prompt": "What does \"meaning\" mean?",
+    "choices": [
+      "意味",
+      "語彙",
+      "言語",
+      "文字",
+      "段落",
+      "概要",
+      "割合",
+      "課題"
+    ],
+    "answer": "意味",
+    "explanation": "meaning = 意味（例：what is the meaning of this word? この単語の意味は何ですか）"
+  },
+  {
+    "id": "q9",
+    "type": "multiple-choice",
+    "prompt": "What does \"native\" mean?",
+    "choices": [
+      "母国の",
+      "形式ばった",
+      "流ちょうな",
+      "論理的な",
+      "典型的な",
+      "効果的な",
+      "一般的な",
+      "学問的な"
+    ],
+    "answer": "母国の",
+    "explanation": "native = ①母国の；母語の ②出身の人（例：native language 母国語）"
+  },
+  {
+    "id": "q10",
+    "type": "multiple-choice",
+    "prompt": "What does \"fluent\" mean?",
+    "choices": [
+      "流ちょうな",
+      "形式ばった",
+      "論理的な",
+      "典型的な",
+      "効果的な",
+      "一般的な",
+      "学問的な",
+      "比較的な"
+    ],
+    "answer": "流ちょうな",
+    "explanation": "fluent = 流ちょうな（例：fluent in English 英語が流ちょうだ）"
+  },
+  {
+    "id": "q11",
+    "type": "multiple-choice",
+    "prompt": "What does \"formal\" mean?",
+    "choices": [
+      "形式ばった",
+      "流ちょうな",
+      "論理的な",
+      "典型的な",
+      "効果的な",
+      "一般的な",
+      "学問的な",
+      "比較的な"
+    ],
+    "answer": "形式ばった",
+    "explanation": "formal = 形式ばった；正式の（例：formal English 正式な英語）"
+  },
+  {
+    "id": "q12",
+    "type": "multiple-choice",
+    "prompt": "What does \"fiction\" mean?",
+    "choices": [
+      "小説",
+      "論文",
+      "小論文",
+      "概要",
+      "段落",
+      "一節",
+      "課題",
+      "理論"
+    ],
+    "answer": "小説",
+    "explanation": "fiction = ①小説 ②作り話（例：science fiction SF小説）"
+  }
+]

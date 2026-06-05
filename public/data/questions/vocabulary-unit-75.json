@@ -1,0 +1,210 @@
+[
+  {
+    "id": "q1",
+    "type": "multiple-choice",
+    "prompt": "What does 「clear up」 mean?",
+    "choices": [
+      "晴れ上がる",
+      "Aを解決する",
+      "Aを励ます",
+      "Aを頼る",
+      "Aに集中する",
+      "もはや〜でない",
+      "少なくとも",
+      "Aを提出する"
+    ],
+    "answer": "晴れ上がる",
+    "explanation": "clear up = 晴れ上がる"
+  },
+  {
+    "id": "q2",
+    "type": "multiple-choice",
+    "prompt": "What does 「cheer up A[A up]」 mean?",
+    "choices": [
+      "Aを励ます",
+      "Aを元気づける",
+      "Aを頼る",
+      "Aに焦点を合わせる",
+      "Aを配る",
+      "Aを判読する",
+      "遅かれ早かれ",
+      "せいぜい"
+    ],
+    "answer": [
+      "Aを励ます",
+      "Aを元気づける"
+    ],
+    "explanation": "cheer up A[A up] = Aを励ます；Aを元気づける"
+  },
+  {
+    "id": "q3",
+    "type": "multiple-choice",
+    "prompt": "What does 「depend on A」 mean?",
+    "choices": [
+      "A（人）を頼る",
+      "A次第である",
+      "Aに集中する",
+      "Aを見送る",
+      "Aを書き込む",
+      "大体",
+      "最新の",
+      "Aにもかかわらず"
+    ],
+    "answer": [
+      "A（人）を頼る",
+      "A次第である"
+    ],
+    "explanation": "depend on A = A（人）を頼る；A次第である"
+  },
+  {
+    "id": "q4",
+    "type": "multiple-choice",
+    "prompt": "What does 「rely on A」 mean?",
+    "choices": [
+      "Aを頼る",
+      "Aを当てにする",
+      "Aを励ます",
+      "Aに所属する",
+      "Aを指摘する",
+      "多かれ少なかれ",
+      "少なくとも",
+      "晴れ上がる"
+    ],
+    "answer": [
+      "Aを頼る",
+      "Aを当てにする"
+    ],
+    "explanation": "rely on A = Aを頼る；Aを当てにする"
+  },
+  {
+    "id": "q5",
+    "type": "multiple-choice",
+    "prompt": "What does 「count on A」 mean?",
+    "choices": [
+      "Aを頼りにする",
+      "Aを元気づける",
+      "Aに焦点を合わせる",
+      "Aを卒業する",
+      "Aを使い古す",
+      "いずれ",
+      "もはや〜でない",
+      "Aに基づく"
+    ],
+    "answer": "Aを頼りにする",
+    "explanation": "count on A = Aを頼りにする"
+  },
+  {
+    "id": "q6",
+    "type": "multiple-choice",
+    "prompt": "What does 「focus on A」 mean?",
+    "choices": [
+      "Aに焦点を合わせる",
+      "Aに集中する",
+      "Aを頼る",
+      "Aを提出する",
+      "Aの代わりに",
+      "Aに関連して",
+      "時代遅れの",
+      "多くとも"
+    ],
+    "answer": [
+      "Aに焦点を合わせる",
+      "Aに集中する"
+    ],
+    "explanation": "focus on A = Aに焦点を合わせる；Aに集中する"
+  },
+  {
+    "id": "q7",
+    "type": "multiple-choice",
+    "prompt": "What does 「more or less」 mean?",
+    "choices": [
+      "多かれ少なかれ",
+      "大体",
+      "遅かれ早かれ",
+      "少なくとも",
+      "せいぜい",
+      "Aを励ます",
+      "Aに集中する",
+      "晴れ上がる"
+    ],
+    "answer": [
+      "多かれ少なかれ",
+      "大体"
+    ],
+    "explanation": "more or less = ①多かれ少なかれ ②大体；ほとんど"
+  },
+  {
+    "id": "q8",
+    "type": "multiple-choice",
+    "prompt": "What does 「sooner or later」 mean?",
+    "choices": [
+      "遅かれ早かれ",
+      "いずれ",
+      "多かれ少なかれ",
+      "もはや〜でない",
+      "最新の",
+      "Aを頼る",
+      "Aを指摘する",
+      "Aの場合には"
+    ],
+    "answer": [
+      "遅かれ早かれ",
+      "いずれ"
+    ],
+    "explanation": "sooner or later = 遅かれ早かれ；いずれ"
+  },
+  {
+    "id": "q9",
+    "type": "multiple-choice",
+    "prompt": "What does 「no longer」 mean?",
+    "choices": [
+      "もはや〜でない",
+      "少なくとも",
+      "多くとも",
+      "大体",
+      "Aを元気づける",
+      "Aを当てにする",
+      "Aを解決する",
+      "とりわけ"
+    ],
+    "answer": "もはや〜でない",
+    "explanation": "no longer = もはや〜でない"
+  },
+  {
+    "id": "q10",
+    "type": "multiple-choice",
+    "prompt": "What does 「at least」 mean?",
+    "choices": [
+      "少なくとも",
+      "多くとも",
+      "せいぜい",
+      "いずれ",
+      "Aに焦点を合わせる",
+      "Aを頼りにする",
+      "Aを提出する",
+      "時代遅れの"
+    ],
+    "answer": "少なくとも",
+    "explanation": "at least = 少なくとも"
+  },
+  {
+    "id": "q11",
+    "type": "multiple-choice",
+    "prompt": "What does 「at (the) most」 mean?",
+    "choices": [
+      "多くとも",
+      "せいぜい",
+      "少なくとも",
+      "遅かれ早かれ",
+      "Aを励ます",
+      "Aを頼る",
+      "Aを判読する",
+      "晴れ上がる"
+    ],
+    "answer": [
+      "多くとも",
+      "せいぜい"
+    ],
+    "explanation": "at (the) most = 多くとも；せいぜい"
+  }
+]

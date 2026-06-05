@@ -1,0 +1,206 @@
+[
+  {
+    "id": "q1",
+    "type": "multiple-choice",
+    "prompt": "What does 「source」 mean?",
+    "choices": [
+      "源",
+      "機能",
+      "保険",
+      "傷",
+      "知識",
+      "〜を提出する",
+      "化学",
+      "効果的な"
+    ],
+    "answer": "源",
+    "explanation": "source = 源；情報源"
+  },
+  {
+    "id": "q2",
+    "type": "multiple-choice",
+    "prompt": "What does 「protein」 mean?",
+    "choices": [
+      "たんぱく質",
+      "血液",
+      "肺",
+      "筋肉",
+      "統計",
+      "〜を予測する",
+      "目標",
+      "安定した"
+    ],
+    "answer": "たんぱく質",
+    "explanation": "protein = たんぱく質"
+  },
+  {
+    "id": "q3",
+    "type": "multiple-choice",
+    "prompt": "What does 「brain」 mean?",
+    "choices": [
+      "脳",
+      "肺",
+      "神経",
+      "胃",
+      "割合",
+      "〜を拒否する",
+      "課題",
+      "一般的な"
+    ],
+    "answer": "脳",
+    "explanation": "brain = 脳"
+  },
+  {
+    "id": "q4",
+    "type": "multiple-choice",
+    "prompt": "What does 「function」 mean?",
+    "choices": [
+      "機能",
+      "操作",
+      "方法",
+      "状態",
+      "感情",
+      "〜を計算する",
+      "天文学",
+      "複雑な"
+    ],
+    "answer": "機能",
+    "explanation": "function = 機能；機能する"
+  },
+  {
+    "id": "q5",
+    "type": "multiple-choice",
+    "prompt": "What does 「flu」 mean?",
+    "choices": [
+      "インフルエンザ",
+      "がん",
+      "症状",
+      "熱",
+      "目標",
+      "〜を導く",
+      "哲学",
+      "効果的な"
+    ],
+    "answer": "インフルエンザ",
+    "explanation": "flu = インフルエンザ"
+  },
+  {
+    "id": "q6",
+    "type": "multiple-choice",
+    "prompt": "What does 「spread」 mean?",
+    "choices": [
+      "広まる",
+      "呼吸する",
+      "〜を提供する",
+      "〜を達成する",
+      "情報源",
+      "百分率",
+      "生物学",
+      "お気に入りの"
+    ],
+    "answer": "広まる",
+    "explanation": "spread = 広まる；〜を広げる"
+  },
+  {
+    "id": "q7",
+    "type": "multiple-choice",
+    "prompt": "What does 「medical」 mean?",
+    "choices": [
+      "医療の",
+      "一般的な",
+      "効果的な",
+      "安定した",
+      "手術",
+      "〜を批判する",
+      "経済学",
+      "血液"
+    ],
+    "answer": "医療の",
+    "explanation": "medical = 医療の；医学の"
+  },
+  {
+    "id": "q8",
+    "type": "multiple-choice",
+    "prompt": "What does 「insurance」 mean?",
+    "choices": [
+      "保険",
+      "薬",
+      "血液",
+      "研究",
+      "比率",
+      "〜を尊敬する",
+      "言語学",
+      "複雑な"
+    ],
+    "answer": "保険",
+    "explanation": "insurance = 保険"
+  },
+  {
+    "id": "q9",
+    "type": "multiple-choice",
+    "prompt": "What does 「donate」 mean?",
+    "choices": [
+      "〜を提供する",
+      "〜を広げる",
+      "〜を提出する",
+      "〜を設立する",
+      "脳",
+      "図表",
+      "心理学",
+      "安定した"
+    ],
+    "answer": "〜を提供する",
+    "explanation": "donate = ①〜を提供する ②〜を寄付する"
+  },
+  {
+    "id": "q10",
+    "type": "multiple-choice",
+    "prompt": "What does 「blood」 mean?",
+    "choices": [
+      "血液",
+      "たんぱく質",
+      "脳",
+      "肺",
+      "機会",
+      "〜を想像する",
+      "人類学",
+      "効果的な"
+    ],
+    "answer": "血液",
+    "explanation": "blood = 血液"
+  },
+  {
+    "id": "q11",
+    "type": "multiple-choice",
+    "prompt": "What does 「wound」 mean?",
+    "choices": [
+      "傷",
+      "手術",
+      "症状",
+      "薬",
+      "目標",
+      "〜を割る",
+      "地理学",
+      "一般的な"
+    ],
+    "answer": "傷",
+    "explanation": "wound = 傷；けが"
+  },
+  {
+    "id": "q12",
+    "type": "multiple-choice",
+    "prompt": "What does 「heal」 mean?",
+    "choices": [
+      "治る",
+      "広まる",
+      "呼吸する",
+      "〜を提供する",
+      "〜を提出する",
+      "統計",
+      "文学",
+      "安定した"
+    ],
+    "answer": "治る",
+    "explanation": "heal = 治る；〜を治す"
+  }
+]

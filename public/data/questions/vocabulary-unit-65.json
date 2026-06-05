@@ -1,0 +1,192 @@
+[
+  {
+    "id": "q1",
+    "type": "multiple-choice",
+    "prompt": "What does 「statistics」 mean?",
+    "choices": [
+      "統計",
+      "百分率",
+      "図表",
+      "大多数",
+      "化学",
+      "〜を提出する",
+      "症状",
+      "効果的な"
+    ],
+    "answer": "統計",
+    "explanation": "statistics = 統計"
+  },
+  {
+    "id": "q2",
+    "type": "multiple-choice",
+    "prompt": "What does 「percentage」 mean?",
+    "choices": [
+      "百分率",
+      "統計",
+      "比率",
+      "項目",
+      "目標",
+      "〜を予測する",
+      "痛み",
+      "一般的な"
+    ],
+    "answer": "百分率",
+    "explanation": "percentage = 百分率；割合"
+  },
+  {
+    "id": "q3",
+    "type": "multiple-choice",
+    "prompt": "What does 「majority」 mean?",
+    "choices": [
+      "大多数",
+      "例外",
+      "割合",
+      "図表",
+      "科目",
+      "〜を拒否する",
+      "恐怖",
+      "安定した"
+    ],
+    "answer": "大多数",
+    "explanation": "majority = 大多数；多数派"
+  },
+  {
+    "id": "q4",
+    "type": "multiple-choice",
+    "prompt": "What does 「exception」 mean?",
+    "choices": [
+      "例外",
+      "大多数",
+      "比率",
+      "統計",
+      "課題",
+      "〜を達成する",
+      "のど",
+      "お気に入りの"
+    ],
+    "answer": "例外",
+    "explanation": "exception = 例外"
+  },
+  {
+    "id": "q5",
+    "type": "multiple-choice",
+    "prompt": "What does 「ratio」 mean?",
+    "choices": [
+      "比率",
+      "百分率",
+      "統計",
+      "項目",
+      "知識",
+      "〜を導く",
+      "血液",
+      "複雑な"
+    ],
+    "answer": "比率",
+    "explanation": "ratio = 比率；比"
+  },
+  {
+    "id": "q6",
+    "type": "multiple-choice",
+    "prompt": "What does 「chart」 mean?",
+    "choices": [
+      "図表",
+      "統計",
+      "百分率",
+      "例外",
+      "方法",
+      "〜を批判する",
+      "肺",
+      "効果的な"
+    ],
+    "answer": "図表",
+    "explanation": "chart = 図表；グラフ"
+  },
+  {
+    "id": "q7",
+    "type": "multiple-choice",
+    "prompt": "What does 「item」 mean?",
+    "choices": [
+      "項目",
+      "図表",
+      "比率",
+      "大多数",
+      "任務",
+      "〜に応募する",
+      "筋肉",
+      "文学"
+    ],
+    "answer": "項目",
+    "explanation": "item = 項目；品物"
+  },
+  {
+    "id": "q8",
+    "type": "multiple-choice",
+    "prompt": "What does 「calculate」 mean?",
+    "choices": [
+      "〜を計算する",
+      "〜を割る",
+      "〜を掛ける",
+      "〜を提出する",
+      "哲学",
+      "気分",
+      "保険",
+      "安定した"
+    ],
+    "answer": "〜を計算する",
+    "explanation": "calculate = 〜を計算する"
+  },
+  {
+    "id": "q9",
+    "type": "multiple-choice",
+    "prompt": "What does 「equal」 mean?",
+    "choices": [
+      "等しい",
+      "〜を計算する",
+      "比率",
+      "大多数",
+      "心理学",
+      "〜を尊敬する",
+      "傷",
+      "一般的な"
+    ],
+    "answer": "等しい",
+    "explanation": "equal = 等しい；〜に等しい"
+  },
+  {
+    "id": "q10",
+    "type": "multiple-choice",
+    "prompt": "What does 「multiply」 mean?",
+    "choices": [
+      "〜を掛ける",
+      "〜を割る",
+      "〜を増やす",
+      "〜を証明する",
+      "人類学",
+      "目標",
+      "薬",
+      "複雑な"
+    ],
+    "answer": [
+      "〜を掛ける",
+      "〜を増やす"
+    ],
+    "explanation": "multiply = 〜を掛ける；〜を増やす"
+  },
+  {
+    "id": "q11",
+    "type": "multiple-choice",
+    "prompt": "What does 「divide」 mean?",
+    "choices": [
+      "〜を割る",
+      "〜を掛ける",
+      "〜を計算する",
+      "〜を治療する",
+      "言語学",
+      "機会",
+      "神経",
+      "効果的な"
+    ],
+    "answer": "〜を割る",
+    "explanation": "divide = 〜を割る；〜を分ける"
+  }
+]

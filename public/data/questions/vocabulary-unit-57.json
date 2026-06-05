@@ -1,0 +1,155 @@
+[
+  {
+    "id": "q1",
+    "type": "multiple-choice",
+    "prompt": "What does 「respect」 mean?",
+    "choices": [
+      "〜を尊敬する",
+      "〜を軽蔑する",
+      "〜を延期する",
+      "〜を予測する",
+      "〜を提出する",
+      "症状",
+      "目標",
+      "化学"
+    ],
+    "answer": "〜を尊敬する",
+    "explanation": "respect = ①〜を尊敬する ②尊敬"
+  },
+  {
+    "id": "q2",
+    "type": "multiple-choice",
+    "prompt": "What does 「despise」 mean?",
+    "choices": [
+      "〜を軽蔑する",
+      "〜に謝罪する",
+      "〜を達成する",
+      "〜を想像する",
+      "〜を証明する",
+      "目標",
+      "感情",
+      "地理学"
+    ],
+    "answer": "〜を軽蔑する",
+    "explanation": "despise = 〜を軽蔑する"
+  },
+  {
+    "id": "q3",
+    "type": "multiple-choice",
+    "prompt": "What does 「criticize」 mean?",
+    "choices": [
+      "〜を批判する",
+      "〜をほめる",
+      "〜を拒否する",
+      "〜を導く",
+      "〜を計算する",
+      "論文",
+      "痛み",
+      "建築"
+    ],
+    "answer": "〜を批判する",
+    "explanation": "criticize = 〜を批判する"
+  },
+  {
+    "id": "q4",
+    "type": "multiple-choice",
+    "prompt": "What does 「praise」 mean?",
+    "choices": [
+      "〜をほめる",
+      "〜を批判する",
+      "〜を無視する",
+      "〜に応募する",
+      "〜を提出する",
+      "哲学",
+      "気分",
+      "割合"
+    ],
+    "answer": "〜をほめる",
+    "explanation": "praise = 〜をほめる"
+  },
+  {
+    "id": "q5",
+    "type": "multiple-choice",
+    "prompt": "What does 「appreciate」 mean?",
+    "choices": [
+      "〜に感謝する",
+      "〜を裏切る",
+      "〜と仮定する",
+      "〜を拒否する",
+      "〜を治療する",
+      "言語学",
+      "熱",
+      "影響"
+    ],
+    "answer": "〜に感謝する",
+    "explanation": "appreciate = ①〜に感謝する ②〜を正しく理解する"
+  },
+  {
+    "id": "q6",
+    "type": "multiple-choice",
+    "prompt": "What does 「apologize」 mean?",
+    "choices": [
+      "〜に謝罪する",
+      "〜をだます",
+      "〜を達成する",
+      "〜を予測する",
+      "〜を提出する",
+      "恐怖",
+      "統計",
+      "筋肉"
+    ],
+    "answer": "〜に謝罪する",
+    "explanation": "apologize = 〜に謝罪する"
+  },
+  {
+    "id": "q7",
+    "type": "multiple-choice",
+    "prompt": "What does 「lead」 mean?",
+    "choices": [
+      "〜を導く",
+      "〜を軽蔑する",
+      "〜を拒否する",
+      "〜を計算する",
+      "〜を想像する",
+      "神経",
+      "百分率",
+      "天文学"
+    ],
+    "answer": "〜を導く",
+    "explanation": "lead = ①〜を導く；〜を主導する ②〜につながる"
+  },
+  {
+    "id": "q8",
+    "type": "multiple-choice",
+    "prompt": "What does 「apply」 mean?",
+    "choices": [
+      "〜に応募する",
+      "〜に謝罪する",
+      "〜を尊敬する",
+      "〜を邪魔する",
+      "〜を割る",
+      "〜を研究する",
+      "筋肉",
+      "経済学"
+    ],
+    "answer": "〜に応募する",
+    "explanation": "apply = ①〜に応募する ②〜を当てはめる"
+  },
+  {
+    "id": "q9",
+    "type": "multiple-choice",
+    "prompt": "What does 「decline」 mean?",
+    "choices": [
+      "〜を断る",
+      "〜を導く",
+      "〜を提出する",
+      "〜を増やす",
+      "〜を特定する",
+      "薬",
+      "文学",
+      "機会"
+    ],
+    "answer": "〜を断る",
+    "explanation": "decline = ①〜を断る ②減少する"
+  }
+]

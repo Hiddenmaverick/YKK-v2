@@ -1,0 +1,218 @@
+[
+  {
+    "id": "q1",
+    "type": "multiple-choice",
+    "prompt": "What does 「take off」 mean?",
+    "choices": [
+      "離陸する",
+      "Aを見送る",
+      "Aを熟考する",
+      "Aを求める",
+      "Aに所属する",
+      "Aを書き込む",
+      "晴れ上がる",
+      "Aを配る"
+    ],
+    "answer": "離陸する",
+    "explanation": "take off = （飛行機が）離陸する"
+  },
+  {
+    "id": "q2",
+    "type": "multiple-choice",
+    "prompt": "What does 「see A off」 mean?",
+    "choices": [
+      "Aを見送る",
+      "離陸する",
+      "Aを遠ざけておく",
+      "Aに合う",
+      "Aを求める",
+      "Aを卒業する",
+      "Aを提出する",
+      "Aに関連して"
+    ],
+    "answer": "Aを見送る",
+    "explanation": "see A off = Aを見送る"
+  },
+  {
+    "id": "q3",
+    "type": "multiple-choice",
+    "prompt": "What does 「keep off A」 mean?",
+    "choices": [
+      "Aを遠ざけておく",
+      "Aに立ち入らない",
+      "Aを見送る",
+      "Aを熟考する",
+      "Aに同情する",
+      "Aを配る",
+      "Aを提出する",
+      "Aの代わりに"
+    ],
+    "answer": [
+      "Aを遠ざけておく",
+      "Aに立ち入らない"
+    ],
+    "explanation": "keep off A = ①Aを遠ざけておく；Aを防ぐ ②Aに立ち入らない"
+  },
+  {
+    "id": "q4",
+    "type": "multiple-choice",
+    "prompt": "What does 「go with A」 mean?",
+    "choices": [
+      "Aに合う",
+      "Aと調和する",
+      "Aで満たされている",
+      "Aに基づく",
+      "Aに焦点を合わせる",
+      "Aを求める",
+      "Aを判読する",
+      "Aを励ます"
+    ],
+    "answer": [
+      "Aに合う",
+      "Aと調和する"
+    ],
+    "explanation": "go with A = Aに合う；Aと調和する"
+  },
+  {
+    "id": "q5",
+    "type": "multiple-choice",
+    "prompt": "What does 「deal with A」 mean?",
+    "choices": [
+      "Aを扱う",
+      "Aを処理する",
+      "Aに合う",
+      "Aを見送る",
+      "Aを書き込む",
+      "Aを指摘する",
+      "Aの存在を信じる",
+      "Aに基づく"
+    ],
+    "answer": [
+      "Aを扱う",
+      "Aを処理する"
+    ],
+    "explanation": "deal with A = Aを扱う；Aを処理する"
+  },
+  {
+    "id": "q6",
+    "type": "multiple-choice",
+    "prompt": "What does 「cope with A」 mean?",
+    "choices": [
+      "Aにうまく対処する",
+      "Aを遠ざけておく",
+      "Aに同情する",
+      "Aを卒業する",
+      "Aをひっくり返す",
+      "Aを配る",
+      "Aを励ます",
+      "Aに関連して"
+    ],
+    "answer": "Aにうまく対処する",
+    "explanation": "cope with A = Aにうまく対処する"
+  },
+  {
+    "id": "q7",
+    "type": "multiple-choice",
+    "prompt": "What does 「be filled with A」 mean?",
+    "choices": [
+      "Aで満たされている",
+      "Aに心を打たれる",
+      "Aに基づく",
+      "Aに同情する",
+      "Aの代わりに",
+      "Aを解決する",
+      "もはや〜でない",
+      "Aを提出する"
+    ],
+    "answer": "Aで満たされている",
+    "explanation": "be filled with A = Aで満たされている"
+  },
+  {
+    "id": "q8",
+    "type": "multiple-choice",
+    "prompt": "What does 「be worried about A」 mean?",
+    "choices": [
+      "Aを心配している",
+      "Aに心を打たれる",
+      "Aで混雑している",
+      "Aに基づく",
+      "Aを熟考する",
+      "Aを励ます",
+      "Aを頼る",
+      "Aに加えて"
+    ],
+    "answer": "Aを心配している",
+    "explanation": "be worried about A = Aを心配している"
+  },
+  {
+    "id": "q9",
+    "type": "multiple-choice",
+    "prompt": "What does 「be struck by A」 mean?",
+    "choices": [
+      "Aに心を打たれる",
+      "Aを心配している",
+      "Aに所属する",
+      "Aを判読する",
+      "Aを指摘する",
+      "Aにもかかわらず",
+      "結局",
+      "Aを求める"
+    ],
+    "answer": "Aに心を打たれる",
+    "explanation": "be struck by A = Aに心を打たれる"
+  },
+  {
+    "id": "q10",
+    "type": "multiple-choice",
+    "prompt": "What does 「be crowded with A」 mean?",
+    "choices": [
+      "Aで混雑している",
+      "Aを見送る",
+      "Aに基づく",
+      "Aの頭に浮かぶ",
+      "Aを配る",
+      "Aの場合には",
+      "とりわけ",
+      "Aを提出する"
+    ],
+    "answer": "Aで混雑している",
+    "explanation": "be crowded with A = Aで混雑している"
+  },
+  {
+    "id": "q11",
+    "type": "multiple-choice",
+    "prompt": "What does 「be caught in A」 mean?",
+    "choices": [
+      "Aに巻き込まれる",
+      "Aにあう",
+      "Aを卒業する",
+      "Aを扱う",
+      "Aに同情する",
+      "Aに加えて",
+      "少なくとも",
+      "Aを指摘する"
+    ],
+    "answer": [
+      "Aに巻き込まれる",
+      "Aにあう"
+    ],
+    "explanation": "be caught in A = Aに巻き込まれる；Aにあう"
+  },
+  {
+    "id": "q12",
+    "type": "multiple-choice",
+    "prompt": "What does 「be based on A」 mean?",
+    "choices": [
+      "Aに基づく",
+      "Aで満たされている",
+      "Aを心配している",
+      "Aを求める",
+      "Aに所属する",
+      "Aを解決する",
+      "Aにもかかわらず",
+      "最新の"
+    ],
+    "answer": "Aに基づく",
+    "explanation": "be based on A = Aに基づく"
+  }
+]

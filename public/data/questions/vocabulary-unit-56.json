@@ -1,0 +1,189 @@
+[
+  {
+    "id": "q1",
+    "type": "multiple-choice",
+    "prompt": "What does \"doubt\" mean?",
+    "choices": [
+      "疑う",
+      "〜と気づく",
+      "〜を否定する",
+      "〜を延期する",
+      "〜がわかる",
+      "〜を要約する",
+      "〜を証明する",
+      "〜を批判する"
+    ],
+    "answer": "疑う",
+    "explanation": "doubt = ①疑う ②疑い（例：I doubt that is true それは本当かどうか疑わしい）"
+  },
+  {
+    "id": "q2",
+    "type": "multiple-choice",
+    "prompt": "What does \"wonder\" mean?",
+    "choices": [
+      "〜かなと思う",
+      "疑う",
+      "〜と気づく",
+      "〜を否定する",
+      "〜を延期する",
+      "〜を要約する",
+      "〜を証明する",
+      "〜を批判する"
+    ],
+    "answer": "〜かなと思う",
+    "explanation": "wonder = 〜かなと思う；〜かしらと思う（例：I wonder if she is okay 彼女は大丈夫かなと思う）"
+  },
+  {
+    "id": "q3",
+    "type": "multiple-choice",
+    "prompt": "What does \"interpret\" mean?",
+    "choices": [
+      "〜を解釈する",
+      "疑う",
+      "〜と気づく",
+      "〜を否定する",
+      "〜を延期する",
+      "〜を要約する",
+      "〜を証明する",
+      "〜を批判する"
+    ],
+    "answer": "〜を解釈する",
+    "explanation": "interpret = ①〜を解釈する ②通訳する（例：interpret the results 結果を解釈する）"
+  },
+  {
+    "id": "q4",
+    "type": "multiple-choice",
+    "prompt": "What does \"recognize\" mean?",
+    "choices": [
+      "〜がわかる",
+      "疑う",
+      "〜かなと思う",
+      "〜を解釈する",
+      "〜と気づく",
+      "〜を設立する",
+      "〜を強調する",
+      "〜に応募する"
+    ],
+    "answer": "〜がわかる",
+    "explanation": "recognize = 〜がわかる；〜と認識する（例：recognize a face 顔がわかる）"
+  },
+  {
+    "id": "q5",
+    "type": "multiple-choice",
+    "prompt": "What does \"realize\" mean?",
+    "choices": [
+      "〜と気づく",
+      "疑う",
+      "〜かなと思う",
+      "〜を解釈する",
+      "〜がわかる",
+      "〜を設立する",
+      "〜を強調する",
+      "〜に応募する"
+    ],
+    "answer": "〜と気づく",
+    "explanation": "realize = ①〜と気づく ②〜を実現する（例：realize a mistake ミスに気づく）"
+  },
+  {
+    "id": "q6",
+    "type": "multiple-choice",
+    "prompt": "What does \"claim\" mean?",
+    "choices": [
+      "〜と主張する",
+      "〜を否定する",
+      "〜と不平を言う",
+      "〜を延期する",
+      "疑う",
+      "〜を批判する",
+      "〜を証明する",
+      "〜を要約する"
+    ],
+    "answer": "〜と主張する",
+    "explanation": "claim = ①〜と主張する ②〜を要求する（例：claim that it is true それは本当だと主張する）"
+  },
+  {
+    "id": "q7",
+    "type": "multiple-choice",
+    "prompt": "What does \"argue\" mean?",
+    "choices": [
+      "〜と主張する",
+      "〜を否定する",
+      "〜と不平を言う",
+      "〜を延期する",
+      "疑う",
+      "〜を批判する",
+      "〜に訴える",
+      "〜を要約する"
+    ],
+    "answer": "〜と主張する",
+    "explanation": "argue = ①〜と主張する ②議論する（例：argue that she is right 彼女が正しいと主張する）"
+  },
+  {
+    "id": "q8",
+    "type": "multiple-choice",
+    "prompt": "What does \"appeal\" mean?",
+    "choices": [
+      "〜に訴える",
+      "〜と主張する",
+      "〜を否定する",
+      "〜と不平を言う",
+      "〜を延期する",
+      "〜を批判する",
+      "〜を証明する",
+      "〜を要約する"
+    ],
+    "answer": "〜に訴える",
+    "explanation": "appeal = ①（to A）Aに訴える ②魅力がある（例：appeal to the audience 聴衆に訴える）"
+  },
+  {
+    "id": "q9",
+    "type": "multiple-choice",
+    "prompt": "What does \"complain\" mean?",
+    "choices": [
+      "〜と不平を言う",
+      "〜と主張する",
+      "〜を否定する",
+      "〜に訴える",
+      "〜を延期する",
+      "〜を批判する",
+      "〜を証明する",
+      "〜を要約する"
+    ],
+    "answer": "〜と不平を言う",
+    "explanation": "complain = 〜と不平を言う（例：complain about homework 宿題について不平を言う）"
+  },
+  {
+    "id": "q10",
+    "type": "multiple-choice",
+    "prompt": "What does \"deny\" mean?",
+    "choices": [
+      "〜を否定する",
+      "〜と主張する",
+      "〜と不平を言う",
+      "〜に訴える",
+      "〜を延期する",
+      "〜を批判する",
+      "〜を証明する",
+      "〜を要約する"
+    ],
+    "answer": "〜を否定する",
+    "explanation": "deny = 〜を否定する（例：deny the rumor うわさを否定する）"
+  },
+  {
+    "id": "q11",
+    "type": "multiple-choice",
+    "prompt": "What does \"postpone\" mean?",
+    "choices": [
+      "〜を延期する",
+      "〜と主張する",
+      "〜を否定する",
+      "〜と不平を言う",
+      "〜に訴える",
+      "〜を批判する",
+      "〜を証明する",
+      "〜を要約する"
+    ],
+    "answer": "〜を延期する",
+    "explanation": "postpone = 〜を延期する（例：postpone the meeting 会議を延期する）"
+  }
+]

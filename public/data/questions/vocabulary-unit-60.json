@@ -1,0 +1,206 @@
+[
+  {
+    "id": "q1",
+    "type": "multiple-choice",
+    "prompt": "What does 「amazed」 mean?",
+    "choices": [
+      "びっくりして",
+      "〜を計算する",
+      "天文学",
+      "割合",
+      "目標",
+      "〜を拒否する",
+      "保険",
+      "複雑な"
+    ],
+    "answer": "びっくりして",
+    "explanation": "amazed = びっくりして"
+  },
+  {
+    "id": "q2",
+    "type": "multiple-choice",
+    "prompt": "What does 「astonished」 mean?",
+    "choices": [
+      "非常に驚いて",
+      "〜を提出する",
+      "化学",
+      "症状",
+      "大多数",
+      "〜を導く",
+      "血液",
+      "一般的な"
+    ],
+    "answer": "非常に驚いて",
+    "explanation": "astonished = 非常に驚いて"
+  },
+  {
+    "id": "q3",
+    "type": "multiple-choice",
+    "prompt": "What does 「annoyed」 mean?",
+    "choices": [
+      "いらだって",
+      "〜を尊敬する",
+      "地理学",
+      "百分率",
+      "のど",
+      "〜を割る",
+      "機会",
+      "安定した"
+    ],
+    "answer": "いらだって",
+    "explanation": "annoyed = いらだって"
+  },
+  {
+    "id": "q4",
+    "type": "multiple-choice",
+    "prompt": "What does 「frustrated」 mean?",
+    "choices": [
+      "欲求不満で",
+      "〜を批判する",
+      "心理学",
+      "筋肉",
+      "例外",
+      "〜を特定する",
+      "効果的な",
+      "文学"
+    ],
+    "answer": "欲求不満で",
+    "explanation": "frustrated = 欲求不満で"
+  },
+  {
+    "id": "q5",
+    "type": "multiple-choice",
+    "prompt": "What does 「disturb」 mean?",
+    "choices": [
+      "〜を邪魔する",
+      "〜を軽蔑する",
+      "哲学",
+      "情報源",
+      "統計",
+      "〜を研究する",
+      "痛い",
+      "建築"
+    ],
+    "answer": "〜を邪魔する",
+    "explanation": "disturb = 〜を邪魔する"
+  },
+  {
+    "id": "q6",
+    "type": "multiple-choice",
+    "prompt": "What does 「interrupt」 mean?",
+    "choices": [
+      "〜をさえぎる",
+      "〜に謝罪する",
+      "経済学",
+      "図表",
+      "薬",
+      "〜を証明する",
+      "お気に入りの",
+      "肺"
+    ],
+    "answer": "〜をさえぎる",
+    "explanation": "interrupt = 〜をさえぎる；〜を邪魔する"
+  },
+  {
+    "id": "q7",
+    "type": "multiple-choice",
+    "prompt": "What does 「bother」 mean?",
+    "choices": [
+      "〜を悩ませる",
+      "〜をほめる",
+      "生物学",
+      "項目",
+      "熱",
+      "〜に応募する",
+      "複雑な",
+      "神経"
+    ],
+    "answer": "〜を悩ませる",
+    "explanation": "bother = 〜を悩ませる；〜をわずらわせる"
+  },
+  {
+    "id": "q8",
+    "type": "multiple-choice",
+    "prompt": "What does 「irritate」 mean?",
+    "choices": [
+      "〜をいらいらさせる",
+      "〜を想像する",
+      "社会学",
+      "要因",
+      "傷",
+      "〜を治療する",
+      "一般的な",
+      "物理学"
+    ],
+    "answer": "〜をいらいらさせる",
+    "explanation": "irritate = 〜をいらいらさせる"
+  },
+  {
+    "id": "q9",
+    "type": "multiple-choice",
+    "prompt": "What does 「ignore」 mean?",
+    "choices": [
+      "〜を無視する",
+      "〜を裏切る",
+      "人類学",
+      "研究所",
+      "百分率",
+      "〜を増やす",
+      "効果的な",
+      "胃"
+    ],
+    "answer": "〜を無視する",
+    "explanation": "ignore = 〜を無視する"
+  },
+  {
+    "id": "q10",
+    "type": "multiple-choice",
+    "prompt": "What does 「fear」 mean?",
+    "choices": [
+      "恐怖",
+      "〜を予測する",
+      "言語学",
+      "保険",
+      "肺",
+      "〜を断る",
+      "お気に入りの",
+      "目標"
+    ],
+    "answer": "恐怖",
+    "explanation": "fear = 恐怖；恐怖心；不安；〜を恐れる；〜を心配する"
+  },
+  {
+    "id": "q11",
+    "type": "multiple-choice",
+    "prompt": "What does 「terror」 mean?",
+    "choices": [
+      "強い恐怖",
+      "〜に抵抗する",
+      "文学",
+      "割合",
+      "のど",
+      "〜を達成する",
+      "安定した",
+      "筋肉"
+    ],
+    "answer": "強い恐怖",
+    "explanation": "terror = 強い恐怖；テロ"
+  },
+  {
+    "id": "q12",
+    "type": "multiple-choice",
+    "prompt": "What does 「horror」 mean?",
+    "choices": [
+      "ぞっとするような恐怖",
+      "〜を批判する",
+      "建築",
+      "統計",
+      "血液",
+      "〜を提出する",
+      "複雑な",
+      "機会"
+    ],
+    "answer": "ぞっとするような恐怖",
+    "explanation": "horror = ぞっとするような恐怖"
+  }
+]

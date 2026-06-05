@@ -1,0 +1,230 @@
+[
+  {
+    "id": "q1",
+    "type": "multiple-choice",
+    "prompt": "What does 「cooperate」 mean?",
+    "choices": [
+      "協力する",
+      "競う",
+      "集中する",
+      "重要である",
+      "会社",
+      "物体",
+      "〜を解放する",
+      "増加"
+    ],
+    "answer": "協力する",
+    "explanation": "cooperate = 協力する"
+  },
+  {
+    "id": "q2",
+    "type": "multiple-choice",
+    "prompt": "What does 「compete」 mean?",
+    "choices": [
+      "競う",
+      "協力する",
+      "〜を捕える",
+      "〜を数える",
+      "仲間",
+      "対象",
+      "減少",
+      "集中力"
+    ],
+    "answer": "競う",
+    "explanation": "compete = 競う；競技会"
+  },
+  {
+    "id": "q3",
+    "type": "multiple-choice",
+    "prompt": "What does 「capture」 mean?",
+    "choices": [
+      "〜を捕える",
+      "〜を解放する",
+      "〜を発売する",
+      "〜を増やす",
+      "競う",
+      "会社",
+      "点",
+      "集中する"
+    ],
+    "answer": "〜を捕える",
+    "explanation": "capture = 〜を捕える"
+  },
+  {
+    "id": "q4",
+    "type": "multiple-choice",
+    "prompt": "What does 「release」 mean?",
+    "choices": [
+      "〜を解放する",
+      "〜を発売する",
+      "協力する",
+      "〜を捕える",
+      "〜を減らす",
+      "重要である",
+      "物体",
+      "集中する"
+    ],
+    "answer": [
+      "〜を解放する",
+      "〜を発売する"
+    ],
+    "explanation": "release = ①〜を解放する；〜を自由にする ②〜を発売する ③〜を放つ"
+  },
+  {
+    "id": "q5",
+    "type": "multiple-choice",
+    "prompt": "What does 「increase」 mean?",
+    "choices": [
+      "増える",
+      "〜を増やす",
+      "減る",
+      "〜を減らす",
+      "会社",
+      "集中する",
+      "対象",
+      "競う"
+    ],
+    "answer": [
+      "増える",
+      "〜を増やす"
+    ],
+    "explanation": "increase = 増える；〜を増やす；増加"
+  },
+  {
+    "id": "q6",
+    "type": "multiple-choice",
+    "prompt": "What does 「decrease」 mean?",
+    "choices": [
+      "減る",
+      "〜を減らす",
+      "増える",
+      "〜を増やす",
+      "仲間",
+      "物体",
+      "競う",
+      "集中する"
+    ],
+    "answer": [
+      "減る",
+      "〜を減らす"
+    ],
+    "explanation": "decrease = 減る；〜を減らす；減少"
+  },
+  {
+    "id": "q7",
+    "type": "multiple-choice",
+    "prompt": "What does 「concentrate」 mean?",
+    "choices": [
+      "集中する",
+      "協力する",
+      "競う",
+      "気を散らす",
+      "〜を数える",
+      "会社",
+      "増加",
+      "対象"
+    ],
+    "answer": "集中する",
+    "explanation": "concentrate = 集中する；集中；集中力"
+  },
+  {
+    "id": "q8",
+    "type": "multiple-choice",
+    "prompt": "What does 「distract」 mean?",
+    "choices": [
+      "注意をそらす",
+      "気を散らす物",
+      "集中する",
+      "協力する",
+      "〜を捕える",
+      "減少",
+      "会社",
+      "点"
+    ],
+    "answer": [
+      "注意をそらす",
+      "気を散らす物"
+    ],
+    "explanation": "distract = 注意をそらす；気を散らす；気を散らす物"
+  },
+  {
+    "id": "q9",
+    "type": "multiple-choice",
+    "prompt": "What does 「company」 mean?",
+    "choices": [
+      "仲間",
+      "会社",
+      "物体",
+      "対象",
+      "競技会",
+      "集中力",
+      "〜を解放する",
+      "減る"
+    ],
+    "answer": [
+      "仲間",
+      "会社"
+    ],
+    "explanation": "company = ①仲間 ②会社"
+  },
+  {
+    "id": "q10",
+    "type": "multiple-choice",
+    "prompt": "What does 「respect」 mean?",
+    "choices": [
+      "点",
+      "〜を尊敬する",
+      "対象",
+      "物体",
+      "協力する",
+      "〜を減らす",
+      "集中する",
+      "増加"
+    ],
+    "answer": [
+      "点",
+      "〜を尊敬する"
+    ],
+    "explanation": "respect = ①点 ②〜を尊敬する"
+  },
+  {
+    "id": "q11",
+    "type": "multiple-choice",
+    "prompt": "What does 「object」 mean?",
+    "choices": [
+      "物体",
+      "対象",
+      "会社",
+      "点",
+      "協力する",
+      "〜を捕える",
+      "減少",
+      "集中力"
+    ],
+    "answer": [
+      "物体",
+      "対象"
+    ],
+    "explanation": "object = ①物体 ②対象；反対する"
+  },
+  {
+    "id": "q12",
+    "type": "multiple-choice",
+    "prompt": "What does 「count」 mean?",
+    "choices": [
+      "重要である",
+      "〜を数える",
+      "協力する",
+      "競う",
+      "会社",
+      "対象",
+      "増加",
+      "集中する"
+    ],
+    "answer": [
+      "重要である",
+      "〜を数える"
+    ],
+    "explanation": "count = ①重要である ②〜を数える"
+  }
+]

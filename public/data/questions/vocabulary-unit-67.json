@@ -1,0 +1,206 @@
+[
+  {
+    "id": "q1",
+    "type": "multiple-choice",
+    "prompt": "What does 「fever」 mean?",
+    "choices": [
+      "熱",
+      "症状",
+      "薬",
+      "胃",
+      "統計",
+      "〜を提出する",
+      "効果的な",
+      "経済学"
+    ],
+    "answer": "熱",
+    "explanation": "fever = ①熱；発熱 ②熱狂"
+  },
+  {
+    "id": "q2",
+    "type": "multiple-choice",
+    "prompt": "What does 「injure」 mean?",
+    "choices": [
+      "〜にけがをさせる",
+      "〜を治療する",
+      "〜を計算する",
+      "〜を拒否する",
+      "筋肉",
+      "保険",
+      "大多数",
+      "複雑な"
+    ],
+    "answer": "〜にけがをさせる",
+    "explanation": "injure = 〜にけがをさせる"
+  },
+  {
+    "id": "q3",
+    "type": "multiple-choice",
+    "prompt": "What does 「hurt」 mean?",
+    "choices": [
+      "〜を傷つける",
+      "〜を予測する",
+      "〜を導く",
+      "〜に謝罪する",
+      "神経",
+      "比率",
+      "課題",
+      "安定した"
+    ],
+    "answer": "〜を傷つける",
+    "explanation": "hurt = ①〜を傷つける ②痛む"
+  },
+  {
+    "id": "q4",
+    "type": "multiple-choice",
+    "prompt": "What does 「symptom」 mean?",
+    "choices": [
+      "症状",
+      "熱",
+      "治療",
+      "薬",
+      "目標",
+      "〜を想像する",
+      "天文学",
+      "一般的な"
+    ],
+    "answer": "症状",
+    "explanation": "symptom = 症状"
+  },
+  {
+    "id": "q5",
+    "type": "multiple-choice",
+    "prompt": "What does 「treatment」 mean?",
+    "choices": [
+      "治療",
+      "症状",
+      "影響",
+      "研究",
+      "〜を計算する",
+      "哲学",
+      "筋肉",
+      "複雑な"
+    ],
+    "answer": "治療",
+    "explanation": "treatment = ①治療；治療法 ②取り扱い"
+  },
+  {
+    "id": "q6",
+    "type": "multiple-choice",
+    "prompt": "What does 「medicine」 mean?",
+    "choices": [
+      "薬",
+      "症状",
+      "神経",
+      "胃",
+      "統計",
+      "〜を提出する",
+      "目標",
+      "効果的な"
+    ],
+    "answer": "薬",
+    "explanation": "medicine = ①薬 ②医学"
+  },
+  {
+    "id": "q7",
+    "type": "multiple-choice",
+    "prompt": "What does 「operation」 mean?",
+    "choices": [
+      "手術",
+      "症状",
+      "胃",
+      "神経",
+      "〜を達成する",
+      "図表",
+      "地理学",
+      "安定した"
+    ],
+    "answer": "手術",
+    "explanation": "operation = ①手術 ②活動 ③操作"
+  },
+  {
+    "id": "q8",
+    "type": "multiple-choice",
+    "prompt": "What does 「muscle」 mean?",
+    "choices": [
+      "筋肉",
+      "神経",
+      "胃",
+      "肺",
+      "血液",
+      "〜を割る",
+      "知識",
+      "お気に入りの"
+    ],
+    "answer": "筋肉",
+    "explanation": "muscle = 筋肉"
+  },
+  {
+    "id": "q9",
+    "type": "multiple-choice",
+    "prompt": "What does 「nerve」 mean?",
+    "choices": [
+      "神経",
+      "筋肉",
+      "胃",
+      "肺",
+      "のど",
+      "〜を批判する",
+      "百分率",
+      "複雑な"
+    ],
+    "answer": "神経",
+    "explanation": "nerve = 神経；神経過敏"
+  },
+  {
+    "id": "q10",
+    "type": "multiple-choice",
+    "prompt": "What does 「stomach」 mean?",
+    "choices": [
+      "胃",
+      "筋肉",
+      "神経",
+      "のど",
+      "血液",
+      "〜を研究する",
+      "例外",
+      "効果的な"
+    ],
+    "answer": "胃",
+    "explanation": "stomach = 胃；腹部"
+  },
+  {
+    "id": "q11",
+    "type": "multiple-choice",
+    "prompt": "What does 「foot」 mean?",
+    "choices": [
+      "足",
+      "歯",
+      "胃",
+      "筋肉",
+      "図表",
+      "〜を拒否する",
+      "哲学",
+      "安定した"
+    ],
+    "answer": "足",
+    "explanation": "foot = ①足 ②フィート"
+  },
+  {
+    "id": "q12",
+    "type": "multiple-choice",
+    "prompt": "What does 「tooth」 mean?",
+    "choices": [
+      "歯",
+      "足",
+      "のど",
+      "神経",
+      "症状",
+      "〜を予測する",
+      "統計",
+      "一般的な"
+    ],
+    "answer": "歯",
+    "explanation": "tooth = 歯"
+  }
+]

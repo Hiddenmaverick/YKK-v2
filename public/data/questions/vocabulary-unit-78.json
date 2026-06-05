@@ -1,0 +1,239 @@
+[
+  {
+    "id": "q1",
+    "type": "multiple-choice",
+    "prompt": "What does 「preserve」 mean?",
+    "choices": [
+      "〜を保存する",
+      "〜を保つ",
+      "〜を観察する",
+      "〜を認める",
+      "方向",
+      "注意",
+      "大声で叫ぶ",
+      "変数"
+    ],
+    "answer": [
+      "〜を保存する",
+      "〜を保つ"
+    ],
+    "explanation": "preserve = 〜を保存する；〜を保つ；保存"
+  },
+  {
+    "id": "q2",
+    "type": "multiple-choice",
+    "prompt": "What does 「conserve」 mean?",
+    "choices": [
+      "〜を保全する",
+      "保護",
+      "〜に値する",
+      "〜を引き付ける",
+      "感覚",
+      "変数",
+      "入場",
+      "大声で叫ぶ"
+    ],
+    "answer": [
+      "〜を保全する",
+      "保護"
+    ],
+    "explanation": "conserve = 〜を保全する；保護"
+  },
+  {
+    "id": "q3",
+    "type": "multiple-choice",
+    "prompt": "What does 「observe」 mean?",
+    "choices": [
+      "〜を観察する",
+      "〜に気づく",
+      "〜を認める",
+      "異なる",
+      "方向",
+      "関心",
+      "保存",
+      "叫び声"
+    ],
+    "answer": [
+      "〜を観察する",
+      "〜に気づく"
+    ],
+    "explanation": "observe = ①〜を観察する；〜に気づく ②〜を守る；観察"
+  },
+  {
+    "id": "q4",
+    "type": "multiple-choice",
+    "prompt": "What does 「deserve」 mean?",
+    "choices": [
+      "〜に値する",
+      "〜を認める",
+      "〜を保つ",
+      "〜を引き付ける",
+      "違い",
+      "五感",
+      "指示",
+      "叫び声"
+    ],
+    "answer": "〜に値する",
+    "explanation": "deserve = 〜に値する；〜するに値する"
+  },
+  {
+    "id": "q5",
+    "type": "multiple-choice",
+    "prompt": "What does 「admit」 mean?",
+    "choices": [
+      "〜を認める",
+      "入場を認める",
+      "〜を観察する",
+      "〜を保全する",
+      "変化する",
+      "方向",
+      "注意力",
+      "大評判"
+    ],
+    "answer": [
+      "〜を認める",
+      "入場を認める"
+    ],
+    "explanation": "admit = ①〜を認める ②入場・入学を認める；入場；入学"
+  },
+  {
+    "id": "q6",
+    "type": "multiple-choice",
+    "prompt": "What does 「acknowledge」 mean?",
+    "choices": [
+      "〜を認める",
+      "承認",
+      "〜に値する",
+      "〜を保存する",
+      "異なる",
+      "感覚",
+      "関心",
+      "叫び声"
+    ],
+    "answer": [
+      "〜を認める",
+      "承認"
+    ],
+    "explanation": "acknowledge = 〜を認める；承認"
+  },
+  {
+    "id": "q7",
+    "type": "multiple-choice",
+    "prompt": "What does 「differ」 mean?",
+    "choices": [
+      "異なる",
+      "違い",
+      "変動する",
+      "〜を守る",
+      "〜を引き付ける",
+      "入学",
+      "五感",
+      "保存"
+    ],
+    "answer": [
+      "異なる",
+      "違い"
+    ],
+    "explanation": "differ = 異なる；違い；相違点"
+  },
+  {
+    "id": "q8",
+    "type": "multiple-choice",
+    "prompt": "What does 「vary」 mean?",
+    "choices": [
+      "異なる",
+      "変動する",
+      "〜を認める",
+      "〜を保全する",
+      "方向",
+      "注意",
+      "大声で叫ぶ",
+      "保存"
+    ],
+    "answer": [
+      "異なる",
+      "変動する"
+    ],
+    "explanation": "vary = 異なる；変動する；変化する；変数"
+  },
+  {
+    "id": "q9",
+    "type": "multiple-choice",
+    "prompt": "What does 「sense」 mean?",
+    "choices": [
+      "感覚",
+      "五感",
+      "方向",
+      "注意力",
+      "関心",
+      "〜を引き付ける",
+      "入場",
+      "叫び声"
+    ],
+    "answer": [
+      "感覚",
+      "五感"
+    ],
+    "explanation": "sense = 感覚；五感；大評判"
+  },
+  {
+    "id": "q10",
+    "type": "multiple-choice",
+    "prompt": "What does 「direction」 mean?",
+    "choices": [
+      "方向",
+      "指示",
+      "感覚",
+      "注意",
+      "違い",
+      "〜を保存する",
+      "承認",
+      "叫び声"
+    ],
+    "answer": [
+      "方向",
+      "指示"
+    ],
+    "explanation": "direction = ①方向 ②指示"
+  },
+  {
+    "id": "q11",
+    "type": "multiple-choice",
+    "prompt": "What does 「attract」 mean?",
+    "choices": [
+      "〜を引き付ける",
+      "魅力",
+      "〜を認める",
+      "〜を守る",
+      "変数",
+      "方向",
+      "入学",
+      "大声で叫ぶ"
+    ],
+    "answer": [
+      "〜を引き付ける",
+      "魅力"
+    ],
+    "explanation": "attract = 〜を引き付ける；魅力"
+  },
+  {
+    "id": "q12",
+    "type": "multiple-choice",
+    "prompt": "What does 「attention」 mean?",
+    "choices": [
+      "注意",
+      "注意力",
+      "感覚",
+      "方向",
+      "〜に値する",
+      "保護",
+      "叫び声",
+      "保存"
+    ],
+    "answer": [
+      "注意",
+      "注意力"
+    ],
+    "explanation": "attention = 注意；注意力；関心"
+  }
+]

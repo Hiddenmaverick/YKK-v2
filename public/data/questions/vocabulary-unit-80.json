@@ -1,0 +1,236 @@
+[
+  {
+    "id": "q1",
+    "type": "multiple-choice",
+    "prompt": "What does 「offer」 mean?",
+    "choices": [
+      "〜を提供する",
+      "申し出る",
+      "〜を借りている",
+      "〜を割く",
+      "特に",
+      "おそらく",
+      "絶対に",
+      "不運にも"
+    ],
+    "answer": [
+      "〜を提供する",
+      "申し出る"
+    ],
+    "explanation": "offer = ①〜を提供する ②提供；申し出る；申し出"
+  },
+  {
+    "id": "q2",
+    "type": "multiple-choice",
+    "prompt": "What does 「owe」 mean?",
+    "choices": [
+      "AにBを借りている",
+      "恩義がある",
+      "〜を提供する",
+      "余分の",
+      "正確に",
+      "全く",
+      "願わくば",
+      "幸運にも"
+    ],
+    "answer": [
+      "AにBを借りている",
+      "恩義がある"
+    ],
+    "explanation": "owe = AにBを借りている；恩義がある"
+  },
+  {
+    "id": "q3",
+    "type": "multiple-choice",
+    "prompt": "What does 「spare」 mean?",
+    "choices": [
+      "AにBを割く",
+      "余分の",
+      "申し出る",
+      "恩義がある",
+      "とりわけ",
+      "間違いなく",
+      "おそらく",
+      "望み通りに"
+    ],
+    "answer": [
+      "AにBを割く",
+      "余分の"
+    ],
+    "explanation": "spare = ①AにBを割く ②惜しむ；余分の"
+  },
+  {
+    "id": "q4",
+    "type": "multiple-choice",
+    "prompt": "What does 「especially」 mean?",
+    "choices": [
+      "特に",
+      "とりわけ",
+      "確実に",
+      "まさに",
+      "全体として",
+      "不運にも",
+      "提供",
+      "余分の"
+    ],
+    "answer": [
+      "特に",
+      "とりわけ"
+    ],
+    "explanation": "especially = 特に；とりわけ"
+  },
+  {
+    "id": "q5",
+    "type": "multiple-choice",
+    "prompt": "What does 「particularly」 mean?",
+    "choices": [
+      "特に",
+      "とりわけ",
+      "間違いなく",
+      "正確に",
+      "絶対的な",
+      "おそらく",
+      "申し出",
+      "恩義がある"
+    ],
+    "answer": [
+      "特に",
+      "とりわけ"
+    ],
+    "explanation": "particularly = 特に；とりわけ；in particular"
+  },
+  {
+    "id": "q6",
+    "type": "multiple-choice",
+    "prompt": "What does 「definitely」 mean?",
+    "choices": [
+      "確実に",
+      "間違いなく",
+      "特に",
+      "正確に",
+      "全く",
+      "願わくば",
+      "余分の",
+      "提供"
+    ],
+    "answer": [
+      "確実に",
+      "間違いなく"
+    ],
+    "explanation": "definitely = 確実に；間違いなく"
+  },
+  {
+    "id": "q7",
+    "type": "multiple-choice",
+    "prompt": "What does 「precisely」 mean?",
+    "choices": [
+      "まさに",
+      "正確に",
+      "おそらく",
+      "不運にも",
+      "特に",
+      "恩義がある",
+      "申し出る",
+      "余分の"
+    ],
+    "answer": [
+      "まさに",
+      "正確に"
+    ],
+    "explanation": "precisely = まさに；正確に；exactly"
+  },
+  {
+    "id": "q8",
+    "type": "multiple-choice",
+    "prompt": "What does 「absolutely」 mean?",
+    "choices": [
+      "絶対に",
+      "全く",
+      "おそらく",
+      "願わくば",
+      "正確に",
+      "提供",
+      "惜しむ",
+      "幸運にも"
+    ],
+    "answer": [
+      "絶対に",
+      "全く"
+    ],
+    "explanation": "absolutely = 絶対に；全く"
+  },
+  {
+    "id": "q9",
+    "type": "multiple-choice",
+    "prompt": "What does 「entirely」 mean?",
+    "choices": [
+      "全体として",
+      "全く",
+      "特に",
+      "確実に",
+      "不運にも",
+      "申し出",
+      "恩義がある",
+      "余分の"
+    ],
+    "answer": [
+      "全体として",
+      "全く"
+    ],
+    "explanation": "entirely = 全体として；全く"
+  },
+  {
+    "id": "q10",
+    "type": "multiple-choice",
+    "prompt": "What does 「probably」 mean?",
+    "choices": [
+      "おそらく",
+      "確率",
+      "間違いなく",
+      "まさに",
+      "望み通りに",
+      "提供",
+      "惜しむ",
+      "絶対的な"
+    ],
+    "answer": "おそらく",
+    "explanation": "probably = おそらく"
+  },
+  {
+    "id": "q11",
+    "type": "multiple-choice",
+    "prompt": "What does 「hopefully」 mean?",
+    "choices": [
+      "願わくば",
+      "望み通りに",
+      "不運にも",
+      "幸運にも",
+      "おそらく",
+      "正確に",
+      "恩義がある",
+      "余分の"
+    ],
+    "answer": [
+      "願わくば",
+      "望み通りに"
+    ],
+    "explanation": "hopefully = ①願わくば ②望み通りに"
+  },
+  {
+    "id": "q12",
+    "type": "multiple-choice",
+    "prompt": "What does 「unfortunately」 mean?",
+    "choices": [
+      "不運にも",
+      "幸運にも",
+      "願わくば",
+      "おそらく",
+      "全く",
+      "提供",
+      "申し出る",
+      "余分の"
+    ],
+    "answer": "不運にも",
+    "explanation": "unfortunately = 不運にも"
+  }
+]

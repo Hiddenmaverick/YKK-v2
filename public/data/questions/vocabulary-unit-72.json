@@ -1,0 +1,218 @@
+[
+  {
+    "id": "q1",
+    "type": "multiple-choice",
+    "prompt": "What does 「think over A[A over]」 mean?",
+    "choices": [
+      "Aを熟考する",
+      "Aをひっくり返す",
+      "Aを求める",
+      "Aに同情する",
+      "Aにもかかわらず",
+      "Aを見送る",
+      "Aに基づく",
+      "とりわけ"
+    ],
+    "answer": "Aを熟考する",
+    "explanation": "think over A[A over] = Aを熟考する"
+  },
+  {
+    "id": "q2",
+    "type": "multiple-choice",
+    "prompt": "What does 「run over A[A over]」 mean?",
+    "choices": [
+      "Aをひく",
+      "Aを熟考する",
+      "Aをめくる",
+      "Aを求める",
+      "Aを除いて",
+      "Aに関係なく",
+      "Aで満たされている",
+      "結局"
+    ],
+    "answer": "Aをひく",
+    "explanation": "run over A[A over] = （車・運転者が）Aをひく"
+  },
+  {
+    "id": "q3",
+    "type": "multiple-choice",
+    "prompt": "What does 「turn over A[A over]」 mean?",
+    "choices": [
+      "Aをひっくり返す",
+      "Aをめくる",
+      "Aを熟考する",
+      "Aを求める",
+      "Aに所属する",
+      "Aに同情する",
+      "Aにもかかわらず",
+      "Aを処理する"
+    ],
+    "answer": [
+      "Aをひっくり返す",
+      "Aをめくる"
+    ],
+    "explanation": "turn over A[A over] = Aをひっくり返す；Aをめくる"
+  },
+  {
+    "id": "q4",
+    "type": "multiple-choice",
+    "prompt": "What does 「ask for A」 mean?",
+    "choices": [
+      "Aを求める",
+      "Aに同情する",
+      "Aを熟考する",
+      "Aを見送る",
+      "Aを扱う",
+      "Aを除いて",
+      "Aの頭に浮かぶ",
+      "何しろ〜だから"
+    ],
+    "answer": "Aを求める",
+    "explanation": "ask for A = Aを求める"
+  },
+  {
+    "id": "q5",
+    "type": "multiple-choice",
+    "prompt": "What does 「feel for A」 mean?",
+    "choices": [
+      "Aに同情する",
+      "Aを求める",
+      "Aに合う",
+      "Aをひく",
+      "Aを遠ざけておく",
+      "Aに関係なく",
+      "Aを卒業する",
+      "やはり"
+    ],
+    "answer": "Aに同情する",
+    "explanation": "feel for A = Aに同情する"
+  },
+  {
+    "id": "q6",
+    "type": "multiple-choice",
+    "prompt": "What does 「apart from A」 mean?",
+    "choices": [
+      "Aを除いて",
+      "Aの他に",
+      "Aにもかかわらず",
+      "Aに関係なく",
+      "Aを熟考する",
+      "Aに基づく",
+      "Aで混雑している",
+      "とりわけ"
+    ],
+    "answer": [
+      "Aを除いて",
+      "Aの他に"
+    ],
+    "explanation": "apart from A = ①Aを除いて；Aはさておき ②Aの他に"
+  },
+  {
+    "id": "q7",
+    "type": "multiple-choice",
+    "prompt": "What does 「other than A」 mean?",
+    "choices": [
+      "Aの他に",
+      "A以外に",
+      "Aを除いて",
+      "Aにもかかわらず",
+      "Aに同情する",
+      "Aをめくる",
+      "Aを心配している",
+      "結局"
+    ],
+    "answer": [
+      "Aの他に",
+      "A以外に"
+    ],
+    "explanation": "other than A = Aの他に；A以外に"
+  },
+  {
+    "id": "q8",
+    "type": "multiple-choice",
+    "prompt": "What does 「in spite of A」 mean?",
+    "choices": [
+      "Aにもかかわらず",
+      "Aに関係なく",
+      "Aを除いて",
+      "Aを求める",
+      "Aをひっくり返す",
+      "Aに心を打たれる",
+      "Aを提出する",
+      "少なくとも"
+    ],
+    "answer": "Aにもかかわらず",
+    "explanation": "in spite of A = Aにもかかわらず"
+  },
+  {
+    "id": "q9",
+    "type": "multiple-choice",
+    "prompt": "What does 「regardless of A」 mean?",
+    "choices": [
+      "Aに関係なく",
+      "Aにもかかわらず",
+      "Aの他に",
+      "Aを熟考する",
+      "Aを扱う",
+      "Aで満たされている",
+      "Aを卒業する",
+      "やはり"
+    ],
+    "answer": "Aに関係なく",
+    "explanation": "regardless of A = Aに関係なく"
+  },
+  {
+    "id": "q10",
+    "type": "multiple-choice",
+    "prompt": "What does 「for all A」 mean?",
+    "choices": [
+      "Aにもかかわらず",
+      "Aに関係なく",
+      "Aを除いて",
+      "Aを見送る",
+      "Aに同情する",
+      "Aの代わりに",
+      "Aを求める",
+      "最新の"
+    ],
+    "answer": "Aにもかかわらず",
+    "explanation": "for all A = Aにもかかわらず"
+  },
+  {
+    "id": "q11",
+    "type": "multiple-choice",
+    "prompt": "What does 「after all」 mean?",
+    "choices": [
+      "結局",
+      "やはり",
+      "とりわけ",
+      "Aにもかかわらず",
+      "Aに関係なく",
+      "Aを熟考する",
+      "Aに所属する",
+      "Aを配る"
+    ],
+    "answer": [
+      "結局",
+      "やはり"
+    ],
+    "explanation": "after all = ①結局；やはり ②何しろ〜だから"
+  },
+  {
+    "id": "q12",
+    "type": "multiple-choice",
+    "prompt": "What does 「above all」 mean?",
+    "choices": [
+      "とりわけ",
+      "結局",
+      "やはり",
+      "Aに関係なく",
+      "Aを除いて",
+      "Aを求める",
+      "Aで混雑している",
+      "Aを扱う"
+    ],
+    "answer": "とりわけ",
+    "explanation": "above all = とりわけ"
+  }
+]

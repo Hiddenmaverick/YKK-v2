@@ -1,0 +1,223 @@
+[
+  {
+    "id": "q1",
+    "type": "multiple-choice",
+    "prompt": "What does 「chemistry」 mean?",
+    "choices": [
+      "化学",
+      "ねたんで",
+      "〜を提出する",
+      "目標",
+      "痛み",
+      "統計",
+      "複雑な",
+      "〜を予測する"
+    ],
+    "answer": "化学",
+    "explanation": "chemistry = 化学"
+  },
+  {
+    "id": "q2",
+    "type": "multiple-choice",
+    "prompt": "What does 「astronomy」 mean?",
+    "choices": [
+      "天文学",
+      "動揺した",
+      "〜を計算する",
+      "症状",
+      "割合",
+      "機会",
+      "安定した",
+      "〜を拒否する"
+    ],
+    "answer": "天文学",
+    "explanation": "astronomy = 天文学"
+  },
+  {
+    "id": "q3",
+    "type": "multiple-choice",
+    "prompt": "What does 「philosophy」 mean?",
+    "choices": [
+      "哲学",
+      "面白がって",
+      "〜を尊敬する",
+      "保険",
+      "大多数",
+      "のど",
+      "効果的な",
+      "〜を導く"
+    ],
+    "answer": "哲学",
+    "explanation": "philosophy = 哲学"
+  },
+  {
+    "id": "q4",
+    "type": "multiple-choice",
+    "prompt": "What does 「geography」 mean?",
+    "choices": [
+      "地理学",
+      "わくわくして",
+      "〜を批判する",
+      "血液",
+      "例外",
+      "目標",
+      "一般的な",
+      "〜を割る"
+    ],
+    "answer": "地理学",
+    "explanation": "geography = 地理学；地理"
+  },
+  {
+    "id": "q5",
+    "type": "multiple-choice",
+    "prompt": "What does 「psychology」 mean?",
+    "choices": [
+      "心理学",
+      "大変うれしく思って",
+      "〜を軽蔑する",
+      "肺",
+      "項目",
+      "研究所",
+      "お気に入りの",
+      "〜を特定する"
+    ],
+    "answer": "心理学",
+    "explanation": "psychology = 心理学；心理"
+  },
+  {
+    "id": "q6",
+    "type": "multiple-choice",
+    "prompt": "What does 「biology」 mean?",
+    "choices": [
+      "生物学",
+      "恥じて",
+      "〜に謝罪する",
+      "筋肉",
+      "図表",
+      "情報源",
+      "複雑な",
+      "〜を証明する"
+    ],
+    "answer": "生物学",
+    "explanation": "biology = 生物学"
+  },
+  {
+    "id": "q7",
+    "type": "multiple-choice",
+    "prompt": "What does 「anthropology」 mean?",
+    "choices": [
+      "人類学",
+      "感情",
+      "〜をほめる",
+      "胃",
+      "百分率",
+      "傷",
+      "安定した",
+      "〜を増やす"
+    ],
+    "answer": "人類学",
+    "explanation": "anthropology = 人類学"
+  },
+  {
+    "id": "q8",
+    "type": "multiple-choice",
+    "prompt": "What does 「sociology」 mean?",
+    "choices": [
+      "社会学",
+      "気分",
+      "〜を想像する",
+      "神経",
+      "要因",
+      "痛い",
+      "効果的な",
+      "〜に応募する"
+    ],
+    "answer": "社会学",
+    "explanation": "sociology = 社会学"
+  },
+  {
+    "id": "q9",
+    "type": "multiple-choice",
+    "prompt": "What does 「physics」 mean?",
+    "choices": [
+      "物理学",
+      "気質",
+      "〜を裏切る",
+      "薬",
+      "統計",
+      "血液",
+      "一般的な",
+      "〜を研究する"
+    ],
+    "answer": "物理学",
+    "explanation": "physics = 物理学"
+  },
+  {
+    "id": "q10",
+    "type": "multiple-choice",
+    "prompt": "What does 「economics」 mean?",
+    "choices": [
+      "経済学",
+      "欲望",
+      "〜を予測する",
+      "熱",
+      "割合",
+      "機会",
+      "お気に入りの",
+      "〜を断る"
+    ],
+    "answer": "経済学",
+    "explanation": "economics = 経済学"
+  },
+  {
+    "id": "q11",
+    "type": "multiple-choice",
+    "prompt": "What does 「linguistics」 mean?",
+    "choices": [
+      "言語学",
+      "びっくりして",
+      "〜を拒否する",
+      "症状",
+      "大多数",
+      "のど",
+      "複雑な",
+      "〜を達成する"
+    ],
+    "answer": "言語学",
+    "explanation": "linguistics = 言語学"
+  },
+  {
+    "id": "q12",
+    "type": "multiple-choice",
+    "prompt": "What does 「literature」 mean?",
+    "choices": [
+      "文学",
+      "いらだって",
+      "〜を提出する",
+      "肺",
+      "図表",
+      "目標",
+      "安定した",
+      "〜を治療する"
+    ],
+    "answer": "文学",
+    "explanation": "literature = 文学"
+  },
+  {
+    "id": "q13",
+    "type": "multiple-choice",
+    "prompt": "What does 「architecture」 mean?",
+    "choices": [
+      "建築学",
+      "欲求不満で",
+      "〜を計算する",
+      "保険",
+      "例外",
+      "筋肉",
+      "効果的な",
+      "〜を導く"
+    ],
+    "answer": "建築学",
+    "explanation": "architecture = 建築学；建築"
+  }
+]

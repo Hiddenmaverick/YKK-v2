@@ -110,8 +110,8 @@
   {
     "id": "q10",
     "type": "true-false",
-    "prompt": "True or false: \"Excuse me, where is the nearest station?\" is a natural way to ask for directions.",
+    "prompt": "True or false: 「Excuse me, where is the nearest station?」 is a natural way to ask for directions.",
     "answer": true,
-    "explanation": "Excuse me' makes the question polite, and 'Where is the nearest station?' clearly asks for a location."
+    "explanation": "「Excuse me」 makes the question polite, and 「Where is the nearest station?」 clearly asks for a location."
   }
 ]
