@@ -111,6 +111,63 @@ const GOOGLE_FORM_FIELDS = {
 } as const;
 
 type LessonProgressMap = Record<string, LessonProgress>;
+
+const VOCABULARY_SUBJECT_ID = 'vocabulary';
+
+type VocabularyUnitGroup = {
+  key: string;
+  label: string;
+  lessons: Lesson[];
+};
+
+const getVocabularyUnitNumber = (lesson: Lesson) => {
+  const titleMatch = lesson.title.match(/\bUnit\s+(\d+)\b/i);
+  const idMatch = lesson.id.match(/(?:^|-)unit-(\d+)$/i);
+  const unitNumber = Number(titleMatch?.[1] ?? idMatch?.[1]);
+
+  return Number.isFinite(unitNumber) ? unitNumber : null;
+};
+
+const getVocabularyUnitButtonLabel = (lesson: Lesson) => {
+  const unitNumber = getVocabularyUnitNumber(lesson);
+
+  return unitNumber ? `Unit ${unitNumber}` : lesson.title;
+};
+
+const getVocabularyUnitGroupLabel = (unitNumber: number) => {
+  const startUnit = Math.floor((unitNumber - 1) / 10) * 10 + 1;
+
+  return {
+    key: `${startUnit}-${startUnit + 9}`,
+    label: `Units ${startUnit}–${startUnit + 9}`,
+  };
+};
+
+const groupVocabularyLessonsByTens = (vocabularyLessons: Lesson[]): VocabularyUnitGroup[] => {
+  const groups = new Map<string, VocabularyUnitGroup>();
+
+  vocabularyLessons.forEach((lesson) => {
+    const unitNumber = getVocabularyUnitNumber(lesson);
+    const groupInfo = unitNumber
+      ? getVocabularyUnitGroupLabel(unitNumber)
+      : { key: 'other', label: 'Other Vocabulary Units' };
+
+    const group = groups.get(groupInfo.key) ?? { ...groupInfo, lessons: [] };
+    group.lessons.push(lesson);
+    groups.set(groupInfo.key, group);
+  });
+
+  return Array.from(groups.values()).map((group) => ({
+    ...group,
+    lessons: [...group.lessons].sort((a, b) => {
+      const aUnitNumber = getVocabularyUnitNumber(a) ?? Number.MAX_SAFE_INTEGER;
+      const bUnitNumber = getVocabularyUnitNumber(b) ?? Number.MAX_SAFE_INTEGER;
+
+      return aUnitNumber - bUnitNumber || a.title.localeCompare(b.title);
+    }),
+  }));
+};
+
 const MIXED_REVIEW_QUESTION_COUNTS: Array<{ value: MixedQuizQuestionCount; label: string }> = [
   { value: 25, label: '25 questions' },
   { value: 50, label: '50 questions' },
@@ -613,6 +670,11 @@ function AppContent() {
     return lessons.filter((lesson) => lesson.categoryId === selectedSubject.id || lessonIds.has(lesson.id));
   }, [lessons, selectedSubject]);
   const hasMixedReviewLessons = selectedSubjectLessons.length > 0;
+  const selectedSubjectIsVocabulary = selectedSubject?.id === VOCABULARY_SUBJECT_ID;
+  const vocabularyUnitGroups = useMemo(
+    () => (selectedSubjectIsVocabulary ? groupVocabularyLessonsByTens(selectedSubjectLessons) : []),
+    [selectedSubjectIsVocabulary, selectedSubjectLessons],
+  );
   const selectedMixedReviewLessons = useMemo(() => {
     const selectedLessonIdSet = new Set(mixedReviewLessonIds);
     return selectedSubjectLessons.filter((lesson) => selectedLessonIdSet.has(lesson.id));
@@ -625,6 +687,10 @@ function AppContent() {
   const mixedReviewSelectionSummary = hasMixedReviewLessonSelection
     ? `${selectedMixedReviewLessons.length} selected`
     : 'No lessons or units selected yet';
+  const allVocabularyMixedReviewLessonsSelected =
+    selectedSubjectIsVocabulary &&
+    selectedSubjectLessons.length > 0 &&
+    selectedSubjectLessons.every((lesson) => mixedReviewLessonIds.includes(lesson.id));
   const quizComplete = questions.length > 0 && showResults;
 
   useEffect(() => {
@@ -745,6 +811,16 @@ function AppContent() {
         ? lessonIds.filter((currentLessonId) => currentLessonId !== lessonId)
         : [...lessonIds, lessonId],
     );
+  };
+
+  const selectAllMixedReviewLessons = () => {
+    setMixedReviewMessage('');
+    setMixedReviewLessonIds(selectedSubjectLessons.map((lesson) => lesson.id));
+  };
+
+  const clearMixedReviewLessons = () => {
+    setMixedReviewMessage('');
+    setMixedReviewLessonIds([]);
   };
 
   const createMixedReviewLesson = (subject: Subject, selectedLessons: Lesson[]): Lesson => {
@@ -1194,25 +1270,54 @@ function AppContent() {
             </button>
           </div>
           {hasMixedReviewLessons ? (
-            <div className="lesson-grid">
-              {selectedSubjectLessons.map((lesson) => {
-                const progress = lessonProgress[lesson.id];
+            selectedSubjectIsVocabulary ? (
+              <div className="vocabulary-unit-groups" aria-label="Vocabulary units grouped by tens">
+                {vocabularyUnitGroups.map((group) => (
+                  <section className="vocabulary-unit-group" key={group.key} aria-labelledby={`vocabulary-unit-group-${group.key}`}>
+                    <h3 id={`vocabulary-unit-group-${group.key}`}>{group.label}</h3>
+                    <div className="vocabulary-unit-button-grid">
+                      {group.lessons.map((lesson) => {
+                        const progress = lessonProgress[lesson.id];
 
-                return (
-                  <button className="lesson-card" key={lesson.id} onClick={() => chooseLesson(lesson)} type="button">
-                    <span>{lesson.title}</span>
-                    <small>{lesson.description}</small>
-                    {progress && (
-                      <div className="lesson-progress">
-                        <p>Last score: {progress.lastScore} / {progress.lastTotal}</p>
-                        <p>Best score: {progress.bestScore} / {progress.bestTotal ?? progress.lastTotal}</p>
-                        <p>Completed: {progress.completedCount} times</p>
-                      </div>
-                    )}
-                  </button>
-                );
-              })}
-            </div>
+                        return (
+                          <button
+                            aria-label={`${lesson.title}: ${lesson.description}`}
+                            className="vocabulary-unit-button"
+                            key={lesson.id}
+                            onClick={() => chooseLesson(lesson)}
+                            title={lesson.title}
+                            type="button"
+                          >
+                            <strong>{getVocabularyUnitButtonLabel(lesson)}</strong>
+                            {progress && <small>{progress.bestPercentage}% best · {progress.completedCount} done</small>}
+                          </button>
+                        );
+                      })}
+                    </div>
+                  </section>
+                ))}
+              </div>
+            ) : (
+              <div className="lesson-grid">
+                {selectedSubjectLessons.map((lesson) => {
+                  const progress = lessonProgress[lesson.id];
+
+                  return (
+                    <button className="lesson-card" key={lesson.id} onClick={() => chooseLesson(lesson)} type="button">
+                      <span>{lesson.title}</span>
+                      <small>{lesson.description}</small>
+                      {progress && (
+                        <div className="lesson-progress">
+                          <p>Last score: {progress.lastScore} / {progress.lastTotal}</p>
+                          <p>Best score: {progress.bestScore} / {progress.bestTotal ?? progress.lastTotal}</p>
+                          <p>Completed: {progress.completedCount} times</p>
+                        </div>
+                      )}
+                    </button>
+                  );
+                })}
+              </div>
+            )
           ) : (
             <p className="message">No lessons or units are available for this subject yet. Please check back later.</p>
           )}
@@ -1233,25 +1338,55 @@ function AppContent() {
                     {hasMixedReviewLessonSelection && (
                       <div className="mixed-review-selected-list" aria-label="Selected Mixed Review lessons or units">
                         {selectedMixedReviewLessons.map((lesson) => (
-                          <span key={lesson.id}>{lesson.title}</span>
+                          <span key={lesson.id}>{selectedSubjectIsVocabulary ? getVocabularyUnitButtonLabel(lesson) : lesson.title}</span>
                         ))}
                       </div>
                     )}
-                    <div className="mixed-review-lessons">
-                      {selectedSubjectLessons.map((lesson) => (
-                        <label className="mixed-review-checkbox" key={lesson.id}>
-                          <input
-                            checked={mixedReviewLessonIds.includes(lesson.id)}
-                            onChange={() => toggleMixedReviewLesson(lesson.id)}
-                            type="checkbox"
-                          />
-                          <span>
-                            <strong>{lesson.title}</strong>
-                            <small>{lesson.description}</small>
-                          </span>
-                        </label>
-                      ))}
-                    </div>
+                    {selectedSubjectIsVocabulary ? (
+                      <div className="mixed-review-unit-groups" aria-label="Vocabulary Mixed Review units grouped by tens">
+                        {vocabularyUnitGroups.map((group) => (
+                          <section className="mixed-review-unit-group" key={group.key} aria-labelledby={`mixed-review-unit-group-${group.key}`}>
+                            <h4 id={`mixed-review-unit-group-${group.key}`}>{group.label}</h4>
+                            <div className="mixed-review-unit-button-grid">
+                              {group.lessons.map((lesson) => {
+                                const isSelected = mixedReviewLessonIds.includes(lesson.id);
+
+                                return (
+                                  <button
+                                    aria-label={`${isSelected ? 'Deselect' : 'Select'} ${lesson.title} for Mixed Review`}
+                                    aria-pressed={isSelected}
+                                    className={`mixed-review-unit-toggle${isSelected ? ' selected' : ''}`}
+                                    key={lesson.id}
+                                    onClick={() => toggleMixedReviewLesson(lesson.id)}
+                                    title={lesson.title}
+                                    type="button"
+                                  >
+                                    <strong>{getVocabularyUnitButtonLabel(lesson)}</strong>
+                                    <span>{isSelected ? 'Selected' : 'Not selected'}</span>
+                                  </button>
+                                );
+                              })}
+                            </div>
+                          </section>
+                        ))}
+                      </div>
+                    ) : (
+                      <div className="mixed-review-lessons">
+                        {selectedSubjectLessons.map((lesson) => (
+                          <label className="mixed-review-checkbox" key={lesson.id}>
+                            <input
+                              checked={mixedReviewLessonIds.includes(lesson.id)}
+                              onChange={() => toggleMixedReviewLesson(lesson.id)}
+                              type="checkbox"
+                            />
+                            <span>
+                              <strong>{lesson.title}</strong>
+                              <small>{lesson.description}</small>
+                            </span>
+                          </label>
+                        ))}
+                      </div>
+                    )}
                   </fieldset>
 
                   <fieldset className="mixed-review-fieldset">
@@ -1274,6 +1409,29 @@ function AppContent() {
                         </label>
                       ))}
                     </div>
+                    {selectedSubjectIsVocabulary && (
+                      <div className="mixed-review-bulk-actions" aria-label="Vocabulary Mixed Review bulk selection controls">
+                        <p>Select vocabulary units quickly.</p>
+                        <div>
+                          <button
+                            className="mixed-review-bulk-button"
+                            disabled={allVocabularyMixedReviewLessonsSelected}
+                            onClick={selectAllMixedReviewLessons}
+                            type="button"
+                          >
+                            Select all
+                          </button>
+                          <button
+                            className="mixed-review-bulk-button secondary"
+                            disabled={!hasMixedReviewLessonSelection}
+                            onClick={clearMixedReviewLessons}
+                            type="button"
+                          >
+                            Clear
+                          </button>
+                        </div>
+                      </div>
+                    )}
                   </fieldset>
                 </div>
 
