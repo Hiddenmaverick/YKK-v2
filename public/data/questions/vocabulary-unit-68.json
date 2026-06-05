@@ -1,0 +1,206 @@
+[
+  {
+    "id": "q1",
+    "type": "multiple-choice",
+    "prompt": "What does 「identify」 mean?",
+    "choices": [
+      "〜を確認する",
+      "〜を引き起こす",
+      "〜を提出する",
+      "〜を計算する",
+      "肺",
+      "不足",
+      "安定した",
+      "心理学"
+    ],
+    "answer": "〜を確認する",
+    "explanation": "identify = 〜を確認する；〜を特定する"
+  },
+  {
+    "id": "q2",
+    "type": "multiple-choice",
+    "prompt": "What does 「cause」 mean?",
+    "choices": [
+      "原因",
+      "状態",
+      "不足",
+      "影響",
+      "目標",
+      "〜を予測する",
+      "血液",
+      "効果的な"
+    ],
+    "answer": "原因",
+    "explanation": "cause = ①原因；理由 ②〜を引き起こす"
+  },
+  {
+    "id": "q3",
+    "type": "multiple-choice",
+    "prompt": "What does 「stable」 mean?",
+    "choices": [
+      "安定した",
+      "効果的な",
+      "一般的な",
+      "複雑な",
+      "痛い",
+      "原因",
+      "〜を拒否する",
+      "天文学"
+    ],
+    "answer": "安定した",
+    "explanation": "stable = 安定した"
+  },
+  {
+    "id": "q4",
+    "type": "multiple-choice",
+    "prompt": "What does 「condition」 mean?",
+    "choices": [
+      "状態",
+      "原因",
+      "不足",
+      "症状",
+      "課題",
+      "〜を導く",
+      "統計",
+      "お気に入りの"
+    ],
+    "answer": "状態",
+    "explanation": "condition = ①状態；状況 ②条件"
+  },
+  {
+    "id": "q5",
+    "type": "multiple-choice",
+    "prompt": "What does 「lung」 mean?",
+    "choices": [
+      "肺",
+      "脳",
+      "筋肉",
+      "胃",
+      "神経",
+      "〜を達成する",
+      "割合",
+      "安定した"
+    ],
+    "answer": "肺",
+    "explanation": "lung = 肺"
+  },
+  {
+    "id": "q6",
+    "type": "multiple-choice",
+    "prompt": "What does 「cancer」 mean?",
+    "choices": [
+      "がん",
+      "熱",
+      "傷",
+      "保険",
+      "薬",
+      "〜を証明する",
+      "地理学",
+      "複雑な"
+    ],
+    "answer": "がん",
+    "explanation": "cancer = がん"
+  },
+  {
+    "id": "q7",
+    "type": "multiple-choice",
+    "prompt": "What does 「lack」 mean?",
+    "choices": [
+      "不足",
+      "原因",
+      "状態",
+      "機能",
+      "図表",
+      "〜を尊敬する",
+      "生物学",
+      "一般的な"
+    ],
+    "answer": "不足",
+    "explanation": "lack = 不足；〜を欠く"
+  },
+  {
+    "id": "q8",
+    "type": "multiple-choice",
+    "prompt": "What does 「exercise」 mean?",
+    "choices": [
+      "運動",
+      "治療",
+      "目標",
+      "課題",
+      "呼吸する",
+      "〜を裏切る",
+      "経済学",
+      "効果的な"
+    ],
+    "answer": "運動",
+    "explanation": "exercise = ①運動 ②練習問題 ③運動をする"
+  },
+  {
+    "id": "q9",
+    "type": "multiple-choice",
+    "prompt": "What does 「breathe」 mean?",
+    "choices": [
+      "呼吸する",
+      "〜を確認する",
+      "〜を計算する",
+      "〜を治療する",
+      "のど",
+      "要因",
+      "哲学",
+      "安定した"
+    ],
+    "answer": "呼吸する",
+    "explanation": "breathe = 呼吸する"
+  },
+  {
+    "id": "q10",
+    "type": "multiple-choice",
+    "prompt": "What does 「yawn」 mean?",
+    "choices": [
+      "あくびをする",
+      "呼吸する",
+      "〜を提出する",
+      "〜を予測する",
+      "肺",
+      "統計",
+      "文学",
+      "複雑な"
+    ],
+    "answer": "あくびをする",
+    "explanation": "yawn = あくびをする；あくび"
+  },
+  {
+    "id": "q11",
+    "type": "multiple-choice",
+    "prompt": "What does 「cough」 mean?",
+    "choices": [
+      "せきをする",
+      "呼吸する",
+      "〜を拒否する",
+      "〜を特定する",
+      "胃",
+      "百分率",
+      "人類学",
+      "効果的な"
+    ],
+    "answer": "せきをする",
+    "explanation": "cough = せきをする；せき"
+  },
+  {
+    "id": "q12",
+    "type": "multiple-choice",
+    "prompt": "What does 「sneeze」 mean?",
+    "choices": [
+      "くしゃみをする",
+      "呼吸する",
+      "〜を批判する",
+      "〜を設立する",
+      "血液",
+      "例外",
+      "言語学",
+      "一般的な"
+    ],
+    "answer": "くしゃみをする",
+    "explanation": "sneeze = くしゃみをする；くしゃみ"
+  }
+]

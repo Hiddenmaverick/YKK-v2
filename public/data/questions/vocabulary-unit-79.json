@@ -1,0 +1,242 @@
+[
+  {
+    "id": "q1",
+    "type": "multiple-choice",
+    "prompt": "What does 「yell」 mean?",
+    "choices": [
+      "大声で叫ぶ",
+      "叫び声",
+      "〜を拡大する",
+      "〜を破壊する",
+      "感覚",
+      "方向",
+      "〜に直面する",
+      "広範囲の"
+    ],
+    "answer": [
+      "大声で叫ぶ",
+      "叫び声"
+    ],
+    "explanation": "yell = 大声で叫ぶ；叫び声"
+  },
+  {
+    "id": "q2",
+    "type": "multiple-choice",
+    "prompt": "What does 「scream」 mean?",
+    "choices": [
+      "悲鳴を上げる",
+      "悲鳴",
+      "〜を解く",
+      "崩壊",
+      "決意",
+      "大規模な",
+      "〜を手に入れる",
+      "保存"
+    ],
+    "answer": [
+      "悲鳴を上げる",
+      "悲鳴"
+    ],
+    "explanation": "scream = 悲鳴を上げる；悲鳴"
+  },
+  {
+    "id": "q3",
+    "type": "multiple-choice",
+    "prompt": "What does 「solve」 mean?",
+    "choices": [
+      "〜を解決する",
+      "〜を解く",
+      "大声で叫ぶ",
+      "〜を延長する",
+      "崩れ落ちる",
+      "〜を獲得する",
+      "方向",
+      "注意"
+    ],
+    "answer": [
+      "〜を解決する",
+      "〜を解く"
+    ],
+    "explanation": "solve = 〜を解決する；〜を解く；解決策"
+  },
+  {
+    "id": "q4",
+    "type": "multiple-choice",
+    "prompt": "What does 「resolve」 mean?",
+    "choices": [
+      "〜を解決する",
+      "〜を決心する",
+      "悲鳴を上げる",
+      "〜を拡大する",
+      "崩壊",
+      "〜を手に入れる",
+      "感覚",
+      "保護"
+    ],
+    "answer": [
+      "〜を解決する",
+      "〜を決心する"
+    ],
+    "explanation": "resolve = ①〜を解決する ②〜を決心する；決議；解決策；決意"
+  },
+  {
+    "id": "q5",
+    "type": "multiple-choice",
+    "prompt": "What does 「extend」 mean?",
+    "choices": [
+      "〜を延長する",
+      "〜を拡大する",
+      "大声で叫ぶ",
+      "〜を破壊する",
+      "悲鳴",
+      "方向",
+      "注意",
+      "保存"
+    ],
+    "answer": [
+      "〜を延長する",
+      "〜を拡大する"
+    ],
+    "explanation": "extend = 〜を延長する；〜を拡大する；延長；拡張"
+  },
+  {
+    "id": "q6",
+    "type": "multiple-choice",
+    "prompt": "What does 「expand」 mean?",
+    "choices": [
+      "〜を拡大する",
+      "膨張する",
+      "〜を解決する",
+      "決意",
+      "崩れ落ちる",
+      "叫び声",
+      "感覚",
+      "会社"
+    ],
+    "answer": [
+      "〜を拡大する",
+      "膨張する"
+    ],
+    "explanation": "expand = 〜を拡大する；膨張する；膨張；拡大"
+  },
+  {
+    "id": "q7",
+    "type": "multiple-choice",
+    "prompt": "What does 「destroy」 mean?",
+    "choices": [
+      "〜を破壊する",
+      "破壊",
+      "〜を延長する",
+      "〜を認める",
+      "大声で叫ぶ",
+      "方向",
+      "注意",
+      "〜を獲得する"
+    ],
+    "answer": [
+      "〜を破壊する",
+      "破壊"
+    ],
+    "explanation": "destroy = 〜を破壊する；破壊；破壊的な"
+  },
+  {
+    "id": "q8",
+    "type": "multiple-choice",
+    "prompt": "What does 「collapse」 mean?",
+    "choices": [
+      "崩れ落ちる",
+      "崩壊",
+      "悲鳴を上げる",
+      "〜を拡大する",
+      "決議",
+      "方向",
+      "感覚",
+      "〜を手に入れる"
+    ],
+    "answer": [
+      "崩れ落ちる",
+      "崩壊"
+    ],
+    "explanation": "collapse = 崩れ落ちる；崩壊"
+  },
+  {
+    "id": "q9",
+    "type": "multiple-choice",
+    "prompt": "What does 「gain」 mean?",
+    "choices": [
+      "〜を獲得する",
+      "〜を増す",
+      "〜を解決する",
+      "崩壊",
+      "大声で叫ぶ",
+      "注意",
+      "〜に立ち向かう",
+      "保存"
+    ],
+    "answer": [
+      "〜を獲得する",
+      "〜を増す"
+    ],
+    "explanation": "gain = ①〜を手に入れる；〜を獲得する ②〜を増す"
+  },
+  {
+    "id": "q10",
+    "type": "multiple-choice",
+    "prompt": "What does 「obtain」 mean?",
+    "choices": [
+      "〜を手に入れる",
+      "〜を獲得する",
+      "〜を延長する",
+      "悲鳴",
+      "崩れ落ちる",
+      "方向",
+      "注意",
+      "〜を認める"
+    ],
+    "answer": [
+      "〜を手に入れる",
+      "〜を獲得する"
+    ],
+    "explanation": "obtain = 〜を手に入れる；〜を獲得する"
+  },
+  {
+    "id": "q11",
+    "type": "multiple-choice",
+    "prompt": "What does 「encounter」 mean?",
+    "choices": [
+      "〜に直面する",
+      "〜に出会う",
+      "〜を解く",
+      "大声で叫ぶ",
+      "膨張する",
+      "崩壊",
+      "保存",
+      "感覚"
+    ],
+    "answer": [
+      "〜に直面する",
+      "〜に出会う"
+    ],
+    "explanation": "encounter = ①〜に直面する ②〜に出会う"
+  },
+  {
+    "id": "q12",
+    "type": "multiple-choice",
+    "prompt": "What does 「confront」 mean?",
+    "choices": [
+      "〜に立ちはだかる",
+      "〜に立ち向かう",
+      "〜を獲得する",
+      "〜を破壊する",
+      "大声で叫ぶ",
+      "方向",
+      "注意",
+      "決意"
+    ],
+    "answer": [
+      "〜に立ちはだかる",
+      "〜に立ち向かう"
+    ],
+    "explanation": "confront = ①〜に立ちはだかる ②〜に立ち向かう"
+  }
+]

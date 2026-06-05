@@ -79,5 +79,239 @@
     "categoryId": "vocabulary",
     "categoryTitle": "語彙 / Vocabulary",
     "categoryDescription": "Practice Vocabulary lessons and units."
+  },
+  {
+    "id": "vocabulary-unit-55",
+    "title": "Unit 55: Discourse and Language",
+    "description": "Practice vocabulary related to discourse connectors, language skills, and writing.",
+    "questionFile": "vocabulary-unit-55.json",
+    "categoryId": "vocabulary",
+    "categoryTitle": "語彙 / Vocabulary",
+    "categoryDescription": "Practice Vocabulary lessons and units."
+  },
+  {
+    "id": "vocabulary-unit-56",
+    "title": "Unit 56: Thinking and Speaking",
+    "description": "Practice verbs related to thought, speech, and persuasion.",
+    "questionFile": "vocabulary-unit-56.json",
+    "categoryId": "vocabulary",
+    "categoryTitle": "語彙 / Vocabulary",
+    "categoryDescription": "Practice Vocabulary lessons and units."
+  },
+  {
+    "id": "vocabulary-unit-57",
+    "title": "Unit 57: Respect and Responses",
+    "description": "Practice vocabulary related to attitudes, apologies, leadership, applications, and refusals.",
+    "questionFile": "vocabulary-unit-57.json",
+    "categoryId": "vocabulary",
+    "categoryTitle": "語彙 / Vocabulary",
+    "categoryDescription": "Practice Vocabulary lessons and units."
+  },
+  {
+    "id": "vocabulary-unit-58",
+    "title": "Unit 58: Deception, Guessing, and Resistance",
+    "description": "Practice vocabulary related to deception, guessing, imagination, prediction, refusal, resistance, and protest.",
+    "questionFile": "vocabulary-unit-58.json",
+    "categoryId": "vocabulary",
+    "categoryTitle": "語彙 / Vocabulary",
+    "categoryDescription": "Practice Vocabulary lessons and units."
+  },
+  {
+    "id": "vocabulary-unit-59",
+    "title": "Unit 59: Emotions and Feelings",
+    "description": "Practice vocabulary related to emotions, moods, temperament, and desire.",
+    "questionFile": "vocabulary-unit-59.json",
+    "categoryId": "vocabulary",
+    "categoryTitle": "語彙 / Vocabulary",
+    "categoryDescription": "Practice Vocabulary lessons and units."
+  },
+  {
+    "id": "vocabulary-unit-60",
+    "title": "Unit 60: Surprise, Annoyance, and Fear",
+    "description": "Practice vocabulary related to surprise, annoyance, interruption, fear, and horror.",
+    "questionFile": "vocabulary-unit-60.json",
+    "categoryId": "vocabulary",
+    "categoryTitle": "語彙 / Vocabulary",
+    "categoryDescription": "Practice Vocabulary lessons and units."
+  },
+  {
+    "id": "vocabulary-unit-61",
+    "title": "Unit 61: Academic Subjects",
+    "description": "Practice vocabulary related to school subjects and academic fields.",
+    "questionFile": "vocabulary-unit-61.json",
+    "categoryId": "vocabulary",
+    "categoryTitle": "語彙 / Vocabulary",
+    "categoryDescription": "Practice Vocabulary lessons and units."
+  },
+  {
+    "id": "vocabulary-unit-62",
+    "title": "Unit 62: Learning and Study Skills",
+    "description": "Practice vocabulary related to school subjects, goals, assignments, skills, and study methods.",
+    "questionFile": "vocabulary-unit-62.json",
+    "categoryId": "vocabulary",
+    "categoryTitle": "語彙 / Vocabulary",
+    "categoryDescription": "Practice Vocabulary lessons and units."
+  },
+  {
+    "id": "vocabulary-unit-63",
+    "title": "Unit 63: Discussion, Regions, and Emphasis",
+    "description": "Practice vocabulary related to factors, regions, debate, reference, emphasis, and founding.",
+    "questionFile": "vocabulary-unit-63.json",
+    "categoryId": "vocabulary",
+    "categoryTitle": "語彙 / Vocabulary",
+    "categoryDescription": "Practice Vocabulary lessons and units."
+  },
+  {
+    "id": "vocabulary-unit-64",
+    "title": "Unit 64: Research and Academic Work",
+    "description": "Practice vocabulary related to academic research, papers, surveys, conferences, and proof.",
+    "questionFile": "vocabulary-unit-64.json",
+    "categoryId": "vocabulary",
+    "categoryTitle": "語彙 / Vocabulary",
+    "categoryDescription": "Practice Vocabulary lessons and units."
+  },
+  {
+    "id": "vocabulary-unit-65",
+    "title": "Unit 65: Statistics and Calculation",
+    "description": "Practice vocabulary related to statistics, percentages, ratios, charts, and basic calculation.",
+    "questionFile": "vocabulary-unit-65.json",
+    "categoryId": "vocabulary",
+    "categoryTitle": "語彙 / Vocabulary",
+    "categoryDescription": "Practice Vocabulary lessons and units."
+  },
+  {
+    "id": "vocabulary-unit-66",
+    "title": "Unit 66: Health, Similarity, and Effects",
+    "description": "Practice vocabulary related to illness, pain, treatment, similarity, effects, and influence.",
+    "questionFile": "vocabulary-unit-66.json",
+    "categoryId": "vocabulary",
+    "categoryTitle": "語彙 / Vocabulary",
+    "categoryDescription": "Practice Vocabulary lessons and units."
+  },
+  {
+    "id": "vocabulary-unit-67",
+    "title": "Unit 67: Symptoms, Treatment, and Body Parts",
+    "description": "Practice vocabulary related to fever, injury, symptoms, treatment, medicine, operations, and body parts.",
+    "questionFile": "vocabulary-unit-67.json",
+    "categoryId": "vocabulary",
+    "categoryTitle": "語彙 / Vocabulary",
+    "categoryDescription": "Practice Vocabulary lessons and units."
+  },
+  {
+    "id": "vocabulary-unit-68",
+    "title": "Unit 68: Causes, Conditions, and Body Functions",
+    "description": "Practice vocabulary related to identifying causes, health conditions, breathing, and body actions.",
+    "questionFile": "vocabulary-unit-68.json",
+    "categoryId": "vocabulary",
+    "categoryTitle": "語彙 / Vocabulary",
+    "categoryDescription": "Practice Vocabulary lessons and units."
+  },
+  {
+    "id": "vocabulary-unit-69",
+    "title": "Unit 69: Health, Nutrition, and Recovery",
+    "description": "Practice vocabulary related to nutrition, body functions, illness, medical care, blood donation, wounds, and healing.",
+    "questionFile": "vocabulary-unit-69.json",
+    "categoryId": "vocabulary",
+    "categoryTitle": "語彙 / Vocabulary",
+    "categoryDescription": "Practice Vocabulary lessons and units."
+  },
+  {
+    "id": "vocabulary-unit-70",
+    "title": "Unit 70: Complexity, Benefits, Forms, and Frequency",
+    "description": "Practice vocabulary related to complexity, benefits, forms, opportunities, occasions, and low frequency.",
+    "questionFile": "vocabulary-unit-70.json",
+    "categoryId": "vocabulary",
+    "categoryTitle": "語彙 / Vocabulary",
+    "categoryDescription": "Practice Vocabulary lessons and units."
+  },
+  {
+    "id": "vocabulary-unit-71",
+    "title": "Unit 71: Phrasal Verbs and Fixed Expressions",
+    "description": "Practice vocabulary related to phrasal verbs and fixed expressions with off, with, about, by, in, and on.",
+    "questionFile": "vocabulary-unit-71.json",
+    "categoryId": "vocabulary",
+    "categoryTitle": "語彙 / Vocabulary",
+    "categoryDescription": "Practice Vocabulary lessons and units."
+  },
+  {
+    "id": "vocabulary-unit-72",
+    "title": "Unit 72: Phrasal Verbs and Contrast Expressions",
+    "description": "Practice vocabulary related to phrasal verbs with over and for, contrast expressions, and emphasis phrases.",
+    "questionFile": "vocabulary-unit-72.json",
+    "categoryId": "vocabulary",
+    "categoryTitle": "語彙 / Vocabulary",
+    "categoryDescription": "Practice Vocabulary lessons and units."
+  },
+  {
+    "id": "vocabulary-unit-73",
+    "title": "Unit 73: Phrasal Verbs and State Changes",
+    "description": "Practice vocabulary related to belonging, ideas occurring, rules, graduation, suffering, results, forms, and weight changes.",
+    "questionFile": "vocabulary-unit-73.json",
+    "categoryId": "vocabulary",
+    "categoryTitle": "語彙 / Vocabulary",
+    "categoryDescription": "Practice Vocabulary lessons and units."
+  },
+  {
+    "id": "vocabulary-unit-74",
+    "title": "Unit 74: Phrasal Verbs with Out and In",
+    "description": "Practice vocabulary related to phrasal verbs with out and fixed expressions with in.",
+    "questionFile": "vocabulary-unit-74.json",
+    "categoryId": "vocabulary",
+    "categoryTitle": "語彙 / Vocabulary",
+    "categoryDescription": "Practice Vocabulary lessons and units."
+  },
+  {
+    "id": "vocabulary-unit-75",
+    "title": "Unit 75: Support, Dependence, and Limits",
+    "description": "Practice vocabulary related to encouragement, dependence, focus, approximate amounts, timing, and limits.",
+    "questionFile": "vocabulary-unit-75.json",
+    "categoryId": "vocabulary",
+    "categoryTitle": "語彙 / Vocabulary",
+    "categoryDescription": "Practice Vocabulary lessons and units."
+  },
+  {
+    "id": "vocabulary-unit-76",
+    "title": "Unit 76: Cooperation, Change, Focus, and Meaning",
+    "description": "Practice vocabulary related to cooperation, competition, capture and release, increase and decrease, focus, distraction, and multiple-meaning nouns and verbs.",
+    "questionFile": "vocabulary-unit-76.json",
+    "categoryId": "vocabulary",
+    "categoryTitle": "語彙 / Vocabulary",
+    "categoryDescription": "Practice Vocabulary lessons and units."
+  },
+  {
+    "id": "vocabulary-unit-77",
+    "title": "Unit 77: Encouragement, Change, Escape, and Reflection",
+    "description": "Practice vocabulary related to encouragement, certainty, possibility, enrichment, qualification, worsening, fear, escape, searching, and reflection.",
+    "questionFile": "vocabulary-unit-77.json",
+    "categoryId": "vocabulary",
+    "categoryTitle": "語彙 / Vocabulary",
+    "categoryDescription": "Practice Vocabulary lessons and units."
+  },
+  {
+    "id": "vocabulary-unit-78",
+    "title": "Unit 78: Preservation, Recognition, Difference, and Attention",
+    "description": "Practice vocabulary related to preserving, observing, admitting, differences, senses, direction, attention, and attraction.",
+    "questionFile": "vocabulary-unit-78.json",
+    "categoryId": "vocabulary",
+    "categoryTitle": "語彙 / Vocabulary",
+    "categoryDescription": "Practice Vocabulary lessons and units."
+  },
+  {
+    "id": "vocabulary-unit-79",
+    "title": "Unit 79: Conflict, Change, and Outcomes",
+    "description": "Practice vocabulary related to shouting, solving problems, expansion, destruction, gaining, meeting difficulties, and confrontation.",
+    "questionFile": "vocabulary-unit-79.json",
+    "categoryId": "vocabulary",
+    "categoryTitle": "語彙 / Vocabulary",
+    "categoryDescription": "Practice Vocabulary lessons and units."
+  },
+  {
+    "id": "vocabulary-unit-80",
+    "title": "Unit 80: Offering, Obligation, and Emphasis Adverbs",
+    "description": "Practice vocabulary related to offering, owing, sparing, emphasis, certainty, probability, hope, and unfortunate situations.",
+    "questionFile": "vocabulary-unit-80.json",
+    "categoryId": "vocabulary",
+    "categoryTitle": "語彙 / Vocabulary",
+    "categoryDescription": "Practice Vocabulary lessons and units."
   }
 ]

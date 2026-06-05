@@ -1,0 +1,206 @@
+[
+  {
+    "id": "q1",
+    "type": "multiple-choice",
+    "prompt": "What does 「sore」 mean?",
+    "choices": [
+      "痛い",
+      "安定した",
+      "効果的な",
+      "複雑な",
+      "のど",
+      "〜を提出する",
+      "統計",
+      "目標"
+    ],
+    "answer": "痛い",
+    "explanation": "sore = 痛い"
+  },
+  {
+    "id": "q2",
+    "type": "multiple-choice",
+    "prompt": "What does 「throat」 mean?",
+    "choices": [
+      "のど",
+      "筋肉",
+      "神経",
+      "胃",
+      "課題",
+      "〜を予測する",
+      "化学",
+      "お気に入りの"
+    ],
+    "answer": "のど",
+    "explanation": "throat = のど"
+  },
+  {
+    "id": "q3",
+    "type": "multiple-choice",
+    "prompt": "What does 「relieve」 mean?",
+    "choices": [
+      "〜を和らげる",
+      "〜を計算する",
+      "〜を拒否する",
+      "〜を導く",
+      "心理学",
+      "割合",
+      "機会",
+      "一般的な"
+    ],
+    "answer": "〜を和らげる",
+    "explanation": "relieve = ①〜を和らげる ②〜を安心させる"
+  },
+  {
+    "id": "q4",
+    "type": "multiple-choice",
+    "prompt": "What does 「pain」 mean?",
+    "choices": [
+      "痛み",
+      "症状",
+      "気分",
+      "欲望",
+      "図表",
+      "〜を尊敬する",
+      "物理学",
+      "安定した"
+    ],
+    "answer": "痛み",
+    "explanation": "pain = 痛み；苦痛"
+  },
+  {
+    "id": "q5",
+    "type": "multiple-choice",
+    "prompt": "What does 「cure」 mean?",
+    "choices": [
+      "〜を治療する",
+      "〜を批判する",
+      "〜を達成する",
+      "〜を設立する",
+      "経済学",
+      "百分率",
+      "血液",
+      "効果的な"
+    ],
+    "answer": "〜を治療する",
+    "explanation": "cure = 〜を治療する；治療"
+  },
+  {
+    "id": "q6",
+    "type": "multiple-choice",
+    "prompt": "What does 「disease」 mean?",
+    "choices": [
+      "病気",
+      "課題",
+      "地域",
+      "恐怖",
+      "例外",
+      "〜を提出する",
+      "文学",
+      "複雑な"
+    ],
+    "answer": "病気",
+    "explanation": "disease = 病気"
+  },
+  {
+    "id": "q7",
+    "type": "multiple-choice",
+    "prompt": "What does 「alike」 mean?",
+    "choices": [
+      "似ている",
+      "一般的な",
+      "大好きな",
+      "期限が来て",
+      "知識",
+      "〜を想像する",
+      "生物学",
+      "図表"
+    ],
+    "answer": "似ている",
+    "explanation": "alike = 似ている；同様な"
+  },
+  {
+    "id": "q8",
+    "type": "multiple-choice",
+    "prompt": "What does 「similar」 mean?",
+    "choices": [
+      "よく似た",
+      "効果的な",
+      "安定した",
+      "お気に入りの",
+      "目標",
+      "〜を断る",
+      "天文学",
+      "傷"
+    ],
+    "answer": "よく似た",
+    "explanation": "similar = よく似た；類似した"
+  },
+  {
+    "id": "q9",
+    "type": "multiple-choice",
+    "prompt": "What does 「effect」 mean?",
+    "choices": [
+      "影響",
+      "統計",
+      "方法",
+      "感情",
+      "薬",
+      "〜を証明する",
+      "哲学",
+      "痛い"
+    ],
+    "answer": "影響",
+    "explanation": "effect = ①影響；効果 ②結果"
+  },
+  {
+    "id": "q10",
+    "type": "multiple-choice",
+    "prompt": "What does 「impact」 mean?",
+    "choices": [
+      "影響",
+      "大多数",
+      "研究",
+      "のど",
+      "技術",
+      "〜を軽蔑する",
+      "人類学",
+      "安定した"
+    ],
+    "answer": "影響",
+    "explanation": "impact = 影響；衝撃"
+  },
+  {
+    "id": "q11",
+    "type": "multiple-choice",
+    "prompt": "What does 「influence」 mean?",
+    "choices": [
+      "〜に影響を与える",
+      "〜を割る",
+      "〜をほめる",
+      "〜を研究する",
+      "社会学",
+      "熱",
+      "比率",
+      "複雑な"
+    ],
+    "answer": "〜に影響を与える",
+    "explanation": "influence = 〜に影響を与える；影響力"
+  },
+  {
+    "id": "q12",
+    "type": "multiple-choice",
+    "prompt": "What does 「affect」 mean?",
+    "choices": [
+      "〜に影響する",
+      "〜に応募する",
+      "〜を裏切る",
+      "〜を計算する",
+      "言語学",
+      "肺",
+      "項目",
+      "一般的な"
+    ],
+    "answer": "〜に影響する",
+    "explanation": "affect = 〜に影響する"
+  }
+]

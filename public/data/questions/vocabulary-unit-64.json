@@ -1,0 +1,189 @@
+[
+  {
+    "id": "q1",
+    "type": "multiple-choice",
+    "prompt": "What does 「challenge」 mean?",
+    "choices": [
+      "〜に異議を唱える",
+      "〜を提出する",
+      "理論",
+      "会議",
+      "〜を計算する",
+      "恐怖",
+      "効果的な",
+      "肺"
+    ],
+    "answer": "〜に異議を唱える",
+    "explanation": "challenge = ①〜に異議を唱える ②挑戦する ③やりがいのある課題"
+  },
+  {
+    "id": "q2",
+    "type": "multiple-choice",
+    "prompt": "What does 「theory」 mean?",
+    "choices": [
+      "理論",
+      "論文",
+      "調査",
+      "実験室",
+      "感情",
+      "〜を拒否する",
+      "百分率",
+      "痛い"
+    ],
+    "answer": "理論",
+    "explanation": "theory = 理論；学説"
+  },
+  {
+    "id": "q3",
+    "type": "multiple-choice",
+    "prompt": "What does 「paper」 mean?",
+    "choices": [
+      "論文",
+      "理論",
+      "会議",
+      "実験室",
+      "目標",
+      "〜を達成する",
+      "症状",
+      "一般的な"
+    ],
+    "answer": "論文",
+    "explanation": "paper = ①論文；レポート ②紙"
+  },
+  {
+    "id": "q4",
+    "type": "multiple-choice",
+    "prompt": "What does 「due」 mean?",
+    "choices": [
+      "期限が来て",
+      "安定した",
+      "効果的な",
+      "お気に入りの",
+      "化学",
+      "〜を尊敬する",
+      "傷",
+      "割合"
+    ],
+    "answer": "期限が来て",
+    "explanation": "due = ①期限が来て ②予定されて"
+  },
+  {
+    "id": "q5",
+    "type": "multiple-choice",
+    "prompt": "What does 「conduct」 mean?",
+    "choices": [
+      "〜を実施する",
+      "〜を証明する",
+      "〜を開く",
+      "〜を提出する",
+      "心理学",
+      "図表",
+      "のど",
+      "複雑な"
+    ],
+    "answer": "〜を実施する",
+    "explanation": "conduct = ①〜を実施する ②行為"
+  },
+  {
+    "id": "q6",
+    "type": "multiple-choice",
+    "prompt": "What does 「survey」 mean?",
+    "choices": [
+      "調査",
+      "理論",
+      "論文",
+      "会議",
+      "知識",
+      "〜を批判する",
+      "血液",
+      "大多数"
+    ],
+    "answer": "調査",
+    "explanation": "survey = 調査；〜を調査する"
+  },
+  {
+    "id": "q7",
+    "type": "multiple-choice",
+    "prompt": "What does 「hold」 mean?",
+    "choices": [
+      "〜を開く",
+      "〜を導く",
+      "〜を計算する",
+      "〜を断る",
+      "哲学",
+      "筋肉",
+      "機会",
+      "痛み"
+    ],
+    "answer": "〜を開く",
+    "explanation": "hold = ①〜を開く ②〜をつかんでいる"
+  },
+  {
+    "id": "q8",
+    "type": "multiple-choice",
+    "prompt": "What does 「conference」 mean?",
+    "choices": [
+      "会議",
+      "調査",
+      "理論",
+      "課題",
+      "経済学",
+      "〜を想像する",
+      "肺",
+      "安定した"
+    ],
+    "answer": "会議",
+    "explanation": "conference = 会議"
+  },
+  {
+    "id": "q9",
+    "type": "multiple-choice",
+    "prompt": "What does 「research」 mean?",
+    "choices": [
+      "研究",
+      "論文",
+      "会議",
+      "知識",
+      "社会学",
+      "〜に謝罪する",
+      "保険",
+      "効果的な"
+    ],
+    "answer": "研究",
+    "explanation": "research = 研究；〜を研究する"
+  },
+  {
+    "id": "q10",
+    "type": "multiple-choice",
+    "prompt": "What does 「laboratory」 mean?",
+    "choices": [
+      "実験室",
+      "会議",
+      "理論",
+      "地域",
+      "言語学",
+      "〜を軽蔑する",
+      "神経",
+      "お気に入りの"
+    ],
+    "answer": "実験室",
+    "explanation": "laboratory = 実験室；研究所"
+  },
+  {
+    "id": "q11",
+    "type": "multiple-choice",
+    "prompt": "What does 「prove」 mean?",
+    "choices": [
+      "〜を証明する",
+      "〜を実施する",
+      "〜を強調する",
+      "〜を治療する",
+      "建築学",
+      "気分",
+      "統計",
+      "目標"
+    ],
+    "answer": "〜を証明する",
+    "explanation": "prove = 〜を証明する"
+  }
+]

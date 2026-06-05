@@ -1,0 +1,206 @@
+[
+  {
+    "id": "q1",
+    "type": "multiple-choice",
+    "prompt": "What does 「cheat」 mean?",
+    "choices": [
+      "ごまかす",
+      "〜を尊敬する",
+      "〜を想像する",
+      "〜を提出する",
+      "目標",
+      "痛み",
+      "複雑な",
+      "統計"
+    ],
+    "answer": "ごまかす",
+    "explanation": "cheat = ①ごまかす ②カンニングをする"
+  },
+  {
+    "id": "q2",
+    "type": "multiple-choice",
+    "prompt": "What does 「mislead」 mean?",
+    "choices": [
+      "〜を誤解させる",
+      "〜をほめる",
+      "〜を計算する",
+      "〜を治療する",
+      "心理学",
+      "割合",
+      "気分",
+      "安定した"
+    ],
+    "answer": "〜を誤解させる",
+    "explanation": "mislead = 〜を誤解させる；だます"
+  },
+  {
+    "id": "q3",
+    "type": "multiple-choice",
+    "prompt": "What does 「trick」 mean?",
+    "choices": [
+      "だます",
+      "〜を批判する",
+      "〜に謝罪する",
+      "〜を達成する",
+      "文学",
+      "症状",
+      "機会",
+      "効果的な"
+    ],
+    "answer": "だます",
+    "explanation": "trick = ①だます ②いたずら"
+  },
+  {
+    "id": "q4",
+    "type": "multiple-choice",
+    "prompt": "What does 「deceive」 mean?",
+    "choices": [
+      "〜をだます",
+      "〜を予測する",
+      "〜を導く",
+      "〜を提出する",
+      "地理学",
+      "筋肉",
+      "例外",
+      "お気に入りの"
+    ],
+    "answer": "〜をだます",
+    "explanation": "deceive = 〜をだます"
+  },
+  {
+    "id": "q5",
+    "type": "multiple-choice",
+    "prompt": "What does 「betray」 mean?",
+    "choices": [
+      "〜を裏切る",
+      "〜を軽蔑する",
+      "〜を計算する",
+      "〜を特定する",
+      "哲学",
+      "情報源",
+      "一般的な",
+      "のど"
+    ],
+    "answer": "〜を裏切る",
+    "explanation": "betray = 〜を裏切る"
+  },
+  {
+    "id": "q6",
+    "type": "multiple-choice",
+    "prompt": "What does 「suppose」 mean?",
+    "choices": [
+      "〜だと思う",
+      "〜を拒否する",
+      "〜を増やす",
+      "〜を研究する",
+      "天文学",
+      "感情",
+      "傷",
+      "効果的な"
+    ],
+    "answer": "〜だと思う",
+    "explanation": "suppose = ①〜だと思う ②〜と仮定する"
+  },
+  {
+    "id": "q7",
+    "type": "multiple-choice",
+    "prompt": "What does 「guess」 mean?",
+    "choices": [
+      "〜を推測する",
+      "〜を割る",
+      "〜を設立する",
+      "〜を断る",
+      "経済学",
+      "恐怖",
+      "薬",
+      "安定した"
+    ],
+    "answer": "〜を推測する",
+    "explanation": "guess = ①〜を推測する ②〜と思う"
+  },
+  {
+    "id": "q8",
+    "type": "multiple-choice",
+    "prompt": "What does 「imagine」 mean?",
+    "choices": [
+      "〜を想像する",
+      "〜を批判する",
+      "〜に応募する",
+      "〜を証明する",
+      "建築",
+      "百分率",
+      "のど",
+      "大多数"
+    ],
+    "answer": "〜を想像する",
+    "explanation": "imagine = 〜を想像する"
+  },
+  {
+    "id": "q9",
+    "type": "multiple-choice",
+    "prompt": "What does 「predict」 mean?",
+    "choices": [
+      "〜を予測する",
+      "〜を軽蔑する",
+      "〜に感謝する",
+      "〜を提出する",
+      "言語学",
+      "胃",
+      "要因",
+      "痛い"
+    ],
+    "answer": "〜を予測する",
+    "explanation": "predict = 〜を予測する"
+  },
+  {
+    "id": "q10",
+    "type": "multiple-choice",
+    "prompt": "What does 「refuse」 mean?",
+    "choices": [
+      "〜を拒否する",
+      "〜を導く",
+      "〜を想像する",
+      "〜を治療する",
+      "生物学",
+      "気分",
+      "血液",
+      "目標"
+    ],
+    "answer": "〜を拒否する",
+    "explanation": "refuse = 〜を拒否する"
+  },
+  {
+    "id": "q11",
+    "type": "multiple-choice",
+    "prompt": "What does 「resist」 mean?",
+    "choices": [
+      "〜に抵抗する",
+      "〜をほめる",
+      "〜を特定する",
+      "〜を計算する",
+      "社会学",
+      "肺",
+      "図表",
+      "複雑な"
+    ],
+    "answer": "〜に抵抗する",
+    "explanation": "resist = 〜に抵抗する"
+  },
+  {
+    "id": "q12",
+    "type": "multiple-choice",
+    "prompt": "What does 「protest」 mean?",
+    "choices": [
+      "〜に抗議する",
+      "〜を尊敬する",
+      "〜を研究する",
+      "〜を割る",
+      "人類学",
+      "症状",
+      "機会",
+      "効果的な"
+    ],
+    "answer": "〜に抗議する",
+    "explanation": "protest = ①〜に抗議する ②抗議"
+  }
+]
