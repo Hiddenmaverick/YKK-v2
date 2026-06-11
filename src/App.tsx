@@ -32,6 +32,71 @@ const prepareQuestionForQuiz = (question: Question): Question => {
   };
 };
 
+const JAPANESE_CHARACTER_PATTERN = /[\u3040-\u30ff\u3400-\u9fff]/u;
+
+type QuestionPromptParts = {
+  instruction: string;
+  mainText: string;
+  supportText: string;
+};
+
+const splitQuestionBodySupport = (body: string) => {
+  const japaneseMatch = JAPANESE_CHARACTER_PATTERN.exec(body);
+
+  if (!japaneseMatch || japaneseMatch.index === 0) {
+    return { mainText: body, supportText: '' };
+  }
+
+  const mainText = body.slice(0, japaneseMatch.index).trim();
+  const supportText = body.slice(japaneseMatch.index).trim();
+
+  const hasEnglishMainText = /[A-Za-z]/.test(mainText);
+  const hasSentenceBoundary = /[.!?。！？]$/.test(mainText);
+  const hasJapaneseSupportText = JAPANESE_CHARACTER_PATTERN.test(supportText);
+
+  if (!hasEnglishMainText || !hasSentenceBoundary || !hasJapaneseSupportText) {
+    return { mainText: body, supportText: '' };
+  }
+
+  return { mainText, supportText };
+};
+
+const getQuestionPromptParts = (prompt: string): QuestionPromptParts => {
+  const colonIndex = prompt.indexOf(':');
+
+  if (colonIndex === -1) {
+    return { instruction: '', mainText: prompt, supportText: '' };
+  }
+
+  const instruction = prompt.slice(0, colonIndex).trim();
+  const body = prompt.slice(colonIndex + 1).trim();
+
+  if (!instruction || !body) {
+    return { instruction: '', mainText: prompt, supportText: '' };
+  }
+
+  return {
+    instruction,
+    ...splitQuestionBodySupport(body),
+  };
+};
+
+type QuestionPromptProps = {
+  prompt: string;
+};
+
+const QuestionPrompt = ({ prompt }: QuestionPromptProps) => {
+  const { instruction, mainText, supportText } = getQuestionPromptParts(prompt);
+
+  return (
+    <div className="question-prompt" aria-label="Question prompt">
+      {instruction && <p className="question-instruction">{instruction}</p>}
+      <h2 className="question-main-text">{mainText}</h2>
+      {supportText && <p className="question-support-text">{supportText}</p>}
+    </div>
+  );
+};
+
 const ATTEMPT_MODES = {
   practice: {
     label: 'Practice Mode',
@@ -1493,7 +1558,7 @@ function AppContent() {
           <p className="progress-text">
             {isMixedReviewAttempt ? 'Mixed Review · ' : ''}{selectedMode ? `${getModeLabel(selectedMode)} · ` : ''}Question {currentQuestionIndex + 1} of {questions.length}
           </p>
-          <h2>{currentQuestion.prompt}</h2>
+          <QuestionPrompt prompt={currentQuestion.prompt} />
 
           {currentQuestion.type === 'multiple-choice' && (
             <div className="choice-list">
