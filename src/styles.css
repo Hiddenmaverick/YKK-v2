@@ -1099,7 +1099,7 @@ h3 {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
-  margin: 0 0 14px;
+  margin: 14px 0 0;
 }
 
 .mixed-review-action-button {
@@ -1120,6 +1120,11 @@ h3 {
   border-color: #22c55e;
   box-shadow: 0 8px 20px rgba(3, 7, 18, 0.26);
   transform: translateY(-1px);
+}
+
+.mixed-review-action-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
 }
 
 .mixed-review-selected-list {
