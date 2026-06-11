@@ -680,6 +680,8 @@ function AppContent() {
     return selectedSubjectLessons.filter((lesson) => selectedLessonIdSet.has(lesson.id));
   }, [mixedReviewLessonIds, selectedSubjectLessons]);
   const hasMixedReviewLessonSelection = selectedMixedReviewLessons.length > 0;
+  const hasSelectedAllMixedReviewLessons =
+    hasMixedReviewLessons && selectedMixedReviewLessons.length === selectedSubjectLessons.length;
   const mixedReviewStartHelperId = 'mixed-review-start-helper';
   const mixedReviewStartButtonText = hasMixedReviewLessonSelection
     ? 'Start Mixed Review'
@@ -1331,21 +1333,6 @@ function AppContent() {
                   <fieldset className="mixed-review-fieldset">
                     <legend>Lessons / Units</legend>
                     <p className="mixed-review-summary">{mixedReviewSelectionSummary}</p>
-                    {selectedSubjectIsVocabulary && (
-                      <div className="mixed-review-selection-actions" aria-label="Vocabulary Mixed Review selection actions">
-                        <button className="mixed-review-action-button" onClick={selectAllMixedReviewLessons} type="button">
-                          Select all
-                        </button>
-                        <button
-                          className="mixed-review-action-button"
-                          disabled={!hasMixedReviewLessonSelection}
-                          onClick={clearMixedReviewLessons}
-                          type="button"
-                        >
-                          Clear
-                        </button>
-                      </div>
-                    )}
                     {hasMixedReviewLessonSelection && (
                       <div className="mixed-review-selected-list" aria-label="Selected Mixed Review lessons or units">
                         {selectedMixedReviewLessons.map((lesson) => (
@@ -1398,6 +1385,24 @@ function AppContent() {
                         ))}
                       </div>
                     )}
+                    <div className="mixed-review-selection-actions" aria-label="Mixed Review selection actions">
+                      <button
+                        className="mixed-review-action-button"
+                        disabled={hasSelectedAllMixedReviewLessons}
+                        onClick={selectAllMixedReviewLessons}
+                        type="button"
+                      >
+                        Select all
+                      </button>
+                      <button
+                        className="mixed-review-action-button"
+                        disabled={!hasMixedReviewLessonSelection}
+                        onClick={clearMixedReviewLessons}
+                        type="button"
+                      >
+                        Clear
+                      </button>
+                    </div>
                   </fieldset>
 
                   <fieldset className="mixed-review-fieldset">
