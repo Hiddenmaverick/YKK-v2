@@ -30,7 +30,10 @@
       "〜を証明する",
       "〜を批判する"
     ],
-    "answer": "〜かなと思う",
+    "answer": [
+      "〜かなと思う",
+      "〜かしらと思う"
+    ],
     "explanation": "wonder = 〜かなと思う；〜かしらと思う（例：I wonder if she is okay 彼女は大丈夫かなと思う）"
   },
   {
@@ -47,7 +50,10 @@
       "〜を証明する",
       "〜を批判する"
     ],
-    "answer": "〜を解釈する",
+    "answer": [
+      "〜を解釈する",
+      "通訳する"
+    ],
     "explanation": "interpret = ①〜を解釈する ②通訳する（例：interpret the results 結果を解釈する）"
   },
   {
@@ -64,7 +70,10 @@
       "〜を強調する",
       "〜に応募する"
     ],
-    "answer": "〜がわかる",
+    "answer": [
+      "〜がわかる",
+      "〜と認識する"
+    ],
     "explanation": "recognize = 〜がわかる；〜と認識する（例：recognize a face 顔がわかる）"
   },
   {
@@ -81,7 +90,10 @@
       "〜を強調する",
       "〜に応募する"
     ],
-    "answer": "〜と気づく",
+    "answer": [
+      "〜と気づく",
+      "〜を実現する"
+    ],
     "explanation": "realize = ①〜と気づく ②〜を実現する（例：realize a mistake ミスに気づく）"
   },
   {
@@ -98,7 +110,10 @@
       "〜を証明する",
       "〜を要約する"
     ],
-    "answer": "〜と主張する",
+    "answer": [
+      "〜と主張する",
+      "〜を要求する"
+    ],
     "explanation": "claim = ①〜と主張する ②〜を要求する（例：claim that it is true それは本当だと主張する）"
   },
   {
@@ -115,7 +130,10 @@
       "〜に訴える",
       "〜を要約する"
     ],
-    "answer": "〜と主張する",
+    "answer": [
+      "〜と主張する",
+      "議論する"
+    ],
     "explanation": "argue = ①〜と主張する ②議論する（例：argue that she is right 彼女が正しいと主張する）"
   },
   {
@@ -132,7 +150,10 @@
       "〜を証明する",
       "〜を要約する"
     ],
-    "answer": "〜に訴える",
+    "answer": [
+      "〜に訴える",
+      "魅力がある"
+    ],
     "explanation": "appeal = ①（to A）Aに訴える ②魅力がある（例：appeal to the audience 聴衆に訴える）"
   },
   {

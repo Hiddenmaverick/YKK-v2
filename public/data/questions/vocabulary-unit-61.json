@@ -64,7 +64,10 @@
       "一般的な",
       "〜を割る"
     ],
-    "answer": "地理学",
+    "answer": [
+      "地理学",
+      "地理"
+    ],
     "explanation": "geography = 地理学；地理"
   },
   {
@@ -81,7 +84,10 @@
       "お気に入りの",
       "〜を特定する"
     ],
-    "answer": "心理学",
+    "answer": [
+      "心理学",
+      "心理"
+    ],
     "explanation": "psychology = 心理学；心理"
   },
   {
@@ -217,7 +223,10 @@
       "効果的な",
       "〜を導く"
     ],
-    "answer": "建築学",
+    "answer": [
+      "建築学",
+      "建築"
+    ],
     "explanation": "architecture = 建築学；建築"
   }
 ]

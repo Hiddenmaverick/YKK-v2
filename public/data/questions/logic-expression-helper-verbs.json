@@ -1,0 +1,237 @@
+[
+  {
+    "id": "helper-verbs-q01",
+    "type": "multiple-choice",
+    "prompt": "状況に最も合う助動詞を選びなさい: I _____ swim 100 meters. 私は100メートル泳ぐことができます。",
+    "choices": [
+      "must have",
+      "had better not",
+      "can",
+      "should have",
+      "would rather not",
+      "might as well",
+      "cannot be too",
+      "must"
+    ],
+    "answer": "can",
+    "explanation": "can は能力を表し、～できる という意味になります。"
+  },
+  {
+    "id": "helper-verbs-q02",
+    "type": "multiple-choice",
+    "prompt": "状況に最も合う助動詞を選びなさい: I _____ call you after dinner. 私は夕食後にあなたに電話します。",
+    "choices": [
+      "should have",
+      "will",
+      "would rather not",
+      "had better not",
+      "must have",
+      "cannot be too",
+      "might as well",
+      "should not"
+    ],
+    "answer": "will",
+    "explanation": "will は未来の意志や予定を表します。"
+  },
+  {
+    "id": "helper-verbs-q03",
+    "type": "multiple-choice",
+    "prompt": "状況に最も合う助動詞を選びなさい: When I was little, I _____ visit my grandmother every summer. 子どものころ、私は毎年夏に祖母を訪れたものです。",
+    "choices": [
+      "had better",
+      "would",
+      "must have",
+      "can",
+      "should have",
+      "cannot be too",
+      "might as well",
+      "had better not"
+    ],
+    "answer": "would",
+    "explanation": "would は過去の習慣を表すことがあります。"
+  },
+  {
+    "id": "helper-verbs-q04",
+    "type": "multiple-choice",
+    "prompt": "状況に最も合う助動詞を選びなさい: _____ you help me carry this box? この箱を運ぶのを手伝っていただけますか。",
+    "choices": [
+      "Should have",
+      "Had better not",
+      "Could",
+      "Must have",
+      "Cannot be too",
+      "Would rather not",
+      "Might as well",
+      "Will have"
+    ],
+    "answer": "Could",
+    "explanation": "Could you ...? は丁寧な依頼に使えます。"
+  },
+  {
+    "id": "helper-verbs-q05",
+    "type": "multiple-choice",
+    "prompt": "状況に最も合う助動詞を選びなさい: It _____ snow tonight. 今夜、雪が降るかもしれません。",
+    "choices": [
+      "should have",
+      "had better not",
+      "might",
+      "would rather not",
+      "must have",
+      "cannot be too",
+      "had better",
+      "might as well"
+    ],
+    "answer": "might",
+    "explanation": "might は可能性を表し、～かもしれない という意味になります。"
+  },
+  {
+    "id": "helper-verbs-q06",
+    "type": "multiple-choice",
+    "prompt": "状況に最も合う助動詞を選びなさい: You _____ check your answer again. 答えをもう一度確認したほうがいいです。",
+    "choices": [
+      "must have",
+      "will have",
+      "would rather not",
+      "should",
+      "had better not",
+      "should have",
+      "cannot be too",
+      "can"
+    ],
+    "answer": "should",
+    "explanation": "should は助言や すべきだ という意味を表します。"
+  },
+  {
+    "id": "helper-verbs-q07",
+    "type": "multiple-choice",
+    "prompt": "状況に最も合う助動詞を選びなさい: The road is wet. It _____ rained last night. 道がぬれています。昨夜雨が降ったに違いありません。",
+    "choices": [
+      "had better",
+      "must have",
+      "will",
+      "cannot be too",
+      "can",
+      "would rather not",
+      "should",
+      "might as well"
+    ],
+    "answer": "must have",
+    "explanation": "must have ＋ 過去分詞は過去についての強い確信を表します。"
+  },
+  {
+    "id": "helper-verbs-q08",
+    "type": "multiple-choice",
+    "prompt": "状況に最も合う助動詞を選びなさい: You _____ hurry, or you will miss the bus. 急がないとバスに乗り遅れますよ。",
+    "choices": [
+      "would rather not",
+      "had better",
+      "should have",
+      "must have",
+      "can",
+      "cannot be too",
+      "would",
+      "had better not"
+    ],
+    "answer": "had better",
+    "explanation": "had better は、そうしないと困る という強い助言や警告を表します。"
+  },
+  {
+    "id": "helper-verbs-q09",
+    "type": "multiple-choice",
+    "prompt": "状況に最も合う助動詞を選びなさい: You _____ touch that wire. It is dangerous. あの電線に触らないほうがいいです。危険です。",
+    "choices": [
+      "can",
+      "had better not",
+      "should have",
+      "will",
+      "must have",
+      "cannot be too",
+      "would",
+      "might as well"
+    ],
+    "answer": "had better not",
+    "explanation": "had better not は強い警告として しないほうがよい を表します。"
+  },
+  {
+    "id": "helper-verbs-q10",
+    "type": "multiple-choice",
+    "prompt": "状況に最も合う助動詞を選びなさい: I _____ studied harder for the test. テストのためにもっと勉強すべきでした。",
+    "choices": [
+      "would rather not",
+      "should have",
+      "can",
+      "had better not",
+      "cannot be too",
+      "will",
+      "might as well",
+      "would"
+    ],
+    "answer": "should have",
+    "explanation": "should have ＋ 過去分詞は過去の後悔を表します。"
+  },
+  {
+    "id": "helper-verbs-q11",
+    "type": "multiple-choice",
+    "prompt": "状況に最も合う表現を選びなさい: I _____ talk about that problem now. 私は今その問題については話したくありません。",
+    "choices": [
+      "must have",
+      "would rather not",
+      "should have",
+      "can",
+      "cannot be too",
+      "will",
+      "had better",
+      "might as well"
+    ],
+    "answer": "would rather not",
+    "explanation": "would rather not は むしろ～したくない という好みを表します。"
+  },
+  {
+    "id": "helper-verbs-q12",
+    "type": "multiple-choice",
+    "prompt": "状況に最も合う表現を選びなさい: We have thirty minutes before the train comes. We _____ wait here. 電車が来るまで30分あります。ここで待ってもよさそうです。",
+    "choices": [
+      "should have",
+      "would rather not",
+      "must have",
+      "might as well",
+      "cannot be too",
+      "had better not",
+      "would",
+      "will have"
+    ],
+    "answer": "might as well",
+    "explanation": "might as well は せっかくだから～してもよい という意味で使えます。"
+  },
+  {
+    "id": "helper-verbs-q13",
+    "type": "multiple-choice",
+    "prompt": "状況に最も合う表現を選びなさい: You _____ careful when you post photos online. ネットに写真を投稿するときは、どれだけ注意してもしすぎることはありません。",
+    "choices": [
+      "can be too",
+      "cannot be too",
+      "should have",
+      "would rather not",
+      "must have",
+      "had better not",
+      "might as well",
+      "will have"
+    ],
+    "answer": "cannot be too",
+    "explanation": "cannot be too careful は どれだけ注意してもしすぎることはない という表現です。"
+  },
+  {
+    "id": "helper-verbs-q14",
+    "type": "fill-in-the-blank",
+    "prompt": "日本語に合うように、空所に適切な助動詞表現を入れなさい: I _____ brought my umbrella. 傘を持ってくればよかった。",
+    "answer": "should have",
+    "explanation": "should have ＋ 過去分詞は過去の後悔を表します。"
+  },
+  {
+    "id": "helper-verbs-q15",
+    "type": "true-false",
+    "prompt": "正誤問題: 「You had better not tell anyone」は、誰にも言わないほうがよい という強い助言や警告を表す。",
+    "answer": true,
+    "explanation": "had better not は しないほうがよい という強い助言や警告を表します。"
+  }
+]

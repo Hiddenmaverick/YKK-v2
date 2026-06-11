@@ -1,0 +1,159 @@
+[
+  {
+    "id": "past-perfect-continuous-q01",
+    "type": "multiple-choice",
+    "prompt": "正しい過去完了進行形の英文を選びなさい。",
+    "choices": [
+      "I had been studying for two hours before dinner.",
+      "I had studied been for two hours before dinner.",
+      "I have been studying for two hours before dinner.",
+      "I was been studying for two hours before dinner."
+    ],
+    "answer": "I had been studying for two hours before dinner.",
+    "explanation": "過去完了進行形は had been ＋ 動詞ing で作ります。"
+  },
+  {
+    "id": "past-perfect-continuous-q02",
+    "type": "multiple-choice",
+    "prompt": "日本語に合う英文を選びなさい: 雨が止んだとき、彼らは1時間ずっと待っていました。",
+    "choices": [
+      "They have been waiting for an hour when the rain stopped.",
+      "They had been waiting for an hour when the rain stopped.",
+      "They were waiting for an hour when the rain stopped.",
+      "They had waited been for an hour when the rain stopped."
+    ],
+    "answer": "They had been waiting for an hour when the rain stopped.",
+    "explanation": "雨が止んだ過去の時点まで続いていた動作なので had been waiting を使います。"
+  },
+  {
+    "id": "past-perfect-continuous-q03",
+    "type": "multiple-choice",
+    "prompt": "この英文は何形ですか: She had been practicing the piano before the lesson started.",
+    "choices": [
+      "現在形",
+      "過去形",
+      "現在進行形",
+      "過去進行形",
+      "現在完了形",
+      "現在完了進行形",
+      "過去完了形",
+      "過去完了進行形"
+    ],
+    "answer": "過去完了進行形",
+    "explanation": "had been practicing は had been ＋ 動詞ing の形です。"
+  },
+  {
+    "id": "past-perfect-continuous-q04",
+    "type": "multiple-choice",
+    "prompt": "この英文の過去完了進行形の役割として最も合うものを選びなさい: I had been walking for thirty minutes when I found the station.",
+    "choices": [
+      "過去のある時点まで続いていた動作",
+      "今している途中の動作",
+      "未来のある時点までに完了する動作",
+      "現在まで続いている動作",
+      "過去の一回の行動",
+      "毎日の習慣"
+    ],
+    "answer": "過去のある時点まで続いていた動作",
+    "explanation": "駅を見つけた過去の時点まで、歩く動作が続いていました。"
+  },
+  {
+    "id": "past-perfect-continuous-q05",
+    "type": "multiple-choice",
+    "prompt": "過去完了進行形の英文を選びなさい。",
+    "choices": [
+      "He has been sleeping since ten.",
+      "He had slept before ten.",
+      "He had been sleeping for ten hours when I called.",
+      "He will have slept for ten hours by noon."
+    ],
+    "answer": "He had been sleeping for ten hours when I called.",
+    "explanation": "when I called という過去の時点まで続いていた動作なので、had been sleeping が合います。"
+  },
+  {
+    "id": "past-perfect-continuous-q06",
+    "type": "fill-in-the-blank",
+    "prompt": "日本語に合うように、空所に had か have を入れなさい: We _____ been cleaning the gym before the game started. 試合が始まる前、私たちは体育館をずっと掃除していました。",
+    "answer": "had",
+    "explanation": "game started は過去なので、その前まで続いていた動作には had been cleaning を使います。"
+  },
+  {
+    "id": "past-perfect-continuous-q07",
+    "type": "fill-in-the-blank",
+    "prompt": "日本語に合うように、空所に been を入れなさい: Yuna had _____ studying for two hours when her mother came home. ユナは母が帰宅したとき、2時間ずっと勉強していました。",
+    "answer": "been",
+    "explanation": "過去完了進行形は had been ＋ 動詞ing です。"
+  },
+  {
+    "id": "past-perfect-continuous-q08",
+    "type": "fill-in-the-blank",
+    "prompt": "日本語に合うように、空所に動詞の ing 形を入れなさい: They had been _____ soccer before it got dark. 暗くなる前、彼らはずっとサッカーをしていました。 play",
+    "answer": "playing",
+    "explanation": "been の後ろは動詞ing にします。"
+  },
+  {
+    "id": "past-perfect-continuous-q09",
+    "type": "fill-in-the-blank",
+    "prompt": "日本語に合うように、空所に not を入れなさい: I had _____ been sleeping well before the test. テスト前、私はよく眠れていませんでした。",
+    "answer": "not",
+    "explanation": "否定文では had の後ろに not を置きます。"
+  },
+  {
+    "id": "past-perfect-continuous-q10",
+    "type": "fill-in-the-blank",
+    "prompt": "日本語に合うように、空所に Had か Did を入れなさい: _____ you been waiting long before the teacher arrived? 先生が到着する前、あなたは長く待っていましたか。",
+    "answer": "Had",
+    "explanation": "過去完了進行形の疑問文は Had ＋ 主語 ＋ been ＋ 動詞ing です。"
+  },
+  {
+    "id": "past-perfect-continuous-q11",
+    "type": "fill-in-the-blank",
+    "prompt": "並べかえて、英文を完成させなさい: the bus arrived / waiting / Ken / had / before / been / for an hour. _____",
+    "answer": [
+      "ken had been waiting for an hour before the bus arrived",
+      "Ken had been waiting for an hour before the bus arrived."
+    ],
+    "explanation": "過去完了進行形は主語 ＋ had been ＋ 動詞ing の順にします。"
+  },
+  {
+    "id": "past-perfect-continuous-q12",
+    "type": "fill-in-the-blank",
+    "prompt": "並べかえて、英文を完成させなさい: the concert started / since morning / had / the students / before / practicing / been. _____",
+    "answer": [
+      "the students had been practicing since morning before the concert started",
+      "The students had been practicing since morning before the concert started."
+    ],
+    "explanation": "since morning は動作が始まった時点を表します。"
+  },
+  {
+    "id": "past-perfect-continuous-q13",
+    "type": "true-false",
+    "prompt": "正誤問題: 「I had been study English before dinner」は正しい過去完了進行形の英文である。",
+    "answer": false,
+    "explanation": "been の後ろは動詞の原形 study ではなく studying にします。"
+  },
+  {
+    "id": "past-perfect-continuous-q14",
+    "type": "true-false",
+    "prompt": "正誤問題: 「They had been talking for ten minutes when the bell rang」は過去完了進行形の英文である。",
+    "answer": true,
+    "explanation": "had been talking は過去完了進行形です。"
+  },
+  {
+    "id": "past-perfect-continuous-q15",
+    "type": "multiple-choice",
+    "prompt": "この英文は何形ですか: I have been reading this book since Monday.",
+    "choices": [
+      "過去完了進行形",
+      "現在完了形",
+      "現在完了進行形",
+      "過去完了形",
+      "未来完了形",
+      "現在進行形",
+      "過去進行形",
+      "過去形"
+    ],
+    "answer": "現在完了進行形",
+    "explanation": "have been reading は現在完了進行形で、had been reading なら過去完了進行形です。"
+  }
+]

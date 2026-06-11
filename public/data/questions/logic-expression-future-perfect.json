@@ -1,0 +1,163 @@
+[
+  {
+    "id": "future-perfect-q01",
+    "type": "multiple-choice",
+    "prompt": "正しい英文を選びなさい。",
+    "choices": [
+      "I will finished my homework by nine.",
+      "I will have finish my homework by nine.",
+      "I will have finished my homework by nine.",
+      "I will be finished my homework by nine."
+    ],
+    "answer": "I will have finished my homework by nine.",
+    "explanation": "未来完了形は will have ＋ 過去分詞で作ります。"
+  },
+  {
+    "id": "future-perfect-q02",
+    "type": "multiple-choice",
+    "prompt": "日本語に合う英文を選びなさい: 来月までに、彼女はその本を読み終えているでしょう。",
+    "choices": [
+      "She will read the book by next month.",
+      "She will have read the book by next month.",
+      "She has read the book by next month.",
+      "She will be reading the book by next month."
+    ],
+    "answer": "She will have read the book by next month.",
+    "explanation": "by next month は未来の期限なので、will have read が合います。"
+  },
+  {
+    "id": "future-perfect-q03",
+    "type": "multiple-choice",
+    "prompt": "この英文は何形ですか: We will have arrived in Fukuoka by noon.",
+    "choices": [
+      "現在形",
+      "過去形",
+      "現在進行形",
+      "過去進行形",
+      "現在完了形",
+      "過去完了形",
+      "未来表現",
+      "未来完了形"
+    ],
+    "answer": "未来完了形",
+    "explanation": "will have arrived は will have ＋ 過去分詞の形です。"
+  },
+  {
+    "id": "future-perfect-q04",
+    "type": "multiple-choice",
+    "prompt": "この英文の未来完了形の役割として最も合うものを選びなさい: By the time you get home, I will have cleaned the kitchen.",
+    "choices": [
+      "未来のある時点までに完了している動作",
+      "今している途中の動作",
+      "過去のある時点より前の動作",
+      "現在まで続く経験",
+      "未来の予定",
+      "毎日の習慣"
+    ],
+    "answer": "未来のある時点までに完了している動作",
+    "explanation": "家に着く未来の時点までに、掃除が完了していることを表します。"
+  },
+  {
+    "id": "future-perfect-q05",
+    "type": "multiple-choice",
+    "prompt": "この英文は何形ですか: By next April, Haruka will have lived in Iki for three years.",
+    "choices": [
+      "過去完了形",
+      "未来表現",
+      "現在完了形",
+      "未来完了形",
+      "過去進行形",
+      "現在進行形",
+      "過去形",
+      "現在形"
+    ],
+    "answer": "未来完了形",
+    "explanation": "will have lived は未来のある時点までの継続を表す未来完了形です。"
+  },
+  {
+    "id": "future-perfect-q06",
+    "type": "fill-in-the-blank",
+    "prompt": "日本語に合うように、空所に have を入れなさい: I will _____ finished this report by tomorrow. 私は明日までにこのレポートを終えているでしょう。",
+    "answer": "have",
+    "explanation": "未来完了形は will have ＋ 過去分詞です。"
+  },
+  {
+    "id": "future-perfect-q07",
+    "type": "fill-in-the-blank",
+    "prompt": "日本語に合うように、空所に過去分詞を入れなさい: She will have _____ dinner by seven. 彼女は7時までに夕食を作り終えているでしょう。 make",
+    "answer": "made",
+    "explanation": "make の過去分詞は made です。"
+  },
+  {
+    "id": "future-perfect-q08",
+    "type": "fill-in-the-blank",
+    "prompt": "日本語に合うように、空所に過去分詞を入れなさい: They will have _____ the classroom before the teacher comes. 彼らは先生が来る前に教室を掃除し終えているでしょう。 clean",
+    "answer": "cleaned",
+    "explanation": "clean の過去分詞は cleaned です。"
+  },
+  {
+    "id": "future-perfect-q09",
+    "type": "fill-in-the-blank",
+    "prompt": "日本語に合うように、空所に not を入れなさい: We will _____ have finished the project by Friday. 私たちは金曜日までにそのプロジェクトを終えていないでしょう。",
+    "answer": "not",
+    "explanation": "未来完了形の否定文は will not have ＋ 過去分詞です。"
+  },
+  {
+    "id": "future-perfect-q10",
+    "type": "fill-in-the-blank",
+    "prompt": "日本語に合うように、空所に Will か Have を入れなさい: _____ you have finished your homework by eight? あなたは8時までに宿題を終えているでしょうか。",
+    "answer": "Will",
+    "explanation": "未来完了形の疑問文は Will ＋ 主語 ＋ have ＋ 過去分詞です。"
+  },
+  {
+    "id": "future-perfect-q11",
+    "type": "fill-in-the-blank",
+    "prompt": "並べかえて、英文を完成させなさい: my homework / will / I / finished / by nine / have. _____",
+    "answer": [
+      "i will have finished my homework by nine",
+      "I will have finished my homework by nine."
+    ],
+    "explanation": "未来完了形は主語 ＋ will have ＋ 過去分詞の順にします。"
+  },
+  {
+    "id": "future-perfect-q12",
+    "type": "fill-in-the-blank",
+    "prompt": "並べかえて、英文を完成させなさい: these words / the students / have / learned / will / by next week. _____",
+    "answer": [
+      "the students will have learned these words by next week",
+      "The students will have learned these words by next week."
+    ],
+    "explanation": "by next week は未来の期限なので、will have learned を使います。"
+  },
+  {
+    "id": "future-perfect-q13",
+    "type": "true-false",
+    "prompt": "正誤問題: 「She will have went home by six」は正しい未来完了形の英文である。",
+    "answer": false,
+    "explanation": "will have の後ろは過去形 went ではなく過去分詞 gone を使います。"
+  },
+  {
+    "id": "future-perfect-q14",
+    "type": "true-false",
+    "prompt": "正誤問題: 「They will have finished the work by tomorrow」は未来完了形の英文である。",
+    "answer": true,
+    "explanation": "will have finished は未来完了形です。"
+  },
+  {
+    "id": "future-perfect-q15",
+    "type": "multiple-choice",
+    "prompt": "この英文は何形ですか: By the end of this year, we will have studied six grammar points.",
+    "choices": [
+      "未来表現",
+      "過去完了形",
+      "現在完了形",
+      "現在進行形",
+      "過去進行形",
+      "現在形",
+      "過去形",
+      "未来完了形"
+    ],
+    "answer": "未来完了形",
+    "explanation": "will have studied は will have ＋ 過去分詞なので未来完了形です。"
+  }
+]

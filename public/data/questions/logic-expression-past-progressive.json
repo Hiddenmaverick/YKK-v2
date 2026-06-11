@@ -1,0 +1,157 @@
+[
+  {
+    "id": "past-progressive-q01",
+    "type": "multiple-choice",
+    "prompt": "正しい英文を選びなさい。",
+    "choices": [
+      "She reading a book at eight.",
+      "She was reading a book at eight.",
+      "She read a book at eight now.",
+      "She were reading a book at eight."
+    ],
+    "answer": "She was reading a book at eight.",
+    "explanation": "過去進行形は was または were ＋ 動詞ing で作ります。"
+  },
+  {
+    "id": "past-progressive-q02",
+    "type": "multiple-choice",
+    "prompt": "日本語に合う英文を選びなさい: 彼らはその時サッカーをしていました。",
+    "choices": [
+      "They played soccer then.",
+      "They are playing soccer then.",
+      "They were play soccer then.",
+      "They were playing soccer then."
+    ],
+    "answer": "They were playing soccer then.",
+    "explanation": "主語が they なので were playing を使います。"
+  },
+  {
+    "id": "past-progressive-q03",
+    "type": "multiple-choice",
+    "prompt": "この英文は何形ですか: I was cooking dinner at seven.",
+    "choices": [
+      "現在形",
+      "現在進行形",
+      "未来形",
+      "過去進行形",
+      "過去形",
+      "現在完了形",
+      "過去完了形",
+      "未来進行形"
+    ],
+    "answer": "過去進行形",
+    "explanation": "was cooking は was ＋ 動詞ing の形です。"
+  },
+  {
+    "id": "past-progressive-q04",
+    "type": "multiple-choice",
+    "prompt": "この英文の過去進行形の役割として最も合うものを選びなさい: We were waiting for the bus at that time.",
+    "choices": [
+      "毎日の習慣",
+      "過去の一回の行動",
+      "過去のある時点で進行中だった動作",
+      "未来の予定"
+    ],
+    "answer": "過去のある時点で進行中だった動作",
+    "explanation": "at that time があるので、過去のその時に進行中だった動作を表します。"
+  },
+  {
+    "id": "past-progressive-q05",
+    "type": "multiple-choice",
+    "prompt": "正しい否定文を選びなさい。",
+    "choices": [
+      "He was not watching TV at that time.",
+      "He did not watching TV at that time.",
+      "He was not watch TV at that time.",
+      "He were not watching TV at that time."
+    ],
+    "answer": "He was not watching TV at that time.",
+    "explanation": "過去進行形の否定文は was または were ＋ not ＋ 動詞ing です。"
+  },
+  {
+    "id": "past-progressive-q06",
+    "type": "fill-in-the-blank",
+    "prompt": "日本語に合うように、空所に be 動詞の過去形を入れなさい: Yuta _____ studying at eight. ユウタは8時に勉強していました。",
+    "answer": "was",
+    "explanation": "主語が Yuta なので was を使います。"
+  },
+  {
+    "id": "past-progressive-q07",
+    "type": "fill-in-the-blank",
+    "prompt": "日本語に合うように、空所に be 動詞の過去形を入れなさい: We _____ cleaning the classroom then. 私たちはその時、教室を掃除していました。",
+    "answer": "were",
+    "explanation": "主語が we なので were を使います。"
+  },
+  {
+    "id": "past-progressive-q08",
+    "type": "fill-in-the-blank",
+    "prompt": "日本語に合うように、空所に動詞の ing 形を入れなさい: Miki was _____ a diary then. ミキはその時、日記を書いていました。 write",
+    "answer": "writing",
+    "explanation": "write の ing 形は writing です。"
+  },
+  {
+    "id": "past-progressive-q09",
+    "type": "fill-in-the-blank",
+    "prompt": "日本語に合うように、空所に not を入れなさい: They were _____ listening to music at that time. 彼らはその時、音楽を聞いていませんでした。",
+    "answer": "not",
+    "explanation": "過去進行形の否定文では was または were の後ろに not を置きます。"
+  },
+  {
+    "id": "past-progressive-q10",
+    "type": "fill-in-the-blank",
+    "prompt": "日本語に合うように、空所に Was か Were を入れなさい: _____ your mother working at six? あなたのお母さんは6時に働いていましたか。",
+    "answer": "Was",
+    "explanation": "単数の your mother には Was を使います。"
+  },
+  {
+    "id": "past-progressive-q11",
+    "type": "fill-in-the-blank",
+    "prompt": "並べかえて、英文を完成させなさい: her homework / Emi / doing / was / at eight. _____",
+    "answer": [
+      "emi was doing her homework at eight",
+      "Emi was doing her homework at eight."
+    ],
+    "explanation": "過去進行形は主語 ＋ was または were ＋ 動詞ing の順にします。"
+  },
+  {
+    "id": "past-progressive-q12",
+    "type": "fill-in-the-blank",
+    "prompt": "並べかえて、英文を完成させなさい: then / reading / were / in the library / the students. _____",
+    "answer": [
+      "the students were reading in the library then",
+      "The students were reading in the library then."
+    ],
+    "explanation": "複数の主語 the students には were を使います。"
+  },
+  {
+    "id": "past-progressive-q13",
+    "type": "true-false",
+    "prompt": "正誤問題: 「I was play tennis at five」は正しい過去進行形の英文である。",
+    "answer": false,
+    "explanation": "過去進行形では play ではなく playing を使います。"
+  },
+  {
+    "id": "past-progressive-q14",
+    "type": "true-false",
+    "prompt": "正誤問題: 「They were studying when I called」は過去進行形を含む英文である。",
+    "answer": true,
+    "explanation": "were studying は過去進行形です。"
+  },
+  {
+    "id": "past-progressive-q15",
+    "type": "multiple-choice",
+    "prompt": "この英文は何形ですか: Were you sleeping when I sent the message?",
+    "choices": [
+      "現在完了形",
+      "過去進行形",
+      "未来形",
+      "現在形",
+      "過去形",
+      "現在進行形",
+      "過去完了形",
+      "未来進行形"
+    ],
+    "answer": "過去進行形",
+    "explanation": "Were sleeping は過去進行形の疑問文です。"
+  }
+]

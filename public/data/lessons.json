@@ -27,19 +27,100 @@
     "categoryDescription": "Practice Communication English lessons and units."
   },
   {
-    "id": "logic-expression-lesson-01",
-    "title": "Lesson 1: Giving Opinions",
-    "description": "Practice giving clear opinions with polite and useful expressions.",
-    "questionFile": "logic-expression-lesson-01.json",
+    "id": "logic-expression-present-simple",
+    "title": "現在形 / Simple Present",
+    "description": "Practice facts, habits, routines, and present states.",
+    "questionFile": "logic-expression-present-simple.json",
     "categoryId": "logic-expression",
     "categoryTitle": "論理・表現 / Logic and Expression",
     "categoryDescription": "Practice Logic and Expression lessons and units."
   },
   {
-    "id": "logic-expression-lesson-02",
-    "title": "Lesson 2: Explaining Reasons",
-    "description": "Practice giving reasons and examples to support opinions.",
-    "questionFile": "logic-expression-lesson-02.json",
+    "id": "logic-expression-past-simple",
+    "title": "過去形 / Simple Past",
+    "description": "Practice past actions, past states, and past habits.",
+    "questionFile": "logic-expression-past-simple.json",
+    "categoryId": "logic-expression",
+    "categoryTitle": "論理・表現 / Logic and Expression",
+    "categoryDescription": "Practice Logic and Expression lessons and units."
+  },
+  {
+    "id": "logic-expression-present-progressive",
+    "title": "現在進行形 / Present Progressive",
+    "description": "Practice be verbs and verb-ing forms for actions happening now or around now.",
+    "questionFile": "logic-expression-present-progressive.json",
+    "categoryId": "logic-expression",
+    "categoryTitle": "論理・表現 / Logic and Expression",
+    "categoryDescription": "Practice Logic and Expression lessons and units."
+  },
+  {
+    "id": "logic-expression-past-progressive",
+    "title": "過去進行形 / Past Progressive",
+    "description": "Practice was/were and verb-ing forms for actions happening at a time in the past.",
+    "questionFile": "logic-expression-past-progressive.json",
+    "categoryId": "logic-expression",
+    "categoryTitle": "論理・表現 / Logic and Expression",
+    "categoryDescription": "Practice Logic and Expression lessons and units."
+  },
+  {
+    "id": "logic-expression-future-forms",
+    "title": "未来表現 / Future Forms",
+    "description": "Practice will and be going to for future plans, predictions, and decisions.",
+    "questionFile": "logic-expression-future-forms.json",
+    "categoryId": "logic-expression",
+    "categoryTitle": "論理・表現 / Logic and Expression",
+    "categoryDescription": "Practice Logic and Expression lessons and units."
+  },
+  {
+    "id": "logic-expression-present-perfect",
+    "title": "現在完了形 / Present Perfect",
+    "description": "Practice have/has plus past participles for experience, completion, and continuation.",
+    "questionFile": "logic-expression-present-perfect.json",
+    "categoryId": "logic-expression",
+    "categoryTitle": "論理・表現 / Logic and Expression",
+    "categoryDescription": "Practice Logic and Expression lessons and units."
+  },
+  {
+    "id": "logic-expression-past-perfect",
+    "title": "過去完了形 / Past Perfect",
+    "description": "Practice had plus past participles for actions completed before another past action or time.",
+    "questionFile": "logic-expression-past-perfect.json",
+    "categoryId": "logic-expression",
+    "categoryTitle": "論理・表現 / Logic and Expression",
+    "categoryDescription": "Practice Logic and Expression lessons and units."
+  },
+  {
+    "id": "logic-expression-future-perfect",
+    "title": "未来完了形 / Future Perfect",
+    "description": "Practice will have plus past participles for actions completed by a future time.",
+    "questionFile": "logic-expression-future-perfect.json",
+    "categoryId": "logic-expression",
+    "categoryTitle": "論理・表現 / Logic and Expression",
+    "categoryDescription": "Practice Logic and Expression lessons and units."
+  },
+  {
+    "id": "logic-expression-present-perfect-continuous",
+    "title": "現在完了進行形 / Present Perfect Continuous",
+    "description": "Practice have/has been plus verb-ing for actions continuing from the past to now.",
+    "questionFile": "logic-expression-present-perfect-continuous.json",
+    "categoryId": "logic-expression",
+    "categoryTitle": "論理・表現 / Logic and Expression",
+    "categoryDescription": "Practice Logic and Expression lessons and units."
+  },
+  {
+    "id": "logic-expression-past-perfect-continuous",
+    "title": "過去完了進行形 / Past Perfect Continuous",
+    "description": "Practice had been plus verb-ing for actions continuing before another past time.",
+    "questionFile": "logic-expression-past-perfect-continuous.json",
+    "categoryId": "logic-expression",
+    "categoryTitle": "論理・表現 / Logic and Expression",
+    "categoryDescription": "Practice Logic and Expression lessons and units."
+  },
+  {
+    "id": "logic-expression-helper-verbs",
+    "title": "助動詞 / Helper Verbs",
+    "description": "Practice modal verbs and helper-verb expressions for ability, advice, possibility, regret, certainty, and preference.",
+    "questionFile": "logic-expression-helper-verbs.json",
     "categoryId": "logic-expression",
     "categoryTitle": "論理・表現 / Logic and Expression",
     "categoryDescription": "Practice Logic and Expression lessons and units."

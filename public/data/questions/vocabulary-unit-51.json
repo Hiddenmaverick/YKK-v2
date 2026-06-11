@@ -13,7 +13,10 @@
       "形式ばった",
       "典型的な"
     ],
-    "answer": "学問の",
+    "answer": [
+      "学問の",
+      "学問的な"
+    ],
     "explanation": "academic = 学問の；学問的な（例：academic studies 学問的な研究）"
   },
   {
@@ -30,7 +33,10 @@
       "一般的な",
       "典型的な"
     ],
-    "answer": "初歩的な",
+    "answer": [
+      "初歩的な",
+      "小学校の"
+    ],
     "explanation": "elementary = 小学校の；初歩的な（例：an elementary class 初歩的なクラス）"
   },
   {
@@ -64,7 +70,10 @@
       "段落",
       "結論"
     ],
-    "answer": "部門",
+    "answer": [
+      "部門",
+      "売り場"
+    ],
     "explanation": "department = ①部門；学科 ②（百貨店の）売り場（例：the French department フランス語学科）"
   },
   {
@@ -115,7 +124,10 @@
       "論理的な",
       "教育の"
     ],
-    "answer": "地位が上の",
+    "answer": [
+      "地位が上の",
+      "先輩の"
+    ],
     "explanation": "senior = 地位が上の；先輩の（例：be senior to him 彼の先輩だ）"
   },
   {
@@ -132,7 +144,10 @@
       "論理的な",
       "教育の"
     ],
-    "answer": "地位が下の",
+    "answer": [
+      "地位が下の",
+      "後輩の"
+    ],
     "explanation": "junior = 地位が下の；後輩の（例：be junior to her 彼女の後輩だ）"
   },
   {
@@ -149,7 +164,10 @@
       "気分",
       "欲望"
     ],
-    "answer": "若者たち",
+    "answer": [
+      "若者たち",
+      "青年期"
+    ],
     "explanation": "youth = ①（the ~）若者たち ②青年期（例：the youth of today 今日の若者たち）"
   },
   {
@@ -166,7 +184,10 @@
       "一般的な",
       "教育の"
     ],
-    "answer": "高齢の",
+    "answer": [
+      "高齢の",
+      "年配の人たち"
+    ],
     "explanation": "elderly = ①（the ~）年配の人たち ②高齢の；年配の（例：be free for the elderly お年寄りは無料だ）"
   },
   {
@@ -183,7 +204,10 @@
       "概要",
       "言語"
     ],
-    "answer": "序論",
+    "answer": [
+      "序論",
+      "紹介"
+    ],
     "explanation": "introduction = ①序論；前置き ②紹介；導入（例：the introduction of a book 本の序論）"
   },
   {

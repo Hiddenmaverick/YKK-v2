@@ -15,7 +15,9 @@
     ],
     "answer": [
       "〜を提供する",
-      "申し出る"
+      "提供",
+      "申し出る",
+      "申し出"
     ],
     "explanation": "offer = ①〜を提供する ②提供；申し出る；申し出"
   },
@@ -55,6 +57,7 @@
     ],
     "answer": [
       "AにBを割く",
+      "惜しむ",
       "余分の"
     ],
     "explanation": "spare = ①AにBを割く ②惜しむ；余分の"
@@ -95,7 +98,8 @@
     ],
     "answer": [
       "特に",
-      "とりわけ"
+      "とりわけ",
+      "in particular"
     ],
     "explanation": "particularly = 特に；とりわけ；in particular"
   },
@@ -135,7 +139,8 @@
     ],
     "answer": [
       "まさに",
-      "正確に"
+      "正確に",
+      "exactly"
     ],
     "explanation": "precisely = まさに；正確に；exactly"
   },

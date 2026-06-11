@@ -13,7 +13,10 @@
       "統計",
       "理論"
     ],
-    "answer": "したがって",
+    "answer": [
+      "したがって",
+      "それで"
+    ],
     "explanation": "therefore = それで；したがって（例：therefore, we concluded したがって、私たちは結論を出した）"
   },
   {
@@ -30,7 +33,10 @@
       "割合",
       "調査"
     ],
-    "answer": "さらに",
+    "answer": [
+      "さらに",
+      "その上"
+    ],
     "explanation": "moreover = さらに；その上（例：moreover, she studied hard さらに、彼女は熱心に勉強した）"
   },
   {
@@ -47,7 +53,10 @@
       "語彙",
       "課題"
     ],
-    "answer": "さらに",
+    "answer": [
+      "さらに",
+      "その上"
+    ],
     "explanation": "furthermore = さらに；その上（例：furthermore, the results showed さらに、結果が示した）"
   },
   {
@@ -149,7 +158,10 @@
       "一般的な",
       "学問的な"
     ],
-    "answer": "母国の",
+    "answer": [
+      "母国の",
+      "出身の人"
+    ],
     "explanation": "native = ①母国の；母語の ②出身の人（例：native language 母国語）"
   },
   {
@@ -183,7 +195,10 @@
       "学問的な",
       "比較的な"
     ],
-    "answer": "形式ばった",
+    "answer": [
+      "形式ばった",
+      "正式の"
+    ],
     "explanation": "formal = 形式ばった；正式の（例：formal English 正式な英語）"
   },
   {
@@ -200,7 +215,10 @@
       "課題",
       "理論"
     ],
-    "answer": "小説",
+    "answer": [
+      "小説",
+      "作り話"
+    ],
     "explanation": "fiction = ①小説 ②作り話（例：science fiction SF小説）"
   }
 ]

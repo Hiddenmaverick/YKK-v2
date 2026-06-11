@@ -1,0 +1,163 @@
+[
+  {
+    "id": "present-perfect-continuous-q01",
+    "type": "multiple-choice",
+    "prompt": "正しい現在完了進行形の英文を選びなさい。",
+    "choices": [
+      "I have been study English for two hours.",
+      "I have studying English for two hours.",
+      "I have been studying English for two hours.",
+      "I was been studying English for two hours."
+    ],
+    "answer": "I have been studying English for two hours.",
+    "explanation": "現在完了進行形は have または has ＋ been ＋ 動詞ing で作ります。"
+  },
+  {
+    "id": "present-perfect-continuous-q02",
+    "type": "multiple-choice",
+    "prompt": "日本語に合う英文を選びなさい: 彼女は朝からずっと英語を勉強しています。",
+    "choices": [
+      "She studies English since this morning.",
+      "She is studying English since this morning.",
+      "She has studied English since this morning.",
+      "She has been studying English since this morning."
+    ],
+    "answer": "She has been studying English since this morning.",
+    "explanation": "since this morning で過去から今まで続く動作なので、has been studying が合います。"
+  },
+  {
+    "id": "present-perfect-continuous-q03",
+    "type": "multiple-choice",
+    "prompt": "この英文は何形ですか: We have been waiting for the bus for twenty minutes.",
+    "choices": [
+      "現在形",
+      "過去形",
+      "現在進行形",
+      "過去進行形",
+      "未来表現",
+      "現在完了形",
+      "過去完了形",
+      "現在完了進行形"
+    ],
+    "answer": "現在完了進行形",
+    "explanation": "have been waiting は have ＋ been ＋ 動詞ing の形です。"
+  },
+  {
+    "id": "present-perfect-continuous-q04",
+    "type": "multiple-choice",
+    "prompt": "この英文の現在完了進行形の役割として最も合うものを選びなさい: I have been cleaning my room for two hours.",
+    "choices": [
+      "過去の一回の行動",
+      "今だけしている途中の動作",
+      "過去から今まで続いている動作",
+      "未来のある時点までに完了する動作",
+      "現在の習慣",
+      "過去のある時点より前に完了した動作"
+    ],
+    "answer": "過去から今まで続いている動作",
+    "explanation": "for two hours があるので、過去から今まで続いている動作を表します。"
+  },
+  {
+    "id": "present-perfect-continuous-q05",
+    "type": "multiple-choice",
+    "prompt": "この英文は何形ですか: She has finished her homework already.",
+    "choices": [
+      "現在完了進行形",
+      "過去完了形",
+      "現在完了形",
+      "現在進行形",
+      "未来完了形",
+      "過去形",
+      "現在形",
+      "過去進行形"
+    ],
+    "answer": "現在完了形",
+    "explanation": "has finished は has ＋ 過去分詞で、現在完了形です。"
+  },
+  {
+    "id": "present-perfect-continuous-q06",
+    "type": "fill-in-the-blank",
+    "prompt": "日本語に合うように、空所に have か has を入れなさい: I _____ been reading this book for a week. 私は一週間ずっとこの本を読んでいます。",
+    "answer": "have",
+    "explanation": "主語が I なので have been reading を使います。"
+  },
+  {
+    "id": "present-perfect-continuous-q07",
+    "type": "fill-in-the-blank",
+    "prompt": "日本語に合うように、空所に been を入れなさい: Aya has _____ writing emails all morning. アヤは午前中ずっとメールを書いています。",
+    "answer": "been",
+    "explanation": "現在完了進行形は has been ＋ 動詞ing です。"
+  },
+  {
+    "id": "present-perfect-continuous-q08",
+    "type": "fill-in-the-blank",
+    "prompt": "日本語に合うように、空所に動詞の ing 形を入れなさい: They have been _____ soccer since 3 p.m. 彼らは午後3時からずっとサッカーをしています。 play",
+    "answer": "playing",
+    "explanation": "play の ing 形は playing です。"
+  },
+  {
+    "id": "present-perfect-continuous-q09",
+    "type": "fill-in-the-blank",
+    "prompt": "日本語に合うように、空所に have か has を入れなさい: My mother _____ been working in the garden since noon. 母は正午からずっと庭で働いています。",
+    "answer": "has",
+    "explanation": "主語が my mother なので has been working を使います。"
+  },
+  {
+    "id": "present-perfect-continuous-q10",
+    "type": "fill-in-the-blank",
+    "prompt": "日本語に合うように、空所に not を入れなさい: He has _____ been sleeping well recently. 彼は最近よく眠れていません。",
+    "answer": "not",
+    "explanation": "否定文では has または have の後ろに not を置きます。"
+  },
+  {
+    "id": "present-perfect-continuous-q11",
+    "type": "fill-in-the-blank",
+    "prompt": "並べかえて、英文を完成させなさい: been / the students / talking / have / for ten minutes. _____",
+    "answer": [
+      "the students have been talking for ten minutes",
+      "The students have been talking for ten minutes."
+    ],
+    "explanation": "現在完了進行形は主語 ＋ have または has ＋ been ＋ 動詞ing の順です。"
+  },
+  {
+    "id": "present-perfect-continuous-q12",
+    "type": "fill-in-the-blank",
+    "prompt": "並べかえて、英文を完成させなさい: the piano / Yui / since this morning / been / practicing / has. _____",
+    "answer": [
+      "yui has been practicing the piano since this morning",
+      "Yui has been practicing the piano since this morning."
+    ],
+    "explanation": "since this morning は動作が始まった時点を表します。"
+  },
+  {
+    "id": "present-perfect-continuous-q13",
+    "type": "true-false",
+    "prompt": "正誤問題: 「I have been study English for an hour」は正しい現在完了進行形の英文である。",
+    "answer": false,
+    "explanation": "been の後ろは動詞の原形 study ではなく studying にします。"
+  },
+  {
+    "id": "present-perfect-continuous-q14",
+    "type": "true-false",
+    "prompt": "正誤問題: 「We have been waiting here since nine」は現在完了進行形の英文である。",
+    "answer": true,
+    "explanation": "have been waiting は現在完了進行形です。"
+  },
+  {
+    "id": "present-perfect-continuous-q15",
+    "type": "multiple-choice",
+    "prompt": "この英文は何形ですか: By tomorrow, we will have finished the project.",
+    "choices": [
+      "現在完了進行形",
+      "現在完了形",
+      "過去完了形",
+      "未来完了形",
+      "現在進行形",
+      "過去進行形",
+      "現在形",
+      "未来表現"
+    ],
+    "answer": "未来完了形",
+    "explanation": "will have finished は未来完了形で、have been finishing ではありません。"
+  }
+]

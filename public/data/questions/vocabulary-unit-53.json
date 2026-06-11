@@ -13,7 +13,10 @@
       "主題",
       "一節"
     ],
-    "answer": "概要",
+    "answer": [
+      "概要",
+      "輪郭"
+    ],
     "explanation": "outline = ①概要；要点 ②輪郭（例：write an outline レポートの概要を書く）"
   },
   {
@@ -47,7 +50,10 @@
       "〜を証明する",
       "〜を批判する"
     ],
-    "answer": "〜に従う",
+    "answer": [
+      "〜に従う",
+      "〜の後について行く"
+    ],
     "explanation": "follow = ①〜に従う ②〜の後について行く（例：follow the instructions 指示に従う）"
   },
   {
@@ -64,7 +70,10 @@
       "討論",
       "調査"
     ],
-    "answer": "指示",
+    "answer": [
+      "指示",
+      "授業"
+    ],
     "explanation": "instruction = ①指示 ②授業；教育（例：follow the instructions 指示に従う）"
   },
   {
@@ -81,7 +90,10 @@
       "形式ばった",
       "比較的な"
     ],
-    "answer": "前の",
+    "answer": [
+      "前の",
+      "以前の"
+    ],
     "explanation": "previous = 前の；以前の（例：the previous lesson 前の授業）"
   },
   {
@@ -115,7 +127,10 @@
       "前の",
       "比較的な"
     ],
-    "answer": "共通の",
+    "answer": [
+      "共通の",
+      "よくある"
+    ],
     "explanation": "common = ①共通の ②よくある（例：a common mistake よくあるミス）"
   },
   {
@@ -149,7 +164,10 @@
       "前の",
       "比較的な"
     ],
-    "answer": "典型的な",
+    "answer": [
+      "典型的な",
+      "特有の"
+    ],
     "explanation": "typical = ①典型的な ②特有の（例：a typical example 典型的な例）"
   },
   {
@@ -183,7 +201,10 @@
       "割合",
       "統計"
     ],
-    "answer": "首都",
+    "answer": [
+      "首都",
+      "大文字"
+    ],
     "explanation": "capital = ①首都 ②大文字（例：Tokyo is the capital of Japan. 東京は日本の首都だ）"
   },
   {
@@ -200,7 +221,10 @@
       "例",
       "主題"
     ],
-    "answer": "文字",
+    "answer": [
+      "文字",
+      "手紙"
+    ],
     "explanation": "letter = ①文字 ②手紙（例：a capital letter 大文字）"
   }
 ]
