@@ -1,0 +1,163 @@
+[
+  {
+    "id": "past-perfect-q01",
+    "type": "multiple-choice",
+    "prompt": "正しい英文を選びなさい。",
+    "choices": [
+      "I had finish my homework before dinner.",
+      "I have finished my homework before dinner yesterday.",
+      "I had finished my homework before dinner.",
+      "I was finished my homework before dinner."
+    ],
+    "answer": "I had finished my homework before dinner.",
+    "explanation": "過去完了形は had ＋ 過去分詞で作ります。"
+  },
+  {
+    "id": "past-perfect-q02",
+    "type": "multiple-choice",
+    "prompt": "日本語に合う英文を選びなさい: 私が駅に着いたとき、電車はもう出発していました。",
+    "choices": [
+      "The train had already left when I arrived at the station.",
+      "The train has already left when I arrived at the station.",
+      "The train already leaves when I arrived at the station.",
+      "The train was already leave when I arrived at the station."
+    ],
+    "answer": "The train had already left when I arrived at the station.",
+    "explanation": "一つの過去より前に終わっていたことには過去完了形を使えます。"
+  },
+  {
+    "id": "past-perfect-q03",
+    "type": "multiple-choice",
+    "prompt": "この英文は何形ですか: She had studied English before she moved to Canada.",
+    "choices": [
+      "現在形",
+      "過去形",
+      "現在進行形",
+      "過去進行形",
+      "現在完了形",
+      "過去完了形",
+      "未来形",
+      "未来完了形"
+    ],
+    "answer": "過去完了形",
+    "explanation": "had studied は had ＋ 過去分詞の形です。"
+  },
+  {
+    "id": "past-perfect-q04",
+    "type": "multiple-choice",
+    "prompt": "この英文の過去完了形の役割として最も合うものを選びなさい: I had eaten breakfast before I left home.",
+    "choices": [
+      "今している途中の動作",
+      "毎日の習慣",
+      "過去のある時点より前に完了した動作",
+      "未来の予定",
+      "現在まで続く経験",
+      "過去の途中の動作"
+    ],
+    "answer": "過去のある時点より前に完了した動作",
+    "explanation": "家を出た過去の時点より前に、朝食を食べ終えていました。"
+  },
+  {
+    "id": "past-perfect-q05",
+    "type": "multiple-choice",
+    "prompt": "この英文は何形ですか: Had they cleaned the room before the teacher came?",
+    "choices": [
+      "過去完了形",
+      "未来形",
+      "現在完了形",
+      "過去進行形",
+      "現在形",
+      "現在進行形",
+      "過去形",
+      "未来完了形"
+    ],
+    "answer": "過去完了形",
+    "explanation": "Had they cleaned は過去完了形の疑問文です。"
+  },
+  {
+    "id": "past-perfect-q06",
+    "type": "fill-in-the-blank",
+    "prompt": "日本語に合うように、空所に had か have を入れなさい: I _____ lost my ticket before I got on the bus. 私はバスに乗る前にチケットをなくしていました。",
+    "answer": "had",
+    "explanation": "got on は過去なので、その前に起きたことには had lost を使います。"
+  },
+  {
+    "id": "past-perfect-q07",
+    "type": "fill-in-the-blank",
+    "prompt": "日本語に合うように、空所に過去分詞を入れなさい: By the time we arrived, the movie had already _____. 私たちが着くまでに、その映画はもう始まっていました。 start",
+    "answer": "started",
+    "explanation": "start の過去分詞は started です。"
+  },
+  {
+    "id": "past-perfect-q08",
+    "type": "fill-in-the-blank",
+    "prompt": "日本語に合うように、空所に過去分詞を入れなさい: She had _____ dinner before her father came home. 彼女は父が帰宅する前に夕食を作っていました。 make",
+    "answer": "made",
+    "explanation": "make の過去分詞は made です。"
+  },
+  {
+    "id": "past-perfect-q09",
+    "type": "fill-in-the-blank",
+    "prompt": "日本語に合うように、空所に not を入れなさい: We had _____ finished the project when the bell rang. ベルが鳴ったとき、私たちはまだそのプロジェクトを終えていませんでした。",
+    "answer": "not",
+    "explanation": "過去完了形の否定文では had の後ろに not を置きます。"
+  },
+  {
+    "id": "past-perfect-q10",
+    "type": "fill-in-the-blank",
+    "prompt": "日本語に合うように、空所に Had か Did を入れなさい: _____ you seen that actor before you watched the movie? その映画を見る前に、その俳優を見たことがありましたか。",
+    "answer": "Had",
+    "explanation": "過去のある時点より前の経験をたずねるので Had ＋ 主語 ＋ 過去分詞を使います。"
+  },
+  {
+    "id": "past-perfect-q11",
+    "type": "fill-in-the-blank",
+    "prompt": "並べかえて、英文を完成させなさい: when / the bus / already / we arrived / had / left. _____",
+    "answer": [
+      "the bus had already left when we arrived",
+      "The bus had already left when we arrived."
+    ],
+    "explanation": "already は had と過去分詞の間に置けます。"
+  },
+  {
+    "id": "past-perfect-q12",
+    "type": "fill-in-the-blank",
+    "prompt": "並べかえて、英文を完成させなさい: she / the book / Emi / saw the movie / had / before / read. _____",
+    "answer": [
+      "emi had read the book before she saw the movie",
+      "Emi had read the book before she saw the movie."
+    ],
+    "explanation": "映画を見た過去の時点より前に本を読んでいたので、had read を使います。"
+  },
+  {
+    "id": "past-perfect-q13",
+    "type": "true-false",
+    "prompt": "正誤問題: 「I had went home before it started raining」は正しい過去完了形の英文である。",
+    "answer": false,
+    "explanation": "had の後ろは過去形 went ではなく過去分詞 gone を使います。"
+  },
+  {
+    "id": "past-perfect-q14",
+    "type": "true-false",
+    "prompt": "正誤問題: 「She had already finished her homework when I called」は過去完了形を含む英文である。",
+    "answer": true,
+    "explanation": "had already finished は過去完了形です。"
+  },
+  {
+    "id": "past-perfect-q15",
+    "type": "multiple-choice",
+    "prompt": "この英文は何形ですか: By 9 p.m., my brother had written three pages.",
+    "choices": [
+      "現在完了形",
+      "過去形",
+      "未来完了形",
+      "現在進行形",
+      "過去進行形",
+      "現在形",
+      "過去完了形",
+      "未来形"
+    ],
+    "answer": "過去完了形",
+    "explanation": "had written は had ＋ 過去分詞なので過去完了形です。"
+  }
+]

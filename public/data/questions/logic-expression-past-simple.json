@@ -1,0 +1,157 @@
+[
+  {
+    "id": "past-simple-q01",
+    "type": "multiple-choice",
+    "prompt": "正しい英文を選びなさい。",
+    "choices": [
+      "We watch a movie last night.",
+      "We watched a movie last night.",
+      "We watches a movie last night.",
+      "We were watch a movie last night."
+    ],
+    "answer": "We watched a movie last night.",
+    "explanation": "last night があるので、動詞は過去形 watched にします。"
+  },
+  {
+    "id": "past-simple-q02",
+    "type": "multiple-choice",
+    "prompt": "日本語に合う英文を選びなさい: 彼女は昨日宿題をしました。",
+    "choices": [
+      "She does her homework yesterday.",
+      "She do her homework yesterday.",
+      "She dids her homework yesterday.",
+      "She did her homework yesterday."
+    ],
+    "answer": "She did her homework yesterday.",
+    "explanation": "yesterday があるので、do の過去形 did を使います。"
+  },
+  {
+    "id": "past-simple-q03",
+    "type": "multiple-choice",
+    "prompt": "この英文は何形ですか: Haru visited his grandmother last weekend.",
+    "choices": [
+      "現在形",
+      "現在進行形",
+      "過去進行形",
+      "未来形",
+      "過去形",
+      "現在完了形",
+      "過去完了形",
+      "未来進行形"
+    ],
+    "answer": "過去形",
+    "explanation": "visited は visit の過去形です。"
+  },
+  {
+    "id": "past-simple-q04",
+    "type": "multiple-choice",
+    "prompt": "この英文の過去形の役割として最も合うものを選びなさい: I was nervous before the speech.",
+    "choices": [
+      "過去の状態",
+      "現在の習慣",
+      "今している途中の動作",
+      "未来の予定"
+    ],
+    "answer": "過去の状態",
+    "explanation": "was は be 動詞の過去形で、過去の状態を表します。"
+  },
+  {
+    "id": "past-simple-q05",
+    "type": "multiple-choice",
+    "prompt": "正しい否定文を選びなさい。",
+    "choices": [
+      "They did not played soccer yesterday.",
+      "They not played soccer yesterday.",
+      "They did not play soccer yesterday.",
+      "They were not play soccer yesterday."
+    ],
+    "answer": "They did not play soccer yesterday.",
+    "explanation": "did not の後ろは動詞の原形 play にします。"
+  },
+  {
+    "id": "past-simple-q06",
+    "type": "fill-in-the-blank",
+    "prompt": "日本語に合うように、空所に適切な形を入れなさい: Aoi _____ tennis yesterday. アオイは昨日テニスをしました。 play",
+    "answer": "played",
+    "explanation": "yesterday があるので、play を過去形 played にします。"
+  },
+  {
+    "id": "past-simple-q07",
+    "type": "fill-in-the-blank",
+    "prompt": "日本語に合うように、空所に be 動詞の過去形を入れなさい: We _____ tired after the game. 私たちは試合の後、疲れていました。",
+    "answer": "were",
+    "explanation": "主語が we なので、be 動詞の過去形は were です。"
+  },
+  {
+    "id": "past-simple-q08",
+    "type": "fill-in-the-blank",
+    "prompt": "日本語に合うように、空所に be 動詞の過去形を入れなさい: My brother _____ at home last night. 私の兄は昨夜家にいました。",
+    "answer": "was",
+    "explanation": "主語が my brother なので、be 動詞の過去形は was です。"
+  },
+  {
+    "id": "past-simple-q09",
+    "type": "fill-in-the-blank",
+    "prompt": "日本語に合うように、空所に適切な形を入れなさい: She _____ a letter to her friend last week. 彼女は先週友だちに手紙を書きました。 write",
+    "answer": "wrote",
+    "explanation": "write の過去形は wrote です。"
+  },
+  {
+    "id": "past-simple-q10",
+    "type": "fill-in-the-blank",
+    "prompt": "日本語に合うように、空所に Did か Do を入れなさい: _____ you clean your room yesterday? あなたは昨日部屋を掃除しましたか。",
+    "answer": "Did",
+    "explanation": "過去の疑問文では Did を文の最初に置き、動詞は原形にします。"
+  },
+  {
+    "id": "past-simple-q11",
+    "type": "fill-in-the-blank",
+    "prompt": "並べかえて、英文を完成させなさい: the museum / we / last Sunday / visited. _____",
+    "answer": [
+      "we visited the museum last sunday",
+      "We visited the museum last Sunday."
+    ],
+    "explanation": "過去の行動なので、visited を使います。"
+  },
+  {
+    "id": "past-simple-q12",
+    "type": "fill-in-the-blank",
+    "prompt": "並べかえて、英文を完成させなさい: breakfast / not / this morning / Ken / did / eat. _____",
+    "answer": [
+      "ken did not eat breakfast this morning",
+      "Ken did not eat breakfast this morning."
+    ],
+    "explanation": "過去の否定文は did not ＋ 動詞の原形です。"
+  },
+  {
+    "id": "past-simple-q13",
+    "type": "true-false",
+    "prompt": "正誤問題: 「I goed to the library yesterday」は正しい過去形の英文である。",
+    "answer": false,
+    "explanation": "go の過去形は goed ではなく went です。"
+  },
+  {
+    "id": "past-simple-q14",
+    "type": "true-false",
+    "prompt": "正誤問題: 「She was happy yesterday」は過去形の英文である。",
+    "answer": true,
+    "explanation": "was は be 動詞の過去形です。"
+  },
+  {
+    "id": "past-simple-q15",
+    "type": "multiple-choice",
+    "prompt": "この英文は何形ですか: Did they practice after school yesterday?",
+    "choices": [
+      "現在完了形",
+      "現在進行形",
+      "過去完了形",
+      "過去進行形",
+      "未来形",
+      "過去形",
+      "現在形",
+      "未来進行形"
+    ],
+    "answer": "過去形",
+    "explanation": "Did から始まる疑問文で、yesterday もあるので過去形です。"
+  }
+]

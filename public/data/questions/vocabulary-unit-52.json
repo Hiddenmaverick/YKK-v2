@@ -30,7 +30,10 @@
       "概要",
       "言語"
     ],
-    "answer": "経歴",
+    "answer": [
+      "経歴",
+      "背景"
+    ],
     "explanation": "background = ①経歴 ②背景（例：educational background 教育の経歴）"
   },
   {
@@ -64,7 +67,10 @@
       "段落",
       "学科"
     ],
-    "answer": "得点",
+    "answer": [
+      "得点",
+      "成績"
+    ],
     "explanation": "score = ①得点 ②成績（例：the average score 平均点）"
   },
   {
@@ -98,7 +104,10 @@
       "後輩",
       "先輩"
     ],
-    "answer": "児童",
+    "answer": [
+      "児童",
+      "瞳"
+    ],
     "explanation": "pupil = ①児童；生徒 ②瞳（例：a kindergarten pupil 幼稚園児）"
   },
   {
@@ -115,7 +124,10 @@
       "要約する",
       "証明する"
     ],
-    "answer": "復習する",
+    "answer": [
+      "復習する",
+      "批評"
+    ],
     "explanation": "review = ①復習する；見直す ②批評；論評（例：review what I learned 学んだことを復習する）"
   },
   {
@@ -149,7 +161,10 @@
       "要約する",
       "証明する"
     ],
-    "answer": "取り除く",
+    "answer": [
+      "取り除く",
+      "脱ぐ"
+    ],
     "explanation": "remove = ①取り除く ②脱ぐ（例：remove a sentence 文を取り除く）"
   },
   {

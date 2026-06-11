@@ -30,7 +30,10 @@
       "地域",
       "課題"
     ],
-    "answer": "テーマ",
+    "answer": [
+      "テーマ",
+      "主題"
+    ],
     "explanation": "theme = テーマ；主題（例：the theme of the essay レポートのテーマ）"
   },
   {
@@ -64,7 +67,10 @@
       "概要",
       "小論文"
     ],
-    "answer": "句",
+    "answer": [
+      "句",
+      "言い回し"
+    ],
     "explanation": "phrase = ①句 ②言い回し（例：a useful phrase 便利な言い回し）"
   },
   {
@@ -81,7 +87,10 @@
       "語彙",
       "主題"
     ],
-    "answer": "一節",
+    "answer": [
+      "一節",
+      "通路"
+    ],
     "explanation": "passage = ①（本文などの）一節 ②通路（例：read the passage 本文の一節を読む）"
   },
   {
@@ -115,7 +124,10 @@
       "統計",
       "証明する"
     ],
-    "answer": "ほとんど",
+    "answer": [
+      "ほとんど",
+      "もう少しで"
+    ],
     "explanation": "nearly = ほとんど；もう少しで（例：nearly finished もう少しで終わる）"
   },
   {
@@ -149,7 +161,10 @@
       "割合",
       "設立する"
     ],
-    "answer": "部分的に",
+    "answer": [
+      "部分的に",
+      "一部は"
+    ],
     "explanation": "partly = 部分的に；一部は（例：partly my fault 一部は私のせいだ）"
   },
   {
@@ -166,7 +181,10 @@
       "語彙",
       "解釈する"
     ],
-    "answer": "たいてい",
+    "answer": [
+      "たいてい",
+      "大部分は"
+    ],
     "explanation": "mostly = たいてい；大部分は（例：mostly correct たいてい正しい）"
   },
   {
@@ -183,7 +201,10 @@
       "一方で",
       "つまり"
     ],
-    "answer": "〜でない限り",
+    "answer": [
+      "〜でない限り",
+      "もし〜でなければ"
+    ],
     "explanation": "unless = 〜でない限り；もし〜でなければ（例：unless you study 勉強しない限り）"
   },
   {

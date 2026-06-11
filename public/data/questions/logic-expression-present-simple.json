@@ -1,0 +1,149 @@
+[
+  {
+    "id": "present-simple-q01",
+    "type": "multiple-choice",
+    "prompt": "正しい英文を選びなさい。",
+    "choices": [
+      "My brother play tennis on Sundays.",
+      "My brother is plays tennis on Sundays.",
+      "My brother plays tennis on Sundays.",
+      "My brother playing tennis on Sundays."
+    ],
+    "answer": "My brother plays tennis on Sundays.",
+    "explanation": "主語が三人称単数のとき、現在形の一般動詞には s を付けます。"
+  },
+  {
+    "id": "present-simple-q02",
+    "type": "multiple-choice",
+    "prompt": "日本語に合う英文を選びなさい: 私たちの教室は三階にあります。",
+    "choices": [
+      "Our classroom are on the third floor.",
+      "Our classroom is on the third floor.",
+      "Our classroom be on the third floor.",
+      "Our classroom on the third floor."
+    ],
+    "answer": "Our classroom is on the third floor.",
+    "explanation": "単数の主語 our classroom には be 動詞 is を使います。"
+  },
+  {
+    "id": "present-simple-q03",
+    "type": "multiple-choice",
+    "prompt": "この英文は何形ですか: They eat lunch at 12:30.",
+    "choices": [
+      "過去形",
+      "現在形",
+      "現在進行形",
+      "過去進行形"
+    ],
+    "answer": "現在形",
+    "explanation": "eat は現在形で、習慣や日課を表せます。"
+  },
+  {
+    "id": "present-simple-q04",
+    "type": "multiple-choice",
+    "prompt": "この英文の現在形の役割として最も合うものを選びなさい: The earth goes around the sun.",
+    "choices": [
+      "今している途中の動作",
+      "昨日の一回の行動",
+      "過去の習慣",
+      "事実や不変の真理"
+    ],
+    "answer": "事実や不変の真理",
+    "explanation": "現在形は事実や一般的な真理を表せます。"
+  },
+  {
+    "id": "present-simple-q05",
+    "type": "multiple-choice",
+    "prompt": "日本語に合う英文を選びなさい: ユイは朝にコーヒーを飲みません。",
+    "choices": [
+      "Yui does not drinks coffee in the morning.",
+      "Yui not drink coffee in the morning.",
+      "Yui is not drink coffee in the morning.",
+      "Yui does not drink coffee in the morning."
+    ],
+    "answer": "Yui does not drink coffee in the morning.",
+    "explanation": "does not の後ろは動詞の原形 drink にします。"
+  },
+  {
+    "id": "present-simple-q06",
+    "type": "fill-in-the-blank",
+    "prompt": "日本語に合うように、空所に適切な形を入れなさい: Emi _____ English every day. エミは毎日英語を勉強します。 study",
+    "answer": "studies",
+    "explanation": "主語が三人称単数のとき、study は studies になります。"
+  },
+  {
+    "id": "present-simple-q07",
+    "type": "fill-in-the-blank",
+    "prompt": "日本語に合うように、空所に be 動詞を入れなさい: This bag _____ heavy. このかばんは重いです。",
+    "answer": "is",
+    "explanation": "単数の this bag には is を使います。"
+  },
+  {
+    "id": "present-simple-q08",
+    "type": "fill-in-the-blank",
+    "prompt": "日本語に合うように、空所に be 動詞を入れなさい: My parents _____ busy on weekdays. 私の両親は平日は忙しいです。",
+    "answer": "are",
+    "explanation": "複数の my parents には are を使います。"
+  },
+  {
+    "id": "present-simple-q09",
+    "type": "fill-in-the-blank",
+    "prompt": "日本語に合うように、空所に適切な形を入れなさい: He _____ his room on Sundays. 彼は日曜日に部屋を掃除します。 clean",
+    "answer": "cleans",
+    "explanation": "主語が he のとき、現在形の一般動詞には s を付けます。"
+  },
+  {
+    "id": "present-simple-q10",
+    "type": "fill-in-the-blank",
+    "prompt": "日本語に合うように、空所に do か does を入れなさい: _____ your sister play the piano? あなたのお姉さんはピアノを弾きますか。",
+    "answer": "does",
+    "explanation": "主語が your sister の疑問文では does を使い、動詞は原形にします。"
+  },
+  {
+    "id": "present-simple-q11",
+    "type": "fill-in-the-blank",
+    "prompt": "並べかえて、英文を完成させなさい: video games / after dinner / plays / usually / my brother. _____",
+    "answer": [
+      "my brother usually plays video games after dinner",
+      "My brother usually plays video games after dinner."
+    ],
+    "explanation": "頻度を表す usually はふつう一般動詞の前に置きます。"
+  },
+  {
+    "id": "present-simple-q12",
+    "type": "fill-in-the-blank",
+    "prompt": "並べかえて、英文を完成させなさい: in the room / three students / are / there. _____",
+    "answer": [
+      "there are three students in the room",
+      "There are three students in the room."
+    ],
+    "explanation": "複数名詞 three students には there are を使います。"
+  },
+  {
+    "id": "present-simple-q13",
+    "type": "true-false",
+    "prompt": "正誤問題: 「He go to school by bus」は正しい現在形の英文である。",
+    "answer": false,
+    "explanation": "he が主語なので、go ではなく goes を使います。"
+  },
+  {
+    "id": "present-simple-q14",
+    "type": "true-false",
+    "prompt": "正誤問題: 「My aunt works at a hospital」は現在形の英文である。",
+    "answer": true,
+    "explanation": "works は三人称単数の現在形です。"
+  },
+  {
+    "id": "present-simple-q15",
+    "type": "multiple-choice",
+    "prompt": "この英文の現在形の役割として最も合うものを選びなさい: Riku often writes in his diary.",
+    "choices": [
+      "習慣や反復動作",
+      "過去の一回の行動",
+      "今している途中の動作",
+      "過去の途中の動作"
+    ],
+    "answer": "習慣や反復動作",
+    "explanation": "often があるので、習慣や反復動作を表します。"
+  }
+]

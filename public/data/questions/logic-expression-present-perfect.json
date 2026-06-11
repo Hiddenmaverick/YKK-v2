@@ -1,0 +1,163 @@
+[
+  {
+    "id": "present-perfect-q01",
+    "type": "multiple-choice",
+    "prompt": "正しい英文を選びなさい。",
+    "choices": [
+      "I have finish my homework already.",
+      "I finished my homework already have.",
+      "I have finished my homework already.",
+      "I has finished my homework already."
+    ],
+    "answer": "I have finished my homework already.",
+    "explanation": "現在完了形は have または has ＋ 過去分詞で作ります。"
+  },
+  {
+    "id": "present-perfect-q02",
+    "type": "multiple-choice",
+    "prompt": "日本語に合う英文を選びなさい: 彼女は3年間、壱岐に住んでいます。",
+    "choices": [
+      "She lives in Iki three years.",
+      "She has lived in Iki for three years.",
+      "She lived in Iki since three years.",
+      "She is lived in Iki for three years."
+    ],
+    "answer": "She has lived in Iki for three years.",
+    "explanation": "過去から今まで続いていることには現在完了形を使えます。"
+  },
+  {
+    "id": "present-perfect-q03",
+    "type": "multiple-choice",
+    "prompt": "この英文は何形ですか: I have seen this movie three times.",
+    "choices": [
+      "現在形",
+      "過去形",
+      "現在進行形",
+      "過去進行形",
+      "現在完了形",
+      "過去完了形",
+      "未来形",
+      "未来完了形"
+    ],
+    "answer": "現在完了形",
+    "explanation": "have seen は have ＋ 過去分詞の形です。"
+  },
+  {
+    "id": "present-perfect-q04",
+    "type": "multiple-choice",
+    "prompt": "この英文の現在完了形の役割として最も合うものを選びなさい: Have you ever visited Nara?",
+    "choices": [
+      "過去の一回の行動",
+      "今している途中の動作",
+      "経験",
+      "未来の予定",
+      "過去の途中の動作",
+      "現在の習慣"
+    ],
+    "answer": "経験",
+    "explanation": "ever を使った現在完了形は経験をたずねることができます。"
+  },
+  {
+    "id": "present-perfect-q05",
+    "type": "multiple-choice",
+    "prompt": "この英文は何形ですか: She has not eaten breakfast yet.",
+    "choices": [
+      "過去完了形",
+      "現在完了形",
+      "現在形",
+      "過去形",
+      "未来形",
+      "現在進行形",
+      "過去進行形",
+      "未来完了形"
+    ],
+    "answer": "現在完了形",
+    "explanation": "has not eaten は has not ＋ 過去分詞の形です。"
+  },
+  {
+    "id": "present-perfect-q06",
+    "type": "fill-in-the-blank",
+    "prompt": "日本語に合うように、空所に適切な語を入れなさい: I _____ finished my report. 私はレポートを終えたところです。",
+    "answer": "have",
+    "explanation": "主語が I なので have finished を使います。"
+  },
+  {
+    "id": "present-perfect-q07",
+    "type": "fill-in-the-blank",
+    "prompt": "日本語に合うように、空所に has か have を入れなさい: My brother _____ lost his key. 私の兄は鍵をなくしてしまいました。",
+    "answer": "has",
+    "explanation": "主語が my brother なので has ＋ 過去分詞を使います。"
+  },
+  {
+    "id": "present-perfect-q08",
+    "type": "fill-in-the-blank",
+    "prompt": "日本語に合うように、空所に過去分詞を入れなさい: We have _____ this song before. 私たちは以前この歌を聞いたことがあります。 hear",
+    "answer": "heard",
+    "explanation": "hear の過去分詞は heard です。"
+  },
+  {
+    "id": "present-perfect-q09",
+    "type": "fill-in-the-blank",
+    "prompt": "日本語に合うように、空所に過去分詞を入れなさい: He has _____ three books this month. 彼は今月3冊の本を読みました。 read",
+    "answer": "read",
+    "explanation": "read の過去分詞は read ですが、発音は red になります。"
+  },
+  {
+    "id": "present-perfect-q10",
+    "type": "fill-in-the-blank",
+    "prompt": "日本語に合うように、空所に been か gone を入れなさい: Have you ever _____ to Okinawa? あなたは沖縄に行ったことがありますか。",
+    "answer": "been",
+    "explanation": "経験を表す 行ったことがある には have been to を使います。"
+  },
+  {
+    "id": "present-perfect-q11",
+    "type": "fill-in-the-blank",
+    "prompt": "並べかえて、英文を完成させなさい: eaten / natto / never / have / I. _____",
+    "answer": [
+      "i have never eaten natto",
+      "I have never eaten natto."
+    ],
+    "explanation": "never は have と過去分詞の間に置きます。"
+  },
+  {
+    "id": "present-perfect-q12",
+    "type": "fill-in-the-blank",
+    "prompt": "並べかえて、英文を完成させなさい: since April / Hana / lived / has / in Iki. _____",
+    "answer": [
+      "hana has lived in iki since april",
+      "Hana has lived in Iki since April."
+    ],
+    "explanation": "since は始まった時点を表し、現在完了形とよく使います。"
+  },
+  {
+    "id": "present-perfect-q13",
+    "type": "true-false",
+    "prompt": "正誤問題: 「I have went to Tokyo twice」は正しい現在完了形の英文である。",
+    "answer": false,
+    "explanation": "have の後ろは過去形 went ではなく過去分詞 been または gone を使います。"
+  },
+  {
+    "id": "present-perfect-q14",
+    "type": "true-false",
+    "prompt": "正誤問題: 「She has lived here for five years」は、過去から今まで続いていることを表せる。",
+    "answer": true,
+    "explanation": "for five years があるので、継続を表す現在完了形として使えます。"
+  },
+  {
+    "id": "present-perfect-q15",
+    "type": "multiple-choice",
+    "prompt": "この英文は何形ですか: Have they finished cleaning the classroom yet?",
+    "choices": [
+      "現在進行形",
+      "過去形",
+      "未来形",
+      "現在完了形",
+      "過去進行形",
+      "現在形",
+      "過去完了形",
+      "未来完了形"
+    ],
+    "answer": "現在完了形",
+    "explanation": "Have they finished は現在完了形の疑問文です。"
+  }
+]

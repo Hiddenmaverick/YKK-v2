@@ -1,0 +1,159 @@
+[
+  {
+    "id": "future-forms-q01",
+    "type": "multiple-choice",
+    "prompt": "正しい英文を選びなさい。",
+    "choices": [
+      "I going to study tonight.",
+      "I am study tonight.",
+      "I will studying tonight.",
+      "I will study tonight."
+    ],
+    "answer": "I will study tonight.",
+    "explanation": "will の後ろは動詞の原形にします。"
+  },
+  {
+    "id": "future-forms-q02",
+    "type": "multiple-choice",
+    "prompt": "日本語に合う英文を選びなさい: 私たちは明日図書館に行く予定です。",
+    "choices": [
+      "We are going to go to the library tomorrow.",
+      "We going to go to the library tomorrow.",
+      "We are go to the library tomorrow.",
+      "We went to the library tomorrow."
+    ],
+    "answer": "We are going to go to the library tomorrow.",
+    "explanation": "予定を表すときは be going to ＋ 動詞の原形を使えます。"
+  },
+  {
+    "id": "future-forms-q03",
+    "type": "multiple-choice",
+    "prompt": "この英文は何形ですか: I will call you tonight.",
+    "choices": [
+      "現在形",
+      "過去形",
+      "現在進行形",
+      "過去進行形",
+      "現在完了形",
+      "未来表現",
+      "過去完了形",
+      "未来進行形"
+    ],
+    "answer": "未来表現",
+    "explanation": "will ＋ 動詞の原形は未来のことを表します。"
+  },
+  {
+    "id": "future-forms-q04",
+    "type": "multiple-choice",
+    "prompt": "この英文の未来表現の役割として最も合うものを選びなさい: It is going to rain soon.",
+    "choices": [
+      "過去の状態",
+      "毎日の習慣",
+      "今している途中の動作",
+      "過去の一回の行動",
+      "これから起こりそうな予測",
+      "現在の事実"
+    ],
+    "answer": "これから起こりそうな予測",
+    "explanation": "be going to は根拠のある予測を表せます。"
+  },
+  {
+    "id": "future-forms-q05",
+    "type": "multiple-choice",
+    "prompt": "正しい否定文を選びなさい。",
+    "choices": [
+      "They will not staying home tomorrow.",
+      "They will not stay home tomorrow.",
+      "They do not will stay home tomorrow.",
+      "They are not will stay home tomorrow."
+    ],
+    "answer": "They will not stay home tomorrow.",
+    "explanation": "will の否定文は will not ＋ 動詞の原形です。"
+  },
+  {
+    "id": "future-forms-q06",
+    "type": "fill-in-the-blank",
+    "prompt": "日本語に合うように、空所に適切な語を入れなさい: I _____ help you after school. 私は放課後あなたを手伝います。",
+    "answer": "will",
+    "explanation": "will の後ろは動詞の原形 help です。"
+  },
+  {
+    "id": "future-forms-q07",
+    "type": "fill-in-the-blank",
+    "prompt": "日本語に合うように、空所に going を入れて未来表現を完成させなさい: She is _____ to make dinner tonight. 彼女は今夜夕食を作る予定です。",
+    "answer": "going",
+    "explanation": "be going to は予定を表せます。"
+  },
+  {
+    "id": "future-forms-q08",
+    "type": "fill-in-the-blank",
+    "prompt": "日本語に合うように、空所に be 動詞を入れなさい: We _____ going to visit Fukuoka next month. 私たちは来月福岡を訪れる予定です。",
+    "answer": "are",
+    "explanation": "主語が we なので are going to を使います。"
+  },
+  {
+    "id": "future-forms-q09",
+    "type": "fill-in-the-blank",
+    "prompt": "日本語に合うように、空所に Will か Do を入れなさい: _____ you come to the meeting tomorrow? あなたは明日会議に来ますか。",
+    "answer": "Will",
+    "explanation": "未来の疑問文では Will を文の最初に置けます。"
+  },
+  {
+    "id": "future-forms-q10",
+    "type": "fill-in-the-blank",
+    "prompt": "日本語に合うように、空所に適切な語を入れなさい: He is not _____ to join us tomorrow. 彼は明日私たちに参加しない予定です。",
+    "answer": "going",
+    "explanation": "be going to の否定文では be 動詞の後ろに not を置きます。"
+  },
+  {
+    "id": "future-forms-q11",
+    "type": "fill-in-the-blank",
+    "prompt": "並べかえて、英文を完成させなさい: a test / will / tomorrow / take / the students. _____",
+    "answer": [
+      "the students will take a test tomorrow",
+      "The students will take a test tomorrow."
+    ],
+    "explanation": "will は主語の後ろ、動詞の原形の前に置きます。"
+  },
+  {
+    "id": "future-forms-q12",
+    "type": "fill-in-the-blank",
+    "prompt": "並べかえて、英文を完成させなさい: going to / Taku / call / is / his friend / tonight. _____",
+    "answer": [
+      "taku is going to call his friend tonight",
+      "Taku is going to call his friend tonight."
+    ],
+    "explanation": "be going to の後ろは動詞の原形です。"
+  },
+  {
+    "id": "future-forms-q13",
+    "type": "true-false",
+    "prompt": "正誤問題: 「She will goes to Osaka next week」は正しい未来表現の英文である。",
+    "answer": false,
+    "explanation": "will の後ろは goes ではなく go にします。"
+  },
+  {
+    "id": "future-forms-q14",
+    "type": "true-false",
+    "prompt": "正誤問題: 「We are going to practice after school」は未来表現を含む英文である。",
+    "answer": true,
+    "explanation": "are going to practice は未来の予定を表します。"
+  },
+  {
+    "id": "future-forms-q15",
+    "type": "multiple-choice",
+    "prompt": "この英文は何形ですか: Are they going to clean the classroom tomorrow?",
+    "choices": [
+      "過去形",
+      "現在完了形",
+      "未来表現",
+      "現在形",
+      "過去進行形",
+      "現在進行形",
+      "過去完了形",
+      "未来進行形"
+    ],
+    "answer": "未来表現",
+    "explanation": "are going to clean は未来の予定を表します。"
+  }
+]

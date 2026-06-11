@@ -14,8 +14,17 @@
     "title": "論理・表現 / Logic and Expression",
     "description": "Practice Logic and Expression lessons and units.",
     "lessonIds": [
-      "logic-expression-lesson-01",
-      "logic-expression-lesson-02"
+      "logic-expression-present-simple",
+      "logic-expression-past-simple",
+      "logic-expression-present-progressive",
+      "logic-expression-past-progressive",
+      "logic-expression-future-forms",
+      "logic-expression-present-perfect",
+      "logic-expression-past-perfect",
+      "logic-expression-future-perfect",
+      "logic-expression-present-perfect-continuous",
+      "logic-expression-past-perfect-continuous",
+      "logic-expression-helper-verbs"
     ]
   },
   {

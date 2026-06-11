@@ -1,0 +1,157 @@
+[
+  {
+    "id": "present-progressive-q01",
+    "type": "multiple-choice",
+    "prompt": "正しい英文を選びなさい。",
+    "choices": [
+      "The students cleaning the classroom now.",
+      "The students are cleaning the classroom now.",
+      "The students clean the classroom now.",
+      "The students are clean the classroom now."
+    ],
+    "answer": "The students are cleaning the classroom now.",
+    "explanation": "現在進行形は be 動詞 ＋ 動詞ing で作ります。"
+  },
+  {
+    "id": "present-progressive-q02",
+    "type": "multiple-choice",
+    "prompt": "日本語に合う英文を選びなさい: 私の妹はいまピアノを弾いています。",
+    "choices": [
+      "My sister plays the piano now.",
+      "My sister is play the piano now.",
+      "My sister playing the piano now.",
+      "My sister is playing the piano now."
+    ],
+    "answer": "My sister is playing the piano now.",
+    "explanation": "主語が my sister なので is playing を使います。"
+  },
+  {
+    "id": "present-progressive-q03",
+    "type": "multiple-choice",
+    "prompt": "この英文は何形ですか: They are talking in the hallway.",
+    "choices": [
+      "現在形",
+      "過去形",
+      "現在進行形",
+      "過去進行形",
+      "現在完了形",
+      "未来形",
+      "過去完了形",
+      "未来進行形"
+    ],
+    "answer": "現在進行形",
+    "explanation": "are talking は be 動詞 ＋ 動詞ing の形です。"
+  },
+  {
+    "id": "present-progressive-q04",
+    "type": "multiple-choice",
+    "prompt": "この英文の現在進行形の役割として最も合うものを選びなさい: It is raining now.",
+    "choices": [
+      "今している途中の動作",
+      "過去の一回の行動",
+      "毎日の習慣",
+      "未来の完了"
+    ],
+    "answer": "今している途中の動作",
+    "explanation": "now があるので、今起こっている動作を表します。"
+  },
+  {
+    "id": "present-progressive-q05",
+    "type": "multiple-choice",
+    "prompt": "正しい否定文を選びなさい。",
+    "choices": [
+      "He not is watching TV now.",
+      "He is watching not TV now.",
+      "He is not watching TV now.",
+      "He does not watching TV now."
+    ],
+    "answer": "He is not watching TV now.",
+    "explanation": "現在進行形の否定文は be 動詞 ＋ not ＋ 動詞ing です。"
+  },
+  {
+    "id": "present-progressive-q06",
+    "type": "fill-in-the-blank",
+    "prompt": "日本語に合うように、空所に be 動詞を入れなさい: Sora _____ reading a book now. ソラはいま本を読んでいます。",
+    "answer": "is",
+    "explanation": "主語が Sora なので is を使います。"
+  },
+  {
+    "id": "present-progressive-q07",
+    "type": "fill-in-the-blank",
+    "prompt": "日本語に合うように、空所に動詞の ing 形を入れなさい: They are _____ English now. 彼らはいま英語を勉強しています。 study",
+    "answer": "studying",
+    "explanation": "study の ing 形は studying です。"
+  },
+  {
+    "id": "present-progressive-q08",
+    "type": "fill-in-the-blank",
+    "prompt": "日本語に合うように、空所に be 動詞を入れなさい: I _____ writing a report now. 私はいまレポートを書いています。",
+    "answer": "am",
+    "explanation": "主語が I の現在進行形では am を使います。"
+  },
+  {
+    "id": "present-progressive-q09",
+    "type": "fill-in-the-blank",
+    "prompt": "日本語に合うように、空所に動詞の ing 形を入れなさい: We are _____ lunch in the classroom now. 私たちはいま教室で昼食を食べています。 eat",
+    "answer": "eating",
+    "explanation": "eat の ing 形は eating です。"
+  },
+  {
+    "id": "present-progressive-q10",
+    "type": "fill-in-the-blank",
+    "prompt": "日本語に合うように、空所に Is か Are を入れなさい: _____ your friends waiting outside now? あなたの友だちはいま外で待っていますか。",
+    "answer": "Are",
+    "explanation": "複数の your friends には are を使います。"
+  },
+  {
+    "id": "present-progressive-q11",
+    "type": "fill-in-the-blank",
+    "prompt": "並べかえて、英文を完成させなさい: a video / Mei / now / is / watching. _____",
+    "answer": [
+      "mei is watching a video now",
+      "Mei is watching a video now."
+    ],
+    "explanation": "現在進行形は主語 ＋ be 動詞 ＋ 動詞ing の順にします。"
+  },
+  {
+    "id": "present-progressive-q12",
+    "type": "fill-in-the-blank",
+    "prompt": "並べかえて、英文を完成させなさい: soccer / now / the children / in the park / playing / are. _____",
+    "answer": [
+      "the children are playing soccer in the park now",
+      "The children are playing soccer in the park now."
+    ],
+    "explanation": "複数の主語 the children には are を使います。"
+  },
+  {
+    "id": "present-progressive-q13",
+    "type": "true-false",
+    "prompt": "正誤問題: 「I am study English now」は正しい現在進行形の英文である。",
+    "answer": false,
+    "explanation": "現在進行形では study ではなく studying を使います。"
+  },
+  {
+    "id": "present-progressive-q14",
+    "type": "true-false",
+    "prompt": "正誤問題: 「They are making lunch now」は現在進行形の英文である。",
+    "answer": true,
+    "explanation": "are making は be 動詞 ＋ 動詞ing の形です。"
+  },
+  {
+    "id": "present-progressive-q15",
+    "type": "multiple-choice",
+    "prompt": "この英文は何形ですか: Is Nana writing an email now?",
+    "choices": [
+      "未来形",
+      "現在完了形",
+      "過去進行形",
+      "現在形",
+      "現在進行形",
+      "過去形",
+      "未来進行形",
+      "過去完了形"
+    ],
+    "answer": "現在進行形",
+    "explanation": "Is writing は現在進行形の疑問文です。"
+  }
+]
