@@ -1,0 +1,251 @@
+[
+  {
+    "id": "ec1-3-q01",
+    "type": "multiple-choice",
+    "prompt": "本文の中心内容として最も合うものを選びなさい。",
+    "choices": [
+      "Anime pilgrimage sites no longer attract fans.",
+      "Anime pilgrimage brings events and souvenirs, but it can also cause problems for local people.",
+      "Washinomiya Shrine stopped selling character goods.",
+      "Local residents always dislike all anime fans.",
+      "Anime fans only visit sites to study Japanese history.",
+      "Anime events are held only in Tokyo."
+    ],
+    "answer": "Anime pilgrimage brings events and souvenirs, but it can also cause problems for local people.",
+    "explanation": "Part 3 は anime pilgrimage の良い面と問題点の両方を説明しています。"
+  },
+  {
+    "id": "ec1-3-q02",
+    "type": "multiple-choice",
+    "prompt": "本文の内容に合うものを選びなさい: 地域が anime pilgrimage を活用している例として最も合うものはどれですか。",
+    "choices": [
+      "アニメに関係するイベントを開き、character goods などのおみやげを売っている。",
+      "すべてのファンに地域のお店へ行かないように言っている。",
+      "住宅地をすべて公式の写真スタジオに変えている。",
+      "地域の習慣をすべてアニメのルールに変えている。",
+      "制限区域をすべて自由に入れる場所にしている。",
+      "地元の人と訪問者の交流を禁止している。",
+      "神社を大都市へ移動させている。",
+      "アニメに関係する商品をすべて売るのをやめている。"
+    ],
+    "answer": "アニメに関係するイベントを開き、character goods などのおみやげを売っている。",
+    "explanation": "本文ではイベントや souvenirs など、地域で anime pilgrimage を活用する例が説明されています。"
+  },
+  {
+    "id": "ec1-3-q03",
+    "type": "multiple-choice",
+    "prompt": "本文の内容に合うものを選びなさい: 多くのファンが anime pilgrimage sites を訪れる目的として合うものはどれですか。",
+    "choices": [
+      "おみやげを買うため。",
+      "写真を撮るため。",
+      "地域のすべてのルールを変えるため。",
+      "アニメの放送を止めるため。",
+      "制限区域を増やすため。",
+      "地元の人にわざと迷惑をかけるため。",
+      "神社や町を自分のものにするため。",
+      "テレビ局を建てるため。"
+    ],
+    "answer": [
+      "おみやげを買うため。",
+      "写真を撮るため。"
+    ],
+    "explanation": "多くのファンは souvenirs を買ったり、photos を撮ったりするために訪れます。"
+  },
+  {
+    "id": "ec1-3-q04",
+    "type": "multiple-choice",
+    "prompt": "本文の内容に合うものを選びなさい: 一部のファンの行動が local residents に迷惑をかけることがあるのはなぜですか。",
+    "choices": [
+      "住宅地で騒がしくしたり、許可なく入ってはいけない場所に入ったりすることがあるから。",
+      "地元の人に必ずあいさつをするから。",
+      "公式イベントだけに参加するから。",
+      "おみやげを買ったあとすぐ帰るから。",
+      "写真を一枚も撮らないから。",
+      "地域の習慣をよく調べてから訪れるから。",
+      "地元の人と静かに交流しようとするから。",
+      "神社のルールを守るから。"
+    ],
+    "answer": "住宅地で騒がしくしたり、許可なく入ってはいけない場所に入ったりすることがあるから。",
+    "explanation": "一部のファンの行動が、地元の人々の生活に迷惑をかけることがあります。"
+  },
+  {
+    "id": "ec1-3-q05",
+    "type": "multiple-choice",
+    "prompt": "下線部の意味として最も近いものを選びなさい: a variety of souvenirs",
+    "choices": [
+      "さまざまなおみやげ",
+      "一つだけのおみやげ",
+      "とても高い入場料",
+      "地元の住民全員",
+      "アニメとは関係ない規則",
+      "撮影禁止の場所",
+      "静かな住宅地",
+      "古いテレビ番組"
+    ],
+    "answer": "さまざまなおみやげ",
+    "explanation": "a variety of は さまざまな、いろいろな という意味です。"
+  },
+  {
+    "id": "ec1-3-q06",
+    "type": "multiple-choice",
+    "prompt": "下線部の意味として最も近いものを選びなさい: including character goods",
+    "choices": [
+      "キャラクター商品を含む",
+      "キャラクター商品を禁止する",
+      "キャラクター商品だけを返す",
+      "キャラクター商品を忘れる",
+      "キャラクター商品を隠す",
+      "キャラクター商品を撮影する"
+    ],
+    "answer": "キャラクター商品を含む",
+    "explanation": "including は ～を含む という意味です。"
+  },
+  {
+    "id": "ec1-3-q07",
+    "type": "multiple-choice",
+    "prompt": "student にとって restricted area の実際の例として最も合うものを選びなさい。",
+    "choices": [
+      "コンビニの店員だけが入るバックヤード",
+      "交番の受付スペース",
+      "学校の廊下",
+      "図書館の読書スペース",
+      "駅の改札前の広場",
+      "先生に呼ばれて入る校長室",
+      "昼休みの教室",
+      "公園のベンチ"
+    ],
+    "answer": "コンビニの店員だけが入るバックヤード",
+    "explanation": "restricted area は、関係者以外が自由に入れない制限された場所です。"
+  },
+  {
+    "id": "ec1-3-q08",
+    "type": "multiple-choice",
+    "prompt": "without permission の意味として最も近いものを選びなさい。",
+    "choices": [
+      "許可を得ずに",
+      "許可をもらった後で",
+      "きまりを確認してから",
+      "係員の案内で",
+      "予約したうえで",
+      "静かに注意して",
+      "地元の人と一緒に",
+      "写真を撮らずに"
+    ],
+    "answer": "許可を得ずに",
+    "explanation": "without permission は 許可なく、許可を得ずに という意味です。"
+  },
+  {
+    "id": "ec1-3-q09",
+    "type": "multiple-choice",
+    "prompt": "in search of better photo spots の意味として最も近いものを選びなさい。",
+    "choices": [
+      "よりよい写真スポットを探して",
+      "写真を全部削除するために",
+      "写真を撮られないように",
+      "おみやげを売るために",
+      "地元の規則を作るために",
+      "イベントを中止するために",
+      "住民の家を買うために",
+      "アニメを放送するために"
+    ],
+    "answer": "よりよい写真スポットを探して",
+    "explanation": "in search of は ～を探して、～を求めて という意味です。"
+  },
+  {
+    "id": "ec1-3-q10",
+    "type": "multiple-choice",
+    "prompt": "本文の内容に合うものを選びなさい: 一部のファンのどのような行動が問題になりますか。",
+    "choices": [
+      "許可なく制限区域に入ったり、住宅地でうるさくしたりすること。",
+      "地元の人と丁寧に話そうとすること。",
+      "おみやげを買ってすぐに帰ること。",
+      "公式イベントだけに参加すること。",
+      "地元の生活習慣を尊重すること。",
+      "神社のルールを守ること。"
+    ],
+    "answer": "許可なく制限区域に入ったり、住宅地でうるさくしたりすること。",
+    "explanation": "無断で restricted areas に入ることや、local neighborhoods で騒がしくすることが問題です。"
+  },
+  {
+    "id": "ec1-3-q11",
+    "type": "multiple-choice",
+    "prompt": "annoy の意味として最も近いものを選びなさい。",
+    "choices": [
+      "困らせる",
+      "尊重する",
+      "交流する",
+      "含む",
+      "訪問する",
+      "制限する",
+      "売る",
+      "続ける"
+    ],
+    "answer": "困らせる",
+    "explanation": "annoy は 人を困らせる、いらだたせる という意味です。"
+  },
+  {
+    "id": "ec1-3-q12",
+    "type": "multiple-choice",
+    "prompt": "respect local customs and lifestyles の意味として最も近いものを選びなさい。",
+    "choices": [
+      "地元の習慣や生活様式を尊重する",
+      "地元の習慣や生活様式を無視する",
+      "地元の習慣や生活様式をすべて変える",
+      "地元の習慣や生活様式を写真に撮る",
+      "地元の習慣や生活様式を海外に売る",
+      "地元の習慣や生活様式をテレビで放送する"
+    ],
+    "answer": "地元の習慣や生活様式を尊重する",
+    "explanation": "respect は 尊重する、customs は 習慣、lifestyles は 生活様式 です。"
+  },
+  {
+    "id": "ec1-3-q13",
+    "type": "multiple-choice",
+    "prompt": "この英文の to の働きとして最も合うものを選びなさい: Many fans visit the sites to buy souvenirs.",
+    "choices": [
+      "目的を表す to",
+      "場所を表す to",
+      "比較を表す to",
+      "所有を表す to",
+      "過去を表す to",
+      "受け身を表す to"
+    ],
+    "answer": "目的を表す to",
+    "explanation": "to buy souvenirs は おみやげを買うために という目的を表します。"
+  },
+  {
+    "id": "ec1-3-q14",
+    "type": "fill-in-the-blank",
+    "prompt": "空所に最も合う語を入れなさい: Fans should not enter restricted areas without _____. 許可",
+    "answer": "permission",
+    "explanation": "permission は 許可 という意味です。"
+  },
+  {
+    "id": "ec1-3-q15",
+    "type": "fill-in-the-blank",
+    "prompt": "空所に最も合う語を入れなさい: Some fans walk around neighborhoods in _____ of good photo spots. ～を探して",
+    "answer": "search",
+    "explanation": "in search of は ～を探して という意味です。"
+  },
+  {
+    "id": "ec1-3-q16",
+    "type": "fill-in-the-blank",
+    "prompt": "空所に最も合う語を入れなさい: Visitors should _____ local customs and lifestyles. 尊重する",
+    "answer": "respect",
+    "explanation": "respect は 尊重する という意味です。"
+  },
+  {
+    "id": "ec1-3-q17",
+    "type": "true-false",
+    "prompt": "本文の内容と合っていれば TRUE、違っていれば FALSE を選びなさい: All anime pilgrims in the passage respect local customs and lifestyles.",
+    "answer": false,
+    "explanation": "一部の anime pilgrims は local customs and lifestyles を尊重していないと説明されています。"
+  },
+  {
+    "id": "ec1-3-q18",
+    "type": "true-false",
+    "prompt": "本文の内容と合っていれば TRUE、違っていれば FALSE を選びなさい: More visitors now try to communicate with local people.",
+    "answer": true,
+    "explanation": "最近はより多くの訪問者が地元の人々と交流しようとしています。"
+  }
+]

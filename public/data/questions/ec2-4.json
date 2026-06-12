@@ -1,0 +1,301 @@
+[
+  {
+    "id": "ec2-4-q01",
+    "type": "multiple-choice",
+    "prompt": "本文の中心内容として最も合うものを選びなさい。",
+    "choices": [
+      "岩谷さんの挑戦は、身近なものを活用し、失敗から学び続けることの大切さを示している。",
+      "岩谷さんは、大きな会社や高価な技術がなければ夢は実現できないと考えている。",
+      "岩谷さんは、最初の失敗のあとすぐに実験をやめた。",
+      "岩谷さんは、発明は必ず国の大きなプロジェクトでなければならないと説明している。",
+      "岩谷さんは、宇宙旅行より映画作りに興味を持つようになった。",
+      "岩谷さんは、風船ではなくロケットだけを使うべきだと考えている。"
+    ],
+    "answer": "岩谷さんの挑戦は、身近なものを活用し、失敗から学び続けることの大切さを示している。",
+    "explanation": "Part 4 は、身近なものを活用し、考え直しながら夢を追う大切さを伝えています。"
+  },
+  {
+    "id": "ec2-4-q02",
+    "type": "multiple-choice",
+    "prompt": "on a large scale の意味として最も近いものを選びなさい。",
+    "choices": [
+      "大規模で",
+      "小さな道具だけで",
+      "一人だけで静かに",
+      "失敗しないように",
+      "何度も考え直して",
+      "身近なものを使って",
+      "回収できるように",
+      "夢をあきらめて"
+    ],
+    "answer": "大規模で",
+    "explanation": "on a large scale は 大規模で という意味です。"
+  },
+  {
+    "id": "ec2-4-q03",
+    "type": "multiple-choice",
+    "prompt": "pursue a dream の意味として最も近いものを選びなさい。",
+    "choices": [
+      "夢を追い求める",
+      "夢をすぐにあきらめる",
+      "夢を忘れて別のことをする",
+      "夢を人に隠す",
+      "夢を大きな規模にする",
+      "夢を失敗として扱う",
+      "夢を回収する",
+      "夢を発射する"
+    ],
+    "answer": "夢を追い求める",
+    "explanation": "pursue は 追い求める という意味です。"
+  },
+  {
+    "id": "ec2-4-q04",
+    "type": "multiple-choice",
+    "prompt": "make the most of things available around him の意味として最も近いものを選びなさい。",
+    "choices": [
+      "自分のまわりで手に入るものを最大限に活用する",
+      "高価な専門機械だけを使う",
+      "使えるものがないと考えて何もしない",
+      "すべての材料を海外から取り寄せる",
+      "身近なものを使わずに捨てる",
+      "大きな会社にすべて任せる",
+      "失敗した実験を完全に忘れる",
+      "発明を大規模なものに変える"
+    ],
+    "answer": "自分のまわりで手に入るものを最大限に活用する",
+    "explanation": "make the most of は 最大限に活用する、available は 手に入る という意味です。"
+  },
+  {
+    "id": "ec2-4-q05",
+    "type": "multiple-choice",
+    "prompt": "available の意味として最も近いものを選びなさい。",
+    "choices": [
+      "手に入る、利用できる",
+      "不可能な",
+      "大規模な",
+      "失敗した",
+      "回収された",
+      "継続的な",
+      "達成可能な",
+      "真っ暗な"
+    ],
+    "answer": "手に入る、利用できる",
+    "explanation": "available は 手に入る、利用できる という意味です。"
+  },
+  {
+    "id": "ec2-4-q06",
+    "type": "multiple-choice",
+    "prompt": "recovery of the camera の recovery の意味として最も近いものを選びなさい。",
+    "choices": [
+      "回収",
+      "取り戻すこと",
+      "発明",
+      "打ち上げ",
+      "再考",
+      "失敗",
+      "規模",
+      "努力"
+    ],
+    "answer": [
+      "回収",
+      "取り戻すこと"
+    ],
+    "explanation": "recovery はここでは、落ちてきたカメラを回収すること、取り戻すことを表します。"
+  },
+  {
+    "id": "ec2-4-q07",
+    "type": "multiple-choice",
+    "prompt": "launch の意味として最も近いものを選びなさい。",
+    "choices": [
+      "打ち上げ",
+      "回収",
+      "直径",
+      "大気",
+      "緩衝材",
+      "珍しさ",
+      "相互理解",
+      "おみやげ"
+    ],
+    "answer": "打ち上げ",
+    "explanation": "launch は ロケットや風船などの 打ち上げ という意味で使えます。"
+  },
+  {
+    "id": "ec2-4-q08",
+    "type": "multiple-choice",
+    "prompt": "本文の内容に合うものを選びなさい: 写真撮影やカメラの回収がうまくいかなかったとき、岩谷さんの実験には何が残りましたか。",
+    "choices": [
+      "新しい発見",
+      "完全な無意味さ",
+      "宇宙旅行の完成",
+      "タイムマシンの設計図",
+      "実験をやめる理由だけ",
+      "高価な技術への依存",
+      "映画制作の仕事",
+      "地元の店の宣伝だけ"
+    ],
+    "answer": "新しい発見",
+    "explanation": "うまくいかない時でも、それぞれの打ち上げから新しい発見がありました。"
+  },
+  {
+    "id": "ec2-4-q09",
+    "type": "multiple-choice",
+    "prompt": "本文で、岩谷さんの試みが本当の意味では failure ではない理由として最も合うものを選びなさい。",
+    "choices": [
+      "うまくいかない時でも、毎回そこから学びや発見があったから。",
+      "すべての実験が最初から完全に成功していたから。",
+      "カメラを一度もなくさなかったから。",
+      "すべての写真が最初から鮮明だったから。",
+      "お金をまったく使わなかったから。",
+      "失敗という単語を知らなかったから。",
+      "実験を一回しかしていないから。",
+      "風船を使わなかったから。"
+    ],
+    "answer": "うまくいかない時でも、毎回そこから学びや発見があったから。",
+    "explanation": "新しい発見があれば、失敗も次の成功につながる経験になります。"
+  },
+  {
+    "id": "ec2-4-q10",
+    "type": "multiple-choice",
+    "prompt": "failure の意味として最も近いものを選びなさい。",
+    "choices": [
+      "失敗",
+      "発見",
+      "回収",
+      "規模",
+      "達成",
+      "継続",
+      "打ち上げ",
+      "努力"
+    ],
+    "answer": "失敗",
+    "explanation": "failure は 失敗 という意味です。"
+  },
+  {
+    "id": "ec2-4-q11",
+    "type": "multiple-choice",
+    "prompt": "Success requires continuous rethinking. の意味として最も近いものを選びなさい。",
+    "choices": [
+      "成功には、何度も考え直し続けることが必要だ。",
+      "成功には、大きなお金だけが必要だ。",
+      "成功には、一度考えたら変えないことが必要だ。",
+      "成功には、失敗を完全に忘れることが必要だ。",
+      "成功には、他人の夢を追うことが必要だ。",
+      "成功には、挑戦をやめることが必要だ。",
+      "成功には、カメラを毎回なくすことが必要だ。",
+      "成功には、発明を大規模にすることだけが必要だ。"
+    ],
+    "answer": "成功には、何度も考え直し続けることが必要だ。",
+    "explanation": "require は 必要とする、continuous rethinking は 継続的に考え直すこと です。"
+  },
+  {
+    "id": "ec2-4-q12",
+    "type": "multiple-choice",
+    "prompt": "continuous の意味として最も近いものを選びなさい。",
+    "choices": [
+      "継続的な",
+      "一度だけの",
+      "完全に失敗した",
+      "大規模な",
+      "手に入る",
+      "回収された",
+      "達成可能な",
+      "真っ暗な"
+    ],
+    "answer": "継続的な",
+    "explanation": "continuous は 継続的な、続いている という意味です。"
+  },
+  {
+    "id": "ec2-4-q13",
+    "type": "multiple-choice",
+    "prompt": "achievable の意味として最も近いものを選びなさい。",
+    "choices": [
+      "達成可能な",
+      "手に入らない",
+      "大規模な",
+      "ぼやけた",
+      "失敗した",
+      "回収された",
+      "真っ暗な",
+      "手作りの"
+    ],
+    "answer": "達成可能な",
+    "explanation": "achievable は 達成可能な という意味です。"
+  },
+  {
+    "id": "ec2-4-q14",
+    "type": "multiple-choice",
+    "prompt": "本文の内容に合うものを選びなさい: 岩谷さんが若い人たちに伝えたいこととして最も合うものはどれですか。",
+    "choices": [
+      "夢は達成可能であり、あきらめずに追い続けてほしい。",
+      "夢は大きな会社がなければ絶対に達成できない。",
+      "失敗したらすぐに夢を変えたほうがよい。",
+      "発明には必ずロケットと宇宙飛行士が必要である。",
+      "身近なものでは何も作れない。",
+      "夢よりも映画を見ることだけが大切である。"
+    ],
+    "answer": "夢は達成可能であり、あきらめずに追い続けてほしい。",
+    "explanation": "岩谷さんは、夢は実現できるもので、若い人に夢を追ってほしいと伝えています。"
+  },
+  {
+    "id": "ec2-4-q15",
+    "type": "multiple-choice",
+    "prompt": "本文の内容に合うものを選びなさい: 岩谷さんの次のプロジェクトは何ですか。",
+    "choices": [
+      "balloon space travel",
+      "a time machine",
+      "a movie about Dr. Brown",
+      "a new home improvement store",
+      "an anime pilgrimage website",
+      "a rocket school for pilots",
+      "a bridge to Sasebo",
+      "a camera museum only"
+    ],
+    "answer": "balloon space travel",
+    "explanation": "岩谷さんは次のプロジェクトとして balloon space travel に取り組んでいます。"
+  },
+  {
+    "id": "ec2-4-q16",
+    "type": "multiple-choice",
+    "prompt": "be likely to continue の意味として最も近いものを選びなさい。",
+    "choices": [
+      "続く可能性が高い",
+      "すぐ終わる必要がある",
+      "一度だけ行われる",
+      "失敗として扱われる",
+      "回収される",
+      "手に入る",
+      "大規模に発明される",
+      "考え直されない"
+    ],
+    "answer": "続く可能性が高い",
+    "explanation": "be likely to do は ～する可能性が高い、～しそうである という意味です。"
+  },
+  {
+    "id": "ec2-4-q17",
+    "type": "fill-in-the-blank",
+    "prompt": "空所に最も合う語を入れなさい: Success requires continuous _____. 考え直すこと",
+    "answer": "rethinking",
+    "explanation": "rethinking は 考え直すこと、再考 という意味です。"
+  },
+  {
+    "id": "ec2-4-q18",
+    "type": "fill-in-the-blank",
+    "prompt": "空所に最も合う語を入れなさい: Dreams are _____ things. 達成可能な",
+    "answer": "achievable",
+    "explanation": "achievable は 達成可能な という意味です。"
+  },
+  {
+    "id": "ec2-4-q19",
+    "type": "fill-in-the-blank",
+    "prompt": "空所に最も合う語を入れなさい: Iwaya made the most of things _____ around him. 手に入る",
+    "answer": "available",
+    "explanation": "available は 手に入る、利用できる という意味です。"
+  },
+  {
+    "id": "ec2-4-q20",
+    "type": "true-false",
+    "prompt": "本文の内容と合っていれば TRUE、違っていれば FALSE を選びなさい: Iwaya’s message is that people should give up quickly if an attempt does not go well.",
+    "answer": false,
+    "explanation": "岩谷さんのメッセージは、考え直し続け、あきらめないことの大切さです。"
+  }
+]

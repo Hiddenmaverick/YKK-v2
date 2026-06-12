@@ -1,0 +1,193 @@
+[
+  {
+    "id": "ec1-1-q01",
+    "type": "multiple-choice",
+    "prompt": "本文の中心内容として最も合うものを選びなさい。",
+    "choices": [
+      "アニメの作り方について説明している。",
+      "アニメに関係する場所を訪れるファンについて説明している。",
+      "日本の高校生活の問題について説明している。",
+      "世界中の映画館について説明している。"
+    ],
+    "answer": "アニメに関係する場所を訪れるファンについて説明している。",
+    "explanation": "本文は anime pilgrimage と、物語に関係する場所を訪れるファンについて説明しています。"
+  },
+  {
+    "id": "ec1-1-q02",
+    "type": "multiple-choice",
+    "prompt": "本文の内容に合うものを選びなさい: Lucky Star は最初どこで発表されましたか。",
+    "choices": [
+      "漫画の単行本で",
+      "コミックブックで",
+      "小説で",
+      "雑誌で",
+      "新聞で",
+      "テレビ番組で",
+      "映画館で",
+      "ウェブサイトで"
+    ],
+    "answer": "雑誌で",
+    "explanation": "Lucky Star は最初、雑誌で発表されました。"
+  },
+  {
+    "id": "ec1-1-q03",
+    "type": "multiple-choice",
+    "prompt": "pilgrimage の実際の例として最も合うものを選びなさい。",
+    "choices": [
+      "修学旅行",
+      "東京タワー見学",
+      "富士山登山",
+      "四国八十八ヶ所巡り",
+      "渋谷スクランブル交差点の観光",
+      "遊園地への遠足",
+      "デパートでの買い物",
+      "映画館での映画鑑賞"
+    ],
+    "answer": "四国八十八ヶ所巡り",
+    "explanation": "四国八十八ヶ所巡りは、宗教的な場所をめぐる pilgrimage の例です。"
+  },
+  {
+    "id": "ec1-1-q04",
+    "type": "multiple-choice",
+    "prompt": "When was the TV anime version of Lucky Star broadcast?",
+    "choices": [
+      "2003年",
+      "2006年",
+      "2007年",
+      "2011年"
+    ],
+    "answer": "2007年",
+    "explanation": "Lucky Star のテレビアニメは2007年に放送されました。"
+  },
+  {
+    "id": "ec1-1-q05",
+    "type": "multiple-choice",
+    "prompt": "本文の内容に合うものを選びなさい: The Melancholy of Haruhi Suzumiya について本文が述べていることはどれですか。",
+    "choices": [
+      "2006年に人気のテレビアニメだった。",
+      "Lucky Star の続編として作られた。",
+      "2003年に初めて雑誌に出た。",
+      "神社を舞台にした短い映画だった。"
+    ],
+    "answer": "2006年に人気のテレビアニメだった。",
+    "explanation": "本文では、2006年の人気テレビアニメの一つとして説明されています。"
+  },
+  {
+    "id": "ec1-1-q06",
+    "type": "multiple-choice",
+    "prompt": "本文の内容に合うものを選びなさい: ファンはどのような場所を訪れることがありますか。",
+    "choices": [
+      "物語の舞台になった場所",
+      "アニメを作る工場だけ",
+      "テレビ局の中だけ",
+      "海外の有名な空港だけ"
+    ],
+    "answer": "物語の舞台になった場所",
+    "explanation": "anime pilgrimage では、ファンが物語の舞台になった場所を訪れます。"
+  },
+  {
+    "id": "ec1-1-q07",
+    "type": "multiple-choice",
+    "prompt": "下線部の意味として最も近いものを選びなさい: broadcast",
+    "choices": [
+      "放送された",
+      "出版された",
+      "翻訳された",
+      "撮影された",
+      "販売された",
+      "案内された"
+    ],
+    "answer": "放送された",
+    "explanation": "broadcast は 放送する、放送された という意味です。"
+  },
+  {
+    "id": "ec1-1-q08",
+    "type": "multiple-choice",
+    "prompt": "下線部の意味として最も近いものを選びなさい: is based on",
+    "choices": [
+      "～に基づいている",
+      "～を探している",
+      "～を禁止している",
+      "～を放送している",
+      "～を旅行している",
+      "～を比較している"
+    ],
+    "answer": "～に基づいている",
+    "explanation": "be based on は ～に基づいている という意味です。"
+  },
+  {
+    "id": "ec1-1-q09",
+    "type": "multiple-choice",
+    "prompt": "説明に合う英単語を選びなさい: 宗教的・文化的に大切な場所へ旅をする人。",
+    "choices": [
+      "pilgrim",
+      "broadcast",
+      "magazine",
+      "character",
+      "location",
+      "shrine",
+      "tourist",
+      "series"
+    ],
+    "answer": "pilgrim",
+    "explanation": "pilgrim は 巡礼者 という意味です。"
+  },
+  {
+    "id": "ec1-1-q10",
+    "type": "multiple-choice",
+    "prompt": "日本語に合う英文を選びなさい: 多くのファンが物語に関係する場所を訪れます。",
+    "choices": [
+      "Many fans visit places connected to the story.",
+      "Many fans write the story in a magazine.",
+      "Many fans broadcast the anime on TV.",
+      "Many fans stop watching the story.",
+      "Many fans sell photos of the story.",
+      "Many fans change the story into a novel."
+    ],
+    "answer": "Many fans visit places connected to the story.",
+    "explanation": "visit places connected to the story は 物語に関係する場所を訪れる という意味です。"
+  },
+  {
+    "id": "ec1-1-q11",
+    "type": "fill-in-the-blank",
+    "prompt": "空所に最も合う語を入れなさい: This anime is _____ on a popular comic. ～に基づいている",
+    "answer": "based",
+    "explanation": "be based on は ～に基づいている という意味です。"
+  },
+  {
+    "id": "ec1-1-q12",
+    "type": "fill-in-the-blank",
+    "prompt": "空所に最も合う語を入れなさい: The show was _____ on TV in 2007. 放送された",
+    "answer": [
+      "broadcast",
+      "broadcasted"
+    ],
+    "explanation": "broadcast は過去形・過去分詞でも broadcast の形で使えます。"
+  },
+  {
+    "id": "ec1-1-q13",
+    "type": "fill-in-the-blank",
+    "prompt": "空所に最も合う語を入れなさい: Some fans travel to the _____ where their favorite stories are set. 場所",
+    "answer": [
+      "locations",
+      "location",
+      "site",
+      "sites"
+    ],
+    "explanation": "location と site はどちらも 場所 を表せます。"
+  },
+  {
+    "id": "ec1-1-q14",
+    "type": "true-false",
+    "prompt": "本文の内容と合っていれば TRUE、違っていれば FALSE を選びなさい: Lucky Star first appeared as a TV anime in 2003.",
+    "answer": false,
+    "explanation": "Lucky Star は2003年に雑誌で発表され、テレビアニメはその後です。"
+  },
+  {
+    "id": "ec1-1-q15",
+    "type": "true-false",
+    "prompt": "本文の内容と合っていれば TRUE、違っていれば FALSE を選びなさい: Anime pilgrimage sites can attract fans from Japan and other countries.",
+    "answer": true,
+    "explanation": "anime pilgrimage の場所は、日本や海外のファンを引きつけることがあります。"
+  }
+]

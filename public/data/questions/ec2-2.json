@@ -1,0 +1,255 @@
+[
+  {
+    "id": "ec2-2-q01",
+    "type": "multiple-choice",
+    "prompt": "本文の中心内容として最も合うものを選びなさい。",
+    "choices": [
+      "岩谷さんが映画と大学生のブログから影響を受け、自分でも挑戦したいと思うようになったこと。",
+      "岩谷さんが Back to the Future の映画を作ったこと。",
+      "岩谷さんがアメリカの大学でスペースカメラを発明したこと。",
+      "岩谷さんが高価な宇宙技術を使って実験したこと。",
+      "岩谷さんがタイムマシンを完成させたこと。",
+      "岩谷さんが大学で映画研究だけをしていたこと。"
+    ],
+    "answer": "岩谷さんが映画と大学生のブログから影響を受け、自分でも挑戦したいと思うようになったこと。",
+    "explanation": "Part 2 は、映画とブログが岩谷さんの挑戦のきっかけになったことを説明しています。"
+  },
+  {
+    "id": "ec2-2-q02",
+    "type": "multiple-choice",
+    "prompt": "Back to the Future が公開された年として正しいものを選びなさい。",
+    "choices": [
+      "1977年",
+      "1985年",
+      "1995年",
+      "2001年",
+      "2007年",
+      "2011年"
+    ],
+    "answer": "1985年",
+    "explanation": "Back to the Future は1985年公開の映画です。"
+  },
+  {
+    "id": "ec2-2-q03",
+    "type": "multiple-choice",
+    "prompt": "本文の内容に合うものを選びなさい: 岩谷さんにとって Dr. Brown はどのような存在でしたか。",
+    "choices": [
+      "あこがれのような存在",
+      "学校の先生",
+      "宇宙飛行士",
+      "ブログを書いた大学生",
+      "カメラを売った店員",
+      "風船を作った会社員",
+      "日本の映画監督",
+      "岩谷さんの父親"
+    ],
+    "answer": "あこがれのような存在",
+    "explanation": "Dr. Brown は岩谷さんにとって hero のような存在でした。"
+  },
+  {
+    "id": "ec2-2-q04",
+    "type": "multiple-choice",
+    "prompt": "本文の内容に合うものを選びなさい: Dr. Brown のどのような姿勢が岩谷さんを引きつけましたか。",
+    "choices": [
+      "興味のあることに全力で取り組む姿勢",
+      "何もしないで成功を待つ姿勢",
+      "高い技術だけを使おうとする姿勢",
+      "他人の夢をすぐに否定する姿勢",
+      "お金を使うことだけを大切にする姿勢",
+      "写真を撮ることを避ける姿勢"
+    ],
+    "answer": "興味のあることに全力で取り組む姿勢",
+    "explanation": "Dr. Brown は興味のあることを追求し、全力で取り組む人物として描かれています。"
+  },
+  {
+    "id": "ec2-2-q05",
+    "type": "multiple-choice",
+    "prompt": "give his all の意味として最も近いものを選びなさい。",
+    "choices": [
+      "全力を尽くす",
+      "すべてをあきらめる",
+      "何もしない",
+      "お金を全部払う",
+      "だれかに全部あげる",
+      "写真を全部消す",
+      "全員を集める",
+      "すぐに帰る"
+    ],
+    "answer": "全力を尽くす",
+    "explanation": "give one’s all は 全力を尽くす という意味です。"
+  },
+  {
+    "id": "ec2-2-q06",
+    "type": "multiple-choice",
+    "prompt": "in pursuit of の意味として最も近いものを選びなさい。",
+    "choices": [
+      "～を追い求めて",
+      "～を避けるために",
+      "～を忘れたあとで",
+      "～を禁止して",
+      "～を偶然なくして",
+      "～を売るかわりに",
+      "～を撮影せずに",
+      "～を終わらせる前に"
+    ],
+    "answer": "～を追い求めて",
+    "explanation": "in pursuit of は ～を追い求めて という意味です。"
+  },
+  {
+    "id": "ec2-2-q07",
+    "type": "multiple-choice",
+    "prompt": "achieve の意味として最も近いものを選びなさい。",
+    "choices": [
+      "達成する",
+      "破裂する",
+      "柔らかくする",
+      "落下する",
+      "手に入れる",
+      "驚かせる",
+      "改良する",
+      "運ぶ"
+    ],
+    "answer": "達成する",
+    "explanation": "achieve は 達成する という意味です。"
+  },
+  {
+    "id": "ec2-2-q08",
+    "type": "multiple-choice",
+    "prompt": "本文の内容に合うものを選びなさい: 大学生のブログで岩谷さんが見たものは何でしたか。",
+    "choices": [
+      "手作りのスペースカメラで地球を撮影した話",
+      "タイムマシンで未来へ行った話",
+      "高価なロケットを買った話",
+      "映画館で働く方法",
+      "地元のホームセンターを作る計画",
+      "Dr. Brown へのインタビュー"
+    ],
+    "answer": "手作りのスペースカメラで地球を撮影した話",
+    "explanation": "岩谷さんは、手作りスペースカメラで地球を撮影したブログを見ました。"
+  },
+  {
+    "id": "ec2-2-q09",
+    "type": "multiple-choice",
+    "prompt": "What surprised Iwaya about the homemade space camera project?",
+    "choices": [
+      "It did not need much money or advanced technology.",
+      "It was made by NASA engineers only.",
+      "It used a real time machine.",
+      "It needed a large rocket and a pilot.",
+      "It was filmed inside a movie studio.",
+      "It could only work on the moon."
+    ],
+    "answer": "It did not need much money or advanced technology.",
+    "explanation": "多くのお金や advanced technology が必要なかったことに岩谷さんは驚きました。"
+  },
+  {
+    "id": "ec2-2-q10",
+    "type": "multiple-choice",
+    "prompt": "advanced technology の意味として最も近いものを選びなさい。",
+    "choices": [
+      "高度な技術",
+      "地元の材料",
+      "手作りの道具",
+      "安いおみやげ",
+      "普通の映画",
+      "古い写真",
+      "偶然の出会い",
+      "強い興味"
+    ],
+    "answer": "高度な技術",
+    "explanation": "advanced technology は 高度な技術 という意味です。"
+  },
+  {
+    "id": "ec2-2-q11",
+    "type": "multiple-choice",
+    "prompt": "locally obtained materials の意味として最も近いものを選びなさい。",
+    "choices": [
+      "地元で手に入れた材料",
+      "海外から特別に輸入した機械",
+      "宇宙で集めた石",
+      "映画館で売っていたチケット",
+      "大学から借りた時間割",
+      "政府が秘密にしている技術",
+      "店で買えない特殊な燃料",
+      "写真に写った背景"
+    ],
+    "answer": "地元で手に入れた材料",
+    "explanation": "locally obtained materials は 地元で手に入れた材料 という意味です。"
+  },
+  {
+    "id": "ec2-2-q12",
+    "type": "multiple-choice",
+    "prompt": "homemade の意味として最も近いものを選びなさい。",
+    "choices": [
+      "手作りの",
+      "高価な",
+      "真っ暗な",
+      "宇宙用の",
+      "自動の",
+      "大学の",
+      "公式の",
+      "未来の"
+    ],
+    "answer": "手作りの",
+    "explanation": "homemade は 手作りの という意味です。"
+  },
+  {
+    "id": "ec2-2-q13",
+    "type": "multiple-choice",
+    "prompt": "encounter の意味として最も近いものを選びなさい。",
+    "choices": [
+      "出会い",
+      "破裂",
+      "高度",
+      "改良",
+      "緩衝材",
+      "背景",
+      "連続写真",
+      "興味"
+    ],
+    "answer": "出会い",
+    "explanation": "encounter は 出会い、遭遇 という意味です。"
+  },
+  {
+    "id": "ec2-2-q14",
+    "type": "multiple-choice",
+    "prompt": "出来事の順番として最も自然なものを選びなさい。",
+    "choices": [
+      "子どものころに映画を見る → 大学生のブログを見る → 自分でもやってみたいと思う",
+      "ブログを見る → 映画を見る → Dr. Brown がタイムマシンを発明する",
+      "自分で実験する → 子どものころに映画を見る → ブログを探す",
+      "タイムマシンを作る → 地球を撮影する → ホームセンターへ行く",
+      "大学生が岩谷さんの映画を見る → 岩谷さんがブログを書く → Dr. Brown が風船を作る"
+    ],
+    "answer": "子どものころに映画を見る → 大学生のブログを見る → 自分でもやってみたいと思う",
+    "explanation": "映画への憧れがあり、その後ブログを見て自分でも挑戦したいと思いました。"
+  },
+  {
+    "id": "ec2-2-q15",
+    "type": "fill-in-the-blank",
+    "prompt": "空所に最も合う語を入れなさい: Dr. Brown _____ a time machine in the movie. 発明した",
+    "answer": "invented",
+    "explanation": "invent は 発明する、invented は 発明した という意味です。"
+  },
+  {
+    "id": "ec2-2-q16",
+    "type": "fill-in-the-blank",
+    "prompt": "空所に最も合う語を入れなさい: Iwaya was strongly _____ to Dr. Brown’s way of living. 引きつけられた",
+    "answer": "attracted",
+    "explanation": "be attracted to は ～に引きつけられる という意味です。"
+  },
+  {
+    "id": "ec2-2-q17",
+    "type": "fill-in-the-blank",
+    "prompt": "空所に最も合う語を入れなさい: The students used _____ obtained materials. 地元で手に入れた",
+    "answer": "locally",
+    "explanation": "locally means 地元で、locally obtained materials は 地元で手に入れた材料 です。"
+  },
+  {
+    "id": "ec2-2-q18",
+    "type": "true-false",
+    "prompt": "本文の内容と合っていれば TRUE、違っていれば FALSE を選びなさい: The blog showed Iwaya that a homemade space camera could be made without much money or advanced technology.",
+    "answer": true,
+    "explanation": "ブログを見て、多くのお金や高度な技術がなくてもできると分かりました。"
+  }
+]

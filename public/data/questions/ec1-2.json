@@ -1,0 +1,251 @@
+[
+  {
+    "id": "ec1-2-q01",
+    "type": "multiple-choice",
+    "prompt": "本文の中心内容として最も合うものを選びなさい。",
+    "choices": [
+      "Lucky Star の登場人物の性格について説明している。",
+      "Washinomiya Shrine が anime pilgrimage の有名な例になったことを説明している。",
+      "Saitama のすべての神社の歴史を説明している。",
+      "日本の新年行事がだんだんなくなっていることを説明している。",
+      "アニメ制作会社の利益について説明している。",
+      "ファンがテレビ番組を作った方法を説明している。"
+    ],
+    "answer": "Washinomiya Shrine が anime pilgrimage の有名な例になったことを説明している。",
+    "explanation": "Part 2 は Washinomiya Shrine が anime pilgrimage の有名な場所になったことを説明しています。"
+  },
+  {
+    "id": "ec1-2-q02",
+    "type": "multiple-choice",
+    "prompt": "本文の内容に合うものを選びなさい: Washinomiya Shrine はどこにありますか。",
+    "choices": [
+      "Saitama",
+      "Tokyo",
+      "Kyoto",
+      "Osaka",
+      "Hokkaido",
+      "Okinawa",
+      "Shikoku",
+      "Nagano"
+    ],
+    "answer": "Saitama",
+    "explanation": "Washinomiya Shrine は Saitama にある神社です。"
+  },
+  {
+    "id": "ec1-2-q03",
+    "type": "multiple-choice",
+    "prompt": "本文の内容に合うものを選びなさい: ファンが Washinomiya Shrine を訪れ始めた理由として最も合うものはどれですか。",
+    "choices": [
+      "Lucky Star に出てくる神社が Washinomiya Shrine をモデルにしていたから。",
+      "Washinomiya Shrine がアニメ制作会社だったから。",
+      "Lucky Star の作者が神社で毎日サイン会をしたから。",
+      "Washinomiya Shrine がすべてのアニメの舞台だったから。",
+      "ファンは神社に行かないとアニメを見られなかったから。",
+      "その神社がテレビ放送を禁止したから。"
+    ],
+    "answer": "Lucky Star に出てくる神社が Washinomiya Shrine をモデルにしていたから。",
+    "explanation": "アニメの中の神社が Washinomiya Shrine をモデルにしていたため、ファンが訪れ始めました。"
+  },
+  {
+    "id": "ec1-2-q04",
+    "type": "multiple-choice",
+    "prompt": "下線部の意味として最も近いものを選びなさい: was modeled on Washinomiya Shrine",
+    "choices": [
+      "Washinomiya Shrine をモデルにして作られた",
+      "Washinomiya Shrine によって禁止された",
+      "Washinomiya Shrine から遠く離れていた",
+      "Washinomiya Shrine を完全に忘れていた",
+      "Washinomiya Shrine を別の国に移した",
+      "Washinomiya Shrine の名前を変えた"
+    ],
+    "answer": "Washinomiya Shrine をモデルにして作られた",
+    "explanation": "be modeled on は ～をモデルにしている という意味です。"
+  },
+  {
+    "id": "ec1-2-q05",
+    "type": "multiple-choice",
+    "prompt": "下線部の意味として最も近いものを選びなさい: the connection came to be known quite widely",
+    "choices": [
+      "そのつながりがかなり広く知られるようになった",
+      "そのつながりが完全に消えてしまった",
+      "そのつながりが一人だけに知られていた",
+      "そのつながりが間違いだと証明された",
+      "そのつながりが海外で禁止された",
+      "そのつながりが雑誌から削除された"
+    ],
+    "answer": "そのつながりがかなり広く知られるようになった",
+    "explanation": "widely は 広く、come to be known は 知られるようになる という意味です。"
+  },
+  {
+    "id": "ec1-2-q06",
+    "type": "multiple-choice",
+    "prompt": "How many New Year’s visitors came to Washinomiya Shrine in 2007?",
+    "choices": [
+      "約13,000人",
+      "約130,000人",
+      "約300,000人",
+      "約470,000人",
+      "約1,300,000人",
+      "約3,100,000人"
+    ],
+    "answer": "約130,000人",
+    "explanation": "2007年の New Year’s visitors は約13万人でした。"
+  },
+  {
+    "id": "ec1-2-q07",
+    "type": "multiple-choice",
+    "prompt": "How many New Year’s visitors came to Washinomiya Shrine the next year?",
+    "choices": [
+      "約47,000人",
+      "約130,000人",
+      "約300,000人",
+      "約470,000人",
+      "約1,000,000人",
+      "約3,100,000人"
+    ],
+    "answer": "約300,000人",
+    "explanation": "翌年には約30万人に増えました。"
+  },
+  {
+    "id": "ec1-2-q08",
+    "type": "multiple-choice",
+    "prompt": "本文の内容に合うものを選びなさい: 2011年の New Year’s visitors は約何人でしたか。",
+    "choices": [
+      "約130,000人",
+      "約200,000人",
+      "約300,000人",
+      "約470,000人",
+      "約700,000人",
+      "約3,100,000人"
+    ],
+    "answer": "約470,000人",
+    "explanation": "2011年には約47万人に達しました。"
+  },
+  {
+    "id": "ec1-2-q09",
+    "type": "multiple-choice",
+    "prompt": "出来事の順番として最も自然なものを選びなさい。",
+    "choices": [
+      "ファンが気づく → アニメの中の神社がモデルにされる → 訪問者が増える → 経済効果が出る",
+      "アニメの中の神社がモデルにされる → ファンが気づく → つながりが広く知られる → 訪問者が増える",
+      "経済効果が出る → ファンが気づく → アニメが作られる → 訪問者が減る",
+      "訪問者が増える → 神社がなくなる → ファンが気づく → 雑誌で発表される",
+      "神社が海外に移る → ファンが気づく → 訪問者が増える → アニメが放送される"
+    ],
+    "answer": "アニメの中の神社がモデルにされる → ファンが気づく → つながりが広く知られる → 訪問者が増える",
+    "explanation": "モデルにされたことにファンが気づき、そのつながりが広まり、訪問者が増えました。"
+  },
+  {
+    "id": "ec1-2-q10",
+    "type": "multiple-choice",
+    "prompt": "Why did the number of visitors to Washinomiya Shrine increase so much?",
+    "choices": [
+      "The shrine’s connection to an anime became famous, so many fans visited it.",
+      "The shrine gave free anime goods to every visitor.",
+      "The population of Saitama suddenly became much larger.",
+      "New Year’s visits were banned in other parts of Japan.",
+      "Lucky Star ended in 2007, so fans stopped visiting the shrine.",
+      "The shrine became a movie theater."
+    ],
+    "answer": "The shrine’s connection to an anime became famous, so many fans visited it.",
+    "explanation": "アニメとのつながりが広く知られ、多くのファンが神社を訪れたことが理由として合います。"
+  },
+  {
+    "id": "ec1-2-q11",
+    "type": "multiple-choice",
+    "prompt": "下線部の意味として最も近いものを選びなさい: many more fans rushed there",
+    "choices": [
+      "さらに多くのファンがそこに殺到した",
+      "さらに多くのファンがそこを避けた",
+      "さらに多くのファンがそこで眠った",
+      "さらに多くのファンがそこを売った",
+      "さらに多くのファンがそこを描いた",
+      "さらに多くのファンがそこを閉めた"
+    ],
+    "answer": "さらに多くのファンがそこに殺到した",
+    "explanation": "rush there は そこへ急いで行く、そこへ殺到する という意味です。"
+  },
+  {
+    "id": "ec1-2-q12",
+    "type": "fill-in-the-blank",
+    "prompt": "空所に最も合う語を入れなさい: The anime shrine was _____ on a real shrine in Saitama. ～をモデルにしていた",
+    "answer": [
+      "modeled",
+      "modelled",
+      "based"
+    ],
+    "explanation": "be modeled on と be based on はどちらも ～をもとにしている という意味で使えます。"
+  },
+  {
+    "id": "ec1-2-q13",
+    "type": "fill-in-the-blank",
+    "prompt": "空所に最も合う語を入れなさい: The number of visitors _____ to about 300,000 the next year. 急増して～になった",
+    "answer": "jumped",
+    "explanation": "jump to は 急増して～になる という意味で使えます。"
+  },
+  {
+    "id": "ec1-2-q14",
+    "type": "fill-in-the-blank",
+    "prompt": "空所に最も合う語を入れなさい: According to _____, the number of visitors increased. 統計によれば",
+    "answer": "statistics",
+    "explanation": "according to statistics は 統計によれば という意味です。"
+  },
+  {
+    "id": "ec1-2-q15",
+    "type": "true-false",
+    "prompt": "本文の内容と合っていれば TRUE、違っていれば FALSE を選びなさい: The pilgrimages helped the local economy.",
+    "answer": true,
+    "explanation": "pilgrimages は地域経済に約31億円をもたらしたと推定されています。"
+  },
+  {
+    "id": "ec1-2-q16",
+    "type": "multiple-choice",
+    "prompt": "local economy の意味として最も近いものを選びなさい。",
+    "choices": [
+      "地元のお店・仕事・お金の動き",
+      "地元の天気や気温",
+      "地元の有名なアニメキャラクター",
+      "地元の神社の建物だけ",
+      "全国の政治制度",
+      "海外旅行の計画",
+      "テレビ番組の放送時間",
+      "漫画雑誌のページ数"
+    ],
+    "answer": "地元のお店・仕事・お金の動き",
+    "explanation": "local economy は 地域経済、つまり地元のお金や仕事の動きのことです。"
+  },
+  {
+    "id": "ec1-2-q17",
+    "type": "multiple-choice",
+    "prompt": "connections の意味として合わないものを選びなさい。",
+    "choices": [
+      "人や物のつながり",
+      "人間関係",
+      "関連・関係性",
+      "知り合い・コネ",
+      "電車や飛行機の乗り継ぎ",
+      "ケーブルなどの接続",
+      "物語の舞台になっている場所",
+      "物事がどう関係しているか"
+    ],
+    "answer": "物語の舞台になっている場所",
+    "explanation": "connections は つながり・関係・接続・乗り継ぎ などを表しますが、場所そのものという意味ではありません。"
+  },
+  {
+    "id": "ec1-2-q18",
+    "type": "multiple-choice",
+    "prompt": "Which number means one billion?",
+    "choices": [
+      "1,000",
+      "10,000",
+      "100,000",
+      "1,000,000",
+      "10,000,000",
+      "100,000,000",
+      "1,000,000,000",
+      "3,100,000,000"
+    ],
+    "answer": "1,000,000,000",
+    "explanation": "one billion は 1,000,000,000、つまり10億です。"
+  }
+]
