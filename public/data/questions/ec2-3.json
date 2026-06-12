@@ -1,0 +1,288 @@
+[
+  {
+    "id": "ec2-3-q01",
+    "type": "multiple-choice",
+    "prompt": "本文の中心内容として最も合うものを選びなさい。",
+    "choices": [
+      "岩谷さんが何度も実験し、データを集めて改良し、ついに宇宙から地球の写真を撮ったこと。",
+      "岩谷さんが映画を見て、タイムマシンを作ったこと。",
+      "岩谷さんが風船を使わずにロケットで宇宙へ行ったこと。",
+      "岩谷さんが地元の店でカメラを売り始めたこと。",
+      "岩谷さんが大きな望遠鏡で月だけを撮影したこと。",
+      "岩谷さんが成層圏の天気予報を作ったこと。"
+    ],
+    "answer": "岩谷さんが何度も実験し、データを集めて改良し、ついに宇宙から地球の写真を撮ったこと。",
+    "explanation": "Part 3 は、失敗と改良を重ねて宇宙から地球を撮影した流れを説明しています。"
+  },
+  {
+    "id": "ec2-3-q02",
+    "type": "multiple-choice",
+    "prompt": "diameter の意味として最も近いものを選びなさい。",
+    "choices": [
+      "直径",
+      "半径",
+      "高度",
+      "背景",
+      "重さ",
+      "速度",
+      "明るさ",
+      "材料"
+    ],
+    "answer": "直径",
+    "explanation": "diameter は 円や球の端から端までを通る 直径 という意味です。"
+  },
+  {
+    "id": "ec2-3-q03",
+    "type": "multiple-choice",
+    "prompt": "本文の内容に合うものを選びなさい: 岩谷さんが使うのに最もよいと分かった風船の大きさはどれですか。",
+    "choices": [
+      "直径1〜2メートル",
+      "直径10〜20センチメートル",
+      "直径5〜6メートル",
+      "直径30メートル以上",
+      "半径1〜2キロメートル",
+      "高さ30,000メートル",
+      "重さ1〜2キログラム",
+      "長さ300メートル"
+    ],
+    "answer": "直径1〜2メートル",
+    "explanation": "風船は直径1〜2メートルくらいがよいと分かりました。"
+  },
+  {
+    "id": "ec2-3-q04",
+    "type": "multiple-choice",
+    "prompt": "stratosphere の意味として最も近いものを選びなさい。",
+    "choices": [
+      "成層圏",
+      "地面",
+      "海底",
+      "宇宙船",
+      "半径",
+      "直径",
+      "地元の店",
+      "緩衝材"
+    ],
+    "answer": "成層圏",
+    "explanation": "stratosphere は 成層圏 という意味です。"
+  },
+  {
+    "id": "ec2-3-q05",
+    "type": "multiple-choice",
+    "prompt": "本文の内容に合うものを選びなさい: よりよい画像を得るために、カメラは何の影響を少なくする必要がありましたか。",
+    "choices": [
+      "atmosphere",
+      "local economy",
+      "character goods",
+      "home improvement store",
+      "Back to the Future",
+      "mutual understanding",
+      "restricted area",
+      "souvenir"
+    ],
+    "answer": "atmosphere",
+    "explanation": "大気の影響が少ない高さまで上がると、より鮮明な画像が得られました。"
+  },
+  {
+    "id": "ec2-3-q06",
+    "type": "multiple-choice",
+    "prompt": "atmosphere の意味として最も近いものを選びなさい。",
+    "choices": [
+      "大気",
+      "直径",
+      "惑星",
+      "失望",
+      "喜び",
+      "発見",
+      "改良",
+      "緩衝材"
+    ],
+    "answer": "大気",
+    "explanation": "atmosphere は 地球を取りまく空気、大気 という意味です。"
+  },
+  {
+    "id": "ec2-3-q07",
+    "type": "multiple-choice",
+    "prompt": "本文の内容に合うものを選びなさい: 何メートル以上の高さがよいと分かりましたか。",
+    "choices": [
+      "3,000メートル以上",
+      "10,000メートル以上",
+      "30,000メートル以上",
+      "80,000メートル以上",
+      "300,000メートル以上",
+      "1,000メートル以上"
+    ],
+    "answer": "30,000メートル以上",
+    "explanation": "30,000メートル以上がよい高さだと分かりました。"
+  },
+  {
+    "id": "ec2-3-q08",
+    "type": "multiple-choice",
+    "prompt": "blurry の反対に最も近い語を選びなさい。",
+    "choices": [
+      "sharp",
+      "dark",
+      "heavy",
+      "local",
+      "handmade",
+      "soft",
+      "rare",
+      "pure"
+    ],
+    "answer": "sharp",
+    "explanation": "blurry は ぼやけた、sharp は 鮮明な という意味です。"
+  },
+  {
+    "id": "ec2-3-q09",
+    "type": "multiple-choice",
+    "prompt": "blurry の意味として最も近いものを選びなさい。",
+    "choices": [
+      "ぼやけた、不鮮明な",
+      "鮮明な、くっきりした",
+      "真っ暗な",
+      "手作りの",
+      "地元で得た",
+      "高度な",
+      "破裂した",
+      "珍しい"
+    ],
+    "answer": "ぼやけた、不鮮明な",
+    "explanation": "blurry は ぼやけた、不鮮明な という意味です。"
+  },
+  {
+    "id": "ec2-3-q10",
+    "type": "multiple-choice",
+    "prompt": "sharp images の意味として最も近いものを選びなさい。",
+    "choices": [
+      "鮮明な画像",
+      "ぼやけた画像",
+      "真っ暗な画像",
+      "壊れた画像",
+      "小さすぎる画像",
+      "手作りの画像",
+      "地元の画像",
+      "古い画像"
+    ],
+    "answer": "鮮明な画像",
+    "explanation": "sharp は 画像について使うと 鮮明な、くっきりした という意味です。"
+  },
+  {
+    "id": "ec2-3-q11",
+    "type": "multiple-choice",
+    "prompt": "本文の内容に合うものを選びなさい: 岩谷さんは何回目の試みで宇宙から写真を撮ることができましたか。",
+    "choices": [
+      "1回目",
+      "3回目",
+      "5回目",
+      "7回目",
+      "11回目",
+      "30回目",
+      "37回目",
+      "100回目"
+    ],
+    "answer": "11回目",
+    "explanation": "11回目の試みで、ついに宇宙から写真を撮ることができました。"
+  },
+  {
+    "id": "ec2-3-q12",
+    "type": "multiple-choice",
+    "prompt": "pure delight の pure の意味として最も近いものを選びなさい。",
+    "choices": [
+      "まったくの、心からの",
+      "汚れた",
+      "高価な",
+      "速い",
+      "地元の",
+      "ぼやけた",
+      "技術的な",
+      "偶然の"
+    ],
+    "answer": "まったくの、心からの",
+    "explanation": "pure delight の pure は、混じりけのない強い喜びを表します。"
+  },
+  {
+    "id": "ec2-3-q13",
+    "type": "multiple-choice",
+    "prompt": "delight の意味として最も近いものを選びなさい。",
+    "choices": [
+      "喜び",
+      "失望",
+      "直径",
+      "大気",
+      "改良",
+      "発見",
+      "速度",
+      "失敗"
+    ],
+    "answer": "喜び",
+    "explanation": "delight は 大きな喜び という意味です。"
+  },
+  {
+    "id": "ec2-3-q14",
+    "type": "multiple-choice",
+    "prompt": "motivate の意味として最も近いものを選びなさい。",
+    "choices": [
+      "やる気にさせる",
+      "ぼやけさせる",
+      "破裂させる",
+      "地元で手に入れる",
+      "直径を測る",
+      "写真を隠す",
+      "大気を消す",
+      "失敗する"
+    ],
+    "answer": "やる気にさせる",
+    "explanation": "motivate は 人にやる気を起こさせる という意味です。"
+  },
+  {
+    "id": "ec2-3-q15",
+    "type": "multiple-choice",
+    "prompt": "本文の内容に合うものを選びなさい: balloon after balloon を打ち上げた後、岩谷さんは何をしましたか。",
+    "choices": [
+      "データを集め、改良を重ねた。",
+      "すぐに実験を完全にやめた。",
+      "タイムマシンを発明した。",
+      "地球の写真をすべて捨てた。",
+      "風船を宇宙船に変えた。",
+      "高価なロケットだけを使うようになった。",
+      "映画館で働き始めた。",
+      "写真を撮らないことに決めた。"
+    ],
+    "answer": "データを集め、改良を重ねた。",
+    "explanation": "何度も風船を打ち上げながら、データを集めて改良しました。"
+  },
+  {
+    "id": "ec2-3-q16",
+    "type": "fill-in-the-blank",
+    "prompt": "空所に最も合う語を入れなさい: He collected _____ and made improvements. データ",
+    "answer": "data",
+    "explanation": "data は データ、集めた情報 という意味です。"
+  },
+  {
+    "id": "ec2-3-q17",
+    "type": "fill-in-the-blank",
+    "prompt": "空所に最も合う語を入れなさい: The camera had to fall slowly so as not to _____ anything. 傷つける",
+    "answer": "damage",
+    "explanation": "damage は 傷つける、損害を与える という意味です。"
+  },
+  {
+    "id": "ec2-3-q18",
+    "type": "fill-in-the-blank",
+    "prompt": "空所に最も合う語を入れなさい: His experience _____ him to continue his efforts. やる気にさせた",
+    "answer": "motivated",
+    "explanation": "motivated は やる気にさせた という意味です。"
+  },
+  {
+    "id": "ec2-3-q19",
+    "type": "true-false",
+    "prompt": "本文の内容と合っていれば TRUE、違っていれば FALSE を選びなさい: The first photos from space were perfectly sharp.",
+    "answer": false,
+    "explanation": "最初に撮れた写真はぼやけていました。"
+  },
+  {
+    "id": "ec2-3-q20",
+    "type": "true-false",
+    "prompt": "本文の内容と合っていれば TRUE、違っていれば FALSE を選びなさい: Even though he was disappointed at first, Iwaya later found one good image.",
+    "answer": true,
+    "explanation": "最初は失望しましたが、よく見るとよい写真が見つかりました。"
+  }
+]

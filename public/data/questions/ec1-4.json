@@ -1,0 +1,249 @@
+[
+  {
+    "id": "ec1-4-q01",
+    "type": "multiple-choice",
+    "prompt": "本文の中心内容として最も合うものを選びなさい。",
+    "choices": [
+      "Lucky Star の放送後も、ファンと地元の人々の関係が続き、地域に良い影響を与えている。",
+      "Lucky Star の放送後、ファンはすぐに Washinomiya Shrine に行かなくなった。",
+      "Anime Pilgrimages は日本文化にまったく関係がない。",
+      "地元の人々は Anime Pilgrims を完全に拒否している。",
+      "海外からの観光客は anime pilgrimage に興味を持たない。",
+      "Anime Pilgrimages は経済とは関係がない。"
+    ],
+    "answer": "Lucky Star の放送後も、ファンと地元の人々の関係が続き、地域に良い影響を与えている。",
+    "explanation": "Part 4 は、ファンと地域の交流や相互理解、経済効果について説明しています。"
+  },
+  {
+    "id": "ec1-4-q02",
+    "type": "multiple-choice",
+    "prompt": "本文の内容に合うものを選びなさい: Lucky Star の放送が終わった後、ファンはどうしましたか。",
+    "choices": [
+      "地元の人々との交流を続けた。",
+      "Washinomiya Shrine を完全に忘れた。",
+      "アニメを見ることを法律で禁止された。",
+      "地元の人々と話すことをやめた。",
+      "その地域を別の県に移した。",
+      "全員が海外に移住した。"
+    ],
+    "answer": "地元の人々との交流を続けた。",
+    "explanation": "放送終了後も、ファンは地元の人々と交流を続けました。"
+  },
+  {
+    "id": "ec1-4-q03",
+    "type": "multiple-choice",
+    "prompt": "本文の内容に合うものを選びなさい: 最初、Anime Pilgrims は主に何をしようとしていましたか。",
+    "choices": [
+      "Lucky Star の世界を体験しようとしていた。",
+      "地元の政治制度を変えようとしていた。",
+      "日本全国の神社をすべて調べようとしていた。",
+      "アニメの放送局を作ろうとしていた。",
+      "地元の人々に英語を教えようとしていた。",
+      "地域の名前を変えようとしていた。"
+    ],
+    "answer": "Lucky Star の世界を体験しようとしていた。",
+    "explanation": "最初は、Lucky Star の世界を体験することが主な目的でした。"
+  },
+  {
+    "id": "ec1-4-q04",
+    "type": "multiple-choice",
+    "prompt": "本文の内容に合うものを選びなさい: ファンが何度も戻ってくるうちに、何が起きましたか。",
+    "choices": [
+      "ファンはその地域自体のファンにもなった。",
+      "ファンはその地域を嫌いになった。",
+      "地元の人々は全員引っ越した。",
+      "Anime Pilgrimages はすぐに禁止された。",
+      "ファンは日本文化への興味を失った。",
+      "地域の情報はすべて消された。"
+    ],
+    "answer": "ファンはその地域自体のファンにもなった。",
+    "explanation": "何度も訪れるうちに、ファンはアニメだけでなく地域にも関心を持つようになりました。"
+  },
+  {
+    "id": "ec1-4-q05",
+    "type": "multiple-choice",
+    "prompt": "相互理解は地域経済にどのような影響を与えましたか。",
+    "choices": [
+      "良い経済効果をもたらした。",
+      "経済には何の影響もなかった。",
+      "地元の店をすべて閉店させた。",
+      "観光客を完全に減らした。",
+      "地元の交通をすべて止めた。",
+      "アニメ関連の商品を禁止した。"
+    ],
+    "answer": "良い経済効果をもたらした。",
+    "explanation": "相互理解は、地域に良い経済効果をもたらしたと説明されています。"
+  },
+  {
+    "id": "ec1-4-q06",
+    "type": "fill-in-the-blank",
+    "prompt": "空所に最も合う語句を入れなさい: _____ has helped fans and local people accept each other. 相互理解",
+    "answer": "mutual understanding",
+    "explanation": "mutual understanding は 相互理解 という意味です。"
+  },
+  {
+    "id": "ec1-4-q07",
+    "type": "multiple-choice",
+    "prompt": "本文の 「holy sites」 に引用符が付いている理由として最も合うものを選びなさい。",
+    "choices": [
+      "本当の宗教的な聖地だけではなく、アニメファンにとって特別な場所という意味で使っているから。",
+      "英語ではすべての場所の名前に必ず引用符を付けるから。",
+      "その場所がすべて外国にあるから。",
+      "その言葉が本文の中で間違って使われているから。",
+      "その場所には誰も入れないから。",
+      "その地域の正式な住所だから。"
+    ],
+    "answer": "本当の宗教的な聖地だけではなく、アニメファンにとって特別な場所という意味で使っているから。",
+    "explanation": "ここでは、アニメファンにとって特別な場所という比喩的な意味で使われています。"
+  },
+  {
+    "id": "ec1-4-q08",
+    "type": "multiple-choice",
+    "prompt": "情報の提供方法として本文に出ていないものを選びなさい。",
+    "choices": [
+      "local people",
+      "websites",
+      "social media",
+      "newspapers"
+    ],
+    "answer": "newspapers",
+    "explanation": "情報は local people、websites、social media によって提供されていますが、newspapers は出ていません。"
+  },
+  {
+    "id": "ec1-4-q09",
+    "type": "multiple-choice",
+    "prompt": "again and again の意味として最も近いものを選びなさい。",
+    "choices": [
+      "何度も",
+      "一度だけ",
+      "少しずつ",
+      "偶然に",
+      "すぐ近くで",
+      "最後に",
+      "静かに",
+      "海外で"
+    ],
+    "answer": "何度も",
+    "explanation": "again and again は 何度も、繰り返して という意味です。"
+  },
+  {
+    "id": "ec1-4-q10",
+    "type": "multiple-choice",
+    "prompt": "interact with local people の意味として最も近いものを選びなさい。",
+    "choices": [
+      "地元の人々と交流する",
+      "地元の人々を避ける",
+      "地元の人々を観察するだけにする",
+      "地元の人々に許可なく命令する",
+      "地元の人々の生活を無視する",
+      "地元の人々の名前を覚えない",
+      "地元の人々から商品を隠す",
+      "地元の人々の写真だけを撮る"
+    ],
+    "answer": "地元の人々と交流する",
+    "explanation": "interact with は ～と交流する、関わる という意味です。"
+  },
+  {
+    "id": "ec1-4-q11",
+    "type": "multiple-choice",
+    "prompt": "次の例は何の例として最も合いますか: 平戸市が、佐世保と島の南部をつなぐ新しい橋づくりを進める。",
+    "choices": [
+      "regional development",
+      "mutual understanding",
+      "local economy",
+      "character goods",
+      "restricted area",
+      "holy site",
+      "broadcast",
+      "anime pilgrimage"
+    ],
+    "answer": "regional development",
+    "explanation": "regional development は、地域を便利にしたり活性化したりする取り組みを表します。"
+  },
+  {
+    "id": "ec1-4-q12",
+    "type": "multiple-choice",
+    "prompt": "tourists from abroad の意味として最も近いものを選びなさい。",
+    "choices": [
+      "海外からの観光客",
+      "地元に住む人々",
+      "アニメを作る人々",
+      "日本国内の高校生だけ",
+      "神社で働く人々",
+      "地元の店だけ"
+    ],
+    "answer": "海外からの観光客",
+    "explanation": "from abroad は 海外からの、tourists は 観光客 という意味です。"
+  },
+  {
+    "id": "ec1-4-q13",
+    "type": "multiple-choice",
+    "prompt": "本文の内容に合うものを選びなさい: 「holy sites」を訪れる人々は、何に強い関心を持っていることが多いですか。",
+    "choices": [
+      "日本文化や好きなアニメの舞台",
+      "日本の空港だけ",
+      "海外の政治だけ",
+      "地元の天気予報だけ",
+      "学校の校則だけ",
+      "アニメとは関係ない工場だけ"
+    ],
+    "answer": "日本文化や好きなアニメの舞台",
+    "explanation": "訪問者は日本文化や、好きなアニメの物語の場所に強い関心を持っています。"
+  },
+  {
+    "id": "ec1-4-q14",
+    "type": "multiple-choice",
+    "prompt": "potential の意味として最も近いものを選びなさい。",
+    "choices": [
+      "可能性",
+      "許可",
+      "巡礼者",
+      "放送",
+      "制限区域",
+      "生活様式",
+      "おみやげ",
+      "統計"
+    ],
+    "answer": "可能性",
+    "explanation": "potential は 可能性、潜在力 という意味です。"
+  },
+  {
+    "id": "ec1-4-q15",
+    "type": "multiple-choice",
+    "prompt": "本文の内容に合うものを選びなさい: Anime Pilgrimages は日本で何を促進する可能性がありますか。",
+    "choices": [
+      "地域の発展",
+      "地域の消滅",
+      "観光情報の削除",
+      "地元の人とファンの対立だけ",
+      "すべてのアニメイベントの中止",
+      "海外観光客の完全な減少"
+    ],
+    "answer": "地域の発展",
+    "explanation": "Anime Pilgrimages は日本の regional development を促進する可能性があると説明されています。"
+  },
+  {
+    "id": "ec1-4-q16",
+    "type": "fill-in-the-blank",
+    "prompt": "空所に最も合う語を入れなさい: Fans came back _____ and again. 何度も",
+    "answer": "again",
+    "explanation": "again and again は 何度も という意味です。"
+  },
+  {
+    "id": "ec1-4-q17",
+    "type": "fill-in-the-blank",
+    "prompt": "空所に最も合う語を入れなさい: Anime Pilgrimages can attract _____ from abroad. 観光客",
+    "answer": [
+      "tourists",
+      "tourist"
+    ],
+    "explanation": "tourists は 観光客 という意味です。"
+  },
+  {
+    "id": "ec1-4-q18",
+    "type": "true-false",
+    "prompt": "本文の内容と合っていれば TRUE、違っていれば FALSE を選びなさい: Information about Anime Pilgrimages is now provided only in Japanese.",
+    "answer": false,
+    "explanation": "情報は多くの異なる言語で提供されています。"
+  }
+]

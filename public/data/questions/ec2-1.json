@@ -1,0 +1,245 @@
+[
+  {
+    "id": "ec2-1-q01",
+    "type": "multiple-choice",
+    "prompt": "本文の中心内容として最も合うものを選びなさい。",
+    "choices": [
+      "岩谷さんが、風船・カメラ・パラシュートなどを使って地球の写真を撮る実験について説明している。",
+      "岩谷さんが、宇宙船を作って月まで行った話を説明している。",
+      "岩谷さんが、ホームセンターで働くようになった理由を説明している。",
+      "岩谷さんが、普通のスマホで地球の写真を撮る方法を説明している。",
+      "岩谷さんが、太陽の温度を測る実験について説明している。",
+      "岩谷さんが、映画 Back to the Future の内容を説明している。"
+    ],
+    "answer": "岩谷さんが、風船・カメラ・パラシュートなどを使って地球の写真を撮る実験について説明している。",
+    "explanation": "Part 1 は、岩谷さんの風船を使った撮影実験について説明しています。"
+  },
+  {
+    "id": "ec2-1-q02",
+    "type": "multiple-choice",
+    "prompt": "本文の内容に合うものを選びなさい: 風船は何を運びますか。",
+    "choices": [
+      "地球に向けられたカメラ",
+      "宇宙飛行士",
+      "大きな望遠鏡",
+      "月の石",
+      "映画のチケット",
+      "ホームセンターの商品棚",
+      "電車の模型",
+      "太陽電池だけ"
+    ],
+    "answer": "地球に向けられたカメラ",
+    "explanation": "風船は、地球に向けられたカメラを運びます。"
+  },
+  {
+    "id": "ec2-1-q03",
+    "type": "multiple-choice",
+    "prompt": "What happens after the balloon explodes?",
+    "choices": [
+      "The camera slowly falls back to the earth with a parachute.",
+      "The camera flies to the moon by itself.",
+      "The balloon becomes a rocket and goes higher.",
+      "The camera takes photos inside a home improvement store.",
+      "The parachute burns up immediately.",
+      "The experiment ends before any photos are taken."
+    ],
+    "answer": "The camera slowly falls back to the earth with a parachute.",
+    "explanation": "風船が破裂した後、カメラはパラシュートでゆっくり地球に戻ります。"
+  },
+  {
+    "id": "ec2-1-q04",
+    "type": "multiple-choice",
+    "prompt": "出来事の順番として最も自然なものを選びなさい。",
+    "choices": [
+      "風船が上がる → カメラが地球を撮影する → 風船が破裂する → カメラが地球へ戻る",
+      "風船が破裂する → カメラを作る → 地球を撮影する → 風船が上がる",
+      "カメラが地球へ戻る → 風船が上がる → 材料を買う → 太陽が暗くなる",
+      "地球を撮影する → ホームセンターが飛ぶ → パラシュートが消える → 風船が戻る",
+      "カメラが月へ行く → 太陽を撮る → 風船を作る → 地球が破裂する"
+    ],
+    "answer": "風船が上がる → カメラが地球を撮影する → 風船が破裂する → カメラが地球へ戻る",
+    "explanation": "風船が上がり、撮影後に破裂し、カメラが戻る流れです。"
+  },
+  {
+    "id": "ec2-1-q05",
+    "type": "multiple-choice",
+    "prompt": "pitch-_____ darkness の意味として最も近いものを選びなさい。",
+    "choices": [
+      "真っ暗な暗闇",
+      "少し明るい夕方",
+      "まぶしい光",
+      "透明な空気",
+      "青空のような明るさ",
+      "写真に写った背景",
+      "高く上がった場所",
+      "やわらかい着地"
+    ],
+    "answer": "真っ暗な暗闇",
+    "explanation": "pitch-black darkness は 真っ暗な暗闇 という意味です。"
+  },
+  {
+    "id": "ec2-1-q06",
+    "type": "multiple-choice",
+    "prompt": "burst の意味として最も近いものを選びなさい。",
+    "choices": [
+      "破裂する",
+      "ゆっくり落ちる",
+      "写真を保存する",
+      "やわらかくする",
+      "手作りする",
+      "材料を集める",
+      "高く飛ぶ",
+      "興味を引く"
+    ],
+    "answer": "破裂する",
+    "explanation": "burst は 破裂する という意味です。"
+  },
+  {
+    "id": "ec2-1-q07",
+    "type": "multiple-choice",
+    "prompt": "burst shot の意味として最も近いものを選びなさい。",
+    "choices": [
+      "連続写真",
+      "真っ暗な写真",
+      "手作りの写真",
+      "失敗した写真",
+      "高度の写真",
+      "破れた写真",
+      "背景だけの写真",
+      "店で買った写真"
+    ],
+    "answer": "連続写真",
+    "explanation": "burst shot は、短い時間に連続して撮る写真です。"
+  },
+  {
+    "id": "ec2-1-q08",
+    "type": "multiple-choice",
+    "prompt": "ホームセンター の英語として最も自然なものを選びなさい。",
+    "choices": [
+      "home improvement store",
+      "home material store",
+      "home center",
+      "material store",
+      "home building center",
+      "house goods market",
+      "building materials shop",
+      "DIY goods place"
+    ],
+    "answer": "home improvement store",
+    "explanation": "home improvement store は、英語で ホームセンター に最も近い自然な表現です。"
+  },
+  {
+    "id": "ec2-1-q09",
+    "type": "multiple-choice",
+    "prompt": "rarity の意味として最も近いものを選びなさい。",
+    "choices": [
+      "珍しさ",
+      "高さ",
+      "背景",
+      "実験",
+      "材料",
+      "破裂",
+      "暗さ",
+      "改良"
+    ],
+    "answer": "珍しさ",
+    "explanation": "rarity は 珍しさ、まれであること という意味です。"
+  },
+  {
+    "id": "ec2-1-q10",
+    "type": "multiple-choice",
+    "prompt": "materials の意味として最も近いものを選びなさい。",
+    "choices": [
+      "材料",
+      "方法",
+      "高度",
+      "誘惑",
+      "背景",
+      "写真撮影",
+      "実験",
+      "改良"
+    ],
+    "answer": "材料",
+    "explanation": "materials は 材料 という意味です。"
+  },
+  {
+    "id": "ec2-1-q11",
+    "type": "multiple-choice",
+    "prompt": "cushioning の役割として最も合うものを選びなさい。",
+    "choices": [
+      "カメラが着地するときの衝撃をやわらげる。",
+      "カメラを太陽に向ける。",
+      "風船を破裂させる。",
+      "写真を連続で撮る。",
+      "カメラを真っ暗にする。",
+      "パラシュートを消す。",
+      "材料を買う店を探す。",
+      "地球から遠ざける。"
+    ],
+    "answer": "カメラが着地するときの衝撃をやわらげる。",
+    "explanation": "cushioning は 着地の衝撃をやわらげるためのものです。"
+  },
+  {
+    "id": "ec2-1-q12",
+    "type": "multiple-choice",
+    "prompt": "obtained の意味として最も近いものを選びなさい。",
+    "choices": [
+      "手に入れた",
+      "破裂させた",
+      "夢見た",
+      "柔らかくした",
+      "撮影した",
+      "運んだ",
+      "失敗した",
+      "引きつけた"
+    ],
+    "answer": "手に入れた",
+    "explanation": "obtained は 手に入れた、得た という意味です。"
+  },
+  {
+    "id": "ec2-1-q13",
+    "type": "fill-in-the-blank",
+    "prompt": "空所に最も合う語を入れなさい: Iwaya’s unusual method has _____ wide interest. 広い関心を引きつけた",
+    "answer": "attracted",
+    "explanation": "attract は 引きつける、attracted は 引きつけた という意味です。"
+  },
+  {
+    "id": "ec2-1-q14",
+    "type": "fill-in-the-blank",
+    "prompt": "空所に最も合う語を入れなさい: He _____ the materials at a local home improvement store. 手に入れた",
+    "answer": [
+      "obtained",
+      "obtain",
+      "got"
+    ],
+    "explanation": "obtain は 手に入れる という意味で、obtained はその過去形です。"
+  },
+  {
+    "id": "ec2-1-q15",
+    "type": "fill-in-the-blank",
+    "prompt": "空所に最も合う語を入れなさい: The camera’s landing was softened by _____. 緩衝材",
+    "answer": "cushioning",
+    "explanation": "cushioning は 衝撃をやわらげるための緩衝材です。"
+  },
+  {
+    "id": "ec2-1-q16",
+    "type": "fill-in-the-blank",
+    "prompt": "空所に最も合う語を入れなさい: The camera was aimed at the _____. 地球",
+    "answer": "earth",
+    "explanation": "earth は 地球 という意味で、Earth と書くこともあります。"
+  },
+  {
+    "id": "ec2-1-q17",
+    "type": "true-false",
+    "prompt": "本文の内容と合っていれば TRUE、違っていれば FALSE を選びなさい: The parachute and cushioning were handmade by Iwaya.",
+    "answer": true,
+    "explanation": "パラシュートと cushioning は岩谷さんによって手作りされました。"
+  },
+  {
+    "id": "ec2-1-q18",
+    "type": "true-false",
+    "prompt": "本文の内容と合っていれば TRUE、違っていれば FALSE を選びなさい: Iwaya used many expensive space materials that only NASA could buy.",
+    "answer": false,
+    "explanation": "彼が使った材料は地元の home improvement store で手に入れたものです。"
+  }
+]
